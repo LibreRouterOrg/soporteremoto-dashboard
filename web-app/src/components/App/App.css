@@ -1,0 +1,44 @@
+.fullLayout{
+  height: 100%;
+}
+
+.fullContent{
+  height: 100%;
+}
+
+#root{
+  display: flex;
+  flex: auto;
+}
+
+#App{
+  display: flex;
+  flex:auto;
+  flex-direction: column;
+}
+
+#Header{
+  padding: 0 50px;
+  height: 64px;
+  flex: 0 0 auto;
+  background-color: #09456b;
+  display: flex;
+  color: white;
+}
+
+#Content{
+  display: flex;
+  flex: auto;
+}
+
+#HeaderLogo{
+  padding:5px;
+  display: flex;
+  justify-content:flex-start;
+  align-items: center;
+}
+
+#MapContainer{
+  display: flex;
+  flex: auto;
+}
