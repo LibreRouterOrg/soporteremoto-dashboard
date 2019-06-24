@@ -1,19 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Button } from 'antd';
+import { Layout } from 'antd';
 import './App.css';
+
+const { Header, Content } = Layout;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <Button type="primary">Ant Button</Button>
-      </header>
-    </div>
+    <Layout className="fullLayout">
+      <Header>
+        Soporte Remoto
+      </Header>
+      <Layout>
+        <Content></Content>
+      </Layout>
+    </Layout>
   );
 }
 
