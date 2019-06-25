@@ -1,0 +1,23 @@
+#LastIssuesContainer{
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    flex:auto;
+}
+
+.IssueReportData{
+    font-size: 12px;
+}
+
+.IssueRow{
+    flex: auto;
+}
+
+#NewReportContainer{
+    display: flex;
+    justify-content: center;
+}
+
+#LastIssuesList{
+    flex:auto;
+}

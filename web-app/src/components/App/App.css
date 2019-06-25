@@ -42,3 +42,8 @@
   display: flex;
   flex: auto;
 }
+
+#MapInfoContainer{
+  flex: auto;
+  display: flex;
+}

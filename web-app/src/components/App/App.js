@@ -1,7 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 import './App.css';
-import CommunityMap from '../CommunityMap/CommunityMap';
+import CommunityMap from '../CommunityMap';
+import LastIssues from '../LastIssues';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       </Row>
       <Row id="Content">
         <Col span={16} id="MapContainer"><CommunityMap></CommunityMap></Col>
-        <Col span={8} id="MapInfoContainer"> Last issues should be shown here</Col>
+        <Col span={8} id="MapInfoContainer"><LastIssues></LastIssues></Col>
       </Row>
     </div>
   );
