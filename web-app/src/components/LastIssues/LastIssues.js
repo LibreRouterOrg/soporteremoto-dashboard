@@ -12,7 +12,7 @@ const Issue = ({ item }) => {
     return (
         <Row className="IssueRow">
             <Col span={2} className="IssueStatus">
-                {item.status == 'open' ? (
+                {item.status === 'open' ? (
                     <Icon type='exclamation-circle' theme='twoTone' twoToneColor='#52c41a' />
                 ) : (
                         <Icon type='check-circle' theme='twoTone' twoToneColor='red' />
