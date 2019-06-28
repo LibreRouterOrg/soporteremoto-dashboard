@@ -1,0 +1,41 @@
+.IssueContainer{
+    display: grid;
+    grid-template-columns: 1fr [side] 3fr [description];
+    grid-template-rows: repeat(3, 1fr [row]);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    background: white;
+}
+
+.IssueTitle {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    align-self: end;
+}
+
+.IssueReportData {
+    grid-row-start: 2;
+    grid-column-start: 2;
+    font-size: 12px;
+    align-self: end;
+}
+
+.IssueStats {
+    grid-row-start: 3;
+    grid-column-start: 2;
+}
+
+.IssueContent {
+    grid-column-start: 2;
+    grid-row: 1/4;
+    padding: 10px 5px;
+}
+
+.IssueSide {
+    grid-row: 1 / 4;
+    grid-column-start: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
