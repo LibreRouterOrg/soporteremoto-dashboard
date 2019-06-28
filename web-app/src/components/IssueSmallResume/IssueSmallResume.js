@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar } from 'antd';
+import { Avatar, Badge } from 'antd';
 import Moment from 'react-moment';
 import './IssueSmallResume.css';
 import 'moment/locale/es';
@@ -16,7 +16,7 @@ function IssueSmallResume({ issue, onSelect }) {
                     <span> Abierto el <Moment locale='es' format='LLLL'>{issue.date}</Moment> por {issue.reporter} en nodo {issue.node}</span>
                 </div>
                 <div className="IssueStats">
-                    <span>Siguiendo({issue.watchers.length}) Afectados({issue.affected_nodes.length})</span>
+                    <span>Siguiendo Afectados({issue.affected_nodes.length})</span>
                 </div>
             </div>
         </div>

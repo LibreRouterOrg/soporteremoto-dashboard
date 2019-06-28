@@ -2,8 +2,6 @@
     display: grid;
     grid-template-columns: 1fr [side] 3fr [description];
     grid-template-rows: repeat(3, 1fr [row]);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
     background: white;
 }
 
@@ -28,7 +26,6 @@
 .IssueContent {
     grid-column-start: 2;
     grid-row: 1/4;
-    padding: 10px 5px;
 }
 
 .IssueSide {
