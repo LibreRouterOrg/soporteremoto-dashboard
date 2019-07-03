@@ -1,31 +1,40 @@
 .IssueContainer{
     display: grid;
     grid-template-columns: 1fr [side] 3fr [description];
-    grid-template-rows: repeat(3, 1fr [row]);
+    grid-template-rows: repeat(3, 40px);
     background: white;
 }
 
 .IssueTitle {
     grid-row-start: 1;
     grid-column-start: 2;
-    align-self: end;
+    margin-top: auto;
 }
 
-.IssueReportData {
-    grid-row-start: 2;
-    grid-column-start: 2;
-    font-size: 12px;
-    align-self: end;
+.IssueTitle > h3 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
-.IssueStats {
+.IssueLastRow {
     grid-row-start: 3;
     grid-column-start: 2;
+    display: flex;
+    align-items: center;
 }
 
-.IssueContent {
-    grid-column-start: 2;
-    grid-row: 1/4;
+.AffectedNodes {
+    color:#f5222d;
+}
+
+.Comments {
+    margin-left: 20px;
+}
+
+.IssueDate {
+    margin-left: auto;
+    margin-right: 10px;
 }
 
 .IssueSide {
@@ -35,4 +44,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 10px 5px;
+}
+
+.IssueReporterNickname {
+    margin-top: 4px;
+    font-size:14px;
+}
+
+.IssueExtraMessages {
+    color: #7cb305;
+    font-size:14px;
+    margin:auto 0px;
 }

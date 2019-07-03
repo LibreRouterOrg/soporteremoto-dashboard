@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Badge } from 'antd';
+import { Avatar, Icon, Tooltip } from 'antd';
 import Moment from 'react-moment';
 import './IssueSmallResume.css';
 import 'moment/locale/es';
@@ -8,16 +8,32 @@ function IssueSmallResume({ issue, onSelect }) {
     return (
         <div className="IssueContainer">
             <div className="IssueSide">
-                <Avatar icon={"user"} size={64}/>
+                {issue.is_bot ?
+                    <Avatar icon='robot' size={64} />
+                : (issue.avatarSrc ?
+                    <Avatar src={issue.avatarSrc} size={64} />
+                    :
+                    <Avatar size={64}>{issue.reporter[0].toUpperCase()}</Avatar>
+                )}
+                <span className="IssueReporterNickname">@{issue.reporter}</span>
             </div>
-            <div className="IssueContent">
-                <div className="IssueTitle"><h2>{issue.title}</h2></div>
-                <div className="IssueReportData">
-                    <span> Abierto el <Moment locale='es' format='LLLL'>{issue.date}</Moment> por {issue.reporter} en nodo {issue.node}</span>
-                </div>
-                <div className="IssueStats">
-                    <span>Siguiendo Afectados({issue.affected_nodes.length})</span>
-                </div>
+            <div className="IssueTitle"><h3>{issue.title}</h3></div>
+            <div className="IssueExtraMessages">
+                {issue.affect_current_user &&
+                    <span>Este problema afecta tu nodo!</span>
+                }
+            </div>
+            <div className="IssueLastRow">
+                <Tooltip title="Nodos Afectados" overlayClassName="AffectedNodesTooltip">
+                    <div className="AffectedNodes">
+                        <Icon type="exclamation" />
+                        <span>{issue.affected_nodes.length}</span>
+                    </div>
+                </Tooltip>
+                <span className="Comments">
+                    <Icon type="message" /> 42
+                </span>
+                <span className="IssueDate"><Moment locale='es' format='D MMM'>{issue.date}</Moment></span>
             </div>
         </div>
     )
