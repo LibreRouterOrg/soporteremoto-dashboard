@@ -41,12 +41,17 @@ const affect_current_user_issue = {
 
 const very_long_title_issue = {
     ...issue,
-    title: "Este es un título muy muy largo ".repeat(3)
+    title: "Este es un título muy muy largo ".repeat(5)
 }
 
 const very_long_username = {
     ...issue,
     reporter: "averyverylongnickname"
+}
+
+const closed_issue = {
+    ...issue,
+    status: "closed"
 }
 
 storiesOf('IssueSmallResume', module)
@@ -56,3 +61,4 @@ storiesOf('IssueSmallResume', module)
     .add('Bot issue', () => <IssueSmallResume issue={bot_issue} {...actions} />)
     .add('Very long title one', () => <IssueSmallResume issue={very_long_title_issue} {...actions} />)
     .add('Very long reporter one', () => <IssueSmallResume issue={very_long_username} {...actions} />)
+    .add('Closed issue', () => <IssueSmallResume issue={closed_issue} {...actions} />)

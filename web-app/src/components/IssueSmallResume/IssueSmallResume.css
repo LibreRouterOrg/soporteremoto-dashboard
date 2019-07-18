@@ -1,20 +1,29 @@
 .IssueContainer{
     display: grid;
     grid-template-columns: 1fr [side] 3fr [description];
-    grid-template-rows: repeat(3, 2.5rem);
+    grid-template-rows: auto repeat(2, 2.5rem);
     background: white;
+}
+
+.statusIcon {
+    margin-right: 0.5em;
+}
+
+.statusOpen {
+    color: green;
+}
+
+.statusClosed {
+    color: red;
 }
 
 .IssueTitle {
     grid-row-start: 1;
     grid-column-start: 2;
-    margin-top: auto;
+    padding-top: 1em;
     min-width: 0;
-}
-
-.IssueTitle > h3 {
-    white-space: nowrap;
-    text-overflow: ellipsis;
+    line-height: 1.1em;
+    max-height: 5.4em;
     overflow: hidden;
 }
 

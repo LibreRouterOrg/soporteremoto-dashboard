@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Icon } from 'antd';
+import { Avatar, Icon, Tooltip } from 'antd';
 import Moment from 'react-moment';
 import './IssueSmallResume.css';
 import 'moment/locale/es';
@@ -17,7 +17,18 @@ function IssueSmallResume({ issue, onSelect }) {
                 )}
                 <span className="IssueReporterNickname">@{issue.reporter}</span>
             </div>
-            <div className="IssueTitle"><h3>{issue.title}</h3></div>
+            <div className="IssueTitle">
+                {issue.status == "open" ?
+                    <Tooltip title="Reporte Abierto" placement="right">
+                        <Icon className="statusIcon statusOpen" type="exclamation-circle"/>
+                    </Tooltip>
+                :
+                    <Tooltip title="Reporte Cerrado" placement="right">
+                        <Icon className="statusIcon statusClosed" type="check-circle"/>
+                    </Tooltip>
+                }
+                {issue.title}
+            </div>
             <div className="IssueExtraMessages">
                 {issue.affect_current_user &&
                     <span>Este problema afecta tu nodo!</span>
