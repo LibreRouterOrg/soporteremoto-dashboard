@@ -6,7 +6,7 @@ import 'moment/locale/es';
 
 function IssueSmallResume({ issue, onSelect }) {
     return (
-        <div className="IssueContainer">
+        <div className="IssueContainer" onClick={onSelect}>
             <div className="IssueSide">
                 {issue.is_bot ?
                     <Avatar icon='robot' size={64} />
