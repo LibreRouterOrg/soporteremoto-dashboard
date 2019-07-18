@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Icon, Tooltip } from 'antd';
+import { Avatar, Icon } from 'antd';
 import Moment from 'react-moment';
 import './IssueSmallResume.css';
 import 'moment/locale/es';
@@ -24,14 +24,8 @@ function IssueSmallResume({ issue, onSelect }) {
                 }
             </div>
             <div className="IssueLastRow">
-                <Tooltip title="Nodos Afectados" overlayClassName="AffectedNodesTooltip">
-                    <div className="AffectedNodes">
-                        <Icon type="exclamation" />
-                        <span>{issue.affected_nodes.length}</span>
-                    </div>
-                </Tooltip>
                 <span className="Comments">
-                    <Icon type="message" /> 42
+                    <Icon type="message" /> {issue.comments.length}
                 </span>
                 <span className="IssueDate"><Moment locale='es' format='D MMM'>{issue.date}</Moment></span>
             </div>

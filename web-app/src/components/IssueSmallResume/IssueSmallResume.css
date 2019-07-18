@@ -1,7 +1,7 @@
 .IssueContainer{
     display: grid;
     grid-template-columns: 1fr [side] 3fr [description];
-    grid-template-rows: repeat(3, 40px);
+    grid-template-rows: repeat(3, 2.5rem);
     background: white;
 }
 
@@ -9,6 +9,7 @@
     grid-row-start: 1;
     grid-column-start: 2;
     margin-top: auto;
+    min-width: 0;
 }
 
 .IssueTitle > h3 {
@@ -24,17 +25,9 @@
     align-items: center;
 }
 
-.AffectedNodes {
-    color:#f5222d;
-}
-
-.Comments {
-    margin-left: 20px;
-}
-
 .IssueDate {
     margin-left: auto;
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .IssueSide {
@@ -44,16 +37,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10px 5px;
+    padding: 1rem .5rem;
+    min-width: 0;
 }
 
 .IssueReporterNickname {
-    margin-top: 4px;
-    font-size:14px;
+    margin-top: .5em;
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.8rem;
 }
 
 .IssueExtraMessages {
     color: #7cb305;
-    font-size:14px;
+    font-size:0.8rem;
     margin:auto 0px;
 }
