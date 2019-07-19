@@ -1,4 +1,5 @@
 .IssueContainer{
+    flex: auto;
     display: grid;
     grid-template-columns: 1fr [side] 3fr [description];
     grid-template-rows: auto repeat(2, 2.5rem);
@@ -46,16 +47,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1rem .5rem;
+    padding: 0.5em 0;
     min-width: 0;
 }
 
 .IssueReporterNickname {
-    margin-top: .5em;
+    margin-top: .2em;
     max-width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 0.8rem;
+    line-height: 2em;
 }
 
 .IssueExtraMessages {
