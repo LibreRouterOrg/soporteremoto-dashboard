@@ -4,7 +4,7 @@ import IssueSmallResume from './IssueSmallResume';
 import { action } from '@storybook/addon-actions';
 import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
 
-const issue = {
+export const issue = {
     id: 143,
     title: 'Conexión Lenta',
     node: 'q-roxa',
