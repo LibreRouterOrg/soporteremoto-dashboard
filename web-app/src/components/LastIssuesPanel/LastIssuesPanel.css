@@ -1,0 +1,16 @@
+.last-issues-panel{
+    flex:auto;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+
+.new-issue {
+    margin-top: auto;
+}
+
+.issues-list {
+    flex:auto;
+    overflow: auto;
+}
