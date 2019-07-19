@@ -52,7 +52,15 @@ function IssuesList({ issues }) {
     )
 }
 
-function NewIssue() { return <div className="new-issue"></div> }
+function NewIssue() {
+    return (
+        <div className="new-issue">
+            <Button type="primary" shape="round" icon="notification" size='large'>
+                Nuevo Reporte
+            </Button>
+        </div>
+    )
+}
 
 function LastIssuesPanel({ issues }) {
     const open_issues = issues.filter(x => (x.status === 'open'))

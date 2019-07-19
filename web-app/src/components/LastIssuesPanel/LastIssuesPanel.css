@@ -8,6 +8,10 @@
 
 .new-issue {
     margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
 }
 
 .issues-list {
