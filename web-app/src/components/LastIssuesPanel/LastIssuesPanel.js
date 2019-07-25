@@ -15,6 +15,7 @@ const tabsStyle = {
 
 const tabsPanStyle = {
     overflow: "auto",
+    display: "flex",
 };
 
 const tabBarStyle = {
