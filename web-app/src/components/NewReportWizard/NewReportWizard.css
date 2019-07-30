@@ -1,0 +1,35 @@
+.wizard-step {
+    background-color: white;
+    flex:auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.step-header {
+    margin-bottom: 1rem;
+}
+
+.choices {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.ant-radio {
+    max-height: fit-content;
+}
+
+.wizard-navigation {
+    display: flex;
+    margin-top: auto;
+}
+
+.right-button {
+    margin-left: auto;
+}
+
+.text-area {
+    padding-bottom: 0.5em;
+}
