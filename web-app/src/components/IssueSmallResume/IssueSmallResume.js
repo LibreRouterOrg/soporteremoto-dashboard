@@ -4,18 +4,19 @@ import Moment from 'react-moment';
 import './IssueSmallResume.css';
 import 'moment/locale/es';
 
-function IssueSmallResume({ issue, onSelect }) {
+function IssueSmallResume({ issue, affectsMe, onSelect }) {
+    const title = issue.common_issue ? issue.common_issue.text : issue.body;
     return (
         <div className="IssueContainer" onClick={onSelect}>
             <div className="IssueSide">
-                {issue.is_bot ?
+                {issue.user.is_bot ?
                     <Avatar icon='robot' size={64} />
-                : (issue.avatarSrc ?
-                    <Avatar src={issue.avatarSrc} size={64} />
+                : (issue.user.avatar ?
+                    <Avatar src={issue.user.avatar} size={64} />
                     :
-                    <Avatar size={64}>{issue.reporter[0].toUpperCase()}</Avatar>
+                    <Avatar size={64}>{issue.user.username[0].toUpperCase()}</Avatar>
                 )}
-                <span className="IssueReporterNickname">@{issue.reporter}</span>
+                <span className="IssueReporterNickname">@{issue.user.username}</span>
             </div>
             <div className="IssueTitle">
                 {issue.status == "open" ?
@@ -27,10 +28,10 @@ function IssueSmallResume({ issue, onSelect }) {
                         <Icon className="statusIcon statusClosed" type="check-circle"/>
                     </Tooltip>
                 }
-                {issue.title}
+                {title}
             </div>
             <div className="IssueExtraMessages">
-                {issue.affect_current_user &&
+                {affectsMe &&
                     <span>Este problema afecta tu nodo!</span>
                 }
             </div>
@@ -38,7 +39,7 @@ function IssueSmallResume({ issue, onSelect }) {
                 <span className="Comments">
                     <Icon type="message" /> {issue.comments.length}
                 </span>
-                <span className="IssueDate"><Moment locale='es' format='D MMM'>{issue.date}</Moment></span>
+                <span className="IssueDate"><Moment locale='es' format='D MMM'>{issue.timestamp}</Moment></span>
             </div>
         </div>
     )

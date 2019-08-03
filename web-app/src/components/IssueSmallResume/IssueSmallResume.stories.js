@@ -3,26 +3,65 @@ import { storiesOf } from '@storybook/react';
 import IssueSmallResume from './IssueSmallResume';
 import { action } from '@storybook/addon-actions';
 import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
+import { commonIssues } from '../data';
+
+// timestamp: number,
+// user: string,
+// status: enum,
+// node: node,
+// common_issue: common_issue, 
+// body: string,
+// comments: Array(comment)
+
+const commonIssuesDict = commonIssues.reduce(
+    (obj, item) => {
+        obj[item.id] = item;
+        return obj
+    }, {});
+
+const user = {
+    username: "gferrero",
+    client: {
+        ip: "192.168.1.4",
+        hostname: "gf",
+    },
+    avatar: gferrero_avatar,
+    is_bot: false,
+}
+
+const noavatarUser = {
+    ...user,
+    avatar: null,
+}
+
+const botUser = {
+    username: 'automático',
+    is_bot: true,
+}
+
+const longUsernameUser = {
+    ...user,
+    username: 'averyverylongusername',
+}
 
 export const issue = {
-    id: 143,
-    title: 'Conexión Lenta',
-    node: 'q-roxa',
-    reporter: 'gferrero',
-    is_bot: false,
+    timestamp: new Date('2019-06-20T14:40:10Z').getTime(),
+    user: user,
     status: 'open',
-    date: '2019-06-20T14:40:10-03',
-    avatarSrc: gferrero_avatar,
+    node: 'ql-gferrero',
+    common_issue: commonIssuesDict['unreachable_network'],
+    body: '',
+    comments: [],
     affect_current_user: false,
     comments: []
 }
 
 const bot_issue = {
     ...issue,
-    title: 'Enlace roxa-natisofi caído',
-    reporter: 'automático',
-    is_bot: true,
+    user: botUser,
+    body: 'Enlace roxa-natisofi caído',
     node: null,
+    common_issue:null,
 }
 
 const actions = {
@@ -31,34 +70,23 @@ const actions = {
 
 const noavatar_issue = {
     ...issue,
-    avatarSrc: null,
+    user: noavatarUser,
 }
 
-const affect_current_user_issue = {
+const longUsernameIssue = {
     ...issue,
-    affect_current_user: true
+    user: longUsernameUser
 }
 
-const very_long_title_issue = {
-    ...issue,
-    title: "Este es un título muy muy largo ".repeat(5)
-}
-
-const very_long_username = {
-    ...issue,
-    reporter: "averyverylongnickname"
-}
-
-const closed_issue = {
+const closedIssue = {
     ...issue,
     status: "closed"
 }
 
 storiesOf('IssueSmallResume', module)
     .add('A person issue', () => <IssueSmallResume issue={issue} {...actions} />)
-    .add('A person issue that affects me', () => <IssueSmallResume issue={affect_current_user_issue} {...actions} />)
+    .add('A person issue that affects me', () => <IssueSmallResume issue={issue} affectsMe {...actions} />)
     .add('No avatar issue', () => <IssueSmallResume issue={noavatar_issue} {...actions} />)
     .add('Bot issue', () => <IssueSmallResume issue={bot_issue} {...actions} />)
-    .add('Very long title one', () => <IssueSmallResume issue={very_long_title_issue} {...actions} />)
-    .add('Very long reporter one', () => <IssueSmallResume issue={very_long_username} {...actions} />)
-    .add('Closed issue', () => <IssueSmallResume issue={closed_issue} {...actions} />)
+    .add('Very long reporter one', () => <IssueSmallResume issue={longUsernameIssue} {...actions} />)
+    .add('Closed issue', () => <IssueSmallResume issue={closedIssue} {...actions} />)

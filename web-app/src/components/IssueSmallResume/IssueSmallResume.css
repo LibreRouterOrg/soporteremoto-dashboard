@@ -2,7 +2,7 @@
     flex: auto;
     display: grid;
     grid-template-columns: 1fr [side] 3fr [description];
-    grid-template-rows: auto repeat(2, 2.5rem);
+    grid-template-rows: auto repeat(2, 1.5rem);
     background: white;
 }
 

@@ -42,8 +42,9 @@ function IssuesList({ issues }) {
     const itemStyle = {
         display: "flex"
     }
+    const sortedIssues = issues.sort((x, y) => y.timestamp - x.timestamp)
     return (
-        <List size="small" className="issues-list" dataSource={issues} renderItem={
+        <List size="small" className="issues-list" dataSource={sortedIssues} renderItem={
             issue => (
                 <List.Item style={itemStyle}>
                     <IssueSmallResume issue={issue} />
