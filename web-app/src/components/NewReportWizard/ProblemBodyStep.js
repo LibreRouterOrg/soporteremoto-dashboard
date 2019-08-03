@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Input } from 'antd';
 import { WizardStep, Navigation } from './utils';
 
 const {TextArea} = Input;
 
-class ProblemBodyStep extends React.Component {
+class ProblemBodyStep extends Component {
     constructor(props) {
         super(props);
         this.state = {

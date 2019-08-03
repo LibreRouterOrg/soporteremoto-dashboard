@@ -1,809 +1,2055 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Task archived 1`] = `
+exports[`Storyshots Comment Basic Comment 1`] = `
 <div
-  className="list-item TASK_ARCHIVED"
+  className="storybook-readme-story"
 >
-  <label
-    className="checkbox"
-  >
-    <input
-      defaultChecked={true}
-      disabled={true}
-      name="checked"
-      type="checkbox"
-    />
-    <span
-      className="checkbox-custom"
-      onClick={[Function]}
-    />
-  </label>
   <div
-    className="title"
-  >
-    <input
-      placeholder="Input title"
-      readOnly={true}
-      type="text"
-      value="Test Task"
-    />
-  </div>
-  <div
-    className="actions"
-    onClick={[Function]}
-  />
-</div>
-`;
-
-exports[`Storyshots Task default 1`] = `
-<div
-  className="list-item TASK_INBOX"
->
-  <label
-    className="checkbox"
-  >
-    <input
-      defaultChecked={false}
-      disabled={true}
-      name="checked"
-      type="checkbox"
-    />
-    <span
-      className="checkbox-custom"
-      onClick={[Function]}
-    />
-  </label>
-  <div
-    className="title"
-  >
-    <input
-      placeholder="Input title"
-      readOnly={true}
-      type="text"
-      value="Test Task"
-    />
-  </div>
-  <div
-    className="actions"
-    onClick={[Function]}
-  >
-    <a
-      onClick={[Function]}
-    >
-      <span
-        className="icon-star"
-      />
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Task pinned 1`] = `
-<div
-  className="list-item TASK_PINNED"
->
-  <label
-    className="checkbox"
-  >
-    <input
-      defaultChecked={false}
-      disabled={true}
-      name="checked"
-      type="checkbox"
-    />
-    <span
-      className="checkbox-custom"
-      onClick={[Function]}
-    />
-  </label>
-  <div
-    className="title"
-  >
-    <input
-      placeholder="Input title"
-      readOnly={true}
-      type="text"
-      value="Test Task"
-    />
-  </div>
-  <div
-    className="actions"
-    onClick={[Function]}
-  >
-    <a
-      onClick={[Function]}
-    >
-      <span
-        className="icon-star"
-      />
-    </a>
-  </div>
-</div>
-`;
-
-exports[`Storyshots TaskList default 1`] = `
-<div
-  style={
-    Object {
-      "padding": "3rem",
+    style={
+      Object {
+        "margin": "32px 0",
+      }
     }
-  }
->
-  <div
-    className="list-items"
   >
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+    <div>
       <div
-        className="title"
+        className="ant-comment comment"
       >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 1"
-        />
-      </div>
-      <div
-        className="actions"
-        onClick={[Function]}
-      >
-        <a
-          onClick={[Function]}
+        <div
+          className="ant-comment-inner"
         >
-          <span
-            className="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
-      <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 2"
-        />
-      </div>
-      <div
-        className="actions"
-        onClick={[Function]}
-      >
-        <a
-          onClick={[Function]}
-        >
-          <span
-            className="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
-      <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 3"
-        />
-      </div>
-      <div
-        className="actions"
-        onClick={[Function]}
-      >
-        <a
-          onClick={[Function]}
-        >
-          <span
-            className="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
-      <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 4"
-        />
-      </div>
-      <div
-        className="actions"
-        onClick={[Function]}
-      >
-        <a
-          onClick={[Function]}
-        >
-          <span
-            className="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
-      <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 5"
-        />
-      </div>
-      <div
-        className="actions"
-        onClick={[Function]}
-      >
-        <a
-          onClick={[Function]}
-        >
-          <span
-            className="icon-star"
-          />
-        </a>
-      </div>
-    </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
-      <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 6"
-        />
-      </div>
-      <div
-        className="actions"
-        onClick={[Function]}
-      >
-        <a
-          onClick={[Function]}
-        >
-          <span
-            className="icon-star"
-          />
-        </a>
+          <div
+            className="ant-comment-avatar"
+          >
+            <span
+              className="ant-avatar ant-avatar-circle ant-avatar-image"
+              style={Object {}}
+            >
+              <img
+                onError={[Function]}
+                src="gferrero_avatar.jpeg"
+              />
+            </span>
+          </div>
+          <div
+            className="ant-comment-content"
+          >
+            <div
+              className="ant-comment-content-author"
+            >
+              <span
+                className="ant-comment-content-author-name"
+              >
+                gferrero
+              </span>
+              <span
+                className="ant-comment-content-author-time"
+              >
+                <span
+                  onMouseEnter={[Function]}
+                  onMouseLeave={[Function]}
+                >
+                  hace 2 meses
+                </span>
+              </span>
+            </div>
+            <div
+              className="ant-comment-content-detail"
+            >
+              <p>
+                Este es un comentario de ejemplo.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots TaskList empty 1`] = `
+exports[`Storyshots CommentsList Empty list 1`] = `
 <div
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
+  className="storybook-readme-story"
 >
   <div
-    className="list-items"
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
   >
-    <div
-      className="wrapper-message"
-    >
-      <span
-        className="icon-check"
-      />
+    <div>
       <div
-        className="title-message"
+        className="comments-list"
       >
-        You have no tasks
-      </div>
-      <div
-        className="subtitle-message"
-      >
-        Sit back and relax
+        <b>
+          Comentarios
+        </b>
+        <div
+          className="ant-list ant-list-split"
+        >
+          <div
+            className="ant-spin-nested-loading"
+          >
+            <div
+              className="ant-spin-container"
+            >
+              <div
+                className="ant-list-empty-text"
+              >
+                <div
+                  className="ant-empty ant-empty-normal"
+                >
+                  <div
+                    className="ant-empty-image"
+                  >
+                    <img
+                      alt="No Data"
+                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNDEiIHZpZXdCb3g9IjAgMCA2NCA0MSIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxlbGxpcHNlIGZpbGw9IiNGNUY1RjUiIGN4PSIzMiIgY3k9IjMzIiByeD0iMzIiIHJ5PSI3Ii8+CiAgICA8ZyBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0iI0Q5RDlEOSI+CiAgICAgIDxwYXRoIGQ9Ik01NSAxMi43Nkw0NC44NTQgMS4yNThDNDQuMzY3LjQ3NCA0My42NTYgMCA0Mi45MDcgMEgyMS4wOTNjLS43NDkgMC0xLjQ2LjQ3NC0xLjk0NyAxLjI1N0w5IDEyLjc2MVYyMmg0NnYtOS4yNHoiLz4KICAgICAgPHBhdGggZD0iTTQxLjYxMyAxNS45MzFjMC0xLjYwNS45OTQtMi45MyAyLjIyNy0yLjkzMUg1NXYxOC4xMzdDNTUgMzMuMjYgNTMuNjggMzUgNTIuMDUgMzVoLTQwLjFDMTAuMzIgMzUgOSAzMy4yNTkgOSAzMS4xMzdWMTNoMTEuMTZjMS4yMzMgMCAyLjIyNyAxLjMyMyAyLjIyNyAyLjkyOHYuMDIyYzAgMS42MDUgMS4wMDUgMi45MDEgMi4yMzcgMi45MDFoMTQuNzUyYzEuMjMyIDAgMi4yMzctMS4zMDggMi4yMzctMi45MTN2LS4wMDd6IiBmaWxsPSIjRkFGQUZBIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K"
+                    />
+                  </div>
+                  <p
+                    className="ant-empty-description"
+                  >
+                    No Data
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots TaskList loading 1`] = `
+exports[`Storyshots CommentsList List of Comments 1`] = `
 <div
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
+  className="storybook-readme-story"
 >
   <div
-    className="list-items"
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
   >
-    <div
-      className="loading-item"
-    >
-      <span
-        className="glow-checkbox"
-      />
-      <span
-        className="glow-text"
+    <div>
+      <div
+        className="comments-list"
       >
-        <span>
-          Loading
-        </span>
-         
-        <span>
-          cool
-        </span>
-         
-        <span>
-          state
-        </span>
-      </span>
-    </div>
-    <div
-      className="loading-item"
-    >
-      <span
-        className="glow-checkbox"
-      />
-      <span
-        className="glow-text"
-      >
-        <span>
-          Loading
-        </span>
-         
-        <span>
-          cool
-        </span>
-         
-        <span>
-          state
-        </span>
-      </span>
-    </div>
-    <div
-      className="loading-item"
-    >
-      <span
-        className="glow-checkbox"
-      />
-      <span
-        className="glow-text"
-      >
-        <span>
-          Loading
-        </span>
-         
-        <span>
-          cool
-        </span>
-         
-        <span>
-          state
-        </span>
-      </span>
-    </div>
-    <div
-      className="loading-item"
-    >
-      <span
-        className="glow-checkbox"
-      />
-      <span
-        className="glow-text"
-      >
-        <span>
-          Loading
-        </span>
-         
-        <span>
-          cool
-        </span>
-         
-        <span>
-          state
-        </span>
-      </span>
-    </div>
-    <div
-      className="loading-item"
-    >
-      <span
-        className="glow-checkbox"
-      />
-      <span
-        className="glow-text"
-      >
-        <span>
-          Loading
-        </span>
-         
-        <span>
-          cool
-        </span>
-         
-        <span>
-          state
-        </span>
-      </span>
-    </div>
-    <div
-      className="loading-item"
-    >
-      <span
-        className="glow-checkbox"
-      />
-      <span
-        className="glow-text"
-      >
-        <span>
-          Loading
-        </span>
-         
-        <span>
-          cool
-        </span>
-         
-        <span>
-          state
-        </span>
-      </span>
+        <b>
+          Comentarios
+        </b>
+        <div
+          className="ant-list ant-list-split"
+        >
+          <div
+            className="ant-spin-nested-loading"
+          >
+            <div
+              className="ant-spin-container"
+            >
+              <ul
+                className="ant-list-items"
+              >
+                <li
+                  className="ant-list-item"
+                >
+                  <div
+                    className="ant-comment comment"
+                  >
+                    <div
+                      className="ant-comment-inner"
+                    >
+                      <div
+                        className="ant-comment-avatar"
+                      >
+                        <span
+                          className="ant-avatar ant-avatar-circle ant-avatar-image"
+                          style={Object {}}
+                        >
+                          <img
+                            onError={[Function]}
+                            src="gferrero_avatar.jpeg"
+                          />
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content"
+                      >
+                        <div
+                          className="ant-comment-content-author"
+                        >
+                          <span
+                            className="ant-comment-content-author-name"
+                          >
+                            gferrero
+                          </span>
+                          <span
+                            className="ant-comment-content-author-time"
+                          >
+                            <span
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              hace 2 meses
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          className="ant-comment-content-detail"
+                        >
+                          <p>
+                            Este es un comentario de ejemplo.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="ant-list-item"
+                >
+                  <div
+                    className="ant-comment comment"
+                  >
+                    <div
+                      className="ant-comment-inner"
+                    >
+                      <div
+                        className="ant-comment-avatar"
+                      >
+                        <span
+                          className="ant-avatar ant-avatar-circle"
+                          style={Object {}}
+                        >
+                          <span
+                            className="ant-avatar-string"
+                          >
+                            G
+                          </span>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content"
+                      >
+                        <div
+                          className="ant-comment-content-author"
+                        >
+                          <span
+                            className="ant-comment-content-author-name"
+                          >
+                            gmarcos
+                          </span>
+                          <span
+                            className="ant-comment-content-author-time"
+                          >
+                            <span
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              hace 4 días
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          className="ant-comment-content-detail"
+                        >
+                          <p>
+                            En respuesta al comentario de ejemplo
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  className="ant-list-item"
+                >
+                  <div
+                    className="ant-comment comment"
+                  >
+                    <div
+                      className="ant-comment-inner"
+                    >
+                      <div
+                        className="ant-comment-avatar"
+                      >
+                        <span
+                          className="ant-avatar ant-avatar-circle"
+                          style={Object {}}
+                        >
+                          <span
+                            className="ant-avatar-string"
+                          >
+                            N
+                          </span>
+                        </span>
+                      </div>
+                      <div
+                        className="ant-comment-content"
+                      >
+                        <div
+                          className="ant-comment-content-author"
+                        >
+                          <span
+                            className="ant-comment-content-author-name"
+                          >
+                            nicop
+                          </span>
+                          <span
+                            className="ant-comment-content-author-time"
+                          >
+                            <span
+                              onMouseEnter={[Function]}
+                              onMouseLeave={[Function]}
+                            >
+                              hace un día
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          className="ant-comment-content-detail"
+                        >
+                          <p>
+                            En respuesta a la respuesta del comentario de ejemplo
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Storyshots TaskList withPinnedTasks 1`] = `
+exports[`Storyshots IssueSmallResume A person issue 1`] = `
 <div
-  style={
-    Object {
-      "padding": "3rem",
-    }
-  }
+  className="storybook-readme-story"
 >
   <div
-    className="list-items"
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
   >
-    <div
-      className="list-item TASK_PINNED"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+    <div>
       <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 6 (pinned)"
-        />
-      </div>
-      <div
-        className="actions"
+        className="IssueContainer"
         onClick={[Function]}
       >
-        <a
-          onClick={[Function]}
+        <div
+          className="IssueSide"
         >
           <span
-            className="icon-star"
-          />
-        </a>
+            className="ant-avatar ant-avatar-circle ant-avatar-image"
+            style={
+              Object {
+                "fontSize": 18,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <img
+              onError={[Function]}
+              src="gferrero_avatar.jpeg"
+            />
+          </span>
+          <span
+            className="IssueReporterNickname"
+          >
+            @
+            gferrero
+          </span>
+        </div>
+        <div
+          className="IssueTitle"
+        >
+          <i
+            aria-label="icon: exclamation-circle"
+            className="anticon anticon-exclamation-circle statusIcon statusOpen"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="exclamation-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+              />
+              <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+              />
+            </svg>
+          </i>
+          Veo mi red wifi disponible pero no puedo conectarme
+        </div>
+        <div
+          className="IssueExtraMessages"
+        />
+        <div
+          className="IssueLastRow"
+        >
+          <span
+            className="Comments"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="message"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                />
+              </svg>
+            </i>
+             
+            0
+          </span>
+          <span
+            className="IssueDate"
+          >
+            <time
+              dateTime={"2019-06-20T14:40:10.000Z"}
+            >
+              20 jun.
+            </time>
+          </span>
+        </div>
       </div>
     </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots IssueSmallResume A person issue that affects me 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
       <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 1"
-        />
-      </div>
-      <div
-        className="actions"
+        className="IssueContainer"
         onClick={[Function]}
       >
-        <a
-          onClick={[Function]}
+        <div
+          className="IssueSide"
         >
           <span
-            className="icon-star"
-          />
-        </a>
+            className="ant-avatar ant-avatar-circle ant-avatar-image"
+            style={
+              Object {
+                "fontSize": 18,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <img
+              onError={[Function]}
+              src="gferrero_avatar.jpeg"
+            />
+          </span>
+          <span
+            className="IssueReporterNickname"
+          >
+            @
+            gferrero
+          </span>
+        </div>
+        <div
+          className="IssueTitle"
+        >
+          <i
+            aria-label="icon: exclamation-circle"
+            className="anticon anticon-exclamation-circle statusIcon statusOpen"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="exclamation-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+              />
+              <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+              />
+            </svg>
+          </i>
+          Veo mi red wifi disponible pero no puedo conectarme
+        </div>
+        <div
+          className="IssueExtraMessages"
+        >
+          <span>
+            Este problema afecta tu nodo!
+          </span>
+        </div>
+        <div
+          className="IssueLastRow"
+        >
+          <span
+            className="Comments"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="message"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                />
+              </svg>
+            </i>
+             
+            0
+          </span>
+          <span
+            className="IssueDate"
+          >
+            <time
+              dateTime={"2019-06-20T14:40:10.000Z"}
+            >
+              20 jun.
+            </time>
+          </span>
+        </div>
       </div>
     </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots IssueSmallResume Bot issue 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
       <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 2"
-        />
-      </div>
-      <div
-        className="actions"
+        className="IssueContainer"
         onClick={[Function]}
       >
-        <a
-          onClick={[Function]}
+        <div
+          className="IssueSide"
         >
           <span
-            className="icon-star"
-          />
-        </a>
+            className="ant-avatar ant-avatar-circle ant-avatar-icon"
+            style={
+              Object {
+                "fontSize": 32,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <i
+              aria-label="icon: robot"
+              className="anticon anticon-robot"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="robot"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M300 328a60 60 0 1 0 120 0 60 60 0 1 0-120 0zM852 64H172c-17.7 0-32 14.3-32 32v660c0 17.7 14.3 32 32 32h680c17.7 0 32-14.3 32-32V96c0-17.7-14.3-32-32-32zm-32 660H204V128h616v596zM604 328a60 60 0 1 0 120 0 60 60 0 1 0-120 0zm250.2 556H169.8c-16.5 0-29.8 14.3-29.8 32v36c0 4.4 3.3 8 7.4 8h729.1c4.1 0 7.4-3.6 7.4-8v-36c.1-17.7-13.2-32-29.7-32zM664 508H360c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h304c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z"
+                />
+              </svg>
+            </i>
+          </span>
+          <span
+            className="IssueReporterNickname"
+          >
+            @
+            automático
+          </span>
+        </div>
+        <div
+          className="IssueTitle"
+        >
+          <i
+            aria-label="icon: exclamation-circle"
+            className="anticon anticon-exclamation-circle statusIcon statusOpen"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="exclamation-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+              />
+              <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+              />
+            </svg>
+          </i>
+          Enlace roxa-natisofi caído
+        </div>
+        <div
+          className="IssueExtraMessages"
+        />
+        <div
+          className="IssueLastRow"
+        >
+          <span
+            className="Comments"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="message"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                />
+              </svg>
+            </i>
+             
+            0
+          </span>
+          <span
+            className="IssueDate"
+          >
+            <time
+              dateTime={"2019-06-20T14:40:10.000Z"}
+            >
+              20 jun.
+            </time>
+          </span>
+        </div>
       </div>
     </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots IssueSmallResume Closed issue 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
       <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 3"
-        />
-      </div>
-      <div
-        className="actions"
+        className="IssueContainer"
         onClick={[Function]}
       >
-        <a
-          onClick={[Function]}
+        <div
+          className="IssueSide"
         >
           <span
-            className="icon-star"
-          />
-        </a>
+            className="ant-avatar ant-avatar-circle ant-avatar-image"
+            style={
+              Object {
+                "fontSize": 18,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <img
+              onError={[Function]}
+              src="gferrero_avatar.jpeg"
+            />
+          </span>
+          <span
+            className="IssueReporterNickname"
+          >
+            @
+            gferrero
+          </span>
+        </div>
+        <div
+          className="IssueTitle"
+        >
+          <i
+            aria-label="icon: check-circle"
+            className="anticon anticon-check-circle statusIcon statusClosed"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="check-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0 0 51.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"
+              />
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+              />
+            </svg>
+          </i>
+          Veo mi red wifi disponible pero no puedo conectarme
+        </div>
+        <div
+          className="IssueExtraMessages"
+        />
+        <div
+          className="IssueLastRow"
+        >
+          <span
+            className="Comments"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="message"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                />
+              </svg>
+            </i>
+             
+            0
+          </span>
+          <span
+            className="IssueDate"
+          >
+            <time
+              dateTime={"2019-06-20T14:40:10.000Z"}
+            >
+              20 jun.
+            </time>
+          </span>
+        </div>
       </div>
     </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots IssueSmallResume No avatar issue 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
       <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 4"
-        />
-      </div>
-      <div
-        className="actions"
+        className="IssueContainer"
         onClick={[Function]}
       >
-        <a
-          onClick={[Function]}
+        <div
+          className="IssueSide"
         >
           <span
-            className="icon-star"
-          />
-        </a>
+            className="ant-avatar ant-avatar-circle"
+            style={
+              Object {
+                "fontSize": 18,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <span
+              className="ant-avatar-string"
+            >
+              G
+            </span>
+          </span>
+          <span
+            className="IssueReporterNickname"
+          >
+            @
+            gferrero
+          </span>
+        </div>
+        <div
+          className="IssueTitle"
+        >
+          <i
+            aria-label="icon: exclamation-circle"
+            className="anticon anticon-exclamation-circle statusIcon statusOpen"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="exclamation-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+              />
+              <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+              />
+            </svg>
+          </i>
+          Veo mi red wifi disponible pero no puedo conectarme
+        </div>
+        <div
+          className="IssueExtraMessages"
+        />
+        <div
+          className="IssueLastRow"
+        >
+          <span
+            className="Comments"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="message"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                />
+              </svg>
+            </i>
+             
+            0
+          </span>
+          <span
+            className="IssueDate"
+          >
+            <time
+              dateTime={"2019-06-20T14:40:10.000Z"}
+            >
+              20 jun.
+            </time>
+          </span>
+        </div>
       </div>
     </div>
-    <div
-      className="list-item TASK_INBOX"
-    >
-      <label
-        className="checkbox"
-      >
-        <input
-          defaultChecked={false}
-          disabled={true}
-          name="checked"
-          type="checkbox"
-        />
-        <span
-          className="checkbox-custom"
-          onClick={[Function]}
-        />
-      </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots IssueSmallResume Very long reporter one 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
       <div
-        className="title"
-      >
-        <input
-          placeholder="Input title"
-          readOnly={true}
-          type="text"
-          value="Task 5"
-        />
-      </div>
-      <div
-        className="actions"
+        className="IssueContainer"
         onClick={[Function]}
       >
-        <a
-          onClick={[Function]}
+        <div
+          className="IssueSide"
         >
           <span
-            className="icon-star"
+            className="ant-avatar ant-avatar-circle ant-avatar-image"
+            style={
+              Object {
+                "fontSize": 18,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <img
+              onError={[Function]}
+              src="gferrero_avatar.jpeg"
+            />
+          </span>
+          <span
+            className="IssueReporterNickname"
+          >
+            @
+            averyverylongusername
+          </span>
+        </div>
+        <div
+          className="IssueTitle"
+        >
+          <i
+            aria-label="icon: exclamation-circle"
+            className="anticon anticon-exclamation-circle statusIcon statusOpen"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <svg
+              aria-hidden="true"
+              className=""
+              data-icon="exclamation-circle"
+              fill="currentColor"
+              focusable="false"
+              height="1em"
+              viewBox="64 64 896 896"
+              width="1em"
+            >
+              <path
+                d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+              />
+              <path
+                d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+              />
+            </svg>
+          </i>
+          Veo mi red wifi disponible pero no puedo conectarme
+        </div>
+        <div
+          className="IssueExtraMessages"
+        />
+        <div
+          className="IssueLastRow"
+        >
+          <span
+            className="Comments"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <svg
+                aria-hidden="true"
+                className=""
+                data-icon="message"
+                fill="currentColor"
+                focusable="false"
+                height="1em"
+                viewBox="64 64 896 896"
+                width="1em"
+              >
+                <path
+                  d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                />
+              </svg>
+            </i>
+             
+            0
+          </span>
+          <span
+            className="IssueDate"
+          >
+            <time
+              dateTime={"2019-06-20T14:40:10.000Z"}
+            >
+              20 jun.
+            </time>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots NewReportWizard Interactive Wizard 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "minHeight": "80vh",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="wizard-step"
+        >
+          <div
+            className="step-header"
+          >
+            <p>
+              En qué nodo notaste el problema
+            </p>
+          </div>
+          <div
+            className="ant-select ant-select-enabled"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              aria-autocomplete="list"
+              aria-controls="test-uuid"
+              aria-expanded={false}
+              aria-haspopup="true"
+              className="ant-select-selection
+            ant-select-selection--single"
+              onKeyDown={[Function]}
+              role="combobox"
+              tabIndex={0}
+            >
+              <div
+                className="ant-select-selection__rendered"
+              >
+                <div
+                  className="ant-select-selection__placeholder"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitUserSelect": "none",
+                      "display": "none",
+                      "userSelect": "none",
+                    }
+                  }
+                  unselectable="on"
+                >
+                  Selecciona un Nodo
+                </div>
+                <div
+                  className="ant-select-selection-selected-value"
+                  style={
+                    Object {
+                      "display": "block",
+                      "opacity": 1,
+                    }
+                  }
+                  title="ql-roxa"
+                >
+                  ql-roxa
+                </div>
+                <div
+                  className="ant-select-search ant-select-search--inline"
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-select-search__field__wrap"
+                  >
+                    <input
+                      autoComplete="off"
+                      className="ant-select-search__field"
+                      onChange={[Function]}
+                      onKeyDown={[Function]}
+                      value=""
+                    />
+                    <span
+                      className="ant-select-search__field__mirror"
+                    >
+                      
+                       
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                className="ant-select-arrow"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "WebkitUserSelect": "none",
+                    "userSelect": "none",
+                  }
+                }
+                unselectable="on"
+              >
+                <i
+                  aria-label="icon: down"
+                  className="anticon anticon-down ant-select-arrow-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className=""
+                    data-icon="down"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                    />
+                  </svg>
+                </i>
+              </span>
+            </div>
+          </div>
+          <div
+            className="wizard-navigation"
+          >
+            <button
+              className="ant-btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="button"
+            >
+              <i
+                aria-label="icon: left"
+                className="anticon anticon-left"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="left"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                  />
+                </svg>
+              </i>
+              <span>
+                Volver
+              </span>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Continuar 
+              </span>
+              <i
+                aria-label="icon: right"
+                className="anticon anticon-right"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="right"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Finalizar
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots NewReportWizard Node Selection 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "minHeight": "80vh",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="wizard-step"
+        >
+          <div
+            className="step-header"
+          >
+            <p>
+              En qué nodo notaste el problema
+            </p>
+          </div>
+          <div
+            className="ant-select ant-select-enabled"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onFocus={[Function]}
+            onMouseDown={[Function]}
+            onMouseOut={[Function]}
+            onMouseUp={[Function]}
+            onTouchStart={[Function]}
+          >
+            <div
+              aria-autocomplete="list"
+              aria-controls="test-uuid"
+              aria-expanded={false}
+              aria-haspopup="true"
+              className="ant-select-selection
+            ant-select-selection--single"
+              onKeyDown={[Function]}
+              role="combobox"
+              tabIndex={0}
+            >
+              <div
+                className="ant-select-selection__rendered"
+              >
+                <div
+                  className="ant-select-selection__placeholder"
+                  onClick={[Function]}
+                  onMouseDown={[Function]}
+                  style={
+                    Object {
+                      "WebkitUserSelect": "none",
+                      "display": "none",
+                      "userSelect": "none",
+                    }
+                  }
+                  unselectable="on"
+                >
+                  Selecciona un Nodo
+                </div>
+                <div
+                  className="ant-select-selection-selected-value"
+                  style={
+                    Object {
+                      "display": "block",
+                      "opacity": 1,
+                    }
+                  }
+                  title="ql-roxa"
+                >
+                  ql-roxa
+                </div>
+                <div
+                  className="ant-select-search ant-select-search--inline"
+                  style={
+                    Object {
+                      "display": "none",
+                    }
+                  }
+                >
+                  <div
+                    className="ant-select-search__field__wrap"
+                  >
+                    <input
+                      autoComplete="off"
+                      className="ant-select-search__field"
+                      onChange={[Function]}
+                      onKeyDown={[Function]}
+                      value=""
+                    />
+                    <span
+                      className="ant-select-search__field__mirror"
+                    >
+                      
+                       
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <span
+                className="ant-select-arrow"
+                onClick={[Function]}
+                style={
+                  Object {
+                    "WebkitUserSelect": "none",
+                    "userSelect": "none",
+                  }
+                }
+                unselectable="on"
+              >
+                <i
+                  aria-label="icon: down"
+                  className="anticon anticon-down ant-select-arrow-icon"
+                >
+                  <svg
+                    aria-hidden="true"
+                    className=""
+                    data-icon="down"
+                    fill="currentColor"
+                    focusable="false"
+                    height="1em"
+                    viewBox="64 64 896 896"
+                    width="1em"
+                  >
+                    <path
+                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                    />
+                  </svg>
+                </i>
+              </span>
+            </div>
+          </div>
+          <div
+            className="wizard-navigation"
+          >
+            <button
+              className="ant-btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="button"
+            >
+              <i
+                aria-label="icon: left"
+                className="anticon anticon-left"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="left"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                  />
+                </svg>
+              </i>
+              <span>
+                Volver
+              </span>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Continuar 
+              </span>
+              <i
+                aria-label="icon: right"
+                className="anticon anticon-right"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="right"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Finalizar
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots NewReportWizard Problem Body 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "minHeight": "80vh",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="wizard-step"
+        >
+          <div
+            className="step-header"
+          >
+            <p>
+              Describe el problema con tus palabras
+            </p>
+          </div>
+          <textarea
+            autoFocus={true}
+            className="ant-input"
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            rows={4}
+            style={Object {}}
+            value=""
           />
-        </a>
+          <div
+            className="wizard-navigation"
+          >
+            <button
+              className="ant-btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              <i
+                aria-label="icon: left"
+                className="anticon anticon-left"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="left"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                  />
+                </svg>
+              </i>
+              <span>
+                Volver
+              </span>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Continuar 
+              </span>
+              <i
+                aria-label="icon: right"
+                className="anticon anticon-right"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="right"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Finalizar
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots NewReportWizard Problem Selection 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div
+    style={
+      Object {
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <div
+        style={
+          Object {
+            "display": "flex",
+            "flexDirection": "column",
+            "minHeight": "80vh",
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          className="wizard-step"
+        >
+          <div
+            className="step-header"
+          >
+            <p>
+              Cuál es el problema?
+            </p>
+          </div>
+          <div
+            className="choices"
+          >
+            <div
+              className="ant-radio-group ant-radio-group-outline"
+            >
+              <label
+                className="ant-radio-wrapper"
+                style={
+                  Object {
+                    "display": "flex",
+                    "paddingBottom": "0.5em",
+                    "whiteSpace": "normal",
+                  }
+                }
+              >
+                <span
+                  className="ant-radio"
+                  style={Object {}}
+                >
+                  <input
+                    checked={false}
+                    className="ant-radio-input"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="radio"
+                    value={
+                      Object {
+                        "id": "unavailable_network",
+                        "parent": null,
+                        "subChoices": Array [],
+                        "text": "Red wifi no disponible",
+                      }
+                    }
+                  />
+                  <span
+                    className="ant-radio-inner"
+                  />
+                </span>
+                <span>
+                  Red wifi no disponible
+                </span>
+              </label>
+              <label
+                className="ant-radio-wrapper"
+                style={
+                  Object {
+                    "display": "flex",
+                    "paddingBottom": "0.5em",
+                    "whiteSpace": "normal",
+                  }
+                }
+              >
+                <span
+                  className="ant-radio"
+                  style={Object {}}
+                >
+                  <input
+                    checked={false}
+                    className="ant-radio-input"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="radio"
+                    value={
+                      Object {
+                        "id": "unreachable_network",
+                        "parent": null,
+                        "subChoices": Array [],
+                        "text": "Veo mi red wifi disponible pero no puedo conectarme",
+                      }
+                    }
+                  />
+                  <span
+                    className="ant-radio-inner"
+                  />
+                </span>
+                <span>
+                  Veo mi red wifi disponible pero no puedo conectarme
+                </span>
+              </label>
+              <label
+                className="ant-radio-wrapper"
+                style={
+                  Object {
+                    "display": "flex",
+                    "paddingBottom": "0.5em",
+                    "whiteSpace": "normal",
+                  }
+                }
+              >
+                <span
+                  className="ant-radio"
+                  style={Object {}}
+                >
+                  <input
+                    checked={false}
+                    className="ant-radio-input"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="radio"
+                    value={
+                      Object {
+                        "id": "unreachable_resources",
+                        "parent": null,
+                        "subChoices": Array [
+                          Object {
+                            "id": "all_resources",
+                            "parent": "unreachable_resources",
+                            "text": "No puedo visitar ninguna página ni usar ninguna aplicación",
+                          },
+                          Object {
+                            "id": "some_of_them",
+                            "parent": "unreachable_resources",
+                            "text": "Puedo visitar algunas páginas pero otras no",
+                          },
+                          Object {
+                            "id": "only_by_ip",
+                            "parent": "unreachable_resources",
+                            "text": "Puedo utilizar algunas aplicaciones como whatsapp pero no puedo navegar",
+                          },
+                        ],
+                        "text": "Puedo conectarme a mi red, pero tengo problemas para navegar",
+                      }
+                    }
+                  />
+                  <span
+                    className="ant-radio-inner"
+                  />
+                </span>
+                <span>
+                  Puedo conectarme a mi red, pero tengo problemas para navegar
+                </span>
+              </label>
+              <label
+                className="ant-radio-wrapper"
+                style={
+                  Object {
+                    "display": "flex",
+                    "paddingBottom": "0.5em",
+                    "whiteSpace": "normal",
+                  }
+                }
+              >
+                <span
+                  className="ant-radio"
+                  style={Object {}}
+                >
+                  <input
+                    checked={false}
+                    className="ant-radio-input"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="radio"
+                    value={
+                      Object {
+                        "id": "slow_connection",
+                        "parent": null,
+                        "subChoices": Array [
+                          Object {
+                            "id": "from_precise_moment",
+                            "parent": "slow_connection",
+                            "text": "Empezó a andar lento en un momento puntual",
+                          },
+                          Object {
+                            "id": "periodically",
+                            "parent": "slow_connection",
+                            "text": "Siempre me anda lento en los mismos días/horarios",
+                          },
+                          Object {
+                            "id": "only_with_some_sites",
+                            "parent": "slow_connection",
+                            "text": "Funciona lento una página/aplicación en particular. Ej (Netflix)",
+                          },
+                        ],
+                        "text": "Puedo navegar pero anda lento",
+                      }
+                    }
+                  />
+                  <span
+                    className="ant-radio-inner"
+                  />
+                </span>
+                <span>
+                  Puedo navegar pero anda lento
+                </span>
+              </label>
+              <label
+                className="ant-radio-wrapper"
+                style={
+                  Object {
+                    "display": "flex",
+                    "paddingBottom": "0.5em",
+                    "whiteSpace": "normal",
+                  }
+                }
+              >
+                <span
+                  className="ant-radio"
+                  style={Object {}}
+                >
+                  <input
+                    checked={false}
+                    className="ant-radio-input"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="radio"
+                    value={
+                      Object {
+                        "id": "cuts_out_connection",
+                        "parent": null,
+                        "subChoices": Array [],
+                        "text": "Puedo navegar pero de a ratos se corta",
+                      }
+                    }
+                  />
+                  <span
+                    className="ant-radio-inner"
+                  />
+                </span>
+                <span>
+                  Puedo navegar pero de a ratos se corta
+                </span>
+              </label>
+              <label
+                className="ant-radio-wrapper"
+                style={
+                  Object {
+                    "display": "flex",
+                    "paddingBottom": "0.5em",
+                    "whiteSpace": "normal",
+                  }
+                }
+              >
+                <span
+                  className="ant-radio"
+                  style={Object {}}
+                >
+                  <input
+                    checked={false}
+                    className="ant-radio-input"
+                    disabled={false}
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    type="radio"
+                    value={
+                      Object {
+                        "id": "custom",
+                        "text": "Ninguno de los anteriores",
+                      }
+                    }
+                  />
+                  <span
+                    className="ant-radio-inner"
+                  />
+                </span>
+                <span>
+                  Ninguno de los anteriores
+                </span>
+              </label>
+            </div>
+          </div>
+          <div
+            className="wizard-navigation"
+          >
+            <button
+              className="ant-btn"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              <i
+                aria-label="icon: left"
+                className="anticon anticon-left"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="left"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                  />
+                </svg>
+              </i>
+              <span>
+                Volver
+              </span>
+            </button>
+            <button
+              className="ant-btn right-button"
+              disabled={true}
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "block",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Continuar 
+              </span>
+              <i
+                aria-label="icon: right"
+                className="anticon anticon-right"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="right"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+                  />
+                </svg>
+              </i>
+            </button>
+            <button
+              className="ant-btn right-button"
+              onClick={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="button"
+            >
+              <span>
+                Finalizar
+              </span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>

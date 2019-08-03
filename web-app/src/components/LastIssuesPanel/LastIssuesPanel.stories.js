@@ -1,7 +1,7 @@
 import React from 'react';
 import LastIssuesPanel from '.';
 import { storiesOf } from '@storybook/react';
-import { issue, actions } from '../IssueSmallResume/IssueSmallResume.stories';
+import { issue } from '../IssueSmallResume/IssueSmallResume.stories';
 import {commonIssues} from '../data';
 
 const emptyIssuesList = [];

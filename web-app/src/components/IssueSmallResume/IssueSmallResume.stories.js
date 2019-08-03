@@ -52,8 +52,6 @@ export const issue = {
     common_issue: commonIssuesDict['unreachable_network'],
     body: '',
     comments: [],
-    affect_current_user: false,
-    comments: []
 }
 
 const bot_issue = {

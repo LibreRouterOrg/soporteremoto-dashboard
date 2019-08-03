@@ -6,8 +6,6 @@ import WizardReport from './NewReportWizard';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
-const username = 'gferrero';
-
 const nodes = ["ql-roxa", "ql-nicoyjesi", "ql-natiysofi", "si-silvia"];
 const defaultNode = ["ql-roxa"];
 

@@ -4,7 +4,7 @@ import NodeSelectionStep from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
 import ProblemBodyStep from './ProblemBodyStep';
 
-class WizardReport extends React.Component {
+class WizardReport extends Component {
     constructor(props) {
         super(props);
         this.state = {
