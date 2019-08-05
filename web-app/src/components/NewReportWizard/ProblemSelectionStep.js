@@ -25,7 +25,7 @@ function Choices({ choices, onChange, selected }) {
         <div className="choices">
             <Radio.Group onChange={onChange} value={selected}>
                 {choices.map(choice =>
-                    <Radio key={choice.key} style={radioStyle} value={choice}>
+                    <Radio key={choice.id} style={radioStyle} value={choice}>
                         {choice.text}
                     </Radio>
                 )}

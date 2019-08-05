@@ -56,6 +56,7 @@ class WizardReport extends Component {
             <>
                 {this.steps.map((step, index) =>
                     <step.component {...step.props} {...props}
+                        key={step.key}
                         shouldRender={index === currentStep}
                         isFirst={index === 0}
                         isLast={index === this.steps.length - 1}
