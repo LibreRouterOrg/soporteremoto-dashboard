@@ -1,1 +1,1 @@
-export {default} from './LastIssuesPanel'
+export {default} from './LastIssuesPanel';

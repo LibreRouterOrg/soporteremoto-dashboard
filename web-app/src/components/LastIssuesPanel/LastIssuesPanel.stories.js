@@ -1,5 +1,5 @@
 import React from 'react';
-import LastIssuesPanel from '.';
+import LastIssuesPanel from './LastIssuesPanel';
 import { storiesOf } from '@storybook/react';
 import { issue } from '../data/mockData';
 import { commonIssuesDict } from '../data';

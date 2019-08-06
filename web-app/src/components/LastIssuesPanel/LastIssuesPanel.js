@@ -1,6 +1,6 @@
 import React from 'react';
 import './LastIssuesPanel.css';
-import IssueSmallResume from '../IssueSmallResume';
+import IssueSmallResume from './IssueSmallResume';
 import { Tabs, Icon, List, Button } from 'antd';
 
 const { TabPane } = Tabs;

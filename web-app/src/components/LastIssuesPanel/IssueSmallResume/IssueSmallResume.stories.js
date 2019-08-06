@@ -2,9 +2,9 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import IssueSmallResume from './IssueSmallResume';
 import { action } from '@storybook/addon-actions';
-import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
-import { commonIssuesDict } from '../data';
-import { issue } from '../data/mockData';
+import gferrero_avatar from '../../../assets/gferrero_avatar.jpeg';
+import { commonIssuesDict } from '../../data';
+import { issue } from '../../data/mockData';
 
 const user = {
     username: "gferrero",
@@ -58,7 +58,7 @@ const closedIssue = {
     status: "closed"
 }
 
-storiesOf('IssueSmallResume', module)
+storiesOf('LastIssuesPanel/IssueSmallResume', module)
     .add('A person issue', () => <IssueSmallResume issue={issue} {...actions} />)
     .add('A person issue that affects me', () => <IssueSmallResume issue={issue} affectsMe {...actions} />)
     .add('No avatar issue', () => <IssueSmallResume issue={noavatar_issue} {...actions} />)

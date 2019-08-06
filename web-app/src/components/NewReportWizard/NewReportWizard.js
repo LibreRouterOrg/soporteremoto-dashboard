@@ -4,7 +4,7 @@ import NodeSelectionStep from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
 import ProblemBodyStep from './ProblemBodyStep';
 
-class WizardReport extends Component {
+class NewReportWizard extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -67,4 +67,4 @@ class WizardReport extends Component {
     }
 }
 
-export default WizardReport;
+export default NewReportWizard;

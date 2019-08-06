@@ -1,6 +1,6 @@
 import React from 'react';
 import { Icon, Tooltip } from 'antd';
-import { Avatar } from '../utils';
+import { Avatar } from '../../utils';
 import Moment from 'react-moment';
 import './IssueSmallResume.css';
 import 'moment/locale/es';

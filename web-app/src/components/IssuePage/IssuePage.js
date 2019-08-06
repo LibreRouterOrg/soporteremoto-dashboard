@@ -3,7 +3,7 @@ import Comments from '../Comments';
 import './IssuePage.css';
 import moment from 'moment';
 
-export default class IssuePage extends Component {
+class IssuePage extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -36,3 +36,5 @@ export default class IssuePage extends Component {
         )
     }
 }
+
+export default IssuePage;

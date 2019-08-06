@@ -3,7 +3,7 @@ import { List } from 'antd';
 import { Comment, CommentEditor } from './Comment';
 import './Comments.css';
 
-export default class Comments extends Component {
+class Comments extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -53,3 +53,5 @@ export default class Comments extends Component {
         );
     }
 }
+
+export default Comments;
