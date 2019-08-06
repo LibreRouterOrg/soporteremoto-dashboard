@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Comment as CommentAntd, Tooltip, Input, Form, Button } from 'antd';
 import { Avatar } from '../utils';
 import moment from 'moment';
-import './Comment.css';
 
 const { TextArea } = Input;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon, Tooltip } from 'antd';
 import { Avatar } from '../../utils';
 import Moment from 'react-moment';
-import './IssueSmallResume.css';
+import './IssueSmallResume.less';
 import 'moment/locale/es';
 
 function IssueSmallResume({ issue, affectsMe, onSelect }) {
