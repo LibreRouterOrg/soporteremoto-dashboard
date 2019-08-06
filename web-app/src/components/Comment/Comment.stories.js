@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
-import {Comment} from './';
+import {Comment, CommentEditor} from './';
 
 const user = {
     username: "gferrero",
@@ -24,4 +24,5 @@ export const comment = {
 }
 
 storiesOf('Comment', module)
-    .add('Basic Comment', () => <Comment {...comment}/>);
+    .add('Basic Comment', () => <Comment {...comment}/>)
+    .add('New Comment Editor', () => <CommentEditor {...comment}/>);

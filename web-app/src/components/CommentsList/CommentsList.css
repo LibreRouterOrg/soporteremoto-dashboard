@@ -1,3 +1,7 @@
 .comments-list {
     background-color: white;
 }
+
+.comments-list-content {
+    padding-left: 0.2rem;
+}

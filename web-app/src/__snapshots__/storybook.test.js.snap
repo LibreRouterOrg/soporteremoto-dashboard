@@ -715,6 +715,320 @@ exports[`Storyshots Comment Basic Comment 1`] = `
 </ReadmeContent>
 `;
 
+exports[`Storyshots Comment New Comment Editor 1`] = `
+<ReadmeContent
+  codeTheme="github"
+  layout={
+    Array [
+      Object {
+        "content": <React.Fragment>
+          <CommentEditor
+            body="Este es un comentario de ejemplo."
+            timestamp={1561041610000}
+            user={
+              Object {
+                "avatar": "gferrero_avatar.jpeg",
+                "client": Object {
+                  "hostname": "gf",
+                  "ip": "192.168.1.4",
+                },
+                "is_bot": false,
+                "username": "gferrero",
+              }
+            }
+          />
+        </React.Fragment>,
+        "type": "STORY",
+      },
+    ]
+  }
+  theme={Object {}}
+  types={
+    Array [
+      "MD",
+      "STORY",
+      "PROPS",
+      "FOOTER_MD",
+      "HEADER_MD",
+    ]
+  }
+>
+  <div
+    className="storybook-readme-story"
+  >
+    <_default
+      key="0"
+    >
+      <div
+        style={
+          Object {
+            "margin": "32px 0",
+          }
+        }
+      >
+        <div>
+          <CommentEditor
+            body="Este es un comentario de ejemplo."
+            timestamp={1561041610000}
+            user={
+              Object {
+                "avatar": "gferrero_avatar.jpeg",
+                "client": Object {
+                  "hostname": "gf",
+                  "ip": "192.168.1.4",
+                },
+                "is_bot": false,
+                "username": "gferrero",
+              }
+            }
+          >
+            <Comment
+              author="gferrero"
+              avatar={
+                <Avatar
+                  user={
+                    Object {
+                      "avatar": "gferrero_avatar.jpeg",
+                      "client": Object {
+                        "hostname": "gf",
+                        "ip": "192.168.1.4",
+                      },
+                      "is_bot": false,
+                      "username": "gferrero",
+                    }
+                  }
+                />
+              }
+              className="comment"
+              content={
+                <div>
+                  <FormItem
+                    hasFeedback={false}
+                  >
+                    <TextArea
+                      disabled={false}
+                      onChange={[Function]}
+                      rows={4}
+                      value={null}
+                    />
+                  </FormItem>
+                  <FormItem
+                    hasFeedback={false}
+                  >
+                    <Button
+                      block={false}
+                      ghost={false}
+                      htmlType="submit"
+                      loading={false}
+                      onClick={[Function]}
+                      type="primary"
+                    >
+                      Agregar Comentario
+                    </Button>
+                  </FormItem>
+                </div>
+              }
+            >
+              <div
+                className="ant-comment comment"
+              >
+                <div
+                  className="ant-comment-inner"
+                >
+                  <div
+                    className="ant-comment-avatar"
+                  >
+                    <Avatar
+                      user={
+                        Object {
+                          "avatar": "gferrero_avatar.jpeg",
+                          "client": Object {
+                            "hostname": "gf",
+                            "ip": "192.168.1.4",
+                          },
+                          "is_bot": false,
+                          "username": "gferrero",
+                        }
+                      }
+                    >
+                      <Avatar
+                        shape="circle"
+                        size="default"
+                        src="gferrero_avatar.jpeg"
+                      >
+                        <span
+                          className="ant-avatar ant-avatar-circle ant-avatar-image"
+                          style={Object {}}
+                        >
+                          <img
+                            onError={[Function]}
+                            src="gferrero_avatar.jpeg"
+                          />
+                        </span>
+                      </Avatar>
+                    </Avatar>
+                  </div>
+                  <div
+                    className="ant-comment-content"
+                  >
+                    <div
+                      className="ant-comment-content-author"
+                    >
+                      <span
+                        className="ant-comment-content-author-name"
+                      >
+                        gferrero
+                      </span>
+                    </div>
+                    <div
+                      className="ant-comment-content-detail"
+                    >
+                      <div>
+                        <FormItem
+                          hasFeedback={false}
+                        >
+                          <Row
+                            className="ant-form-item"
+                            gutter={0}
+                            key="row"
+                          >
+                            <div
+                              className="ant-row ant-form-item"
+                            >
+                              <Col
+                                className="ant-form-item-control-wrapper"
+                              >
+                                <div
+                                  className="ant-col ant-form-item-control-wrapper"
+                                >
+                                  <div
+                                    className="ant-form-item-control"
+                                  >
+                                    <span
+                                      className="ant-form-item-children"
+                                    >
+                                      <TextArea
+                                        disabled={false}
+                                        onChange={[Function]}
+                                        rows={4}
+                                        value={null}
+                                      >
+                                        <ReactResizeObserver
+                                          disabled={true}
+                                          onResize={[Function]}
+                                        >
+                                          <textarea
+                                            className="ant-input"
+                                            disabled={false}
+                                            onChange={[Function]}
+                                            onKeyDown={[Function]}
+                                            rows={4}
+                                            style={Object {}}
+                                            value=""
+                                          />
+                                        </ReactResizeObserver>
+                                      </TextArea>
+                                    </span>
+                                    <Animate
+                                      animation={Object {}}
+                                      component=""
+                                      componentProps={Object {}}
+                                      key="help"
+                                      onAppear={[Function]}
+                                      onEnd={[Function]}
+                                      onEnter={[Function]}
+                                      onLeave={[Function]}
+                                      transitionAppear={true}
+                                      transitionEnter={true}
+                                      transitionLeave={true}
+                                      transitionName="show-help"
+                                    />
+                                  </div>
+                                </div>
+                              </Col>
+                            </div>
+                          </Row>
+                        </FormItem>
+                        <FormItem
+                          hasFeedback={false}
+                        >
+                          <Row
+                            className="ant-form-item"
+                            gutter={0}
+                            key="row"
+                          >
+                            <div
+                              className="ant-row ant-form-item"
+                            >
+                              <Col
+                                className="ant-form-item-control-wrapper"
+                              >
+                                <div
+                                  className="ant-col ant-form-item-control-wrapper"
+                                >
+                                  <div
+                                    className="ant-form-item-control"
+                                  >
+                                    <span
+                                      className="ant-form-item-children"
+                                    >
+                                      <Button
+                                        block={false}
+                                        ghost={false}
+                                        htmlType="submit"
+                                        loading={false}
+                                        onClick={[Function]}
+                                        type="primary"
+                                      >
+                                        <Wave>
+                                          <button
+                                            className="ant-btn ant-btn-primary"
+                                            onClick={[Function]}
+                                            type="submit"
+                                          >
+                                            <span
+                                              key=".0"
+                                            >
+                                              Agregar Comentario
+                                            </span>
+                                          </button>
+                                        </Wave>
+                                      </Button>
+                                    </span>
+                                    <Animate
+                                      animation={Object {}}
+                                      component=""
+                                      componentProps={Object {}}
+                                      key="help"
+                                      onAppear={[Function]}
+                                      onEnd={[Function]}
+                                      onEnter={[Function]}
+                                      onLeave={[Function]}
+                                      transitionAppear={true}
+                                      transitionEnter={true}
+                                      transitionLeave={true}
+                                      transitionName="show-help"
+                                    />
+                                  </div>
+                                </div>
+                              </Col>
+                            </div>
+                          </Row>
+                        </FormItem>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Comment>
+          </CommentEditor>
+        </div>
+      </div>
+    </_default>
+  </div>
+</ReadmeContent>
+`;
+
 exports[`Storyshots CommentsList Empty list 1`] = `
 <ReadmeContent
   codeTheme="github"

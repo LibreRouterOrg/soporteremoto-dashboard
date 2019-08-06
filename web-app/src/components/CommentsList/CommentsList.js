@@ -8,10 +8,17 @@ export function CommentsList({ comments }) {
 
     return (
         <div className="comments-list">
-            <b>Comentarios</b>
-            <List dataSource={sortedComments}
-                renderItem={(props) => <List.Item><Comment {...props} /></List.Item>}
-            />
+            <div className="comments-list-header">
+                <b>Comentarios</b>
+            </div>
+            <div className="comments-list-content">
+                {sortedComments.length > 0 ?
+                    <List dataSource={sortedComments}
+                        renderItem={(props) => <List.Item><Comment {...props} /></List.Item>}
+                    />
+                    :
+                    <p>No hay comentarios</p>}
+            </div>
         </div>
     );
 }

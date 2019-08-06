@@ -1,1 +1,1 @@
-export {Comment} from './Comment';
+export {Comment, CommentEditor} from './Comment';
