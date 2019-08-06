@@ -5,13 +5,6 @@ import { action } from '@storybook/addon-actions';
 import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
 import { commonIssues } from '../data';
 
-// timestamp: number,
-// user: string,
-// status: enum,
-// node: node,
-// common_issue: common_issue, 
-// body: string,
-// comments: Array(comment)
 
 const commonIssuesDict = commonIssues.reduce(
     (obj, item) => {
@@ -45,12 +38,13 @@ const longUsernameUser = {
 }
 
 export const issue = {
+    id: 10,
     timestamp: new Date('2019-06-20T14:40:10Z').getTime(),
     user: user,
     status: 'open',
     node: 'ql-gferrero',
     common_issue: commonIssuesDict['unreachable_network'],
-    body: '',
+    body: 'Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop',
     comments: [],
 }
 

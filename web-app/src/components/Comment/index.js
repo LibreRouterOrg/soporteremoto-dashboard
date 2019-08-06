@@ -1,1 +1,0 @@
-export {Comment, CommentEditor} from './Comment';
