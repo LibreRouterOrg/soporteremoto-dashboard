@@ -1,1 +1,1 @@
-export {commonIssues} from './commonIssues';
+export {commonIssues, commonIssuesDict} from './commonIssues';

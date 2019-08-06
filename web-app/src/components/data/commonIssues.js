@@ -56,3 +56,8 @@ export const commonIssues = [
     }
 ];
 
+export const commonIssuesDict = commonIssues.reduce(
+    (obj, item) => {
+        obj[item.id] = item;
+        return obj
+    }, {});

@@ -3,14 +3,8 @@ import { storiesOf } from '@storybook/react';
 import IssueSmallResume from './IssueSmallResume';
 import { action } from '@storybook/addon-actions';
 import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
-import { commonIssues } from '../data';
-
-
-const commonIssuesDict = commonIssues.reduce(
-    (obj, item) => {
-        obj[item.id] = item;
-        return obj
-    }, {});
+import { commonIssuesDict } from '../data';
+import { issue } from '../data/mockData';
 
 const user = {
     username: "gferrero",
@@ -35,17 +29,6 @@ const botUser = {
 const longUsernameUser = {
     ...user,
     username: 'averyverylongusername',
-}
-
-export const issue = {
-    id: 10,
-    timestamp: new Date('2019-06-20T14:40:10Z').getTime(),
-    user: user,
-    status: 'open',
-    node: 'ql-gferrero',
-    common_issue: commonIssuesDict['unreachable_network'],
-    body: 'Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop',
-    comments: [],
 }
 
 const bot_issue = {

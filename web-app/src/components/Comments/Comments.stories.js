@@ -3,24 +3,13 @@ import { storiesOf } from '@storybook/react';
 import moment from 'moment';
 import Comments from './Comments';
 import { Comment, CommentEditor } from './Comment';
-
-import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
-
-export const user = {
-    username: "gferrero",
-    client: {
-        ip: "192.168.1.4",
-        hostname: "gf",
-    },
-    avatar: gferrero_avatar,
-    is_bot: false,
-};
+import { user } from '../data/mockData';
 
 const timestamp = new Date('2019-06-20T14:40:10Z').getTime();
 
 const body = "Este es un comentario de ejemplo.";
 
-export const comment = {
+const comment = {
     user: user,
     timestamp: timestamp,
     body: body,
@@ -43,5 +32,5 @@ const comments = [
 storiesOf('Comments', module)
     .add('Single Comment', () => <Comment {...comment} />)
     .add('New Comment Editor', () => <CommentEditor {...comment} />)
-    .add('List of Comments', () => <Comments comments={comments} user={user}/>)
-    .add('Empty list', () => <Comments comments={[]} user={user}/>);
+    .add('List of Comments', () => <Comments comments={comments} user={user} />)
+    .add('Empty list', () => <Comments comments={[]} user={user} />);
