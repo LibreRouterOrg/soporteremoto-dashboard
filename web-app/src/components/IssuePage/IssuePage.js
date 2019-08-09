@@ -6,12 +6,12 @@ import { Menu } from './Menu';
 import './IssuePage.less';
 import moment from 'moment';
 
-function Header({ issue, onChangeStatus }) {
+function Header({ issue, status, onChangeStatus }) {
     return (
         <div className="header">
             <div className="header-title">
                 <div className="title">Reporte #{issue.id}
-                {issue.status === "open" ?
+                {status === "open" ?
                     <div className="status">
                         <Icon className="status-icon status-open" type="exclamation-circle"/>
                         Abierto
@@ -26,7 +26,7 @@ function Header({ issue, onChangeStatus }) {
                 <div className="subtitle">Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}</div>
             </div>
             <div className="menu">
-                <Menu status={issue.status} onChange={onChangeStatus} />
+                <Menu status={status} onChange={onChangeStatus} />
             </div>
         </div>
     );
@@ -37,7 +37,9 @@ class IssuePage extends Component {
         super(props)
         this.state = {
             comments: this.props.issue.comments,
+            status: this.props.issue.status,
         }
+        this.onChangeStatus = this.onChangeStatus.bind(this);
     }
 
     getCommonIssueText(commonIssue) {
@@ -53,12 +55,17 @@ class IssuePage extends Component {
         return result;
     }
 
+    onChangeStatus = e => {
+        const status = this.state.status;
+        this.setState({status: status === 'open' ? 'closed': 'open'});
+    }
+
     render() {
         const { issue, user } = this.props;
         return (
             <div className="issue-page">
                 <div className="section">
-                    <Header issue={issue} />
+                    <Header issue={issue} status={this.state.status} onChangeStatus={this.onChangeStatus}/>
                 </div>
                 <div className="section">
                     <div className="title">Tipo de problema</div>

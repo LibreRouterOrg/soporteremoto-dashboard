@@ -12,7 +12,7 @@ export function Menu({ status, onChange }) {
 
     return (
         <div>
-            <Dropdown overlay={menu}>
+            <Dropdown overlay={menu} placement="bottomRight">
                 <Button className='action-trigger' size='small'>
                     <Icon type='ellipsis'></Icon>
                 </Button>
