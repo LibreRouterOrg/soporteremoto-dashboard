@@ -13,12 +13,12 @@ function Header({ issue, onChangeStatus }) {
                 <div className="title">Reporte #{issue.id}
                 {issue.status === "open" ?
                     <div className="status">
-                        <Icon className="statusIcon statusOpen" type="exclamation-circle"/>
+                        <Icon className="status-icon status-open" type="exclamation-circle"/>
                         Abierto
                     </div>
                     :
                     <div className="status">
-                        <Icon className="statusIcon statusClosed" type="check-circle" />
+                        <Icon className="status-icon status-closed" type="check-circle" />
                         Resuelto
                     </div>
                 }
