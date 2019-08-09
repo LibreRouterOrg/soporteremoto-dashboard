@@ -1,5 +1,5 @@
 import React from 'react';
-import './LastIssuesPanel.css';
+import './LastIssuesPanel.less';
 import IssueSmallResume from './IssueSmallResume';
 import { Tabs, Icon, List, Button } from 'antd';
 
@@ -57,7 +57,7 @@ function IssuesList({ issues }) {
 function NewIssue() {
     return (
         <div className="new-issue">
-            <Button type="primary" shape="round" icon="notification" size='large'>
+            <Button type="link" icon="notification" size='large'>
                 Nuevo Reporte
             </Button>
         </div>

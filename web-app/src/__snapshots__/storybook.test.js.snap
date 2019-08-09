@@ -4275,6 +4275,1907 @@ exports[`Storyshots IssuePage Basic Issue Page 1`] = `
 </ReadmeContent>
 `;
 
+exports[`Storyshots IssuePage Larger common issue path 1`] = `
+<ReadmeContent
+  codeTheme="github"
+  layout={
+    Array [
+      Object {
+        "content": <React.Fragment>
+          <IssuePage
+            issue={
+              Object {
+                "body": "Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop",
+                "comments": Array [],
+                "common_issue": Object {
+                  "id": "from_precise_moment",
+                  "parent": "slow_connection",
+                  "text": "Empezó a andar lento en un momento puntual",
+                },
+                "id": 10,
+                "node": "ql-gferrero",
+                "status": "open",
+                "timestamp": 1561041610000,
+                "user": Object {
+                  "avatar": "gferrero_avatar.jpeg",
+                  "client": Object {
+                    "hostname": "gf",
+                    "ip": "192.168.1.4",
+                  },
+                  "is_bot": false,
+                  "username": "gferrero",
+                },
+              }
+            }
+            user={
+              Object {
+                "avatar": "gferrero_avatar.jpeg",
+                "client": Object {
+                  "hostname": "gf",
+                  "ip": "192.168.1.4",
+                },
+                "is_bot": false,
+                "username": "gferrero",
+              }
+            }
+          />
+        </React.Fragment>,
+        "type": "STORY",
+      },
+    ]
+  }
+  theme={Object {}}
+  types={
+    Array [
+      "MD",
+      "STORY",
+      "PROPS",
+      "FOOTER_MD",
+      "HEADER_MD",
+    ]
+  }
+>
+  <div
+    className="storybook-readme-story"
+  >
+    <_default
+      key="0"
+    >
+      <div
+        style={
+          Object {
+            "margin": "32px 0",
+          }
+        }
+      >
+        <div>
+          <IssuePage
+            issue={
+              Object {
+                "body": "Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop",
+                "comments": Array [],
+                "common_issue": Object {
+                  "id": "from_precise_moment",
+                  "parent": "slow_connection",
+                  "text": "Empezó a andar lento en un momento puntual",
+                },
+                "id": 10,
+                "node": "ql-gferrero",
+                "status": "open",
+                "timestamp": 1561041610000,
+                "user": Object {
+                  "avatar": "gferrero_avatar.jpeg",
+                  "client": Object {
+                    "hostname": "gf",
+                    "ip": "192.168.1.4",
+                  },
+                  "is_bot": false,
+                  "username": "gferrero",
+                },
+              }
+            }
+            user={
+              Object {
+                "avatar": "gferrero_avatar.jpeg",
+                "client": Object {
+                  "hostname": "gf",
+                  "ip": "192.168.1.4",
+                },
+                "is_bot": false,
+                "username": "gferrero",
+              }
+            }
+          >
+            <div
+              className="issue-page"
+            >
+              <div
+                className="section"
+              >
+                <div
+                  className="title"
+                >
+                  Reporte #
+                  10
+                </div>
+                <div
+                  className="subtitle"
+                >
+                  Por 
+                  gferrero
+                   el 
+                  20 de junio de 2019 11:40
+                </div>
+              </div>
+              <div
+                className="section"
+              >
+                <div
+                  className="title"
+                >
+                  Tipo de problema
+                </div>
+                <div
+                  className="section-content"
+                >
+                  Puedo navegar pero anda lento &gt; Empezó a andar lento en un momento puntual
+                </div>
+              </div>
+              <div
+                className="section"
+              >
+                <div
+                  className="title"
+                >
+                  Detalles
+                </div>
+                <div
+                  className="section-content"
+                >
+                  Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop
+                </div>
+              </div>
+              <div
+                className="section"
+              >
+                <Comments
+                  comments={Array []}
+                  user={
+                    Object {
+                      "avatar": "gferrero_avatar.jpeg",
+                      "client": Object {
+                        "hostname": "gf",
+                        "ip": "192.168.1.4",
+                      },
+                      "is_bot": false,
+                      "username": "gferrero",
+                    }
+                  }
+                >
+                  <div
+                    className="comments-list"
+                  >
+                    <div
+                      className="comments-list-header"
+                    >
+                      Comentarios
+                    </div>
+                    <div
+                      className="comments-list-content"
+                    >
+                      <p>
+                        No hay comentarios
+                      </p>
+                    </div>
+                    <div
+                      className="comments-list-header"
+                    >
+                       Haz un comentario 
+                    </div>
+                    <div
+                      className="comments-list-content"
+                    >
+                      <CommentEditor
+                        onChange={[Function]}
+                        onSubmit={[Function]}
+                        submitting={false}
+                        user={
+                          Object {
+                            "avatar": "gferrero_avatar.jpeg",
+                            "client": Object {
+                              "hostname": "gf",
+                              "ip": "192.168.1.4",
+                            },
+                            "is_bot": false,
+                            "username": "gferrero",
+                          }
+                        }
+                        value={null}
+                      >
+                        <Comment
+                          author="gferrero"
+                          avatar={
+                            <Avatar
+                              user={
+                                Object {
+                                  "avatar": "gferrero_avatar.jpeg",
+                                  "client": Object {
+                                    "hostname": "gf",
+                                    "ip": "192.168.1.4",
+                                  },
+                                  "is_bot": false,
+                                  "username": "gferrero",
+                                }
+                              }
+                            />
+                          }
+                          className="comment"
+                          content={
+                            <div>
+                              <FormItem
+                                hasFeedback={false}
+                              >
+                                <TextArea
+                                  disabled={false}
+                                  onChange={[Function]}
+                                  rows={4}
+                                  value={null}
+                                />
+                              </FormItem>
+                              <FormItem
+                                hasFeedback={false}
+                              >
+                                <Button
+                                  block={false}
+                                  ghost={false}
+                                  htmlType="submit"
+                                  loading={false}
+                                  onClick={[Function]}
+                                  type="primary"
+                                >
+                                  Agregar Comentario
+                                </Button>
+                              </FormItem>
+                            </div>
+                          }
+                        >
+                          <div
+                            className="ant-comment comment"
+                          >
+                            <div
+                              className="ant-comment-inner"
+                            >
+                              <div
+                                className="ant-comment-avatar"
+                              >
+                                <Avatar
+                                  user={
+                                    Object {
+                                      "avatar": "gferrero_avatar.jpeg",
+                                      "client": Object {
+                                        "hostname": "gf",
+                                        "ip": "192.168.1.4",
+                                      },
+                                      "is_bot": false,
+                                      "username": "gferrero",
+                                    }
+                                  }
+                                >
+                                  <Avatar
+                                    shape="circle"
+                                    size="default"
+                                    src="gferrero_avatar.jpeg"
+                                  >
+                                    <span
+                                      className="ant-avatar ant-avatar-circle ant-avatar-image"
+                                      style={Object {}}
+                                    >
+                                      <img
+                                        onError={[Function]}
+                                        src="gferrero_avatar.jpeg"
+                                      />
+                                    </span>
+                                  </Avatar>
+                                </Avatar>
+                              </div>
+                              <div
+                                className="ant-comment-content"
+                              >
+                                <div
+                                  className="ant-comment-content-author"
+                                >
+                                  <span
+                                    className="ant-comment-content-author-name"
+                                  >
+                                    gferrero
+                                  </span>
+                                </div>
+                                <div
+                                  className="ant-comment-content-detail"
+                                >
+                                  <div>
+                                    <FormItem
+                                      hasFeedback={false}
+                                    >
+                                      <Row
+                                        className="ant-form-item"
+                                        gutter={0}
+                                        key="row"
+                                      >
+                                        <div
+                                          className="ant-row ant-form-item"
+                                        >
+                                          <Col
+                                            className="ant-form-item-control-wrapper"
+                                          >
+                                            <div
+                                              className="ant-col ant-form-item-control-wrapper"
+                                            >
+                                              <div
+                                                className="ant-form-item-control"
+                                              >
+                                                <span
+                                                  className="ant-form-item-children"
+                                                >
+                                                  <TextArea
+                                                    disabled={false}
+                                                    onChange={[Function]}
+                                                    rows={4}
+                                                    value={null}
+                                                  >
+                                                    <ReactResizeObserver
+                                                      disabled={true}
+                                                      onResize={[Function]}
+                                                    >
+                                                      <textarea
+                                                        className="ant-input"
+                                                        disabled={false}
+                                                        onChange={[Function]}
+                                                        onKeyDown={[Function]}
+                                                        rows={4}
+                                                        style={Object {}}
+                                                        value=""
+                                                      />
+                                                    </ReactResizeObserver>
+                                                  </TextArea>
+                                                </span>
+                                                <Animate
+                                                  animation={Object {}}
+                                                  component=""
+                                                  componentProps={Object {}}
+                                                  key="help"
+                                                  onAppear={[Function]}
+                                                  onEnd={[Function]}
+                                                  onEnter={[Function]}
+                                                  onLeave={[Function]}
+                                                  transitionAppear={true}
+                                                  transitionEnter={true}
+                                                  transitionLeave={true}
+                                                  transitionName="show-help"
+                                                />
+                                              </div>
+                                            </div>
+                                          </Col>
+                                        </div>
+                                      </Row>
+                                    </FormItem>
+                                    <FormItem
+                                      hasFeedback={false}
+                                    >
+                                      <Row
+                                        className="ant-form-item"
+                                        gutter={0}
+                                        key="row"
+                                      >
+                                        <div
+                                          className="ant-row ant-form-item"
+                                        >
+                                          <Col
+                                            className="ant-form-item-control-wrapper"
+                                          >
+                                            <div
+                                              className="ant-col ant-form-item-control-wrapper"
+                                            >
+                                              <div
+                                                className="ant-form-item-control"
+                                              >
+                                                <span
+                                                  className="ant-form-item-children"
+                                                >
+                                                  <Button
+                                                    block={false}
+                                                    ghost={false}
+                                                    htmlType="submit"
+                                                    loading={false}
+                                                    onClick={[Function]}
+                                                    type="primary"
+                                                  >
+                                                    <Wave>
+                                                      <button
+                                                        className="ant-btn ant-btn-primary"
+                                                        onClick={[Function]}
+                                                        type="submit"
+                                                      >
+                                                        <span
+                                                          key=".0"
+                                                        >
+                                                          Agregar Comentario
+                                                        </span>
+                                                      </button>
+                                                    </Wave>
+                                                  </Button>
+                                                </span>
+                                                <Animate
+                                                  animation={Object {}}
+                                                  component=""
+                                                  componentProps={Object {}}
+                                                  key="help"
+                                                  onAppear={[Function]}
+                                                  onEnd={[Function]}
+                                                  onEnter={[Function]}
+                                                  onLeave={[Function]}
+                                                  transitionAppear={true}
+                                                  transitionEnter={true}
+                                                  transitionLeave={true}
+                                                  transitionName="show-help"
+                                                />
+                                              </div>
+                                            </div>
+                                          </Col>
+                                        </div>
+                                      </Row>
+                                    </FormItem>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </Comment>
+                      </CommentEditor>
+                    </div>
+                  </div>
+                </Comments>
+              </div>
+            </div>
+          </IssuePage>
+        </div>
+      </div>
+    </_default>
+  </div>
+</ReadmeContent>
+`;
+
+exports[`Storyshots IssuePage Non common issue selecetd 1`] = `
+<ReadmeContent
+  codeTheme="github"
+  layout={
+    Array [
+      Object {
+        "content": <React.Fragment>
+          <IssuePage
+            issue={
+              Object {
+                "body": "Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop",
+                "comments": Array [],
+                "common_issue": null,
+                "id": 10,
+                "node": "ql-gferrero",
+                "status": "open",
+                "timestamp": 1561041610000,
+                "user": Object {
+                  "avatar": "gferrero_avatar.jpeg",
+                  "client": Object {
+                    "hostname": "gf",
+                    "ip": "192.168.1.4",
+                  },
+                  "is_bot": false,
+                  "username": "gferrero",
+                },
+              }
+            }
+            user={
+              Object {
+                "avatar": "gferrero_avatar.jpeg",
+                "client": Object {
+                  "hostname": "gf",
+                  "ip": "192.168.1.4",
+                },
+                "is_bot": false,
+                "username": "gferrero",
+              }
+            }
+          />
+        </React.Fragment>,
+        "type": "STORY",
+      },
+    ]
+  }
+  theme={Object {}}
+  types={
+    Array [
+      "MD",
+      "STORY",
+      "PROPS",
+      "FOOTER_MD",
+      "HEADER_MD",
+    ]
+  }
+>
+  <div
+    className="storybook-readme-story"
+  >
+    <_default
+      key="0"
+    >
+      <div
+        style={
+          Object {
+            "margin": "32px 0",
+          }
+        }
+      >
+        <div>
+          <IssuePage
+            issue={
+              Object {
+                "body": "Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop",
+                "comments": Array [],
+                "common_issue": null,
+                "id": 10,
+                "node": "ql-gferrero",
+                "status": "open",
+                "timestamp": 1561041610000,
+                "user": Object {
+                  "avatar": "gferrero_avatar.jpeg",
+                  "client": Object {
+                    "hostname": "gf",
+                    "ip": "192.168.1.4",
+                  },
+                  "is_bot": false,
+                  "username": "gferrero",
+                },
+              }
+            }
+            user={
+              Object {
+                "avatar": "gferrero_avatar.jpeg",
+                "client": Object {
+                  "hostname": "gf",
+                  "ip": "192.168.1.4",
+                },
+                "is_bot": false,
+                "username": "gferrero",
+              }
+            }
+          >
+            <div
+              className="issue-page"
+            >
+              <div
+                className="section"
+              >
+                <div
+                  className="title"
+                >
+                  Reporte #
+                  10
+                </div>
+                <div
+                  className="subtitle"
+                >
+                  Por 
+                  gferrero
+                   el 
+                  20 de junio de 2019 11:40
+                </div>
+              </div>
+              <div
+                className="section"
+              >
+                <div
+                  className="title"
+                >
+                  Tipo de problema
+                </div>
+                <div
+                  className="section-content"
+                >
+                  <div
+                    className="common-issue-text"
+                  >
+                    Ninguno de los problemas conocidos
+                  </div>
+                </div>
+              </div>
+              <div
+                className="section"
+              >
+                <div
+                  className="title"
+                >
+                  Detalles
+                </div>
+                <div
+                  className="section-content"
+                >
+                  Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop
+                </div>
+              </div>
+              <div
+                className="section"
+              >
+                <Comments
+                  comments={Array []}
+                  user={
+                    Object {
+                      "avatar": "gferrero_avatar.jpeg",
+                      "client": Object {
+                        "hostname": "gf",
+                        "ip": "192.168.1.4",
+                      },
+                      "is_bot": false,
+                      "username": "gferrero",
+                    }
+                  }
+                >
+                  <div
+                    className="comments-list"
+                  >
+                    <div
+                      className="comments-list-header"
+                    >
+                      Comentarios
+                    </div>
+                    <div
+                      className="comments-list-content"
+                    >
+                      <p>
+                        No hay comentarios
+                      </p>
+                    </div>
+                    <div
+                      className="comments-list-header"
+                    >
+                       Haz un comentario 
+                    </div>
+                    <div
+                      className="comments-list-content"
+                    >
+                      <CommentEditor
+                        onChange={[Function]}
+                        onSubmit={[Function]}
+                        submitting={false}
+                        user={
+                          Object {
+                            "avatar": "gferrero_avatar.jpeg",
+                            "client": Object {
+                              "hostname": "gf",
+                              "ip": "192.168.1.4",
+                            },
+                            "is_bot": false,
+                            "username": "gferrero",
+                          }
+                        }
+                        value={null}
+                      >
+                        <Comment
+                          author="gferrero"
+                          avatar={
+                            <Avatar
+                              user={
+                                Object {
+                                  "avatar": "gferrero_avatar.jpeg",
+                                  "client": Object {
+                                    "hostname": "gf",
+                                    "ip": "192.168.1.4",
+                                  },
+                                  "is_bot": false,
+                                  "username": "gferrero",
+                                }
+                              }
+                            />
+                          }
+                          className="comment"
+                          content={
+                            <div>
+                              <FormItem
+                                hasFeedback={false}
+                              >
+                                <TextArea
+                                  disabled={false}
+                                  onChange={[Function]}
+                                  rows={4}
+                                  value={null}
+                                />
+                              </FormItem>
+                              <FormItem
+                                hasFeedback={false}
+                              >
+                                <Button
+                                  block={false}
+                                  ghost={false}
+                                  htmlType="submit"
+                                  loading={false}
+                                  onClick={[Function]}
+                                  type="primary"
+                                >
+                                  Agregar Comentario
+                                </Button>
+                              </FormItem>
+                            </div>
+                          }
+                        >
+                          <div
+                            className="ant-comment comment"
+                          >
+                            <div
+                              className="ant-comment-inner"
+                            >
+                              <div
+                                className="ant-comment-avatar"
+                              >
+                                <Avatar
+                                  user={
+                                    Object {
+                                      "avatar": "gferrero_avatar.jpeg",
+                                      "client": Object {
+                                        "hostname": "gf",
+                                        "ip": "192.168.1.4",
+                                      },
+                                      "is_bot": false,
+                                      "username": "gferrero",
+                                    }
+                                  }
+                                >
+                                  <Avatar
+                                    shape="circle"
+                                    size="default"
+                                    src="gferrero_avatar.jpeg"
+                                  >
+                                    <span
+                                      className="ant-avatar ant-avatar-circle ant-avatar-image"
+                                      style={Object {}}
+                                    >
+                                      <img
+                                        onError={[Function]}
+                                        src="gferrero_avatar.jpeg"
+                                      />
+                                    </span>
+                                  </Avatar>
+                                </Avatar>
+                              </div>
+                              <div
+                                className="ant-comment-content"
+                              >
+                                <div
+                                  className="ant-comment-content-author"
+                                >
+                                  <span
+                                    className="ant-comment-content-author-name"
+                                  >
+                                    gferrero
+                                  </span>
+                                </div>
+                                <div
+                                  className="ant-comment-content-detail"
+                                >
+                                  <div>
+                                    <FormItem
+                                      hasFeedback={false}
+                                    >
+                                      <Row
+                                        className="ant-form-item"
+                                        gutter={0}
+                                        key="row"
+                                      >
+                                        <div
+                                          className="ant-row ant-form-item"
+                                        >
+                                          <Col
+                                            className="ant-form-item-control-wrapper"
+                                          >
+                                            <div
+                                              className="ant-col ant-form-item-control-wrapper"
+                                            >
+                                              <div
+                                                className="ant-form-item-control"
+                                              >
+                                                <span
+                                                  className="ant-form-item-children"
+                                                >
+                                                  <TextArea
+                                                    disabled={false}
+                                                    onChange={[Function]}
+                                                    rows={4}
+                                                    value={null}
+                                                  >
+                                                    <ReactResizeObserver
+                                                      disabled={true}
+                                                      onResize={[Function]}
+                                                    >
+                                                      <textarea
+                                                        className="ant-input"
+                                                        disabled={false}
+                                                        onChange={[Function]}
+                                                        onKeyDown={[Function]}
+                                                        rows={4}
+                                                        style={Object {}}
+                                                        value=""
+                                                      />
+                                                    </ReactResizeObserver>
+                                                  </TextArea>
+                                                </span>
+                                                <Animate
+                                                  animation={Object {}}
+                                                  component=""
+                                                  componentProps={Object {}}
+                                                  key="help"
+                                                  onAppear={[Function]}
+                                                  onEnd={[Function]}
+                                                  onEnter={[Function]}
+                                                  onLeave={[Function]}
+                                                  transitionAppear={true}
+                                                  transitionEnter={true}
+                                                  transitionLeave={true}
+                                                  transitionName="show-help"
+                                                />
+                                              </div>
+                                            </div>
+                                          </Col>
+                                        </div>
+                                      </Row>
+                                    </FormItem>
+                                    <FormItem
+                                      hasFeedback={false}
+                                    >
+                                      <Row
+                                        className="ant-form-item"
+                                        gutter={0}
+                                        key="row"
+                                      >
+                                        <div
+                                          className="ant-row ant-form-item"
+                                        >
+                                          <Col
+                                            className="ant-form-item-control-wrapper"
+                                          >
+                                            <div
+                                              className="ant-col ant-form-item-control-wrapper"
+                                            >
+                                              <div
+                                                className="ant-form-item-control"
+                                              >
+                                                <span
+                                                  className="ant-form-item-children"
+                                                >
+                                                  <Button
+                                                    block={false}
+                                                    ghost={false}
+                                                    htmlType="submit"
+                                                    loading={false}
+                                                    onClick={[Function]}
+                                                    type="primary"
+                                                  >
+                                                    <Wave>
+                                                      <button
+                                                        className="ant-btn ant-btn-primary"
+                                                        onClick={[Function]}
+                                                        type="submit"
+                                                      >
+                                                        <span
+                                                          key=".0"
+                                                        >
+                                                          Agregar Comentario
+                                                        </span>
+                                                      </button>
+                                                    </Wave>
+                                                  </Button>
+                                                </span>
+                                                <Animate
+                                                  animation={Object {}}
+                                                  component=""
+                                                  componentProps={Object {}}
+                                                  key="help"
+                                                  onAppear={[Function]}
+                                                  onEnd={[Function]}
+                                                  onEnter={[Function]}
+                                                  onLeave={[Function]}
+                                                  transitionAppear={true}
+                                                  transitionEnter={true}
+                                                  transitionLeave={true}
+                                                  transitionName="show-help"
+                                                />
+                                              </div>
+                                            </div>
+                                          </Col>
+                                        </div>
+                                      </Row>
+                                    </FormItem>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </Comment>
+                      </CommentEditor>
+                    </div>
+                  </div>
+                </Comments>
+              </div>
+            </div>
+          </IssuePage>
+        </div>
+      </div>
+    </_default>
+  </div>
+</ReadmeContent>
+`;
+
+exports[`Storyshots IssuePage Status Handler 1`] = `
+<ReadmeContent
+  codeTheme="github"
+  layout={
+    Array [
+      Object {
+        "content": <React.Fragment>
+          <Status
+            status="open"
+          />
+        </React.Fragment>,
+        "type": "STORY",
+      },
+    ]
+  }
+  theme={Object {}}
+  types={
+    Array [
+      "MD",
+      "STORY",
+      "PROPS",
+      "FOOTER_MD",
+      "HEADER_MD",
+    ]
+  }
+>
+  <div
+    className="storybook-readme-story"
+  >
+    <_default
+      key="0"
+    >
+      <div
+        style={
+          Object {
+            "margin": "32px 0",
+          }
+        }
+      >
+        <div>
+          <Status
+            status="open"
+          >
+            <Dropdown
+              className="open-status"
+              mouseEnterDelay={0.15}
+              mouseLeaveDelay={0.1}
+              overlay={
+                <Menu>
+                  <MenuItem>
+                    Marcar como Resuelto
+                  </MenuItem>
+                </Menu>
+              }
+              placement="bottomLeft"
+            >
+              <Dropdown
+                className="open-status"
+                defaultVisible={false}
+                mouseEnterDelay={0.15}
+                mouseLeaveDelay={0.1}
+                onVisibleChange={[Function]}
+                overlay={[Function]}
+                overlayClassName=""
+                overlayStyle={Object {}}
+                placement="bottomLeft"
+                prefixCls="ant-dropdown"
+                showAction={Array []}
+                transitionName="slide-up"
+                trigger={
+                  Array [
+                    "hover",
+                  ]
+                }
+              >
+                <Trigger
+                  action={
+                    Array [
+                      "hover",
+                    ]
+                  }
+                  afterPopupVisibleChange={[Function]}
+                  blurDelay={0.15}
+                  builtinPlacements={
+                    Object {
+                      "bottomCenter": Object {
+                        "offset": Array [
+                          0,
+                          4,
+                        ],
+                        "overflow": Object {
+                          "adjustX": 1,
+                          "adjustY": 1,
+                        },
+                        "points": Array [
+                          "tc",
+                          "bc",
+                        ],
+                        "targetOffset": Array [
+                          0,
+                          0,
+                        ],
+                      },
+                      "bottomLeft": Object {
+                        "offset": Array [
+                          0,
+                          4,
+                        ],
+                        "overflow": Object {
+                          "adjustX": 1,
+                          "adjustY": 1,
+                        },
+                        "points": Array [
+                          "tl",
+                          "bl",
+                        ],
+                        "targetOffset": Array [
+                          0,
+                          0,
+                        ],
+                      },
+                      "bottomRight": Object {
+                        "offset": Array [
+                          0,
+                          4,
+                        ],
+                        "overflow": Object {
+                          "adjustX": 1,
+                          "adjustY": 1,
+                        },
+                        "points": Array [
+                          "tr",
+                          "br",
+                        ],
+                        "targetOffset": Array [
+                          0,
+                          0,
+                        ],
+                      },
+                      "topCenter": Object {
+                        "offset": Array [
+                          0,
+                          -4,
+                        ],
+                        "overflow": Object {
+                          "adjustX": 1,
+                          "adjustY": 1,
+                        },
+                        "points": Array [
+                          "bc",
+                          "tc",
+                        ],
+                        "targetOffset": Array [
+                          0,
+                          0,
+                        ],
+                      },
+                      "topLeft": Object {
+                        "offset": Array [
+                          0,
+                          -4,
+                        ],
+                        "overflow": Object {
+                          "adjustX": 1,
+                          "adjustY": 1,
+                        },
+                        "points": Array [
+                          "bl",
+                          "tl",
+                        ],
+                        "targetOffset": Array [
+                          0,
+                          0,
+                        ],
+                      },
+                      "topRight": Object {
+                        "offset": Array [
+                          0,
+                          -4,
+                        ],
+                        "overflow": Object {
+                          "adjustX": 1,
+                          "adjustY": 1,
+                        },
+                        "points": Array [
+                          "br",
+                          "tr",
+                        ],
+                        "targetOffset": Array [
+                          0,
+                          0,
+                        ],
+                      },
+                    }
+                  }
+                  className="open-status"
+                  defaultPopupVisible={false}
+                  defaultVisible={false}
+                  destroyPopupOnHide={false}
+                  focusDelay={0}
+                  getDocument={[Function]}
+                  getPopupClassNameFromAlign={[Function]}
+                  hideAction={Array []}
+                  mask={false}
+                  maskClosable={true}
+                  mouseEnterDelay={0.15}
+                  mouseLeaveDelay={0.1}
+                  onPopupAlign={[Function]}
+                  onPopupVisibleChange={[Function]}
+                  onVisibleChange={[Function]}
+                  overlay={[Function]}
+                  popup={[Function]}
+                  popupAlign={Object {}}
+                  popupClassName=""
+                  popupPlacement="bottomLeft"
+                  popupStyle={Object {}}
+                  popupTransitionName="slide-up"
+                  popupVisible={false}
+                  prefixCls="ant-dropdown"
+                  showAction={Array []}
+                >
+                  <Button
+                    block={false}
+                    className="ant-dropdown-trigger open-status"
+                    ghost={false}
+                    htmlType="button"
+                    key="trigger"
+                    loading={false}
+                    onMouseEnter={[Function]}
+                    onMouseLeave={[Function]}
+                  >
+                    <Wave>
+                      <button
+                        className="ant-btn ant-dropdown-trigger open-status"
+                        onClick={[Function]}
+                        onMouseEnter={[Function]}
+                        onMouseLeave={[Function]}
+                        type="button"
+                      >
+                        <Icon
+                          key=".0"
+                          type="exclamation-circle"
+                        >
+                          <LocaleReceiver
+                            componentName="Icon"
+                          >
+                            <i
+                              aria-label="icon: exclamation-circle"
+                              className="anticon anticon-exclamation-circle"
+                            >
+                              <IconReact
+                                className=""
+                                type="exclamation-circle-o"
+                              >
+                                <svg
+                                  aria-hidden="true"
+                                  className=""
+                                  data-icon="exclamation-circle"
+                                  fill="currentColor"
+                                  focusable="false"
+                                  height="1em"
+                                  key="svg-exclamation-circle"
+                                  viewBox="64 64 896 896"
+                                  width="1em"
+                                >
+                                  <path
+                                    d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                    key="svg-exclamation-circle-svg-0"
+                                  />
+                                  <path
+                                    d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+                                    key="svg-exclamation-circle-svg-1"
+                                  />
+                                </svg>
+                              </IconReact>
+                            </i>
+                          </LocaleReceiver>
+                        </Icon>
+                        <span
+                          key=".1"
+                        >
+                          Abierto
+                        </span>
+                      </button>
+                    </Wave>
+                  </Button>
+                </Trigger>
+              </Dropdown>
+            </Dropdown>
+          </Status>
+        </div>
+      </div>
+    </_default>
+  </div>
+</ReadmeContent>
+`;
+
+exports[`Storyshots IssuePage Status Handler closed 1`] = `
+<ReadmeContent
+  codeTheme="github"
+  layout={
+    Array [
+      Object {
+        "content": <React.Fragment>
+          <Status
+            status="closed"
+          />
+        </React.Fragment>,
+        "type": "STORY",
+      },
+    ]
+  }
+  theme={Object {}}
+  types={
+    Array [
+      "MD",
+      "STORY",
+      "PROPS",
+      "FOOTER_MD",
+      "HEADER_MD",
+    ]
+  }
+>
+  <div
+    className="storybook-readme-story"
+  >
+    <_default
+      key="0"
+    >
+      <div
+        style={
+          Object {
+            "margin": "32px 0",
+          }
+        }
+      >
+        <div>
+          <Status
+            status="closed"
+          >
+            <div
+              className="closed-status"
+            >
+              <Dropdown
+                mouseEnterDelay={0.15}
+                mouseLeaveDelay={0.1}
+                overlay={
+                  <Menu>
+                    <MenuItem>
+                      Reabrir
+                    </MenuItem>
+                  </Menu>
+                }
+                placement="bottomLeft"
+              >
+                <Dropdown
+                  defaultVisible={false}
+                  mouseEnterDelay={0.15}
+                  mouseLeaveDelay={0.1}
+                  onVisibleChange={[Function]}
+                  overlay={[Function]}
+                  overlayClassName=""
+                  overlayStyle={Object {}}
+                  placement="bottomLeft"
+                  prefixCls="ant-dropdown"
+                  showAction={Array []}
+                  transitionName="slide-up"
+                  trigger={
+                    Array [
+                      "hover",
+                    ]
+                  }
+                >
+                  <Trigger
+                    action={
+                      Array [
+                        "hover",
+                      ]
+                    }
+                    afterPopupVisibleChange={[Function]}
+                    blurDelay={0.15}
+                    builtinPlacements={
+                      Object {
+                        "bottomCenter": Object {
+                          "offset": Array [
+                            0,
+                            4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "tc",
+                            "bc",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "bottomLeft": Object {
+                          "offset": Array [
+                            0,
+                            4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "tl",
+                            "bl",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "bottomRight": Object {
+                          "offset": Array [
+                            0,
+                            4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "tr",
+                            "br",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "topCenter": Object {
+                          "offset": Array [
+                            0,
+                            -4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "bc",
+                            "tc",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "topLeft": Object {
+                          "offset": Array [
+                            0,
+                            -4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "bl",
+                            "tl",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "topRight": Object {
+                          "offset": Array [
+                            0,
+                            -4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "br",
+                            "tr",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                      }
+                    }
+                    defaultPopupVisible={false}
+                    defaultVisible={false}
+                    destroyPopupOnHide={false}
+                    focusDelay={0}
+                    getDocument={[Function]}
+                    getPopupClassNameFromAlign={[Function]}
+                    hideAction={Array []}
+                    mask={false}
+                    maskClosable={true}
+                    mouseEnterDelay={0.15}
+                    mouseLeaveDelay={0.1}
+                    onPopupAlign={[Function]}
+                    onPopupVisibleChange={[Function]}
+                    onVisibleChange={[Function]}
+                    overlay={[Function]}
+                    popup={[Function]}
+                    popupAlign={Object {}}
+                    popupClassName=""
+                    popupPlacement="bottomLeft"
+                    popupStyle={Object {}}
+                    popupTransitionName="slide-up"
+                    popupVisible={false}
+                    prefixCls="ant-dropdown"
+                    showAction={Array []}
+                  >
+                    <Button
+                      block={false}
+                      className="action-trigger ant-dropdown-trigger"
+                      ghost={false}
+                      htmlType="button"
+                      key="trigger"
+                      loading={false}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <Wave>
+                        <button
+                          className="ant-btn action-trigger ant-dropdown-trigger"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          type="button"
+                        >
+                          <Icon
+                            className="status-icon"
+                            key=".0"
+                            type="check-circle"
+                          >
+                            <LocaleReceiver
+                              componentName="Icon"
+                            >
+                              <i
+                                aria-label="icon: check-circle"
+                                className="anticon anticon-check-circle status-icon"
+                              >
+                                <IconReact
+                                  className=""
+                                  type="check-circle-o"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className=""
+                                    data-icon="check-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    key="svg-check-circle"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M699 353h-46.9c-10.2 0-19.9 4.9-25.9 13.3L469 584.3l-71.2-98.8c-6-8.3-15.6-13.3-25.9-13.3H325c-6.5 0-10.3 7.4-6.5 12.7l124.6 172.8a31.8 31.8 0 0 0 51.7 0l210.6-292c3.9-5.3.1-12.7-6.4-12.7z"
+                                      key="svg-check-circle-svg-0"
+                                    />
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      key="svg-check-circle-svg-1"
+                                    />
+                                  </svg>
+                                </IconReact>
+                              </i>
+                            </LocaleReceiver>
+                          </Icon>
+                          <span
+                            key=".1"
+                          >
+                            Resuelto
+                          </span>
+                          <Icon
+                            key=".2"
+                            type="down"
+                          >
+                            <LocaleReceiver
+                              componentName="Icon"
+                            >
+                              <i
+                                aria-label="icon: down"
+                                className="anticon anticon-down"
+                              >
+                                <IconReact
+                                  className=""
+                                  type="down-o"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className=""
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    key="svg-down"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                      key="svg-down-svg-0"
+                                    />
+                                  </svg>
+                                </IconReact>
+                              </i>
+                            </LocaleReceiver>
+                          </Icon>
+                        </button>
+                      </Wave>
+                    </Button>
+                  </Trigger>
+                </Dropdown>
+              </Dropdown>
+            </div>
+          </Status>
+        </div>
+      </div>
+    </_default>
+  </div>
+</ReadmeContent>
+`;
+
+exports[`Storyshots IssuePage Status Handler open 1`] = `
+<ReadmeContent
+  codeTheme="github"
+  layout={
+    Array [
+      Object {
+        "content": <React.Fragment>
+          <Status
+            status="open"
+          />
+        </React.Fragment>,
+        "type": "STORY",
+      },
+    ]
+  }
+  theme={Object {}}
+  types={
+    Array [
+      "MD",
+      "STORY",
+      "PROPS",
+      "FOOTER_MD",
+      "HEADER_MD",
+    ]
+  }
+>
+  <div
+    className="storybook-readme-story"
+  >
+    <_default
+      key="0"
+    >
+      <div
+        style={
+          Object {
+            "margin": "32px 0",
+          }
+        }
+      >
+        <div>
+          <Status
+            status="open"
+          >
+            <div
+              className="open-status"
+            >
+              <Dropdown
+                mouseEnterDelay={0.15}
+                mouseLeaveDelay={0.1}
+                overlay={
+                  <Menu>
+                    <MenuItem>
+                      Marcar como Resuelto
+                    </MenuItem>
+                  </Menu>
+                }
+                placement="bottomLeft"
+              >
+                <Dropdown
+                  defaultVisible={false}
+                  mouseEnterDelay={0.15}
+                  mouseLeaveDelay={0.1}
+                  onVisibleChange={[Function]}
+                  overlay={[Function]}
+                  overlayClassName=""
+                  overlayStyle={Object {}}
+                  placement="bottomLeft"
+                  prefixCls="ant-dropdown"
+                  showAction={Array []}
+                  transitionName="slide-up"
+                  trigger={
+                    Array [
+                      "hover",
+                    ]
+                  }
+                >
+                  <Trigger
+                    action={
+                      Array [
+                        "hover",
+                      ]
+                    }
+                    afterPopupVisibleChange={[Function]}
+                    blurDelay={0.15}
+                    builtinPlacements={
+                      Object {
+                        "bottomCenter": Object {
+                          "offset": Array [
+                            0,
+                            4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "tc",
+                            "bc",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "bottomLeft": Object {
+                          "offset": Array [
+                            0,
+                            4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "tl",
+                            "bl",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "bottomRight": Object {
+                          "offset": Array [
+                            0,
+                            4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "tr",
+                            "br",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "topCenter": Object {
+                          "offset": Array [
+                            0,
+                            -4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "bc",
+                            "tc",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "topLeft": Object {
+                          "offset": Array [
+                            0,
+                            -4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "bl",
+                            "tl",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                        "topRight": Object {
+                          "offset": Array [
+                            0,
+                            -4,
+                          ],
+                          "overflow": Object {
+                            "adjustX": 1,
+                            "adjustY": 1,
+                          },
+                          "points": Array [
+                            "br",
+                            "tr",
+                          ],
+                          "targetOffset": Array [
+                            0,
+                            0,
+                          ],
+                        },
+                      }
+                    }
+                    defaultPopupVisible={false}
+                    defaultVisible={false}
+                    destroyPopupOnHide={false}
+                    focusDelay={0}
+                    getDocument={[Function]}
+                    getPopupClassNameFromAlign={[Function]}
+                    hideAction={Array []}
+                    mask={false}
+                    maskClosable={true}
+                    mouseEnterDelay={0.15}
+                    mouseLeaveDelay={0.1}
+                    onPopupAlign={[Function]}
+                    onPopupVisibleChange={[Function]}
+                    onVisibleChange={[Function]}
+                    overlay={[Function]}
+                    popup={[Function]}
+                    popupAlign={Object {}}
+                    popupClassName=""
+                    popupPlacement="bottomLeft"
+                    popupStyle={Object {}}
+                    popupTransitionName="slide-up"
+                    popupVisible={false}
+                    prefixCls="ant-dropdown"
+                    showAction={Array []}
+                  >
+                    <Button
+                      block={false}
+                      className="action-trigger ant-dropdown-trigger"
+                      ghost={false}
+                      htmlType="button"
+                      key="trigger"
+                      loading={false}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <Wave>
+                        <button
+                          className="ant-btn action-trigger ant-dropdown-trigger"
+                          onClick={[Function]}
+                          onMouseEnter={[Function]}
+                          onMouseLeave={[Function]}
+                          type="button"
+                        >
+                          <Icon
+                            className="status-icon"
+                            key=".0"
+                            type="exclamation-circle"
+                          >
+                            <LocaleReceiver
+                              componentName="Icon"
+                            >
+                              <i
+                                aria-label="icon: exclamation-circle"
+                                className="anticon anticon-exclamation-circle status-icon"
+                              >
+                                <IconReact
+                                  className=""
+                                  type="exclamation-circle-o"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className=""
+                                    data-icon="exclamation-circle"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    key="svg-exclamation-circle"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+                                      key="svg-exclamation-circle-svg-0"
+                                    />
+                                    <path
+                                      d="M464 688a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm24-112h48c4.4 0 8-3.6 8-8V296c0-4.4-3.6-8-8-8h-48c-4.4 0-8 3.6-8 8v272c0 4.4 3.6 8 8 8z"
+                                      key="svg-exclamation-circle-svg-1"
+                                    />
+                                  </svg>
+                                </IconReact>
+                              </i>
+                            </LocaleReceiver>
+                          </Icon>
+                          <span
+                            key=".1"
+                          >
+                            Abierto
+                          </span>
+                          <Icon
+                            key=".2"
+                            type="down"
+                          >
+                            <LocaleReceiver
+                              componentName="Icon"
+                            >
+                              <i
+                                aria-label="icon: down"
+                                className="anticon anticon-down"
+                              >
+                                <IconReact
+                                  className=""
+                                  type="down-o"
+                                >
+                                  <svg
+                                    aria-hidden="true"
+                                    className=""
+                                    data-icon="down"
+                                    fill="currentColor"
+                                    focusable="false"
+                                    height="1em"
+                                    key="svg-down"
+                                    viewBox="64 64 896 896"
+                                    width="1em"
+                                  >
+                                    <path
+                                      d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                      key="svg-down-svg-0"
+                                    />
+                                  </svg>
+                                </IconReact>
+                              </i>
+                            </LocaleReceiver>
+                          </Icon>
+                        </button>
+                      </Wave>
+                    </Button>
+                  </Trigger>
+                </Dropdown>
+              </Dropdown>
+            </div>
+          </Status>
+        </div>
+      </div>
+    </_default>
+  </div>
+</ReadmeContent>
+`;
+
 exports[`Storyshots LastIssuesPanel Empty List 1`] = `
 <ReadmeContent
   codeTheme="github"

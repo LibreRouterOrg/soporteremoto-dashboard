@@ -53,15 +53,9 @@ const longUsernameIssue = {
     user: longUsernameUser
 }
 
-const closedIssue = {
-    ...issue,
-    status: "closed"
-}
-
 storiesOf('LastIssuesPanel/IssueSmallResume', module)
     .add('A person issue', () => <IssueSmallResume issue={issue} {...actions} />)
     .add('A person issue that affects me', () => <IssueSmallResume issue={issue} affectsMe {...actions} />)
     .add('No avatar issue', () => <IssueSmallResume issue={noavatar_issue} {...actions} />)
     .add('Bot issue', () => <IssueSmallResume issue={bot_issue} {...actions} />)
     .add('Very long reporter one', () => <IssueSmallResume issue={longUsernameIssue} {...actions} />)
-    .add('Closed issue', () => <IssueSmallResume issue={closedIssue} {...actions} />)

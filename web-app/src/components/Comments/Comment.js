@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Comment as CommentAntd, Tooltip, Input, Form, Button } from 'antd';
 import { Avatar } from '../utils';
 import moment from 'moment';
