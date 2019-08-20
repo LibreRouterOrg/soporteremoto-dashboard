@@ -3,7 +3,6 @@ import { storiesOf } from '@storybook/react';
 import IssueSmallResume from './IssueSmallResume';
 import { action } from '@storybook/addon-actions';
 import gferrero_avatar from '../../../assets/gferrero_avatar.jpeg';
-import { commonIssuesDict } from '../../data';
 import { issue } from '../../data/mockData';
 
 const user = {

@@ -6,24 +6,26 @@ class LoginForm extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
-          if (!err) {
-            this.props.handleSubmit(values);
-          }
+            if (!err) {
+                this.props.handleSubmit(values);
+            }
         });
-      };
+    };
 
-    render(){
+    render() {
         const { getFieldDecorator } = this.props.form;
+        const seedPhraseDecorator = getFieldDecorator('seedPhrase', {
+            rules: [{ required: true,
+                      message: 'Por favor indica tu frase secreta'}],
+        });
         return (
             <Form onSubmit={this.handleSubmit} className="login-form">
                 <Form.Item>
-                    {getFieldDecorator('username', {
-                        rules: [{ required: true, message: 'Porfavor indica tu nombre de usuario!' }],
-                    })(
+                    {seedPhraseDecorator(
                         <Input
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="Usuario"
-                        />,
+                            prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            placeholder="Frase Secreta"
+                        /> ,
                     )}
                 </Form.Item>
                 <Button type="primary" htmlType="submit" className="login-form-button">
@@ -34,5 +36,5 @@ class LoginForm extends React.Component {
     }
 }
 
-const Login = Form.create({name:'login_form'})(LoginForm)
+const Login = Form.create({ name: 'login_form' })(LoginForm)
 export default Login;

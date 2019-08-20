@@ -1,0 +1,7 @@
+.congrats {
+    padding: 1rem;
+}
+
+.congrats > Button {
+    float: right;
+}
