@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Input, Button, Icon } from 'antd';
+import { Form, Input, Button } from 'antd';
 import './Login.css';
 
 function login(seedPhrase) {
