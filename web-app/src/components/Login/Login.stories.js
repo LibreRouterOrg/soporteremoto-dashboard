@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import Login from './Login';
 
-const handleSumbit = action('handleSumbit');
+const handleSuccess = action('handleSuccess');
 
 storiesOf('Login', module)
-    .add('LoginForm', () => <Login handleSubmit={handleSumbit}></Login>)
+    .add('LoginForm', () => <Login handleSuccess={handleSuccess}></Login>)
