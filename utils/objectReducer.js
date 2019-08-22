@@ -1,0 +1,1 @@
+export default  (objs = []) => objs.reduce((prev,act) => Object.assign(prev? prev: {}, act),{})
