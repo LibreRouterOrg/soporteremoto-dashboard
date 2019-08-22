@@ -7,7 +7,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 
 const nodes = ["ql-roxa", "ql-nicoyjesi", "ql-natiysofi", "si-silvia"];
-const defaultNode = ["ql-roxa"];
+const defaultNode = "ql-roxa";
 
 const onLeaveBackward = action('onLeaveBackward');
 const onLeaveForward = action('onLeaveForward');
@@ -25,4 +25,4 @@ storiesOf('NewReportWizard', module)
     .add('Node Selection', () => <NodeSelectionStep isFirst nodes={nodes} defaultNode={defaultNode} onLeaveForward={onLeaveForward} onLeaveBackward={onLeaveBackward}/>)
     .add('Problem Selection', () => <ProblemSelectionStep onLeaveForward={onLeaveForward} onLeaveBackward={onLeaveBackward}/>)
     .add('Problem Body', () => <ProblemBodyStep isLast onLeaveForward={onLeaveForward} onLeaveBackward={onLeaveBackward}/>)
-    .add('Interactive Wizard', () => <NewReportWizard nodes={nodes} defaultNode="ql-roxa" onFinish={onFinish}/>)
+    .add('Interactive Wizard', () => <NewReportWizard nodes={nodes} defaultNode={defaultNode} onFinish={onFinish}/>)
