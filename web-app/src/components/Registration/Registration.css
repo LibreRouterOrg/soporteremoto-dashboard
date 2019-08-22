@@ -1,8 +1,15 @@
 .registration-form {
     max-width: 40rem;
+}
+
+.registration-page {
     padding: 1rem;
 }
 
 .registration-form-button {
     width: 100%;
+}
+
+.or-login {
+    text-align: center;
 }

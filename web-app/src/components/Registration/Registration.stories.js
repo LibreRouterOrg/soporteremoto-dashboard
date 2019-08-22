@@ -11,4 +11,4 @@ const seedPhrase = "witch collapse practice feed shame open despair creek road a
 storiesOf('Registration', module)
     .add('Default Node Roxa', () => <Registration handleSubmit={handleSumbit} nodes={nodes} defaultNode="ql-roxa"></Registration>)
     .add('No default node', () => <Registration handleSubmit={handleSumbit} nodes={nodes}></Registration>)
-    .add('Congrats after registering', () => <Congrats seedPhrase={seedPhrase}/>)
+    .add('Congrats after registering', () => <Congrats seedPhrase={seedPhrase} username={'gferrero'}/>)
