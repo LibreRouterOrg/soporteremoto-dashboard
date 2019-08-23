@@ -18,7 +18,7 @@ class NodeSelectionStep extends Component {
     render() {
         return (
             <WizardStep shouldRender={this.props.shouldRender}>
-                <div className="step-header">
+                <div className="step-title">
                     <p>En qué nodo notaste el problema</p>
                 </div>
                 <Select showSearch defaultValue={this.state.node}

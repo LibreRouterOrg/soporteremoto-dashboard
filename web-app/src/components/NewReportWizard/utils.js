@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 import { Button, Icon } from 'antd';
 import './utils.css';
 
@@ -32,7 +33,11 @@ export function WizardStep(props) {
     }
     return (
         <div className="wizard-step">
-            {props.children}
+            <div className="step-header">
+                Nuevo Reporte
+                <Button className='close-button' icon="close" onClick={() => {navigate('/')}}/>
+            </div>
+            <div className="step-content">{props.children}</div>
         </div>
     );
 }

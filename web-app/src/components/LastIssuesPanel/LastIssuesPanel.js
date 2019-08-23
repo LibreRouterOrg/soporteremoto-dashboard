@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from '@reach/router';
 import './LastIssuesPanel.less';
 import IssueSmallResume from './IssueSmallResume';
 import { Tabs, Icon, List, Button } from 'antd';
-
 const { TabPane } = Tabs;
 
 
 /* These two styles modify antd components to be flex containers
 and allow issues list to be scrollable. Newer versions of antd may break this UI */
 const tabsStyle = {
+    flex: "auto",
     display: "flex",
     flexDirection: "column",
 };
@@ -57,9 +58,11 @@ function IssuesList({ issues }) {
 function NewIssue() {
     return (
         <div className="new-issue">
-            <Button type="link" icon="notification" size='large'>
-                Nuevo Reporte
-            </Button>
+            <Link to='/reports/new'>
+                <Button type="link" icon="notification" size='large'>
+                    Nuevo Reporte
+                </Button>
+            </Link>
         </div>
     )
 }
@@ -75,4 +78,13 @@ function LastIssuesPanel({ issues }) {
     )
 }
 
-export default LastIssuesPanel;
+function getReports() {
+    /* To be replaced with api service */
+    return [];
+}
+
+function LastIssuesPanelContainer() {
+    const issues = getReports();
+    return <LastIssuesPanel issues={issues} />
+}
+export default LastIssuesPanelContainer;

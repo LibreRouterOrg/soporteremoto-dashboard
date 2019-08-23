@@ -87,7 +87,7 @@ class ProblemSelectionStep extends React.Component {
         }
         return (
             <WizardStep shouldRender={this.props.shouldRender}>
-                <div className="step-header">
+                <div className="step-title">
                     <p>Cuál es el problema?</p>
                 </div>
                 <Choices choices={currentChoices} onChange={choiceChange} selected={selected} />
