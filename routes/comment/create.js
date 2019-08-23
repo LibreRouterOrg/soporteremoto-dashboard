@@ -1,13 +1,10 @@
-import { getDb } from "../../db";
+import sbot from "../../db";
+import { orderLog } from "../../utils/orderLog";
 
 export const createComment = (req, res) => {
-    const db = getDb();
     try {
-        const commentData = req.body;
-        // TODO: Add validation
-        db.append({type: 'comment', content: commentData }, () => {
-            res.json({data: { status: "ok" }})
-        })
+        const commentData = orderLog(req.body);
+        sbot.add(commentData,(a,b,c)=>res.json({a,b,c}))
     } catch(error) {
         res.json({error})
     }

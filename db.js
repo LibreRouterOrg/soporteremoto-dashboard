@@ -1,22 +1,25 @@
-import OffsetLog from 'flumelog-offset'
-import codec from 'flumecodec'
-import Flume from 'flumedb'
+const pull = require('pull-stream')
+const ssbKeys = require('ssb-keys')
 
+//create a secret-stack instance and add ssb-db, for persistence.
+var createSbot = require('secret-stack')({})
+    .use(require('ssb-db'))
+    .use(require('scuttlebot/plugins/master'))
+    .use(require('ssb-backlinks'))
+    .use(require('ssb-about'))
 
-import Query from './reducers/query';
-import accountReducer from './reducers/accountReducer';
-import reportReducer from './reducers/reportReducer';
+// create the db instance.
+// Only one instance may be created at a time due to os locks on port and database files.
+var sbot = createSbot(require('ssb-config/inject')('soporteremoto',{
+    port: 8091,
+    caps: {
+      shs: 'v/vqlQfe1EGN5gi187Wpl+0RIaeGaNkjGeoHtjmcouA=',
+      invite: 'VSPZS69Yqzz2F6E+TaQBKjxJqJGXAfkRKwnCbSjvy70='
+    }
+}))
 
+//setTimeout(()=>{
+//
+//},1000)
 
-// Setup db
-const filename = './log/flume.db'
-const log = OffsetLog(filename, {codec: codec.json})
-const db = Flume(log)
-    .use('accounts', accountReducer)
-    .use('reports', reportReducer)
-    .use('query', Query)
-
-
-export const getDb = () => db
-    
-
+export default sbot
