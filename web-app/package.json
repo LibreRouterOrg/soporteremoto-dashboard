@@ -24,7 +24,8 @@
     "react-scripts": "3.0.1",
     "secret-stack": "^6.3.0",
     "ssb-keys": "^7.2.0",
-    "tweetnacl": "^1.0.1"
+    "tweetnacl": "^1.0.1",
+    "tweetnacl-util": "^0.15.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
