@@ -2,11 +2,28 @@
     flex:auto;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
     overflow: hidden;
 }
 
+.step-content{
+    display: flex;
+    flex-direction: column;
+    flex:auto;
+    padding: 1rem;
+}
+
 .step-header {
+    display: flex;
+    box-shadow: 0 2px 8px #f0f1f2;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.step-header .close-button {
+    margin-left: auto;
+}
+
+.step-title {
     margin-bottom: 1rem;
 }
 

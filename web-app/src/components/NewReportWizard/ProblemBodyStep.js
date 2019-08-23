@@ -18,7 +18,7 @@ class ProblemBodyStep extends Component {
     render() {
         return (
             <WizardStep shouldRender={this.props.shouldRender}>
-                <div className="step-header">
+                <div className="step-title">
                     <p>Describe el problema con tus palabras</p>
                 </div>
                 <TextArea autoFocus={true} rows={4} value={this.state.body} onChange={this.onChange} />

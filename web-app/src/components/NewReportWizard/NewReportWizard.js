@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
-
+import { navigate } from '@reach/router';
 import NodeSelectionStep from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
 import ProblemBodyStep from './ProblemBodyStep';
+
+function getNodes() {
+    /* To be replaced with api service */
+    return ['ql-roxa', 'ql-silvia', 'ql-nico'];
+}
+
+function getDefaultNode() {
+    /* To be replaced with default node */
+    return 'ql-roxa';
+}
 
 class NewReportWizard extends Component {
     constructor(props) {
@@ -15,8 +25,8 @@ class NewReportWizard extends Component {
                 'key': 'node_selection',
                 'component': NodeSelectionStep,
                 'props': {
-                    nodes: this.props.nodes,
-                    defaultNode: this.props.defaultNode,
+                    nodes: getNodes(),
+                    defaultNode: getDefaultNode(),
                 }
             },
             {
@@ -40,7 +50,7 @@ class NewReportWizard extends Component {
     onLeaveForward() {
         let currentStep = this.state.currentStep;
         if (currentStep >= (this.steps.length - 1)) {
-            this.props.onFinish();
+            navigate('/');
         } else {
             this.setState({ currentStep: currentStep + 1 })
         }
