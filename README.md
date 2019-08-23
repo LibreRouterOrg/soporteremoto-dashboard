@@ -1,2 +1,0 @@
-# soporteremoto-dashboard
-Dashboard mockup
