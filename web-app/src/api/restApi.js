@@ -1,5 +1,4 @@
 import ssbKey from 'ssb-keys';
-import { get } from 'http';
 
 const sendToLog = async(content, config) => {
     const sequenceData  = await fetch(config.url+'/account/getSequence', {

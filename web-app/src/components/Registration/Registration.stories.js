@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
-import Registration from './Registration';
-import Congrats from './Congrats';
+import {Registration} from './Registration';
+import {Congrats} from './Congrats';
 
 const handleSumbit = action('handleSumbit');
 const nodes = ["ql-roxa", "ql-nicoyjesi", "ql-natiysofi", "si-silvia"];

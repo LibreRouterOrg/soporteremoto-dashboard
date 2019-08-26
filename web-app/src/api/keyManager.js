@@ -50,10 +50,14 @@ const loadOrCreate = () => {
     return credentials;
 }
 
+const set = (credentials) => {
+    localStorage.setItem('credentials', JSON.stringify(credentials))
+}
 
 export default {
     ...ssbKeys, 
     generate,
+    set,
     isSaved,
     regenerate,
     loadOrCreate,

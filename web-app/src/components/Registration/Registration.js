@@ -1,6 +1,8 @@
 import React from 'react';
+import { navigate, Link } from '@reach/router';
 import { Form, Input, Icon, Select, Button } from 'antd';
 import './Registration.css';
+import api from '../../api';
 
 function RegistrationForm(props) {
     const handleSubmit = e => {
@@ -54,11 +56,24 @@ function RegistrationForm(props) {
                 </Form.Item>
             </Form>
             <div className="or-login">
-                <p>O <a href="">Ingresa con tu frase secreta</a></p>
+                <p>O <Link to='/login'>Ingresa con tu frase secreta</Link></p>
             </div>
         </div>
     );
 }
 
-const Registration = Form.create({ name: 'registration_form' })(RegistrationForm)
-export default Registration;
+export const Registration = Form.create({ name: 'registration_form' })(RegistrationForm)
+
+function handleSubmit({ username, node }) {
+    api.account.createAccount({ name: username, node });
+    navigate('/congrats');
+}
+
+class RegistrationPage extends React.Component {
+    render() {
+        return (
+            <Registration handleSubmit={handleSubmit} defaultNode='ql-roxa' nodes={['ql-roxa']} />
+        );
+    }
+}
+export default RegistrationPage;

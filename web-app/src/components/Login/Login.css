@@ -1,4 +1,10 @@
+.login-page {
+    flex: auto;
+    display: flex;
+}
+
 .login-form {
+    flex:auto;
     max-width: 40rem;
     padding: 1rem;
 }

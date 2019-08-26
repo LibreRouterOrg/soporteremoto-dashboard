@@ -4,6 +4,7 @@
 
 .registration-page {
     padding: 1rem;
+    flex:auto;
 }
 
 .registration-form-button {
