@@ -12,17 +12,27 @@ import api from '../../api';
 import './App.less';
 
 function PrivateRoute({ children }) {
-  if (api.account.isLogged()){
+  if (api.account.isLogged()) {
     return <>{children}</>;
   } else {
-    return(
-        <Redirect to="/registration" noThrow/>
+    return (
+      <Redirect to="/registration" noThrow />
     );
   }
 }
 
-function Route({children}) {
+function Route({ children }) {
   return <>{children}</>;
+}
+
+function NotLoggedRoute({ children }) {
+  if (api.account.isLogged()) {
+    return (
+      <Redirect to="/" noThrow />
+    );
+  } else {
+    return <>{children}</>;
+  }
 }
 
 function App() {
@@ -43,10 +53,10 @@ function App() {
             <NewReportWizard path="/reports/new" />
             <IssuePage path="/reports/:id" />
           </Router>
-          <Router primary={false} component={Route}>
-              <Registration path="/registration"/>
-              <Login path="/login"/>
-              <Congrats path="/congrats"/>
+          <Router primary={false} component={NotLoggedRoute}>
+            <Registration path="/registration" />
+            <Login path="/login" />
+            <Congrats path="/congrats" />
           </Router>
         </Col>
       </Row>
