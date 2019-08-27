@@ -19,11 +19,21 @@ export default {
             return { words: keys.words }
         },
         get: restApi.accounts.get,
-        list: restApi.accounts.list
+        list: restApi.accounts.list,
+        recover: (words) => {
+            return keyManager.regenerate(words)
+                .then((keys)=>{
+                    restApi.config({keys})
+                    return new Promise.resolve(keys)
+                })
+        }
     },
-    // reports: {
-    //     create: restApi.reports.create, 
-    //     list: restApi.reports.list
-    // },
-
+    reports: {
+        create: restApi.reports.create, 
+        get: restApi.reports.get,
+        list: restApi.reports.list
+    },
+    comment: {
+        create: restApi.comment.create
+    }
 }
