@@ -7,6 +7,7 @@ var createSbot = require('secret-stack')({})
     .use(require('scuttlebot/plugins/master'))
     .use(require('ssb-backlinks'))
     .use(require('ssb-about'))
+    .use(require('ssb-threads'))
 
 // create the db instance.
 // Only one instance may be created at a time due to os locks on port and database files.

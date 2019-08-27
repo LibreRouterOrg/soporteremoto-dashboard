@@ -7,7 +7,11 @@
     "start": "node run.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["libremesh", "altermundi", "librerouter"],
+  "keywords": [
+    "libremesh",
+    "altermundi",
+    "librerouter"
+  ],
   "author": "Marcos Gutierrez <gmarcos@altermundi.net",
   "license": "ISC",
   "dependencies": {
@@ -19,7 +23,8 @@
     "ssb-backlinks": "^0.7.3",
     "ssb-config": "^3.3.2",
     "ssb-db": "^19.3.0",
-    "ssb-keys": "^7.2.0"
+    "ssb-keys": "^7.2.0",
+    "ssb-threads": "git+https://github.com/gmarcos87/ssb-threads.git#lib"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
