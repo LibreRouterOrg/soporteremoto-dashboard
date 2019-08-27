@@ -24,7 +24,15 @@ const generate = (words) => {
 }
 
 const regenerate = (words) => {
-    return generate(words)
+    return new Promise((res, rej) => {
+        try {
+            const credentials = generate(words)
+            localStorage.setItem('credentials', JSON.stringify(credentials))
+            res(credentials)
+        } catch(e) {
+            rej({error: 'wrong words'})
+        }
+    }
 }
 
 const isSaved = () => {
