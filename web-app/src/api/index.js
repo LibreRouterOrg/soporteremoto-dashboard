@@ -24,7 +24,7 @@ export default {
             return keyManager.regenerate(words)
                 .then((keys)=>{
                     restApi.config({keys})
-                    return new Promise.resolve(keys)
+                    return Promise.resolve(keys)
                 })
         }
     },
