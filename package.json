@@ -24,7 +24,7 @@
     "ssb-config": "^3.3.2",
     "ssb-db": "^19.3.0",
     "ssb-keys": "^7.2.0",
-    "ssb-threads": "git+https://github.com/gmarcos87/ssb-threads.git#lib"
+    "ssb-threads": "^3.6.0"
   },
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
