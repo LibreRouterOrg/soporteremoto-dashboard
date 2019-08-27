@@ -8,12 +8,12 @@ export const listReports = (req,res) => {
         req.body.gt = d.getTime();
         req.body.lt = Date.now();
     }
-
+    
     pull(
-        sbot.messagesByType({type: 'report', live: false, gt: req.body.gt, lt: req.body.lt }),
+        sbot.threads.public({allowlist: 'reports'}),
         pull.collect((err, msgs) => {
             err
-                ? res.json({error: 'reports not found'})
+                ? res.json({error: 'object not found'})
                 : res.json(msgs)
         })
     )
