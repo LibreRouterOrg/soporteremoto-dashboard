@@ -32,7 +32,7 @@ const regenerate = (words) => {
         } catch(e) {
             rej({error: 'wrong words'})
         }
-    }
+    })
 }
 
 const isSaved = () => {
