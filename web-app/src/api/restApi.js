@@ -84,6 +84,22 @@ export default {
         list: (data) => {
             const {gt,lt} = data || {};
             return fetchLog({gt, lt}, {...config, path: '/reports/list'})
+        },
+        get: (id) => {
+            return fetchLog({id}, {...config, path: '/reports/get'})
         }
+    },
+    comment: {
+        create:  ({
+            parent,
+            text
+        }) => {
+            return sendToLog({
+                type: 'report',
+                author: config.keys.publicKey,
+                root: parent,
+                body: text
+            }, {...config, path: '/reports/create'})
+        },
     }
 }
