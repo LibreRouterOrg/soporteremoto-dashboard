@@ -6,14 +6,14 @@ import "./Congrats.css";
 
 const { Text } = Typography;
 
-export function Congrats({ seedPhrase, username }) {
+export function Congrats({ seedPhrase, username, handleExit}) {
     return (
         <div className="congrats">
             <h3>Felicitaciones {username}!</h3>
             <p>Te has registrado correctamente. Esta es tu frase secreta:</p>
             <p><Text code>{seedPhrase}</Text></p>
             <p><b>Conservala</b>, la necesitarás para acceder en el futuro.</p>
-            <Button type="primary" onClick={() => navigate('/')}>Continuar</Button>
+            <Button type="primary" onClick={handleExit}>Continuar</Button>
         </div>
     );
 }
@@ -26,6 +26,7 @@ class CongratsPage extends React.Component {
             seedPhrase: null,
             loading: true,
         }
+        this.handleExit = this.handleExit.bind(this);
     }
 
     componentDidMount() {
@@ -44,9 +45,13 @@ class CongratsPage extends React.Component {
             );
     }
 
+    handleExit() {
+        navigate(this.props.location.state.from);
+    }
+
     render() {
         const {seedPhrase, username} = this.state;
-        return <Congrats seedPhrase={ seedPhrase } username={ username }/>
+        return <Congrats seedPhrase={ seedPhrase } username={ username } handleExit={this.handleExit}/>
     }
 }
 export default CongratsPage;

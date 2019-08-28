@@ -56,7 +56,7 @@ function RegistrationForm(props) {
                 </Form.Item>
             </Form>
             <div className="or-login">
-                <p>O <Link to='/login'>Ingresa con tu frase secreta</Link></p>
+                <p>O <Button type='link' onClick={props.goToLogin}>Ingresa con tu frase secreta</Button></p>
             </div>
         </div>
     );
@@ -64,15 +64,29 @@ function RegistrationForm(props) {
 
 export const Registration = Form.create({ name: 'registration_form' })(RegistrationForm)
 
-function handleSubmit({ username, node }) {
-    api.account.createAccount({ name: username, node });
-    navigate('/congrats');
-}
 
 class RegistrationPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.goToLogin = this.goToLogin.bind(this);
+    }
+
+    handleSubmit({ username, node }) {
+        api.account.createAccount({ name: username, node }).then(
+            () => {
+                navigate('/congrats', {state:{ from: this.props.location.state.from }});
+            }
+        );
+    }
+
+    goToLogin(){
+        navigate('/login', {state:{from:this.props.location.state.from}});
+    }
+
     render() {
         return (
-            <Registration handleSubmit={handleSubmit} defaultNode='ql-roxa' nodes={['ql-roxa']} />
+            <Registration handleSubmit={this.handleSubmit} defaultNode='ql-roxa' nodes={['ql-roxa']} goToLogin={this.goToLogin}/>
         );
     }
 }

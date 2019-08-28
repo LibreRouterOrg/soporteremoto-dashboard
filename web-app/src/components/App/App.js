@@ -15,8 +15,9 @@ function PrivateRoute({ children }) {
   if (api.account.isLogged()) {
     return <>{children}</>;
   } else {
+    const pathname = children.props.location.pathname;
     return (
-      <Redirect to="/registration" noThrow />
+      <Redirect to="/registration" state={{from:pathname}} noThrow />
     );
   }
 }
@@ -52,11 +53,11 @@ function App() {
             <LastIssuesPanel path="/" />
             <NewReportWizard path="/reports/new" />
             <IssuePage path="/reports/:id" />
+            <Congrats path="/congrats" />
           </Router>
           <Router primary={false} component={NotLoggedRoute}>
             <Registration path="/registration" />
             <Login path="/login" />
-            <Congrats path="/congrats" />
           </Router>
         </Col>
       </Row>
