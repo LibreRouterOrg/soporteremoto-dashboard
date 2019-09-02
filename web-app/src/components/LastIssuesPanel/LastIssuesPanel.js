@@ -67,7 +67,7 @@ function NewIssue() {
     )
 }
 
-function LastIssuesPanel({ issues }) {
+export function LastIssuesPanel({ issues }) {
     const open_issues = issues.filter(x => (x.status === 'open'))
     const closed_issues = issues.filter(x => (x.status === 'closed'))
     return (
