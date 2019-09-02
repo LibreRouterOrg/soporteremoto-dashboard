@@ -13911,22 +13911,7 @@ exports[`Storyshots NewReportWizard Problem Selection 1`] = `
 
 exports[`Storyshots Registration Congrats after registering 1`] = `
 <Congrats
-  seedPhrase={
-    Array [
-      "witch",
-      "collapse",
-      "practice",
-      "feed",
-      "shame",
-      "open",
-      "despair",
-      "creek",
-      "road",
-      "again",
-      "ice",
-      "least",
-    ]
-  }
+  seedPhrase="witch collapse practice feed shame open despair creek road again ice least"
   username="gferrero"
 >
   <div
