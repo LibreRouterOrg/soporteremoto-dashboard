@@ -7,6 +7,10 @@ const { Text } = Typography;
 
 const api = {
     account: {
+        isLogged: () => { return {
+            words: 'these are mock words',
+            publicKey: 'this is a mock public key'
+        }},
         get: async id => { return { name: 'gferrero' } }
     }
 }
