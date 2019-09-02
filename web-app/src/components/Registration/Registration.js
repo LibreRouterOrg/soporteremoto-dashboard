@@ -1,6 +1,15 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 import { Form, Input, Icon, Select, Button } from 'antd';
 import './Registration.css';
+
+const api = {
+    account: {
+        createAccount: async (name, node) => {
+            return null
+        }
+    }
+}
 
 function RegistrationForm(props) {
     const handleSubmit = e => {
@@ -54,11 +63,34 @@ function RegistrationForm(props) {
                 </Form.Item>
             </Form>
             <div className="or-login">
-                <p>O <a href="">Ingresa con tu frase secreta</a></p>
+                <p>O <Button type='link' onClick={() => props.handleGoToLogin()}>Ingresa con tu frase secreta</Button></p>
             </div>
         </div>
     );
 }
 
-const Registration = Form.create({ name: 'registration_form' })(RegistrationForm)
-export default Registration;
+export const Registration = Form.create({ name: 'registration_form' })(RegistrationForm)
+
+class RegistrationPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.goToLogin = this.goToLogin.bind(this);
+    }
+    handleSubmit({ username, node }) {
+        api.account.createAccount({ name: username, node }).then(
+            () => {
+                navigate('/congrats', {state:{ from: this.props.location.state.from }});
+            }
+        );
+    }
+    goToLogin(){
+        navigate('/login', {state:{from:this.props.location.state.from}});
+    }
+    render() {
+        return (
+            <Registration handleSubmit={this.handleSubmit} defaultNode='ql-roxa' nodes={['ql-roxa']} handleGoToLogin={this.goToLogin}/>
+        );
+    }
+}
+export default RegistrationPage;

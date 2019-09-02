@@ -14018,6 +14018,7 @@ exports[`Storyshots Registration Congrats after registering 1`] = `
 exports[`Storyshots Registration Default Node Roxa 1`] = `
 <Form(RegistrationForm)
   defaultNode="ql-roxa"
+  handleGoToLogin={[Function]}
   handleSubmit={[Function]}
   nodes={
     Array [
@@ -14053,6 +14054,7 @@ exports[`Storyshots Registration Default Node Roxa 1`] = `
         "validateFieldsAndScroll": [Function],
       }
     }
+    handleGoToLogin={[Function]}
     handleSubmit={[Function]}
     nodes={
       Array [
@@ -14950,11 +14952,26 @@ exports[`Storyshots Registration Default Node Roxa 1`] = `
       >
         <p>
           O 
-          <a
-            href=""
+          <Button
+            block={false}
+            ghost={false}
+            htmlType="button"
+            loading={false}
+            onClick={[Function]}
+            type="link"
           >
-            Ingresa con tu frase secreta
-          </a>
+            <button
+              className="ant-btn ant-btn-link"
+              onClick={[Function]}
+              type="button"
+            >
+              <span
+                key=".0"
+              >
+                Ingresa con tu frase secreta
+              </span>
+            </button>
+          </Button>
         </p>
       </div>
     </div>
@@ -14964,6 +14981,7 @@ exports[`Storyshots Registration Default Node Roxa 1`] = `
 
 exports[`Storyshots Registration No default node 1`] = `
 <Form(RegistrationForm)
+  handleGoToLogin={[Function]}
   handleSubmit={[Function]}
   nodes={
     Array [
@@ -14998,6 +15016,7 @@ exports[`Storyshots Registration No default node 1`] = `
         "validateFieldsAndScroll": [Function],
       }
     }
+    handleGoToLogin={[Function]}
     handleSubmit={[Function]}
     nodes={
       Array [
@@ -15829,11 +15848,26 @@ exports[`Storyshots Registration No default node 1`] = `
       >
         <p>
           O 
-          <a
-            href=""
+          <Button
+            block={false}
+            ghost={false}
+            htmlType="button"
+            loading={false}
+            onClick={[Function]}
+            type="link"
           >
-            Ingresa con tu frase secreta
-          </a>
+            <button
+              className="ant-btn ant-btn-link"
+              onClick={[Function]}
+              type="button"
+            >
+              <span
+                key=".0"
+              >
+                Ingresa con tu frase secreta
+              </span>
+            </button>
+          </Button>
         </p>
       </div>
     </div>
