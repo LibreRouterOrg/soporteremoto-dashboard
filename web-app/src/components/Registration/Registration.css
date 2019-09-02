@@ -1,8 +1,11 @@
 .registration-form {
-    max-width: 40rem;
+    flex: auto;
 }
 
 .registration-page {
+    flex:auto;
+    flex-direction: column;
+    display: flex;
     padding: 1rem;
 }
 

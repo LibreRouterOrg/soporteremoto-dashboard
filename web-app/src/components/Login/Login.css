@@ -1,6 +1,6 @@
 .login-form {
-    max-width: 40rem;
     padding: 1rem;
+    flex:auto;
 }
 
 .login-form-button {

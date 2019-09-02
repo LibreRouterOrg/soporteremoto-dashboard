@@ -16,14 +16,6 @@ const openAndClosedIssues = [
     { ...issue, user: { username: 'nati' }, status: 'closed', common_issue: commonIssuesDict["only_with_some_sites"], timestamp: new Date('2019-06-14T14:40:10Z').getTime() }
 ];
 
-const wrapperStyle = {
-    display: "flex",
-    flexDirection: "column",
-    height: "80vh",
-    width: "100%",
-}
-
 storiesOf('LastIssuesPanel', module)
-    .addDecorator(story => <div style={wrapperStyle}>{story()}</div>)
     .add('Empty List', () => <LastIssuesPanel issues={emptyIssuesList} />)
     .add('Open and Closed Issues', () => <LastIssuesPanel issues={openAndClosedIssues} />)

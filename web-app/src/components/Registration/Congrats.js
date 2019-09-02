@@ -12,7 +12,9 @@ function Congrats({ seedPhrase, username}) {
             <p>Te has registrado correctamente. Esta es tu frase secreta:</p>
             <p><Text code>{seedPhrase_}</Text></p>
             <p><b>Conservala</b>, la necesitarás para acceder en el futuro.</p>
-            <Button type="primary">Continuar</Button>
+            <div className="button-wrapper">
+                <Button type="primary">Continuar</Button>
+            </div>
         </div>
     );
 }

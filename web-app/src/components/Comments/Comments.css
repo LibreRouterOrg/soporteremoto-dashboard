@@ -5,3 +5,11 @@
 .comments-list-header {
     font-weight: bold;
 }
+
+.comment {
+    flex:auto;
+}
+
+.comments-list {
+    flex:auto;
+}
