@@ -1,3 +1,8 @@
+.login-page {
+    flex:auto;
+    display: flex;
+}
+
 .login-form {
     padding: 1rem;
     flex:auto;

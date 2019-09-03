@@ -1,19 +1,18 @@
 import React from 'react';
+import { navigate } from '@reach/router';
 import { Form, Input, Button } from 'antd';
 import './Login.css';
 
-function login(seedPhrase) {
-    /*To be replaced with real login service*/
-    const promise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (seedPhrase === 'notvalid') {
-                reject(new Error('Tu frase secreta no es válida'));
-            } else {
-                resolve();
+const api = {
+    account: {
+        recoverAccount: async seedPhrase => {
+            return {
+                name: 'gferrero',
+                avatar: '/some/avatar/path',
+                node: 'ql-gferrero'
             }
-        }, 400);
-    });
-    return promise;
+        }
+    }
 }
 
 function LoginPresentational({ handleSubmit, submitting, form }) {
@@ -62,17 +61,22 @@ class LoginForm extends React.Component {
         this.props.form.validateFields((error, values) => {
             if (!error) {
                 this.setState({ submitting: true });
-                login(values.seedPhrase)
-                    .then(this.onSuccess)
-                    .catch(error => this.onFailure(error, values))
+                const promise = api.account.recoverAccount(values.seedPhrase);
+                promise
+                    .then(() => navigate('/'))
+                    .catch((error) => {
+                        this.onFailure(error, values)
+                    })
                     .finally(() => this.setState({ submitting: false }));
             }
         });
     };
 
     render() {
-        return(
-            <LoginPresentational form={this.props.form} handleSubmit={this.handleSubmit} submitting={this.state.submitting}/>
+        return (
+            <div className="login-page">
+                <LoginPresentational form={this.props.form} handleSubmit={this.handleSubmit} submitting={this.state.submitting} />
+            </div>
         );
     }
 }
