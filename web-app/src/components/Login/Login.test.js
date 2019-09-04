@@ -1,24 +1,7 @@
 import React from 'react';
-import { render, unmountComponentAtNode } from "react-dom";
-import { mount } from 'enzyme';
-import { act } from "react-dom/test-utils";
-
+import { render, fireEvent, wait } from '@testing-library/react';
 import mockedApi from '../../api';
 import Login from './Login';
-
-let container = null;
-beforeEach(() => {
-    // setup a DOM element as a render target
-    container = document.createElement("div");
-    document.body.appendChild(container);
-});
-
-afterEach(() => {
-    // cleanup on exiting
-    unmountComponentAtNode(container);
-    container.remove();
-    container = null;
-});
 
 jest.mock('../../api', () => {
     const api = {
@@ -56,71 +39,52 @@ jest.mock('../../api', () => {
         <SeedPhraseField error="NOT_VALID">
     */
 
-it('should render an enmpty input field for seed phrase', () => {
-    act(() => {
-        render(<Login />, container);
-    });
+it('should render an empty input field for seed phrase', () => {
+    const {getByLabelText} = render(<Login />);
     expect(
-        container.querySelector('input[name="seedPhrase"]').value
+        getByLabelText("Frase Secreta").value
     ).toBe('');
 })
 
 it('should render a submit button saying Entrar', () => {
-    act(() => {
-        render(<Login />, container);
-    });
+    const {getByText} = render(<Login />);
     expect(
-        container.querySelector('button[type="submit"]').textContent
-    ).toBe('Entrar');
-})
-
-it('should render seed phrase required message when empty', () => {
-    act(() => {
-        render(<Login />, container);
-    });
-    const submitButton = container.querySelector('button[type="submit"]');
-    act(() => {
-        submitButton.dispatchEvent(new MouseEvent("click"), { bubbles: true });
-    });
-    setTimeout(() => {
-        expect(
-            container.innerHTML
-        ).toContain('Por favor indica tu frase secreta');
-    }, 4300);
-    // TODO, We want to have a storybook story for this usecase.
+        getByText('Entrar').getAttribute('type')
+    ).toBe('submit');
 })
 
 
-it('should call account api recover endpoint when submitting a seed phrase', () => {
+it('should render seed phrase required message when submitting empty form', async () => {
+    const {getByText, findByText} = render(<Login/>);
+    const submitButton = getByText('Entrar');
+    fireEvent.click(submitButton);
+    await findByText('Por favor indica tu frase secreta');
+})
+
+
+it('should call account api recover endpoint when submitting a seed phrase', async () => {
     const seedPhrase = 'my seed phrase'
-    let wrapper = null;
-    act(() => {
-        wrapper = mount(<Login />);
-    });
-    const seedPhraseInput = wrapper.find('input[name="seedPhrase"]');
-    act(() => {
-        seedPhraseInput.simulate('change', {target: {name:'seedPhrase', value: seedPhrase}, });
-    })
-    const submitButton = wrapper.find('button[type="submit"]');
-    act(() => {
-        submitButton.simulate('click', { bubbles: true });
-    });
-    setTimeout(() => {
+    const {getByLabelText, getByText} = render(<Login />);
+    const seedPhraseInput = getByLabelText('Frase Secreta');
+    fireEvent.change(seedPhraseInput, {target: {name: 'seedPhrase', value:seedPhrase}});
+    const submitButton = getByText('Entrar');
+    fireEvent.click(submitButton);
+    await wait(() => {
         expect(
             mockedApi.account.recoverAccount
         ).toBeCalledWith(seedPhrase)
-    }, 4300);
+    });
 })
 
-it('should render seed phrase not valid message when submitting not valid seed phrase', () => {
-    // Renderizar el component
-    // Darle submit con un seed phrase no válido
-    // Asegurarse q está el texto SEED_PHRASE_IS_NOT_VALID
-    // Aparte quiero tener un story para esto.
-})
+// it('should render seed phrase not valid message when submitting not valid seed phrase', () => {
+//     // Renderizar el component
+//     // Darle submit con un seed phrase no válido
+//     // Asegurarse q está el texto SEED_PHRASE_IS_NOT_VALID
+//     // Aparte quiero tener un story para esto.
+// })
 
-it('should redirect to location.from after submitting a valid seed phrase', () => {
-    // Renderizar el component viniendo de un location.from
-    // Darle submit con un seed phrase válido
-    // Asegurarse de que redirige al location.from
-});
+// it('should redirect to location.from after submitting a valid seed phrase', () => {
+//     // Renderizar el component viniendo de un location.from
+//     // Darle submit con un seed phrase válido
+//     // Asegurarse de que redirige al location.from
+// });

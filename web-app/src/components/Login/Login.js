@@ -12,7 +12,7 @@ function LoginPresentational({ handleSubmit }) {
             validate={values => {
                 let errors = {};
                 if (!values.seedPhrase) {
-                    errors.seedPhrase = 'Por favor indica tu frase secreta';
+                    errors.seedPhrase = <span id='seedPhraseError'>Por favor indica tu frase secreta</span>;
                 }
                 return errors;
             }}
@@ -23,7 +23,8 @@ function LoginPresentational({ handleSubmit }) {
         >
             {({ isSubmitting }) => (
                 <Form>
-                    <Field type="password" name="seedPhrase" />
+                    <label htmlFor="seedPhrase">Frase Secreta</label>
+                    <Field id="seedPhrase" type="password" name="seedPhrase" />
                     <ErrorMessage name="seedPhrase" component="div" />
                     <button type="submit" disabled={isSubmitting}>
                         Entrar
@@ -46,8 +47,8 @@ class LoginForm extends React.Component {
         this.setState({showError: true});
     }
 
-    handleSubmit = seedPhrase => {
-        const promise = api.account.recoverAccount(seedPhrase);
+    handleSubmit = values => {
+        const promise = api.account.recoverAccount(values.seedPhrase);
         promise
             .then(() => navigate('/'))
             .catch(() => {

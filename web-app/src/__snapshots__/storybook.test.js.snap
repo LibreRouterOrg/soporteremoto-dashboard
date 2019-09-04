@@ -11067,7 +11067,13 @@ exports[`Storyshots Login LoginForm 1`] = `
               onReset={[Function]}
               onSubmit={[Function]}
             >
+              <label
+                htmlFor="seedPhrase"
+              >
+                Frase Secreta
+              </label>
               <FormikConnect(FieldInner)
+                id="seedPhrase"
                 name="seedPhrase"
                 type="password"
               >
@@ -11114,10 +11120,12 @@ exports[`Storyshots Login LoginForm 1`] = `
                       },
                     }
                   }
+                  id="seedPhrase"
                   name="seedPhrase"
                   type="password"
                 >
                   <input
+                    id="seedPhrase"
                     name="seedPhrase"
                     onBlur={[Function]}
                     onChange={[Function]}
