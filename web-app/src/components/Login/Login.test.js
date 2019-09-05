@@ -22,6 +22,11 @@ jest.mock('../../api', () => {
     return api;
 });
 
+const submitButtonParams = [
+    (content, element) => element.textContent === 'Entrar',
+    {'selector': '*[type="submit"]'}
+]
+
 it('should render an empty input field for seed phrase', () => {
     const { getByLabelText } = render(<Login />);
     expect(
@@ -31,15 +36,13 @@ it('should render an empty input field for seed phrase', () => {
 
 it('should render a submit button saying Entrar', () => {
     const { getByText } = render(<Login />);
-    expect(
-        getByText('Entrar').getAttribute('type')
-    ).toBe('submit');
+    getByText(...submitButtonParams)
 })
 
 
 it('should render seed phrase required message when submitting empty seedPhrase', async () => {
     const { getByText, findByText } = render(<Login />);
-    const submitButton = getByText('Entrar');
+    const submitButton = getByText(...submitButtonParams);
     fireEvent.click(submitButton);
     await findByText('Por favor indica tu frase secreta');
 })
@@ -50,7 +53,7 @@ it('should call account api recover endpoint when submitting a seed phrase', asy
     const { getByLabelText, getByText } = render(<Login />);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: seedPhrase } });
-    const submitButton = getByText('Entrar');
+    const submitButton = getByText(...submitButtonParams);
     fireEvent.click(submitButton);
     await wait(() => {
         expect(
@@ -64,7 +67,7 @@ it('should render seed phrase not valid message when submitting not valid seed p
     const { getByLabelText, getByText, findByText } = render(<Login />);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: notValidSeedPhrase } });
-    const submitButton = getByText('Entrar');
+    const submitButton = getByText(...submitButtonParams);
     fireEvent.click(submitButton);
     await findByText('La frase secreta ingresada no es correcta');
 })
@@ -75,7 +78,7 @@ it('should redirect to location.state.from after submitting a valid seed phrase 
     const { getByLabelText, getByText } = render(<Login location={{state:{from:'/reports'}}}/>);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: validSeedPhrase } });
-    const submitButton = getByText('Entrar');
+    const submitButton = getByText(...submitButtonParams);
     fireEvent.click(submitButton);
     await wait(() => {
         expect(
@@ -90,7 +93,7 @@ it('should redirect to / after submitting a valid seed phrase when not location.
     const { getByLabelText, getByText } = render(<Login />);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: validSeedPhrase } });
-    const submitButton = getByText('Entrar');
+    const submitButton = getByText(...submitButtonParams);
     fireEvent.click(submitButton);
     await wait(() => {
         expect(

@@ -6,6 +6,8 @@
 .login-form {
     padding: 1rem;
     flex:auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .login-form-button {

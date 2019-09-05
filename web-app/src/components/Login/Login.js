@@ -1,18 +1,19 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import { Input, Button } from 'antd';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Button, Alert } from 'antd';
+import { Form, Input} from "@jbuschke/formik-antd";
+import { Formik } from 'formik';
 import './Login.css';
 import api from '../../api';
 
-function LoginPresentational({ handleSubmit, showError }) {
+export function Login({ handleSubmit, showError }) {
     return (
         <Formik
-            initialValues={{ seedPhrase: ''}}
+            initialValues={{ seedPhrase: '' }}
             validate={values => {
                 let errors = {};
                 if (!values.seedPhrase) {
-                    errors.seedPhrase = <span id='seedPhraseError'>Por favor indica tu frase secreta</span>;
+                    errors.seedPhrase = 'Por favor indica tu frase secreta';
                 }
                 return errors;
             }}
@@ -22,24 +23,24 @@ function LoginPresentational({ handleSubmit, showError }) {
             }}
         >
             {({ isSubmitting }) => (
-                <Form>
-                    <label htmlFor="seedPhrase">Frase Secreta</label>
-                    <Field id="seedPhrase" type="password" name="seedPhrase" />
-                    <ErrorMessage name="seedPhrase" component="div" />
-                    {showError  &&
-                        <div>La frase secreta ingresada no es correcta</div>
+                <Form className='login-form'>
+                    {showError &&
+                        <Alert type="error" message="La frase secreta ingresada no es correcta"/>
                     }
-                    <button type="submit" disabled={isSubmitting}>
+                    <Form.Item name="seedPhrase" label="Frase Secreta" htmlFor="seedPhrase">
+                        <Input.Password name="seedPhrase" id="seedPhrase"></Input.Password>
+                    </Form.Item>
+                    <Button type="primary" htmlType="submit" disabled={isSubmitting}>
                         Entrar
-                    </button>
+                    </Button>
                 </Form>
             )}
         </Formik>
     );
 }
 
-class LoginForm extends React.Component {
-    constructor(props){
+class LoginContainer extends React.Component {
+    constructor(props) {
         super(props)
         this.state = {
             showError: false,
@@ -48,7 +49,7 @@ class LoginForm extends React.Component {
     }
 
     onFailure = () => {
-        this.setState({showError: true});
+        this.setState({ showError: true });
     }
 
     handleExit() {
@@ -71,10 +72,10 @@ class LoginForm extends React.Component {
     render() {
         return (
             <div className="login-page">
-                <LoginPresentational handleSubmit={this.handleSubmit} showError={this.state.showError}/>
+                <Login handleSubmit={this.handleSubmit} showError={this.state.showError} />
             </div>
         );
     }
 }
 
-export default LoginForm;
+export default LoginContainer;
