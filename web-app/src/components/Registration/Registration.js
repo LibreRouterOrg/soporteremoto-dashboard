@@ -1,95 +1,95 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import { Form, Input, Icon, Select, Button } from 'antd';
+import { Icon, Button } from 'antd';
+import { Form, Input, Select } from "@jbuschke/formik-antd";
+import { Formik } from "formik";
 import './Registration.css';
+import api from '../../api';
 
-const api = {
-    account: {
-        createAccount: async (name, node) => {
-            return null
-        }
-    }
-}
-
-function RegistrationForm(props) {
-    const handleSubmit = e => {
-        e.preventDefault();
-        props.form.validateFields((err, values) => {
-            if (!err) {
-                props.handleSubmit(values);
-            }
-        });
-    };
-    const { getFieldDecorator } = props.form;
-    const usernameDecorator = getFieldDecorator('username', {
-        rules: [{
-            required: true,
-            message: 'Por favor indica un nombre de usuario'
-        }],
-    });
+export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes }) {
     return (
         <div className="registration-page">
-            <Form onSubmit={handleSubmit} className="registration-form">
-                <Form.Item hasFeedback>
-                    {usernameDecorator(
-                        <Input
-                            placeholder="Nombre de Usuario"
-                            prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                        />,
-                    )}
-                </Form.Item>
-                <Form.Item hasFeedback>
-                    {getFieldDecorator('node', {
-                        initialValue: props.defaultNode,
-                    })(
-                        <Select showSearch
-                            placeholder="Selecciona tu Nodo"
-                            optionFilterProp="children"
-                            filterOption={(input, option) =>
-                                option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
-                            }
-                        >
-                            <Select.Option key={null}>&nbsp;</Select.Option>
-                            {props.nodes.map(
-                                node => <Select.Option key={node}>{node}</Select.Option>
-                            )}
-                        </Select>
-                    )}
-                </Form.Item>
-                <Form.Item>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
-                        Registrarme
-                    </Button>
-                </Form.Item>
-            </Form>
+            <Formik
+                initialValues={{ node: defaultNode }}
+                validate={values => {
+                    let errors = {};
+                    if (!values.name) {
+                        errors.name = 'Por favor indica un nombre de usuario';
+                    }
+                    return errors;
+                }}
+                onSubmit={(values, { setSubmitting }) => {
+                    handleSubmit(values);
+                    setSubmitting(false);
+                }}
+            >
+                {({ isSubmitting }) => (
+                    <Form className="registration-form">
+                        <Form.Item name="name" hasFeedback label="Nombre de Usuario" htmlFor="name">
+                            <Input id="name" name="name"prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} />
+                        </Form.Item>
+                        <Form.Item hasFeedback name="node" label="Tu Nodo" htmlFor="name">
+                            <Select showSearch name="node"
+                                optionFilterProp="children"
+                                filterOption={(input, option) =>
+                                    option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                }
+                            >
+                                <Select.Option key={null}>--No tengo nodo--</Select.Option>
+                                {nodes.map(
+                                    node => <Select.Option key={node}>{node}</Select.Option>
+                                )}
+                            </Select>
+                        </Form.Item>
+                        <Form.Item>
+                            <Button type="primary" htmlType="submit" className="login-form-button">
+                                Registrarme
+                            </Button>
+                        </Form.Item>
+                    </Form>
+                )}
+            </Formik>
             <div className="or-login">
-                <p>O <Button type='link' onClick={() => props.handleGoToLogin()}>Ingresa con tu frase secreta</Button></p>
+                <p>O <Button type='link' onClick={() => handleGoToLogin()}>Ingresa con tu frase secreta</Button></p>
             </div>
         </div>
     );
 }
 
-export const Registration = Form.create({ name: 'registration_form' })(RegistrationForm)
-
 class RegistrationPage extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            defaultNode: null,
+            nodes: []
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.goToLogin = this.goToLogin.bind(this);
     }
+
+    componentDidMount() {
+        api.getDefaultNode().then((defaultNode) => {
+            this.setState({ defaultNode: defaultNode });
+        });
+        api.nodes.list().then((nodes) => {
+            this.setState({ nodes: nodes });
+        })
+    }
+
     handleSubmit({ username, node }) {
         api.account.createAccount({ name: username, node }).then(
             () => {
-                navigate('/congrats', {state:{ from: this.props.location.state.from }});
+                navigate('/congrats', { state: { from: this.props.location.state.from } });
             }
         );
     }
-    goToLogin(){
-        navigate('/login', {state:{from:this.props.location.state.from}});
+    goToLogin() {
+        navigate('/login', { state: { from: this.props.location.state.from } });
     }
     render() {
+        const { defaultNode, nodes } = this.state
         return (
-            <Registration handleSubmit={this.handleSubmit} defaultNode='ql-roxa' nodes={['ql-roxa']} handleGoToLogin={this.goToLogin}/>
+            <Registration handleSubmit={this.handleSubmit} defaultNode={defaultNode} nodes={nodes} handleGoToLogin={this.goToLogin} />
         );
     }
 }
