@@ -1,19 +1,10 @@
 import React from 'react';
 import { navigate } from '@reach/router';
 import { Typography, Button } from 'antd';
+import api from '../../api';
 import "./Congrats.css";
 
 const { Text } = Typography;
-
-const api = {
-    account: {
-        isLogged: () => { return {
-            words: 'these are mock words',
-            publicKey: 'this is a mock public key'
-        }},
-        get: async id => { return { name: 'gferrero' } }
-    }
-}
 
 export function Congrats({ seedPhrase, username }) {
     return (

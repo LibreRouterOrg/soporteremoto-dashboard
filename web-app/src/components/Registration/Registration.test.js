@@ -13,7 +13,7 @@ jest.mock('../../api', () => {
             list: async () => ['ql-bob', 'ql-jim', 'ql-roxa']
         },
         account: {
-            createAccount: async({name, node}) => {words: 'your words'}
+            createAccount: async({name, node}) => ({words: 'your words'})
         }
     }
     return api;

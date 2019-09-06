@@ -14370,14 +14370,14 @@ exports[`Storyshots NewReportWizard Problem Selection 1`] = `
 exports[`Storyshots Registration Congrats after registering 1`] = `
 <Congrats
   seedPhrase="witch collapse practice feed shame open despair creek road again ice least"
-  username="gferrero"
+  username="bob"
 >
   <div
     className="congrats"
   >
     <h3>
       Felicitaciones 
-      gferrero
+      bob
       !
     </h3>
     <p>
@@ -14474,7 +14474,7 @@ exports[`Storyshots Registration Congrats after registering 1`] = `
 `;
 
 exports[`Storyshots Registration Default Node Roxa 1`] = `
-<Form(RegistrationForm)
+<Registration
   defaultNode="ql-roxa"
   handleGoToLogin={[Function]}
   handleSubmit={[Function]}
@@ -14487,958 +14487,1040 @@ exports[`Storyshots Registration Default Node Roxa 1`] = `
     ]
   }
 >
-  <RegistrationForm
-    defaultNode="ql-roxa"
-    form={
-      Object {
-        "getFieldDecorator": [Function],
-        "getFieldError": [Function],
-        "getFieldInstance": [Function],
-        "getFieldProps": [Function],
-        "getFieldValue": [Function],
-        "getFieldsError": [Function],
-        "getFieldsValue": [Function],
-        "isFieldTouched": [Function],
-        "isFieldValidating": [Function],
-        "isFieldsTouched": [Function],
-        "isFieldsValidating": [Function],
-        "isSubmitting": [Function],
-        "resetFields": [Function],
-        "setFields": [Function],
-        "setFieldsInitialValue": [Function],
-        "setFieldsValue": [Function],
-        "submit": [Function],
-        "validateFields": [Function],
-        "validateFieldsAndScroll": [Function],
-      }
-    }
-    handleGoToLogin={[Function]}
-    handleSubmit={[Function]}
-    nodes={
-      Array [
-        "ql-roxa",
-        "ql-nicoyjesi",
-        "ql-natiysofi",
-        "si-silvia",
-      ]
-    }
+  <div
+    className="registration-page"
   >
-    <div
-      className="registration-page"
+    <Formik
+      enableReinitialize={false}
+      initialValues={
+        Object {
+          "node": "ql-roxa",
+        }
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validate={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
     >
       <Form
         className="registration-form"
-        colon={true}
-        hideRequiredMark={false}
-        layout="horizontal"
-        onSubmit={[Function]}
       >
-        <form
-          className="ant-form ant-form-horizontal registration-form"
-          onSubmit={[Function]}
-        >
-          <FormItem
-            hasFeedback={true}
+        <FormikConnect(FieldInner)>
+          <FieldInner
+            formik={
+              Object {
+                "dirty": false,
+                "errors": Object {},
+                "handleBlur": [Function],
+                "handleChange": [Function],
+                "handleReset": [Function],
+                "handleSubmit": [Function],
+                "initialValues": Object {
+                  "node": "ql-roxa",
+                },
+                "isSubmitting": false,
+                "isValid": false,
+                "isValidating": false,
+                "registerField": [Function],
+                "resetForm": [Function],
+                "setError": [Function],
+                "setErrors": [Function],
+                "setFieldError": [Function],
+                "setFieldTouched": [Function],
+                "setFieldValue": [Function],
+                "setFormikState": [Function],
+                "setStatus": [Function],
+                "setSubmitting": [Function],
+                "setTouched": [Function],
+                "setValues": [Function],
+                "status": undefined,
+                "submitCount": 0,
+                "submitForm": [Function],
+                "touched": Object {},
+                "unregisterField": [Function],
+                "validate": [Function],
+                "validateField": [Function],
+                "validateForm": [Function],
+                "validateOnBlur": true,
+                "validateOnChange": true,
+                "validationSchema": undefined,
+                "values": Object {
+                  "node": "ql-roxa",
+                },
+              }
+            }
           >
-            <Row
-              className="ant-form-item"
-              gutter={0}
-              key="row"
+            <Form
+              className="registration-form"
+              colon={true}
+              hideRequiredMark={false}
+              layout="horizontal"
+              onReset={[Function]}
+              onSubmit={[Function]}
             >
-              <div
-                className="ant-row ant-form-item"
+              <form
+                className="ant-form ant-form-horizontal registration-form"
+                onReset={[Function]}
+                onSubmit={[Function]}
               >
-                <Col
-                  className="ant-form-item-control-wrapper"
+                <Component
+                  hasFeedback={true}
+                  htmlFor="name"
+                  label="Nombre de Usuario"
+                  name="name"
                 >
-                  <div
-                    className="ant-col ant-form-item-control-wrapper"
+                  <FormikConnect(FieldInner)
+                    name="name"
                   >
-                    <div
-                      className="ant-form-item-control"
+                    <FieldInner
+                      formik={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "node": "ql-roxa",
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validate": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "validationSchema": undefined,
+                          "values": Object {
+                            "node": "ql-roxa",
+                          },
+                        }
+                      }
+                      name="name"
                     >
-                      <span
-                        className="ant-form-item-children"
+                      <FormItem
+                        hasFeedback={true}
+                        help={false}
+                        htmlFor="name"
+                        label="Nombre de Usuario"
                       >
-                        <Input
-                          data-__field={
-                            Object {
-                              "name": "username",
-                            }
-                          }
-                          data-__meta={
-                            Object {
-                              "name": "username",
-                              "originalProps": Object {
-                                "disabled": false,
-                                "placeholder": "Nombre de Usuario",
-                                "prefix": <Icon
-                                  style={
-                                    Object {
-                                      "color": "rgba(0,0,0,.25)",
-                                    }
-                                  }
-                                  type="user"
-                                />,
-                                "type": "text",
-                              },
-                              "ref": null,
-                              "rules": Array [
-                                Object {
-                                  "message": "Por favor indica un nombre de usuario",
-                                  "required": true,
-                                },
-                              ],
-                              "trigger": "onChange",
-                              "validate": Array [
-                                Object {
-                                  "rules": Array [
-                                    Object {
-                                      "message": "Por favor indica un nombre de usuario",
-                                      "required": true,
-                                    },
-                                  ],
-                                  "trigger": Array [
-                                    "onChange",
-                                  ],
-                                },
-                              ],
-                              "valuePropName": "value",
-                            }
-                          }
-                          disabled={false}
-                          id="registration_form_username"
-                          onChange={[Function]}
-                          placeholder="Nombre de Usuario"
-                          prefix={
-                            <Icon
-                              style={
-                                Object {
-                                  "color": "rgba(0,0,0,.25)",
-                                }
-                              }
-                              type="user"
-                            />
-                          }
-                          type="text"
+                        <Row
+                          className="ant-form-item"
+                          gutter={0}
+                          key="row"
                         >
-                          <span
-                            className="ant-input-affix-wrapper"
+                          <div
+                            className="ant-row ant-form-item"
                           >
-                            <span
-                              className="ant-input-prefix"
+                            <Col
+                              className="ant-form-item-label"
                             >
-                              <Icon
-                                style={
-                                  Object {
-                                    "color": "rgba(0,0,0,.25)",
-                                  }
-                                }
-                                type="user"
+                              <div
+                                className="ant-col ant-form-item-label"
                               >
-                                <LocaleReceiver
-                                  componentName="Icon"
+                                <label
+                                  className=""
+                                  htmlFor="name"
+                                  onClick={[Function]}
+                                  title="Nombre de Usuario"
                                 >
-                                  <i
-                                    aria-label="icon: user"
-                                    className="anticon anticon-user"
-                                    style={
-                                      Object {
-                                        "color": "rgba(0,0,0,.25)",
-                                      }
-                                    }
-                                  >
-                                    <IconReact
-                                      className=""
-                                      type="user-o"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        className=""
-                                        data-icon="user"
-                                        fill="currentColor"
-                                        focusable="false"
-                                        height="1em"
-                                        key="svg-user"
-                                        viewBox="64 64 896 896"
-                                        width="1em"
-                                      >
-                                        <path
-                                          d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
-                                          key="svg-user-svg-0"
-                                        />
-                                      </svg>
-                                    </IconReact>
-                                  </i>
-                                </LocaleReceiver>
-                              </Icon>
-                            </span>
-                            <input
-                              className="ant-input"
-                              data-__field={
-                                Object {
-                                  "name": "username",
-                                }
-                              }
-                              data-__meta={
-                                Object {
-                                  "name": "username",
-                                  "originalProps": Object {
-                                    "disabled": false,
-                                    "placeholder": "Nombre de Usuario",
-                                    "prefix": <Icon
-                                      style={
-                                        Object {
-                                          "color": "rgba(0,0,0,.25)",
-                                        }
-                                      }
-                                      type="user"
-                                    />,
-                                    "type": "text",
-                                  },
-                                  "ref": null,
-                                  "rules": Array [
-                                    Object {
-                                      "message": "Por favor indica un nombre de usuario",
-                                      "required": true,
-                                    },
-                                  ],
-                                  "trigger": "onChange",
-                                  "validate": Array [
-                                    Object {
-                                      "rules": Array [
-                                        Object {
-                                          "message": "Por favor indica un nombre de usuario",
-                                          "required": true,
-                                        },
-                                      ],
-                                      "trigger": Array [
-                                        "onChange",
-                                      ],
-                                    },
-                                  ],
-                                  "valuePropName": "value",
-                                }
-                              }
-                              disabled={false}
-                              id="registration_form_username"
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder="Nombre de Usuario"
-                              style={null}
-                              type="text"
-                              value=""
-                            />
-                          </span>
-                        </Input>
-                      </span>
-                      <Animate
-                        animation={Object {}}
-                        component=""
-                        componentProps={Object {}}
-                        key="help"
-                        onAppear={[Function]}
-                        onEnd={[Function]}
-                        onEnter={[Function]}
-                        onLeave={[Function]}
-                        transitionAppear={true}
-                        transitionEnter={true}
-                        transitionLeave={true}
-                        transitionName="show-help"
-                      />
-                    </div>
-                  </div>
-                </Col>
-              </div>
-            </Row>
-          </FormItem>
-          <FormItem
-            hasFeedback={true}
-          >
-            <Row
-              className="ant-form-item"
-              gutter={0}
-              key="row"
-            >
-              <div
-                className="ant-row ant-form-item"
-              >
-                <Col
-                  className="ant-form-item-control-wrapper"
-                >
-                  <div
-                    className="ant-col ant-form-item-control-wrapper"
-                  >
-                    <div
-                      className="ant-form-item-control has-feedback has-success"
-                    >
-                      <span
-                        className="ant-form-item-children"
-                      >
-                        <Select
-                          choiceTransitionName="zoom"
-                          data-__field={
-                            Object {
-                              "name": "node",
-                            }
-                          }
-                          data-__meta={
-                            Object {
-                              "initialValue": "ql-roxa",
-                              "name": "node",
-                              "originalProps": Object {
-                                "children": Array [
-                                  <Option>
-                                     
-                                  </Option>,
-                                  Array [
-                                    <Option>
-                                      ql-roxa
-                                    </Option>,
-                                    <Option>
-                                      ql-nicoyjesi
-                                    </Option>,
-                                    <Option>
-                                      ql-natiysofi
-                                    </Option>,
-                                    <Option>
-                                      si-silvia
-                                    </Option>,
-                                  ],
-                                ],
-                                "choiceTransitionName": "zoom",
-                                "filterOption": [Function],
-                                "optionFilterProp": "children",
-                                "placeholder": "Selecciona tu Nodo",
-                                "showSearch": true,
-                                "transitionName": "slide-up",
-                              },
-                              "ref": null,
-                              "trigger": "onChange",
-                              "validate": Array [],
-                              "valuePropName": "value",
-                            }
-                          }
-                          filterOption={[Function]}
-                          id="registration_form_node"
-                          onChange={[Function]}
-                          optionFilterProp="children"
-                          placeholder="Selecciona tu Nodo"
-                          showSearch={true}
-                          transitionName="slide-up"
-                          value="ql-roxa"
-                        >
-                          <Select
-                            allowClear={false}
-                            autoClearSearchValue={true}
-                            backfill={false}
-                            choiceTransitionName="zoom"
-                            className=""
-                            clearIcon={
-                              <Icon
-                                className="ant-select-clear-icon"
-                                theme="filled"
-                                type="close-circle"
-                              />
-                            }
-                            combobox={false}
-                            data-__field={
-                              Object {
-                                "name": "node",
-                              }
-                            }
-                            data-__meta={
-                              Object {
-                                "initialValue": "ql-roxa",
-                                "name": "node",
-                                "originalProps": Object {
-                                  "children": Array [
-                                    <Option>
-                                       
-                                    </Option>,
-                                    Array [
-                                      <Option>
-                                        ql-roxa
-                                      </Option>,
-                                      <Option>
-                                        ql-nicoyjesi
-                                      </Option>,
-                                      <Option>
-                                        ql-natiysofi
-                                      </Option>,
-                                      <Option>
-                                        si-silvia
-                                      </Option>,
-                                    ],
-                                  ],
-                                  "choiceTransitionName": "zoom",
-                                  "filterOption": [Function],
-                                  "optionFilterProp": "children",
-                                  "placeholder": "Selecciona tu Nodo",
-                                  "showSearch": true,
-                                  "transitionName": "slide-up",
-                                },
-                                "ref": null,
-                                "trigger": "onChange",
-                                "validate": Array [],
-                                "valuePropName": "value",
-                              }
-                            }
-                            defaultActiveFirstOption={true}
-                            defaultOpen={false}
-                            dropdownMatchSelectWidth={true}
-                            dropdownMenuStyle={Object {}}
-                            dropdownRender={[Function]}
-                            dropdownStyle={Object {}}
-                            filterOption={[Function]}
-                            id="registration_form_node"
-                            inputIcon={
-                              <Icon
-                                className="ant-select-arrow-icon"
-                                type="down"
-                              />
-                            }
-                            labelInValue={false}
-                            menuItemSelectedIcon={
-                              <Icon
-                                className="ant-select-selected-icon"
-                                type="check"
-                              />
-                            }
-                            multiple={false}
-                            notFoundContent={
-                              <Context.Consumer>
-                                [Function]
-                              </Context.Consumer>
-                            }
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onDeselect={[Function]}
-                            onFocus={[Function]}
-                            onInputKeyDown={[Function]}
-                            onSearch={[Function]}
-                            onSelect={[Function]}
-                            optionFilterProp="children"
-                            optionLabelProp="children"
-                            placeholder="Selecciona tu Nodo"
-                            prefixCls="ant-select"
-                            removeIcon={
-                              <Icon
-                                className="ant-select-remove-icon"
-                                type="close"
-                              />
-                            }
-                            showAction={
-                              Array [
-                                "click",
-                              ]
-                            }
-                            showSearch={true}
-                            tabIndex={0}
-                            tags={false}
-                            tokenSeparators={Array []}
-                            transitionName="slide-up"
-                            value="ql-roxa"
-                          >
-                            <SelectTrigger
-                              ariaId="test-uuid"
-                              backfillValue=""
-                              combobox={false}
-                              defaultActiveFirstOption={true}
-                              dropdownMatchSelectWidth={true}
-                              dropdownMenuStyle={Object {}}
-                              dropdownRender={[Function]}
-                              dropdownStyle={Object {}}
-                              empty={false}
-                              inputValue=""
-                              menuItemSelectedIcon={
-                                <Icon
-                                  className="ant-select-selected-icon"
-                                  type="check"
-                                />
-                              }
-                              multiple={false}
-                              onDropdownVisibleChange={[Function]}
-                              onMenuDeselect={[Function]}
-                              onMenuSelect={[Function]}
-                              onPopupFocus={[Function]}
-                              options={Array []}
-                              prefixCls="ant-select"
-                              showAction={
-                                Array [
-                                  "click",
-                                ]
-                              }
-                              showSearch={true}
-                              transitionName="slide-up"
-                              value={
-                                Array [
-                                  "ql-roxa",
-                                ]
-                              }
-                              visible={false}
+                                  Nombre de Usuario
+                                </label>
+                              </div>
+                            </Col>
+                            <Col
+                              className="ant-form-item-control-wrapper"
                             >
-                              <Trigger
-                                action={Array []}
-                                afterPopupVisibleChange={[Function]}
-                                ariaId="test-uuid"
-                                backfillValue=""
-                                blurDelay={0.15}
-                                builtinPlacements={
-                                  Object {
-                                    "bottomLeft": Object {
-                                      "offset": Array [
-                                        0,
-                                        4,
-                                      ],
-                                      "overflow": Object {
-                                        "adjustX": 0,
-                                        "adjustY": 1,
-                                      },
-                                      "points": Array [
-                                        "tl",
-                                        "bl",
-                                      ],
-                                    },
-                                    "topLeft": Object {
-                                      "offset": Array [
-                                        0,
-                                        -4,
-                                      ],
-                                      "overflow": Object {
-                                        "adjustX": 0,
-                                        "adjustY": 1,
-                                      },
-                                      "points": Array [
-                                        "bl",
-                                        "tl",
-                                      ],
-                                    },
-                                  }
-                                }
-                                combobox={false}
-                                defaultActiveFirstOption={true}
-                                defaultPopupVisible={false}
-                                destroyPopupOnHide={false}
-                                dropdownMatchSelectWidth={true}
-                                dropdownMenuStyle={Object {}}
-                                dropdownRender={[Function]}
-                                dropdownStyle={Object {}}
-                                focusDelay={0}
-                                getDocument={[Function]}
-                                getPopupClassNameFromAlign={[Function]}
-                                hideAction={
-                                  Array [
-                                    "blur",
-                                  ]
-                                }
-                                inputValue=""
-                                mask={false}
-                                maskClosable={true}
-                                menuItemSelectedIcon={
-                                  <Icon
-                                    className="ant-select-selected-icon"
-                                    type="check"
-                                  />
-                                }
-                                mouseEnterDelay={0}
-                                mouseLeaveDelay={0.1}
-                                multiple={false}
-                                onDropdownVisibleChange={[Function]}
-                                onMenuDeselect={[Function]}
-                                onMenuSelect={[Function]}
-                                onPopupAlign={[Function]}
-                                onPopupVisibleChange={[Function]}
-                                options={Array []}
-                                popup={
-                                  <DropdownMenu
-                                    ariaId="test-uuid"
-                                    backfillValue=""
-                                    defaultActiveFirstOption={true}
-                                    dropdownMenuStyle={Object {}}
-                                    inputValue=""
-                                    menuItemSelectedIcon={
-                                      <Icon
-                                        className="ant-select-selected-icon"
-                                        type="check"
-                                      />
-                                    }
-                                    menuItems={Array []}
-                                    multiple={false}
-                                    onMenuDeselect={[Function]}
-                                    onMenuSelect={[Function]}
-                                    onPopupFocus={[Function]}
-                                    prefixCls="ant-select-dropdown"
-                                    value={
-                                      Array [
-                                        "ql-roxa",
-                                      ]
-                                    }
-                                    visible={false}
-                                  />
-                                }
-                                popupAlign={Object {}}
-                                popupClassName="ant-select-dropdown--single"
-                                popupPlacement="bottomLeft"
-                                popupStyle={Object {}}
-                                popupTransitionName="slide-up"
-                                popupVisible={false}
-                                prefixCls="ant-select-dropdown"
-                                showAction={
-                                  Array [
-                                    "click",
-                                  ]
-                                }
-                                showSearch={true}
-                                transitionName="slide-up"
-                                value={
-                                  Array [
-                                    "ql-roxa",
-                                  ]
-                                }
-                                visible={false}
+                              <div
+                                className="ant-col ant-form-item-control-wrapper"
                               >
                                 <div
-                                  className="ant-select ant-select-enabled"
-                                  id="registration_form_node"
-                                  key="trigger"
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchStart={[Function]}
+                                  className="ant-form-item-control"
                                 >
-                                  <div
-                                    aria-autocomplete="list"
-                                    aria-controls="test-uuid"
-                                    aria-expanded={false}
-                                    aria-haspopup="true"
-                                    className="ant-select-selection
-            ant-select-selection--single"
-                                    data-__field={
-                                      Object {
-                                        "name": "node",
-                                      }
-                                    }
-                                    data-__meta={
-                                      Object {
-                                        "initialValue": "ql-roxa",
-                                        "name": "node",
-                                        "originalProps": Object {
-                                          "children": Array [
-                                            <Option>
-                                               
-                                            </Option>,
-                                            Array [
-                                              <Option>
-                                                ql-roxa
-                                              </Option>,
-                                              <Option>
-                                                ql-nicoyjesi
-                                              </Option>,
-                                              <Option>
-                                                ql-natiysofi
-                                              </Option>,
-                                              <Option>
-                                                si-silvia
-                                              </Option>,
-                                            ],
-                                          ],
-                                          "choiceTransitionName": "zoom",
-                                          "filterOption": [Function],
-                                          "optionFilterProp": "children",
-                                          "placeholder": "Selecciona tu Nodo",
-                                          "showSearch": true,
-                                          "transitionName": "slide-up",
-                                        },
-                                        "ref": null,
-                                        "trigger": "onChange",
-                                        "validate": Array [],
-                                        "valuePropName": "value",
-                                      }
-                                    }
-                                    key="selection"
-                                    onKeyDown={[Function]}
-                                    role="combobox"
-                                    tabIndex={0}
+                                  <span
+                                    className="ant-form-item-children"
                                   >
-                                    <div
-                                      className="ant-select-selection__rendered"
+                                    <Component
+                                      id="name"
+                                      name="name"
+                                      prefix={
+                                        <Icon
+                                          style={
+                                            Object {
+                                              "color": "rgba(0,0,0,.25)",
+                                            }
+                                          }
+                                          type="user"
+                                        />
+                                      }
                                     >
-                                      <div
-                                        className="ant-select-selection__placeholder"
-                                        onClick={[Function]}
-                                        onMouseDown={[Function]}
-                                        style={
-                                          Object {
-                                            "WebkitUserSelect": "none",
-                                            "display": "none",
-                                            "userSelect": "none",
-                                          }
-                                        }
-                                        unselectable="on"
+                                      <FormikConnect(FieldInner)
+                                        name="name"
                                       >
-                                        Selecciona tu Nodo
-                                      </div>
-                                      <div
-                                        className="ant-select-selection-selected-value"
-                                        key="value"
-                                        style={
-                                          Object {
-                                            "display": "block",
-                                            "opacity": 1,
+                                        <FieldInner
+                                          formik={
+                                            Object {
+                                              "dirty": false,
+                                              "errors": Object {},
+                                              "handleBlur": [Function],
+                                              "handleChange": [Function],
+                                              "handleReset": [Function],
+                                              "handleSubmit": [Function],
+                                              "initialValues": Object {
+                                                "node": "ql-roxa",
+                                              },
+                                              "isSubmitting": false,
+                                              "isValid": false,
+                                              "isValidating": false,
+                                              "registerField": [Function],
+                                              "resetForm": [Function],
+                                              "setError": [Function],
+                                              "setErrors": [Function],
+                                              "setFieldError": [Function],
+                                              "setFieldTouched": [Function],
+                                              "setFieldValue": [Function],
+                                              "setFormikState": [Function],
+                                              "setStatus": [Function],
+                                              "setSubmitting": [Function],
+                                              "setTouched": [Function],
+                                              "setValues": [Function],
+                                              "status": undefined,
+                                              "submitCount": 0,
+                                              "submitForm": [Function],
+                                              "touched": Object {},
+                                              "unregisterField": [Function],
+                                              "validate": [Function],
+                                              "validateField": [Function],
+                                              "validateForm": [Function],
+                                              "validateOnBlur": true,
+                                              "validateOnChange": true,
+                                              "validationSchema": undefined,
+                                              "values": Object {
+                                                "node": "ql-roxa",
+                                              },
+                                            }
                                           }
-                                        }
-                                        title="ql-roxa"
-                                      >
-                                        ql-roxa
-                                      </div>
-                                      <div
-                                        className="ant-select-search ant-select-search--inline"
-                                        key="input"
-                                        style={
-                                          Object {
-                                            "display": "none",
-                                          }
-                                        }
-                                      >
-                                        <div
-                                          className="ant-select-search__field__wrap"
+                                          name="name"
                                         >
-                                          <input
-                                            autoComplete="off"
-                                            className="ant-select-search__field"
-                                            id="registration_form_node"
+                                          <Input
+                                            disabled={false}
+                                            id="name"
+                                            name="name"
+                                            onBlur={[Function]}
                                             onChange={[Function]}
-                                            onKeyDown={[Function]}
-                                            value=""
-                                          />
-                                          <span
-                                            className="ant-select-search__field__mirror"
+                                            prefix={
+                                              <Icon
+                                                style={
+                                                  Object {
+                                                    "color": "rgba(0,0,0,.25)",
+                                                  }
+                                                }
+                                                type="user"
+                                              />
+                                            }
+                                            type="text"
                                           >
-                                             
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <span
-                                      className="ant-select-arrow"
-                                      key="arrow"
-                                      onClick={[Function]}
-                                      style={
-                                        Object {
-                                          "WebkitUserSelect": "none",
-                                          "userSelect": "none",
-                                        }
-                                      }
-                                      unselectable="on"
-                                    >
-                                      <Icon
-                                        className="ant-select-arrow-icon"
-                                        type="down"
-                                      >
-                                        <LocaleReceiver
-                                          componentName="Icon"
-                                        >
-                                          <i
-                                            aria-label="icon: down"
-                                            className="anticon anticon-down ant-select-arrow-icon"
-                                          >
-                                            <IconReact
-                                              className=""
-                                              type="down-o"
+                                            <span
+                                              className="ant-input-affix-wrapper"
                                             >
-                                              <svg
-                                                aria-hidden="true"
-                                                className=""
-                                                data-icon="down"
-                                                fill="currentColor"
-                                                focusable="false"
-                                                height="1em"
-                                                key="svg-down"
-                                                viewBox="64 64 896 896"
-                                                width="1em"
+                                              <span
+                                                className="ant-input-prefix"
                                               >
-                                                <path
-                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                                  key="svg-down-svg-0"
-                                                />
-                                              </svg>
-                                            </IconReact>
-                                          </i>
-                                        </LocaleReceiver>
-                                      </Icon>
-                                    </span>
-                                  </div>
+                                                <Icon
+                                                  style={
+                                                    Object {
+                                                      "color": "rgba(0,0,0,.25)",
+                                                    }
+                                                  }
+                                                  type="user"
+                                                >
+                                                  <LocaleReceiver
+                                                    componentName="Icon"
+                                                  >
+                                                    <i
+                                                      aria-label="icon: user"
+                                                      className="anticon anticon-user"
+                                                      style={
+                                                        Object {
+                                                          "color": "rgba(0,0,0,.25)",
+                                                        }
+                                                      }
+                                                    >
+                                                      <IconReact
+                                                        className=""
+                                                        type="user-o"
+                                                      >
+                                                        <svg
+                                                          aria-hidden="true"
+                                                          className=""
+                                                          data-icon="user"
+                                                          fill="currentColor"
+                                                          focusable="false"
+                                                          height="1em"
+                                                          key="svg-user"
+                                                          viewBox="64 64 896 896"
+                                                          width="1em"
+                                                        >
+                                                          <path
+                                                            d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+                                                            key="svg-user-svg-0"
+                                                          />
+                                                        </svg>
+                                                      </IconReact>
+                                                    </i>
+                                                  </LocaleReceiver>
+                                                </Icon>
+                                              </span>
+                                              <input
+                                                className="ant-input"
+                                                disabled={false}
+                                                id="name"
+                                                name="name"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                onKeyDown={[Function]}
+                                                style={null}
+                                                type="text"
+                                                value=""
+                                              />
+                                            </span>
+                                          </Input>
+                                        </FieldInner>
+                                      </FormikConnect(FieldInner)>
+                                    </Component>
+                                  </span>
+                                  <Animate
+                                    animation={Object {}}
+                                    component=""
+                                    componentProps={Object {}}
+                                    key="help"
+                                    onAppear={[Function]}
+                                    onEnd={[Function]}
+                                    onEnter={[Function]}
+                                    onLeave={[Function]}
+                                    transitionAppear={true}
+                                    transitionEnter={true}
+                                    transitionLeave={true}
+                                    transitionName="show-help"
+                                  />
                                 </div>
-                              </Trigger>
-                            </SelectTrigger>
-                          </Select>
-                        </Select>
-                        <span
-                          className="ant-form-item-children-icon"
-                        >
-                          <Icon
-                            theme="filled"
-                            type="check-circle"
-                          >
-                            <LocaleReceiver
-                              componentName="Icon"
-                            >
-                              <i
-                                aria-label="icon: check-circle"
-                                className="anticon anticon-check-circle"
-                              >
-                                <IconReact
-                                  className=""
-                                  type="check-circle-fill"
-                                >
-                                  <svg
-                                    aria-hidden="true"
-                                    className=""
-                                    data-icon="check-circle"
-                                    fill="currentColor"
-                                    focusable="false"
-                                    height="1em"
-                                    key="svg-check-circle"
-                                    viewBox="64 64 896 896"
-                                    width="1em"
-                                  >
-                                    <path
-                                      d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 0 1-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"
-                                      key="svg-check-circle-svg-0"
-                                    />
-                                  </svg>
-                                </IconReact>
-                              </i>
-                            </LocaleReceiver>
-                          </Icon>
-                        </span>
-                      </span>
-                      <Animate
-                        animation={Object {}}
-                        component=""
-                        componentProps={Object {}}
-                        key="help"
-                        onAppear={[Function]}
-                        onEnd={[Function]}
-                        onEnter={[Function]}
-                        onLeave={[Function]}
-                        transitionAppear={true}
-                        transitionEnter={true}
-                        transitionLeave={true}
-                        transitionName="show-help"
-                      />
-                    </div>
-                  </div>
-                </Col>
-              </div>
-            </Row>
-          </FormItem>
-          <FormItem
-            hasFeedback={false}
-          >
-            <Row
-              className="ant-form-item"
-              gutter={0}
-              key="row"
-            >
-              <div
-                className="ant-row ant-form-item"
-              >
-                <Col
-                  className="ant-form-item-control-wrapper"
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </FormItem>
+                    </FieldInner>
+                  </FormikConnect(FieldInner)>
+                </Component>
+                <Component
+                  hasFeedback={true}
+                  htmlFor="name"
+                  label="Tu Nodo"
+                  name="node"
                 >
-                  <div
-                    className="ant-col ant-form-item-control-wrapper"
+                  <FormikConnect(FieldInner)
+                    name="node"
                   >
-                    <div
-                      className="ant-form-item-control"
+                    <FieldInner
+                      formik={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "node": "ql-roxa",
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validate": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "validationSchema": undefined,
+                          "values": Object {
+                            "node": "ql-roxa",
+                          },
+                        }
+                      }
+                      name="node"
                     >
-                      <span
-                        className="ant-form-item-children"
+                      <FormItem
+                        hasFeedback={true}
+                        help={false}
+                        htmlFor="name"
+                        label="Tu Nodo"
                       >
-                        <Button
-                          block={false}
-                          className="login-form-button"
-                          ghost={false}
-                          htmlType="submit"
-                          loading={false}
-                          type="primary"
+                        <Row
+                          className="ant-form-item"
+                          gutter={0}
+                          key="row"
                         >
-                          <Wave>
-                            <button
-                              className="ant-btn login-form-button ant-btn-primary"
-                              onClick={[Function]}
-                              type="submit"
+                          <div
+                            className="ant-row ant-form-item"
+                          >
+                            <Col
+                              className="ant-form-item-label"
                             >
-                              <span
-                                key=".0"
+                              <div
+                                className="ant-col ant-form-item-label"
                               >
-                                Registrarme
-                              </span>
-                            </button>
-                          </Wave>
-                        </Button>
-                      </span>
-                      <Animate
-                        animation={Object {}}
-                        component=""
-                        componentProps={Object {}}
-                        key="help"
-                        onAppear={[Function]}
-                        onEnd={[Function]}
-                        onEnter={[Function]}
-                        onLeave={[Function]}
-                        transitionAppear={true}
-                        transitionEnter={true}
-                        transitionLeave={true}
-                        transitionName="show-help"
-                      />
-                    </div>
-                  </div>
-                </Col>
-              </div>
-            </Row>
-          </FormItem>
-        </form>
+                                <label
+                                  className=""
+                                  htmlFor="name"
+                                  onClick={[Function]}
+                                  title="Tu Nodo"
+                                >
+                                  Tu Nodo
+                                </label>
+                              </div>
+                            </Col>
+                            <Col
+                              className="ant-form-item-control-wrapper"
+                            >
+                              <div
+                                className="ant-col ant-form-item-control-wrapper"
+                              >
+                                <div
+                                  className="ant-form-item-control"
+                                >
+                                  <span
+                                    className="ant-form-item-children"
+                                  >
+                                    <Component
+                                      filterOption={[Function]}
+                                      name="node"
+                                      optionFilterProp="children"
+                                      showSearch={true}
+                                    >
+                                      <FormikConnect(FieldInner)
+                                        name="node"
+                                      >
+                                        <FieldInner
+                                          formik={
+                                            Object {
+                                              "dirty": false,
+                                              "errors": Object {},
+                                              "handleBlur": [Function],
+                                              "handleChange": [Function],
+                                              "handleReset": [Function],
+                                              "handleSubmit": [Function],
+                                              "initialValues": Object {
+                                                "node": "ql-roxa",
+                                              },
+                                              "isSubmitting": false,
+                                              "isValid": false,
+                                              "isValidating": false,
+                                              "registerField": [Function],
+                                              "resetForm": [Function],
+                                              "setError": [Function],
+                                              "setErrors": [Function],
+                                              "setFieldError": [Function],
+                                              "setFieldTouched": [Function],
+                                              "setFieldValue": [Function],
+                                              "setFormikState": [Function],
+                                              "setStatus": [Function],
+                                              "setSubmitting": [Function],
+                                              "setTouched": [Function],
+                                              "setValues": [Function],
+                                              "status": undefined,
+                                              "submitCount": 0,
+                                              "submitForm": [Function],
+                                              "touched": Object {},
+                                              "unregisterField": [Function],
+                                              "validate": [Function],
+                                              "validateField": [Function],
+                                              "validateForm": [Function],
+                                              "validateOnBlur": true,
+                                              "validateOnChange": true,
+                                              "validationSchema": undefined,
+                                              "values": Object {
+                                                "node": "ql-roxa",
+                                              },
+                                            }
+                                          }
+                                          name="node"
+                                        >
+                                          <Select
+                                            choiceTransitionName="zoom"
+                                            filterOption={[Function]}
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            optionFilterProp="children"
+                                            showSearch={true}
+                                            transitionName="slide-up"
+                                            value="ql-roxa"
+                                          >
+                                            <Select
+                                              allowClear={false}
+                                              autoClearSearchValue={true}
+                                              backfill={false}
+                                              choiceTransitionName="zoom"
+                                              className=""
+                                              clearIcon={
+                                                <Icon
+                                                  className="ant-select-clear-icon"
+                                                  theme="filled"
+                                                  type="close-circle"
+                                                />
+                                              }
+                                              combobox={false}
+                                              defaultActiveFirstOption={true}
+                                              defaultOpen={false}
+                                              dropdownMatchSelectWidth={true}
+                                              dropdownMenuStyle={Object {}}
+                                              dropdownRender={[Function]}
+                                              dropdownStyle={Object {}}
+                                              filterOption={[Function]}
+                                              inputIcon={
+                                                <Icon
+                                                  className="ant-select-arrow-icon"
+                                                  type="down"
+                                                />
+                                              }
+                                              labelInValue={false}
+                                              menuItemSelectedIcon={
+                                                <Icon
+                                                  className="ant-select-selected-icon"
+                                                  type="check"
+                                                />
+                                              }
+                                              multiple={false}
+                                              notFoundContent={
+                                                <Context.Consumer>
+                                                  [Function]
+                                                </Context.Consumer>
+                                              }
+                                              onBlur={[Function]}
+                                              onChange={[Function]}
+                                              onDeselect={[Function]}
+                                              onFocus={[Function]}
+                                              onInputKeyDown={[Function]}
+                                              onSearch={[Function]}
+                                              onSelect={[Function]}
+                                              optionFilterProp="children"
+                                              optionLabelProp="children"
+                                              placeholder=""
+                                              prefixCls="ant-select"
+                                              removeIcon={
+                                                <Icon
+                                                  className="ant-select-remove-icon"
+                                                  type="close"
+                                                />
+                                              }
+                                              showAction={
+                                                Array [
+                                                  "click",
+                                                ]
+                                              }
+                                              showSearch={true}
+                                              tabIndex={0}
+                                              tags={false}
+                                              tokenSeparators={Array []}
+                                              transitionName="slide-up"
+                                              value="ql-roxa"
+                                            >
+                                              <SelectTrigger
+                                                ariaId="test-uuid"
+                                                backfillValue=""
+                                                combobox={false}
+                                                defaultActiveFirstOption={true}
+                                                dropdownMatchSelectWidth={true}
+                                                dropdownMenuStyle={Object {}}
+                                                dropdownRender={[Function]}
+                                                dropdownStyle={Object {}}
+                                                empty={false}
+                                                inputValue=""
+                                                menuItemSelectedIcon={
+                                                  <Icon
+                                                    className="ant-select-selected-icon"
+                                                    type="check"
+                                                  />
+                                                }
+                                                multiple={false}
+                                                onDropdownVisibleChange={[Function]}
+                                                onMenuDeselect={[Function]}
+                                                onMenuSelect={[Function]}
+                                                onPopupFocus={[Function]}
+                                                options={Array []}
+                                                prefixCls="ant-select"
+                                                showAction={
+                                                  Array [
+                                                    "click",
+                                                  ]
+                                                }
+                                                showSearch={true}
+                                                transitionName="slide-up"
+                                                value={
+                                                  Array [
+                                                    "ql-roxa",
+                                                  ]
+                                                }
+                                                visible={false}
+                                              >
+                                                <Trigger
+                                                  action={Array []}
+                                                  afterPopupVisibleChange={[Function]}
+                                                  ariaId="test-uuid"
+                                                  backfillValue=""
+                                                  blurDelay={0.15}
+                                                  builtinPlacements={
+                                                    Object {
+                                                      "bottomLeft": Object {
+                                                        "offset": Array [
+                                                          0,
+                                                          4,
+                                                        ],
+                                                        "overflow": Object {
+                                                          "adjustX": 0,
+                                                          "adjustY": 1,
+                                                        },
+                                                        "points": Array [
+                                                          "tl",
+                                                          "bl",
+                                                        ],
+                                                      },
+                                                      "topLeft": Object {
+                                                        "offset": Array [
+                                                          0,
+                                                          -4,
+                                                        ],
+                                                        "overflow": Object {
+                                                          "adjustX": 0,
+                                                          "adjustY": 1,
+                                                        },
+                                                        "points": Array [
+                                                          "bl",
+                                                          "tl",
+                                                        ],
+                                                      },
+                                                    }
+                                                  }
+                                                  combobox={false}
+                                                  defaultActiveFirstOption={true}
+                                                  defaultPopupVisible={false}
+                                                  destroyPopupOnHide={false}
+                                                  dropdownMatchSelectWidth={true}
+                                                  dropdownMenuStyle={Object {}}
+                                                  dropdownRender={[Function]}
+                                                  dropdownStyle={Object {}}
+                                                  focusDelay={0}
+                                                  getDocument={[Function]}
+                                                  getPopupClassNameFromAlign={[Function]}
+                                                  hideAction={
+                                                    Array [
+                                                      "blur",
+                                                    ]
+                                                  }
+                                                  inputValue=""
+                                                  mask={false}
+                                                  maskClosable={true}
+                                                  menuItemSelectedIcon={
+                                                    <Icon
+                                                      className="ant-select-selected-icon"
+                                                      type="check"
+                                                    />
+                                                  }
+                                                  mouseEnterDelay={0}
+                                                  mouseLeaveDelay={0.1}
+                                                  multiple={false}
+                                                  onDropdownVisibleChange={[Function]}
+                                                  onMenuDeselect={[Function]}
+                                                  onMenuSelect={[Function]}
+                                                  onPopupAlign={[Function]}
+                                                  onPopupVisibleChange={[Function]}
+                                                  options={Array []}
+                                                  popup={
+                                                    <DropdownMenu
+                                                      ariaId="test-uuid"
+                                                      backfillValue=""
+                                                      defaultActiveFirstOption={true}
+                                                      dropdownMenuStyle={Object {}}
+                                                      inputValue=""
+                                                      menuItemSelectedIcon={
+                                                        <Icon
+                                                          className="ant-select-selected-icon"
+                                                          type="check"
+                                                        />
+                                                      }
+                                                      menuItems={Array []}
+                                                      multiple={false}
+                                                      onMenuDeselect={[Function]}
+                                                      onMenuSelect={[Function]}
+                                                      onPopupFocus={[Function]}
+                                                      prefixCls="ant-select-dropdown"
+                                                      value={
+                                                        Array [
+                                                          "ql-roxa",
+                                                        ]
+                                                      }
+                                                      visible={false}
+                                                    />
+                                                  }
+                                                  popupAlign={Object {}}
+                                                  popupClassName="ant-select-dropdown--single"
+                                                  popupPlacement="bottomLeft"
+                                                  popupStyle={Object {}}
+                                                  popupTransitionName="slide-up"
+                                                  popupVisible={false}
+                                                  prefixCls="ant-select-dropdown"
+                                                  showAction={
+                                                    Array [
+                                                      "click",
+                                                    ]
+                                                  }
+                                                  showSearch={true}
+                                                  transitionName="slide-up"
+                                                  value={
+                                                    Array [
+                                                      "ql-roxa",
+                                                    ]
+                                                  }
+                                                  visible={false}
+                                                >
+                                                  <div
+                                                    className="ant-select ant-select-enabled"
+                                                    key="trigger"
+                                                    onBlur={[Function]}
+                                                    onClick={[Function]}
+                                                    onFocus={[Function]}
+                                                    onMouseDown={[Function]}
+                                                    onMouseOut={[Function]}
+                                                    onMouseUp={[Function]}
+                                                    onTouchStart={[Function]}
+                                                  >
+                                                    <div
+                                                      aria-autocomplete="list"
+                                                      aria-controls="test-uuid"
+                                                      aria-expanded={false}
+                                                      aria-haspopup="true"
+                                                      className="ant-select-selection
+            ant-select-selection--single"
+                                                      key="selection"
+                                                      onKeyDown={[Function]}
+                                                      role="combobox"
+                                                      tabIndex={0}
+                                                    >
+                                                      <div
+                                                        className="ant-select-selection__rendered"
+                                                      >
+                                                        <div
+                                                          className="ant-select-selection-selected-value"
+                                                          key="value"
+                                                          style={
+                                                            Object {
+                                                              "display": "block",
+                                                              "opacity": 1,
+                                                            }
+                                                          }
+                                                          title="ql-roxa"
+                                                        >
+                                                          ql-roxa
+                                                        </div>
+                                                        <div
+                                                          className="ant-select-search ant-select-search--inline"
+                                                          key="input"
+                                                          style={
+                                                            Object {
+                                                              "display": "none",
+                                                            }
+                                                          }
+                                                        >
+                                                          <div
+                                                            className="ant-select-search__field__wrap"
+                                                          >
+                                                            <input
+                                                              autoComplete="off"
+                                                              className="ant-select-search__field"
+                                                              onChange={[Function]}
+                                                              onKeyDown={[Function]}
+                                                              value=""
+                                                            />
+                                                            <span
+                                                              className="ant-select-search__field__mirror"
+                                                            >
+                                                               
+                                                            </span>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <span
+                                                        className="ant-select-arrow"
+                                                        key="arrow"
+                                                        onClick={[Function]}
+                                                        style={
+                                                          Object {
+                                                            "WebkitUserSelect": "none",
+                                                            "userSelect": "none",
+                                                          }
+                                                        }
+                                                        unselectable="on"
+                                                      >
+                                                        <Icon
+                                                          className="ant-select-arrow-icon"
+                                                          type="down"
+                                                        >
+                                                          <LocaleReceiver
+                                                            componentName="Icon"
+                                                          >
+                                                            <i
+                                                              aria-label="icon: down"
+                                                              className="anticon anticon-down ant-select-arrow-icon"
+                                                            >
+                                                              <IconReact
+                                                                className=""
+                                                                type="down-o"
+                                                              >
+                                                                <svg
+                                                                  aria-hidden="true"
+                                                                  className=""
+                                                                  data-icon="down"
+                                                                  fill="currentColor"
+                                                                  focusable="false"
+                                                                  height="1em"
+                                                                  key="svg-down"
+                                                                  viewBox="64 64 896 896"
+                                                                  width="1em"
+                                                                >
+                                                                  <path
+                                                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                                    key="svg-down-svg-0"
+                                                                  />
+                                                                </svg>
+                                                              </IconReact>
+                                                            </i>
+                                                          </LocaleReceiver>
+                                                        </Icon>
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </Trigger>
+                                              </SelectTrigger>
+                                            </Select>
+                                          </Select>
+                                        </FieldInner>
+                                      </FormikConnect(FieldInner)>
+                                    </Component>
+                                  </span>
+                                  <Animate
+                                    animation={Object {}}
+                                    component=""
+                                    componentProps={Object {}}
+                                    key="help"
+                                    onAppear={[Function]}
+                                    onEnd={[Function]}
+                                    onEnter={[Function]}
+                                    onLeave={[Function]}
+                                    transitionAppear={true}
+                                    transitionEnter={true}
+                                    transitionLeave={true}
+                                    transitionName="show-help"
+                                  />
+                                </div>
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </FormItem>
+                    </FieldInner>
+                  </FormikConnect(FieldInner)>
+                </Component>
+                <Component>
+                  <FormikConnect(FieldInner)>
+                    <FieldInner
+                      formik={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "node": "ql-roxa",
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validate": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "validationSchema": undefined,
+                          "values": Object {
+                            "node": "ql-roxa",
+                          },
+                        }
+                      }
+                    >
+                      <FormItem
+                        hasFeedback={false}
+                        help={false}
+                      >
+                        <Row
+                          className="ant-form-item"
+                          gutter={0}
+                          key="row"
+                        >
+                          <div
+                            className="ant-row ant-form-item"
+                          >
+                            <Col
+                              className="ant-form-item-control-wrapper"
+                            >
+                              <div
+                                className="ant-col ant-form-item-control-wrapper"
+                              >
+                                <div
+                                  className="ant-form-item-control"
+                                >
+                                  <span
+                                    className="ant-form-item-children"
+                                  >
+                                    <Button
+                                      block={false}
+                                      className="login-form-button"
+                                      ghost={false}
+                                      htmlType="submit"
+                                      loading={false}
+                                      type="primary"
+                                    >
+                                      <Wave>
+                                        <button
+                                          className="ant-btn login-form-button ant-btn-primary"
+                                          onClick={[Function]}
+                                          type="submit"
+                                        >
+                                          <span
+                                            key=".0"
+                                          >
+                                            Registrarme
+                                          </span>
+                                        </button>
+                                      </Wave>
+                                    </Button>
+                                  </span>
+                                  <Animate
+                                    animation={Object {}}
+                                    component=""
+                                    componentProps={Object {}}
+                                    key="help"
+                                    onAppear={[Function]}
+                                    onEnd={[Function]}
+                                    onEnter={[Function]}
+                                    onLeave={[Function]}
+                                    transitionAppear={true}
+                                    transitionEnter={true}
+                                    transitionLeave={true}
+                                    transitionName="show-help"
+                                  />
+                                </div>
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </FormItem>
+                    </FieldInner>
+                  </FormikConnect(FieldInner)>
+                </Component>
+              </form>
+            </Form>
+          </FieldInner>
+        </FormikConnect(FieldInner)>
       </Form>
-      <div
-        className="or-login"
-      >
-        <p>
-          O 
-          <Button
-            block={false}
-            ghost={false}
-            htmlType="button"
-            loading={false}
+    </Formik>
+    <div
+      className="or-login"
+    >
+      <p>
+        O 
+        <Button
+          block={false}
+          ghost={false}
+          htmlType="button"
+          loading={false}
+          onClick={[Function]}
+          type="link"
+        >
+          <button
+            className="ant-btn ant-btn-link"
             onClick={[Function]}
-            type="link"
+            type="button"
           >
-            <button
-              className="ant-btn ant-btn-link"
-              onClick={[Function]}
-              type="button"
+            <span
+              key=".0"
             >
-              <span
-                key=".0"
-              >
-                Ingresa con tu frase secreta
-              </span>
-            </button>
-          </Button>
-        </p>
-      </div>
+              Ingresa con tu frase secreta
+            </span>
+          </button>
+        </Button>
+      </p>
     </div>
-  </RegistrationForm>
-</Form(RegistrationForm)>
+  </div>
+</Registration>
 `;
 
 exports[`Storyshots Registration No default node 1`] = `
-<Form(RegistrationForm)
+<Registration
   handleGoToLogin={[Function]}
   handleSubmit={[Function]}
   nodes={
@@ -15450,885 +15532,1007 @@ exports[`Storyshots Registration No default node 1`] = `
     ]
   }
 >
-  <RegistrationForm
-    form={
-      Object {
-        "getFieldDecorator": [Function],
-        "getFieldError": [Function],
-        "getFieldInstance": [Function],
-        "getFieldProps": [Function],
-        "getFieldValue": [Function],
-        "getFieldsError": [Function],
-        "getFieldsValue": [Function],
-        "isFieldTouched": [Function],
-        "isFieldValidating": [Function],
-        "isFieldsTouched": [Function],
-        "isFieldsValidating": [Function],
-        "isSubmitting": [Function],
-        "resetFields": [Function],
-        "setFields": [Function],
-        "setFieldsInitialValue": [Function],
-        "setFieldsValue": [Function],
-        "submit": [Function],
-        "validateFields": [Function],
-        "validateFieldsAndScroll": [Function],
-      }
-    }
-    handleGoToLogin={[Function]}
-    handleSubmit={[Function]}
-    nodes={
-      Array [
-        "ql-roxa",
-        "ql-nicoyjesi",
-        "ql-natiysofi",
-        "si-silvia",
-      ]
-    }
+  <div
+    className="registration-page"
   >
-    <div
-      className="registration-page"
+    <Formik
+      enableReinitialize={false}
+      initialValues={
+        Object {
+          "node": undefined,
+        }
+      }
+      isInitialValid={false}
+      onSubmit={[Function]}
+      validate={[Function]}
+      validateOnBlur={true}
+      validateOnChange={true}
     >
       <Form
         className="registration-form"
-        colon={true}
-        hideRequiredMark={false}
-        layout="horizontal"
-        onSubmit={[Function]}
       >
-        <form
-          className="ant-form ant-form-horizontal registration-form"
-          onSubmit={[Function]}
-        >
-          <FormItem
-            hasFeedback={true}
+        <FormikConnect(FieldInner)>
+          <FieldInner
+            formik={
+              Object {
+                "dirty": false,
+                "errors": Object {},
+                "handleBlur": [Function],
+                "handleChange": [Function],
+                "handleReset": [Function],
+                "handleSubmit": [Function],
+                "initialValues": Object {
+                  "node": undefined,
+                },
+                "isSubmitting": false,
+                "isValid": false,
+                "isValidating": false,
+                "registerField": [Function],
+                "resetForm": [Function],
+                "setError": [Function],
+                "setErrors": [Function],
+                "setFieldError": [Function],
+                "setFieldTouched": [Function],
+                "setFieldValue": [Function],
+                "setFormikState": [Function],
+                "setStatus": [Function],
+                "setSubmitting": [Function],
+                "setTouched": [Function],
+                "setValues": [Function],
+                "status": undefined,
+                "submitCount": 0,
+                "submitForm": [Function],
+                "touched": Object {},
+                "unregisterField": [Function],
+                "validate": [Function],
+                "validateField": [Function],
+                "validateForm": [Function],
+                "validateOnBlur": true,
+                "validateOnChange": true,
+                "validationSchema": undefined,
+                "values": Object {
+                  "node": undefined,
+                },
+              }
+            }
           >
-            <Row
-              className="ant-form-item"
-              gutter={0}
-              key="row"
+            <Form
+              className="registration-form"
+              colon={true}
+              hideRequiredMark={false}
+              layout="horizontal"
+              onReset={[Function]}
+              onSubmit={[Function]}
             >
-              <div
-                className="ant-row ant-form-item"
+              <form
+                className="ant-form ant-form-horizontal registration-form"
+                onReset={[Function]}
+                onSubmit={[Function]}
               >
-                <Col
-                  className="ant-form-item-control-wrapper"
+                <Component
+                  hasFeedback={true}
+                  htmlFor="name"
+                  label="Nombre de Usuario"
+                  name="name"
                 >
-                  <div
-                    className="ant-col ant-form-item-control-wrapper"
+                  <FormikConnect(FieldInner)
+                    name="name"
                   >
-                    <div
-                      className="ant-form-item-control"
+                    <FieldInner
+                      formik={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "node": undefined,
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validate": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "validationSchema": undefined,
+                          "values": Object {
+                            "node": undefined,
+                          },
+                        }
+                      }
+                      name="name"
                     >
-                      <span
-                        className="ant-form-item-children"
+                      <FormItem
+                        hasFeedback={true}
+                        help={false}
+                        htmlFor="name"
+                        label="Nombre de Usuario"
                       >
-                        <Input
-                          data-__field={
-                            Object {
-                              "name": "username",
-                            }
-                          }
-                          data-__meta={
-                            Object {
-                              "name": "username",
-                              "originalProps": Object {
-                                "disabled": false,
-                                "placeholder": "Nombre de Usuario",
-                                "prefix": <Icon
-                                  style={
-                                    Object {
-                                      "color": "rgba(0,0,0,.25)",
-                                    }
-                                  }
-                                  type="user"
-                                />,
-                                "type": "text",
-                              },
-                              "ref": null,
-                              "rules": Array [
-                                Object {
-                                  "message": "Por favor indica un nombre de usuario",
-                                  "required": true,
-                                },
-                              ],
-                              "trigger": "onChange",
-                              "validate": Array [
-                                Object {
-                                  "rules": Array [
-                                    Object {
-                                      "message": "Por favor indica un nombre de usuario",
-                                      "required": true,
-                                    },
-                                  ],
-                                  "trigger": Array [
-                                    "onChange",
-                                  ],
-                                },
-                              ],
-                              "valuePropName": "value",
-                            }
-                          }
-                          disabled={false}
-                          id="registration_form_username"
-                          onChange={[Function]}
-                          placeholder="Nombre de Usuario"
-                          prefix={
-                            <Icon
-                              style={
-                                Object {
-                                  "color": "rgba(0,0,0,.25)",
-                                }
-                              }
-                              type="user"
-                            />
-                          }
-                          type="text"
+                        <Row
+                          className="ant-form-item"
+                          gutter={0}
+                          key="row"
                         >
-                          <span
-                            className="ant-input-affix-wrapper"
+                          <div
+                            className="ant-row ant-form-item"
                           >
-                            <span
-                              className="ant-input-prefix"
+                            <Col
+                              className="ant-form-item-label"
                             >
-                              <Icon
-                                style={
-                                  Object {
-                                    "color": "rgba(0,0,0,.25)",
-                                  }
-                                }
-                                type="user"
+                              <div
+                                className="ant-col ant-form-item-label"
                               >
-                                <LocaleReceiver
-                                  componentName="Icon"
+                                <label
+                                  className=""
+                                  htmlFor="name"
+                                  onClick={[Function]}
+                                  title="Nombre de Usuario"
                                 >
-                                  <i
-                                    aria-label="icon: user"
-                                    className="anticon anticon-user"
-                                    style={
-                                      Object {
-                                        "color": "rgba(0,0,0,.25)",
-                                      }
-                                    }
-                                  >
-                                    <IconReact
-                                      className=""
-                                      type="user-o"
-                                    >
-                                      <svg
-                                        aria-hidden="true"
-                                        className=""
-                                        data-icon="user"
-                                        fill="currentColor"
-                                        focusable="false"
-                                        height="1em"
-                                        key="svg-user"
-                                        viewBox="64 64 896 896"
-                                        width="1em"
-                                      >
-                                        <path
-                                          d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
-                                          key="svg-user-svg-0"
-                                        />
-                                      </svg>
-                                    </IconReact>
-                                  </i>
-                                </LocaleReceiver>
-                              </Icon>
-                            </span>
-                            <input
-                              className="ant-input"
-                              data-__field={
-                                Object {
-                                  "name": "username",
-                                }
-                              }
-                              data-__meta={
-                                Object {
-                                  "name": "username",
-                                  "originalProps": Object {
-                                    "disabled": false,
-                                    "placeholder": "Nombre de Usuario",
-                                    "prefix": <Icon
-                                      style={
-                                        Object {
-                                          "color": "rgba(0,0,0,.25)",
-                                        }
-                                      }
-                                      type="user"
-                                    />,
-                                    "type": "text",
-                                  },
-                                  "ref": null,
-                                  "rules": Array [
-                                    Object {
-                                      "message": "Por favor indica un nombre de usuario",
-                                      "required": true,
-                                    },
-                                  ],
-                                  "trigger": "onChange",
-                                  "validate": Array [
-                                    Object {
-                                      "rules": Array [
-                                        Object {
-                                          "message": "Por favor indica un nombre de usuario",
-                                          "required": true,
-                                        },
-                                      ],
-                                      "trigger": Array [
-                                        "onChange",
-                                      ],
-                                    },
-                                  ],
-                                  "valuePropName": "value",
-                                }
-                              }
-                              disabled={false}
-                              id="registration_form_username"
-                              onChange={[Function]}
-                              onKeyDown={[Function]}
-                              placeholder="Nombre de Usuario"
-                              style={null}
-                              type="text"
-                              value=""
-                            />
-                          </span>
-                        </Input>
-                      </span>
-                      <Animate
-                        animation={Object {}}
-                        component=""
-                        componentProps={Object {}}
-                        key="help"
-                        onAppear={[Function]}
-                        onEnd={[Function]}
-                        onEnter={[Function]}
-                        onLeave={[Function]}
-                        transitionAppear={true}
-                        transitionEnter={true}
-                        transitionLeave={true}
-                        transitionName="show-help"
-                      />
-                    </div>
-                  </div>
-                </Col>
-              </div>
-            </Row>
-          </FormItem>
-          <FormItem
-            hasFeedback={true}
-          >
-            <Row
-              className="ant-form-item"
-              gutter={0}
-              key="row"
-            >
-              <div
-                className="ant-row ant-form-item"
-              >
-                <Col
-                  className="ant-form-item-control-wrapper"
-                >
-                  <div
-                    className="ant-col ant-form-item-control-wrapper"
-                  >
-                    <div
-                      className="ant-form-item-control"
-                    >
-                      <span
-                        className="ant-form-item-children"
-                      >
-                        <Select
-                          choiceTransitionName="zoom"
-                          data-__field={
-                            Object {
-                              "name": "node",
-                            }
-                          }
-                          data-__meta={
-                            Object {
-                              "initialValue": undefined,
-                              "name": "node",
-                              "originalProps": Object {
-                                "children": Array [
-                                  <Option>
-                                     
-                                  </Option>,
-                                  Array [
-                                    <Option>
-                                      ql-roxa
-                                    </Option>,
-                                    <Option>
-                                      ql-nicoyjesi
-                                    </Option>,
-                                    <Option>
-                                      ql-natiysofi
-                                    </Option>,
-                                    <Option>
-                                      si-silvia
-                                    </Option>,
-                                  ],
-                                ],
-                                "choiceTransitionName": "zoom",
-                                "filterOption": [Function],
-                                "optionFilterProp": "children",
-                                "placeholder": "Selecciona tu Nodo",
-                                "showSearch": true,
-                                "transitionName": "slide-up",
-                              },
-                              "ref": null,
-                              "trigger": "onChange",
-                              "validate": Array [],
-                              "valuePropName": "value",
-                            }
-                          }
-                          filterOption={[Function]}
-                          id="registration_form_node"
-                          onChange={[Function]}
-                          optionFilterProp="children"
-                          placeholder="Selecciona tu Nodo"
-                          showSearch={true}
-                          transitionName="slide-up"
-                        >
-                          <Select
-                            allowClear={false}
-                            autoClearSearchValue={true}
-                            backfill={false}
-                            choiceTransitionName="zoom"
-                            className=""
-                            clearIcon={
-                              <Icon
-                                className="ant-select-clear-icon"
-                                theme="filled"
-                                type="close-circle"
-                              />
-                            }
-                            combobox={false}
-                            data-__field={
-                              Object {
-                                "name": "node",
-                              }
-                            }
-                            data-__meta={
-                              Object {
-                                "initialValue": undefined,
-                                "name": "node",
-                                "originalProps": Object {
-                                  "children": Array [
-                                    <Option>
-                                       
-                                    </Option>,
-                                    Array [
-                                      <Option>
-                                        ql-roxa
-                                      </Option>,
-                                      <Option>
-                                        ql-nicoyjesi
-                                      </Option>,
-                                      <Option>
-                                        ql-natiysofi
-                                      </Option>,
-                                      <Option>
-                                        si-silvia
-                                      </Option>,
-                                    ],
-                                  ],
-                                  "choiceTransitionName": "zoom",
-                                  "filterOption": [Function],
-                                  "optionFilterProp": "children",
-                                  "placeholder": "Selecciona tu Nodo",
-                                  "showSearch": true,
-                                  "transitionName": "slide-up",
-                                },
-                                "ref": null,
-                                "trigger": "onChange",
-                                "validate": Array [],
-                                "valuePropName": "value",
-                              }
-                            }
-                            defaultActiveFirstOption={true}
-                            defaultOpen={false}
-                            dropdownMatchSelectWidth={true}
-                            dropdownMenuStyle={Object {}}
-                            dropdownRender={[Function]}
-                            dropdownStyle={Object {}}
-                            filterOption={[Function]}
-                            id="registration_form_node"
-                            inputIcon={
-                              <Icon
-                                className="ant-select-arrow-icon"
-                                type="down"
-                              />
-                            }
-                            labelInValue={false}
-                            menuItemSelectedIcon={
-                              <Icon
-                                className="ant-select-selected-icon"
-                                type="check"
-                              />
-                            }
-                            multiple={false}
-                            notFoundContent={
-                              <Context.Consumer>
-                                [Function]
-                              </Context.Consumer>
-                            }
-                            onBlur={[Function]}
-                            onChange={[Function]}
-                            onDeselect={[Function]}
-                            onFocus={[Function]}
-                            onInputKeyDown={[Function]}
-                            onSearch={[Function]}
-                            onSelect={[Function]}
-                            optionFilterProp="children"
-                            optionLabelProp="children"
-                            placeholder="Selecciona tu Nodo"
-                            prefixCls="ant-select"
-                            removeIcon={
-                              <Icon
-                                className="ant-select-remove-icon"
-                                type="close"
-                              />
-                            }
-                            showAction={
-                              Array [
-                                "click",
-                              ]
-                            }
-                            showSearch={true}
-                            tabIndex={0}
-                            tags={false}
-                            tokenSeparators={Array []}
-                            transitionName="slide-up"
-                          >
-                            <SelectTrigger
-                              ariaId="test-uuid"
-                              backfillValue=""
-                              combobox={false}
-                              defaultActiveFirstOption={true}
-                              dropdownMatchSelectWidth={true}
-                              dropdownMenuStyle={Object {}}
-                              dropdownRender={[Function]}
-                              dropdownStyle={Object {}}
-                              empty={false}
-                              inputValue=""
-                              menuItemSelectedIcon={
-                                <Icon
-                                  className="ant-select-selected-icon"
-                                  type="check"
-                                />
-                              }
-                              multiple={false}
-                              onDropdownVisibleChange={[Function]}
-                              onMenuDeselect={[Function]}
-                              onMenuSelect={[Function]}
-                              onPopupFocus={[Function]}
-                              options={Array []}
-                              prefixCls="ant-select"
-                              showAction={
-                                Array [
-                                  "click",
-                                ]
-                              }
-                              showSearch={true}
-                              transitionName="slide-up"
-                              value={Array []}
-                              visible={false}
+                                  Nombre de Usuario
+                                </label>
+                              </div>
+                            </Col>
+                            <Col
+                              className="ant-form-item-control-wrapper"
                             >
-                              <Trigger
-                                action={Array []}
-                                afterPopupVisibleChange={[Function]}
-                                ariaId="test-uuid"
-                                backfillValue=""
-                                blurDelay={0.15}
-                                builtinPlacements={
-                                  Object {
-                                    "bottomLeft": Object {
-                                      "offset": Array [
-                                        0,
-                                        4,
-                                      ],
-                                      "overflow": Object {
-                                        "adjustX": 0,
-                                        "adjustY": 1,
-                                      },
-                                      "points": Array [
-                                        "tl",
-                                        "bl",
-                                      ],
-                                    },
-                                    "topLeft": Object {
-                                      "offset": Array [
-                                        0,
-                                        -4,
-                                      ],
-                                      "overflow": Object {
-                                        "adjustX": 0,
-                                        "adjustY": 1,
-                                      },
-                                      "points": Array [
-                                        "bl",
-                                        "tl",
-                                      ],
-                                    },
-                                  }
-                                }
-                                combobox={false}
-                                defaultActiveFirstOption={true}
-                                defaultPopupVisible={false}
-                                destroyPopupOnHide={false}
-                                dropdownMatchSelectWidth={true}
-                                dropdownMenuStyle={Object {}}
-                                dropdownRender={[Function]}
-                                dropdownStyle={Object {}}
-                                focusDelay={0}
-                                getDocument={[Function]}
-                                getPopupClassNameFromAlign={[Function]}
-                                hideAction={
-                                  Array [
-                                    "blur",
-                                  ]
-                                }
-                                inputValue=""
-                                mask={false}
-                                maskClosable={true}
-                                menuItemSelectedIcon={
-                                  <Icon
-                                    className="ant-select-selected-icon"
-                                    type="check"
-                                  />
-                                }
-                                mouseEnterDelay={0}
-                                mouseLeaveDelay={0.1}
-                                multiple={false}
-                                onDropdownVisibleChange={[Function]}
-                                onMenuDeselect={[Function]}
-                                onMenuSelect={[Function]}
-                                onPopupAlign={[Function]}
-                                onPopupVisibleChange={[Function]}
-                                options={Array []}
-                                popup={
-                                  <DropdownMenu
-                                    ariaId="test-uuid"
-                                    backfillValue=""
-                                    defaultActiveFirstOption={true}
-                                    dropdownMenuStyle={Object {}}
-                                    inputValue=""
-                                    menuItemSelectedIcon={
-                                      <Icon
-                                        className="ant-select-selected-icon"
-                                        type="check"
-                                      />
-                                    }
-                                    menuItems={Array []}
-                                    multiple={false}
-                                    onMenuDeselect={[Function]}
-                                    onMenuSelect={[Function]}
-                                    onPopupFocus={[Function]}
-                                    prefixCls="ant-select-dropdown"
-                                    value={Array []}
-                                    visible={false}
-                                  />
-                                }
-                                popupAlign={Object {}}
-                                popupClassName="ant-select-dropdown--single"
-                                popupPlacement="bottomLeft"
-                                popupStyle={Object {}}
-                                popupTransitionName="slide-up"
-                                popupVisible={false}
-                                prefixCls="ant-select-dropdown"
-                                showAction={
-                                  Array [
-                                    "click",
-                                  ]
-                                }
-                                showSearch={true}
-                                transitionName="slide-up"
-                                value={Array []}
-                                visible={false}
+                              <div
+                                className="ant-col ant-form-item-control-wrapper"
                               >
                                 <div
-                                  className="ant-select ant-select-enabled"
-                                  id="registration_form_node"
-                                  key="trigger"
-                                  onBlur={[Function]}
-                                  onClick={[Function]}
-                                  onFocus={[Function]}
-                                  onMouseDown={[Function]}
-                                  onMouseOut={[Function]}
-                                  onMouseUp={[Function]}
-                                  onTouchStart={[Function]}
+                                  className="ant-form-item-control"
                                 >
-                                  <div
-                                    aria-autocomplete="list"
-                                    aria-controls="test-uuid"
-                                    aria-expanded={false}
-                                    aria-haspopup="true"
-                                    className="ant-select-selection
-            ant-select-selection--single"
-                                    data-__field={
-                                      Object {
-                                        "name": "node",
-                                      }
-                                    }
-                                    data-__meta={
-                                      Object {
-                                        "initialValue": undefined,
-                                        "name": "node",
-                                        "originalProps": Object {
-                                          "children": Array [
-                                            <Option>
-                                               
-                                            </Option>,
-                                            Array [
-                                              <Option>
-                                                ql-roxa
-                                              </Option>,
-                                              <Option>
-                                                ql-nicoyjesi
-                                              </Option>,
-                                              <Option>
-                                                ql-natiysofi
-                                              </Option>,
-                                              <Option>
-                                                si-silvia
-                                              </Option>,
-                                            ],
-                                          ],
-                                          "choiceTransitionName": "zoom",
-                                          "filterOption": [Function],
-                                          "optionFilterProp": "children",
-                                          "placeholder": "Selecciona tu Nodo",
-                                          "showSearch": true,
-                                          "transitionName": "slide-up",
-                                        },
-                                        "ref": null,
-                                        "trigger": "onChange",
-                                        "validate": Array [],
-                                        "valuePropName": "value",
-                                      }
-                                    }
-                                    key="selection"
-                                    onKeyDown={[Function]}
-                                    role="combobox"
-                                    tabIndex={0}
+                                  <span
+                                    className="ant-form-item-children"
                                   >
-                                    <div
-                                      className="ant-select-selection__rendered"
-                                    >
-                                      <div
-                                        className="ant-select-selection__placeholder"
-                                        onClick={[Function]}
-                                        onMouseDown={[Function]}
-                                        style={
-                                          Object {
-                                            "WebkitUserSelect": "none",
-                                            "display": "block",
-                                            "userSelect": "none",
+                                    <Component
+                                      id="name"
+                                      name="name"
+                                      prefix={
+                                        <Icon
+                                          style={
+                                            Object {
+                                              "color": "rgba(0,0,0,.25)",
+                                            }
                                           }
-                                        }
-                                        unselectable="on"
-                                      >
-                                        Selecciona tu Nodo
-                                      </div>
-                                      <div
-                                        className="ant-select-search ant-select-search--inline"
-                                        key="input"
-                                        style={
-                                          Object {
-                                            "display": "none",
-                                          }
-                                        }
-                                      >
-                                        <div
-                                          className="ant-select-search__field__wrap"
-                                        >
-                                          <input
-                                            autoComplete="off"
-                                            className="ant-select-search__field"
-                                            id="registration_form_node"
-                                            onChange={[Function]}
-                                            onKeyDown={[Function]}
-                                            value=""
-                                          />
-                                          <span
-                                            className="ant-select-search__field__mirror"
-                                          >
-                                             
-                                          </span>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <span
-                                      className="ant-select-arrow"
-                                      key="arrow"
-                                      onClick={[Function]}
-                                      style={
-                                        Object {
-                                          "WebkitUserSelect": "none",
-                                          "userSelect": "none",
-                                        }
+                                          type="user"
+                                        />
                                       }
-                                      unselectable="on"
                                     >
-                                      <Icon
-                                        className="ant-select-arrow-icon"
-                                        type="down"
+                                      <FormikConnect(FieldInner)
+                                        name="name"
                                       >
-                                        <LocaleReceiver
-                                          componentName="Icon"
+                                        <FieldInner
+                                          formik={
+                                            Object {
+                                              "dirty": false,
+                                              "errors": Object {},
+                                              "handleBlur": [Function],
+                                              "handleChange": [Function],
+                                              "handleReset": [Function],
+                                              "handleSubmit": [Function],
+                                              "initialValues": Object {
+                                                "node": undefined,
+                                              },
+                                              "isSubmitting": false,
+                                              "isValid": false,
+                                              "isValidating": false,
+                                              "registerField": [Function],
+                                              "resetForm": [Function],
+                                              "setError": [Function],
+                                              "setErrors": [Function],
+                                              "setFieldError": [Function],
+                                              "setFieldTouched": [Function],
+                                              "setFieldValue": [Function],
+                                              "setFormikState": [Function],
+                                              "setStatus": [Function],
+                                              "setSubmitting": [Function],
+                                              "setTouched": [Function],
+                                              "setValues": [Function],
+                                              "status": undefined,
+                                              "submitCount": 0,
+                                              "submitForm": [Function],
+                                              "touched": Object {},
+                                              "unregisterField": [Function],
+                                              "validate": [Function],
+                                              "validateField": [Function],
+                                              "validateForm": [Function],
+                                              "validateOnBlur": true,
+                                              "validateOnChange": true,
+                                              "validationSchema": undefined,
+                                              "values": Object {
+                                                "node": undefined,
+                                              },
+                                            }
+                                          }
+                                          name="name"
                                         >
-                                          <i
-                                            aria-label="icon: down"
-                                            className="anticon anticon-down ant-select-arrow-icon"
+                                          <Input
+                                            disabled={false}
+                                            id="name"
+                                            name="name"
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            prefix={
+                                              <Icon
+                                                style={
+                                                  Object {
+                                                    "color": "rgba(0,0,0,.25)",
+                                                  }
+                                                }
+                                                type="user"
+                                              />
+                                            }
+                                            type="text"
                                           >
-                                            <IconReact
-                                              className=""
-                                              type="down-o"
+                                            <span
+                                              className="ant-input-affix-wrapper"
                                             >
-                                              <svg
-                                                aria-hidden="true"
-                                                className=""
-                                                data-icon="down"
-                                                fill="currentColor"
-                                                focusable="false"
-                                                height="1em"
-                                                key="svg-down"
-                                                viewBox="64 64 896 896"
-                                                width="1em"
+                                              <span
+                                                className="ant-input-prefix"
                                               >
-                                                <path
-                                                  d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-                                                  key="svg-down-svg-0"
-                                                />
-                                              </svg>
-                                            </IconReact>
-                                          </i>
-                                        </LocaleReceiver>
-                                      </Icon>
-                                    </span>
-                                  </div>
+                                                <Icon
+                                                  style={
+                                                    Object {
+                                                      "color": "rgba(0,0,0,.25)",
+                                                    }
+                                                  }
+                                                  type="user"
+                                                >
+                                                  <LocaleReceiver
+                                                    componentName="Icon"
+                                                  >
+                                                    <i
+                                                      aria-label="icon: user"
+                                                      className="anticon anticon-user"
+                                                      style={
+                                                        Object {
+                                                          "color": "rgba(0,0,0,.25)",
+                                                        }
+                                                      }
+                                                    >
+                                                      <IconReact
+                                                        className=""
+                                                        type="user-o"
+                                                      >
+                                                        <svg
+                                                          aria-hidden="true"
+                                                          className=""
+                                                          data-icon="user"
+                                                          fill="currentColor"
+                                                          focusable="false"
+                                                          height="1em"
+                                                          key="svg-user"
+                                                          viewBox="64 64 896 896"
+                                                          width="1em"
+                                                        >
+                                                          <path
+                                                            d="M858.5 763.6a374 374 0 0 0-80.6-119.5 375.63 375.63 0 0 0-119.5-80.6c-.4-.2-.8-.3-1.2-.5C719.5 518 760 444.7 760 362c0-137-111-248-248-248S264 225 264 362c0 82.7 40.5 156 102.8 201.1-.4.2-.8.3-1.2.5-44.8 18.9-85 46-119.5 80.6a375.63 375.63 0 0 0-80.6 119.5A371.7 371.7 0 0 0 136 901.8a8 8 0 0 0 8 8.2h60c4.4 0 7.9-3.5 8-7.8 2-77.2 33-149.5 87.8-204.3 56.7-56.7 132-87.9 212.2-87.9s155.5 31.2 212.2 87.9C779 752.7 810 825 812 902.2c.1 4.4 3.6 7.8 8 7.8h60a8 8 0 0 0 8-8.2c-1-47.8-10.9-94.3-29.5-138.2zM512 534c-45.9 0-89.1-17.9-121.6-50.4S340 407.9 340 362c0-45.9 17.9-89.1 50.4-121.6S466.1 190 512 190s89.1 17.9 121.6 50.4S684 316.1 684 362c0 45.9-17.9 89.1-50.4 121.6S557.9 534 512 534z"
+                                                            key="svg-user-svg-0"
+                                                          />
+                                                        </svg>
+                                                      </IconReact>
+                                                    </i>
+                                                  </LocaleReceiver>
+                                                </Icon>
+                                              </span>
+                                              <input
+                                                className="ant-input"
+                                                disabled={false}
+                                                id="name"
+                                                name="name"
+                                                onBlur={[Function]}
+                                                onChange={[Function]}
+                                                onKeyDown={[Function]}
+                                                style={null}
+                                                type="text"
+                                                value=""
+                                              />
+                                            </span>
+                                          </Input>
+                                        </FieldInner>
+                                      </FormikConnect(FieldInner)>
+                                    </Component>
+                                  </span>
+                                  <Animate
+                                    animation={Object {}}
+                                    component=""
+                                    componentProps={Object {}}
+                                    key="help"
+                                    onAppear={[Function]}
+                                    onEnd={[Function]}
+                                    onEnter={[Function]}
+                                    onLeave={[Function]}
+                                    transitionAppear={true}
+                                    transitionEnter={true}
+                                    transitionLeave={true}
+                                    transitionName="show-help"
+                                  />
                                 </div>
-                              </Trigger>
-                            </SelectTrigger>
-                          </Select>
-                        </Select>
-                      </span>
-                      <Animate
-                        animation={Object {}}
-                        component=""
-                        componentProps={Object {}}
-                        key="help"
-                        onAppear={[Function]}
-                        onEnd={[Function]}
-                        onEnter={[Function]}
-                        onLeave={[Function]}
-                        transitionAppear={true}
-                        transitionEnter={true}
-                        transitionLeave={true}
-                        transitionName="show-help"
-                      />
-                    </div>
-                  </div>
-                </Col>
-              </div>
-            </Row>
-          </FormItem>
-          <FormItem
-            hasFeedback={false}
-          >
-            <Row
-              className="ant-form-item"
-              gutter={0}
-              key="row"
-            >
-              <div
-                className="ant-row ant-form-item"
-              >
-                <Col
-                  className="ant-form-item-control-wrapper"
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </FormItem>
+                    </FieldInner>
+                  </FormikConnect(FieldInner)>
+                </Component>
+                <Component
+                  hasFeedback={true}
+                  htmlFor="name"
+                  label="Tu Nodo"
+                  name="node"
                 >
-                  <div
-                    className="ant-col ant-form-item-control-wrapper"
+                  <FormikConnect(FieldInner)
+                    name="node"
                   >
-                    <div
-                      className="ant-form-item-control"
+                    <FieldInner
+                      formik={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "node": undefined,
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validate": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "validationSchema": undefined,
+                          "values": Object {
+                            "node": undefined,
+                          },
+                        }
+                      }
+                      name="node"
                     >
-                      <span
-                        className="ant-form-item-children"
+                      <FormItem
+                        hasFeedback={true}
+                        help={false}
+                        htmlFor="name"
+                        label="Tu Nodo"
                       >
-                        <Button
-                          block={false}
-                          className="login-form-button"
-                          ghost={false}
-                          htmlType="submit"
-                          loading={false}
-                          type="primary"
+                        <Row
+                          className="ant-form-item"
+                          gutter={0}
+                          key="row"
                         >
-                          <Wave>
-                            <button
-                              className="ant-btn login-form-button ant-btn-primary"
-                              onClick={[Function]}
-                              type="submit"
+                          <div
+                            className="ant-row ant-form-item"
+                          >
+                            <Col
+                              className="ant-form-item-label"
                             >
-                              <span
-                                key=".0"
+                              <div
+                                className="ant-col ant-form-item-label"
                               >
-                                Registrarme
-                              </span>
-                            </button>
-                          </Wave>
-                        </Button>
-                      </span>
-                      <Animate
-                        animation={Object {}}
-                        component=""
-                        componentProps={Object {}}
-                        key="help"
-                        onAppear={[Function]}
-                        onEnd={[Function]}
-                        onEnter={[Function]}
-                        onLeave={[Function]}
-                        transitionAppear={true}
-                        transitionEnter={true}
-                        transitionLeave={true}
-                        transitionName="show-help"
-                      />
-                    </div>
-                  </div>
-                </Col>
-              </div>
-            </Row>
-          </FormItem>
-        </form>
+                                <label
+                                  className=""
+                                  htmlFor="name"
+                                  onClick={[Function]}
+                                  title="Tu Nodo"
+                                >
+                                  Tu Nodo
+                                </label>
+                              </div>
+                            </Col>
+                            <Col
+                              className="ant-form-item-control-wrapper"
+                            >
+                              <div
+                                className="ant-col ant-form-item-control-wrapper"
+                              >
+                                <div
+                                  className="ant-form-item-control"
+                                >
+                                  <span
+                                    className="ant-form-item-children"
+                                  >
+                                    <Component
+                                      filterOption={[Function]}
+                                      name="node"
+                                      optionFilterProp="children"
+                                      showSearch={true}
+                                    >
+                                      <FormikConnect(FieldInner)
+                                        name="node"
+                                      >
+                                        <FieldInner
+                                          formik={
+                                            Object {
+                                              "dirty": false,
+                                              "errors": Object {},
+                                              "handleBlur": [Function],
+                                              "handleChange": [Function],
+                                              "handleReset": [Function],
+                                              "handleSubmit": [Function],
+                                              "initialValues": Object {
+                                                "node": undefined,
+                                              },
+                                              "isSubmitting": false,
+                                              "isValid": false,
+                                              "isValidating": false,
+                                              "registerField": [Function],
+                                              "resetForm": [Function],
+                                              "setError": [Function],
+                                              "setErrors": [Function],
+                                              "setFieldError": [Function],
+                                              "setFieldTouched": [Function],
+                                              "setFieldValue": [Function],
+                                              "setFormikState": [Function],
+                                              "setStatus": [Function],
+                                              "setSubmitting": [Function],
+                                              "setTouched": [Function],
+                                              "setValues": [Function],
+                                              "status": undefined,
+                                              "submitCount": 0,
+                                              "submitForm": [Function],
+                                              "touched": Object {},
+                                              "unregisterField": [Function],
+                                              "validate": [Function],
+                                              "validateField": [Function],
+                                              "validateForm": [Function],
+                                              "validateOnBlur": true,
+                                              "validateOnChange": true,
+                                              "validationSchema": undefined,
+                                              "values": Object {
+                                                "node": undefined,
+                                              },
+                                            }
+                                          }
+                                          name="node"
+                                        >
+                                          <Select
+                                            choiceTransitionName="zoom"
+                                            filterOption={[Function]}
+                                            onBlur={[Function]}
+                                            onChange={[Function]}
+                                            optionFilterProp="children"
+                                            showSearch={true}
+                                            transitionName="slide-up"
+                                          >
+                                            <Select
+                                              allowClear={false}
+                                              autoClearSearchValue={true}
+                                              backfill={false}
+                                              choiceTransitionName="zoom"
+                                              className=""
+                                              clearIcon={
+                                                <Icon
+                                                  className="ant-select-clear-icon"
+                                                  theme="filled"
+                                                  type="close-circle"
+                                                />
+                                              }
+                                              combobox={false}
+                                              defaultActiveFirstOption={true}
+                                              defaultOpen={false}
+                                              dropdownMatchSelectWidth={true}
+                                              dropdownMenuStyle={Object {}}
+                                              dropdownRender={[Function]}
+                                              dropdownStyle={Object {}}
+                                              filterOption={[Function]}
+                                              inputIcon={
+                                                <Icon
+                                                  className="ant-select-arrow-icon"
+                                                  type="down"
+                                                />
+                                              }
+                                              labelInValue={false}
+                                              menuItemSelectedIcon={
+                                                <Icon
+                                                  className="ant-select-selected-icon"
+                                                  type="check"
+                                                />
+                                              }
+                                              multiple={false}
+                                              notFoundContent={
+                                                <Context.Consumer>
+                                                  [Function]
+                                                </Context.Consumer>
+                                              }
+                                              onBlur={[Function]}
+                                              onChange={[Function]}
+                                              onDeselect={[Function]}
+                                              onFocus={[Function]}
+                                              onInputKeyDown={[Function]}
+                                              onSearch={[Function]}
+                                              onSelect={[Function]}
+                                              optionFilterProp="children"
+                                              optionLabelProp="children"
+                                              placeholder=""
+                                              prefixCls="ant-select"
+                                              removeIcon={
+                                                <Icon
+                                                  className="ant-select-remove-icon"
+                                                  type="close"
+                                                />
+                                              }
+                                              showAction={
+                                                Array [
+                                                  "click",
+                                                ]
+                                              }
+                                              showSearch={true}
+                                              tabIndex={0}
+                                              tags={false}
+                                              tokenSeparators={Array []}
+                                              transitionName="slide-up"
+                                            >
+                                              <SelectTrigger
+                                                ariaId="test-uuid"
+                                                backfillValue=""
+                                                combobox={false}
+                                                defaultActiveFirstOption={true}
+                                                dropdownMatchSelectWidth={true}
+                                                dropdownMenuStyle={Object {}}
+                                                dropdownRender={[Function]}
+                                                dropdownStyle={Object {}}
+                                                empty={false}
+                                                inputValue=""
+                                                menuItemSelectedIcon={
+                                                  <Icon
+                                                    className="ant-select-selected-icon"
+                                                    type="check"
+                                                  />
+                                                }
+                                                multiple={false}
+                                                onDropdownVisibleChange={[Function]}
+                                                onMenuDeselect={[Function]}
+                                                onMenuSelect={[Function]}
+                                                onPopupFocus={[Function]}
+                                                options={Array []}
+                                                prefixCls="ant-select"
+                                                showAction={
+                                                  Array [
+                                                    "click",
+                                                  ]
+                                                }
+                                                showSearch={true}
+                                                transitionName="slide-up"
+                                                value={Array []}
+                                                visible={false}
+                                              >
+                                                <Trigger
+                                                  action={Array []}
+                                                  afterPopupVisibleChange={[Function]}
+                                                  ariaId="test-uuid"
+                                                  backfillValue=""
+                                                  blurDelay={0.15}
+                                                  builtinPlacements={
+                                                    Object {
+                                                      "bottomLeft": Object {
+                                                        "offset": Array [
+                                                          0,
+                                                          4,
+                                                        ],
+                                                        "overflow": Object {
+                                                          "adjustX": 0,
+                                                          "adjustY": 1,
+                                                        },
+                                                        "points": Array [
+                                                          "tl",
+                                                          "bl",
+                                                        ],
+                                                      },
+                                                      "topLeft": Object {
+                                                        "offset": Array [
+                                                          0,
+                                                          -4,
+                                                        ],
+                                                        "overflow": Object {
+                                                          "adjustX": 0,
+                                                          "adjustY": 1,
+                                                        },
+                                                        "points": Array [
+                                                          "bl",
+                                                          "tl",
+                                                        ],
+                                                      },
+                                                    }
+                                                  }
+                                                  combobox={false}
+                                                  defaultActiveFirstOption={true}
+                                                  defaultPopupVisible={false}
+                                                  destroyPopupOnHide={false}
+                                                  dropdownMatchSelectWidth={true}
+                                                  dropdownMenuStyle={Object {}}
+                                                  dropdownRender={[Function]}
+                                                  dropdownStyle={Object {}}
+                                                  focusDelay={0}
+                                                  getDocument={[Function]}
+                                                  getPopupClassNameFromAlign={[Function]}
+                                                  hideAction={
+                                                    Array [
+                                                      "blur",
+                                                    ]
+                                                  }
+                                                  inputValue=""
+                                                  mask={false}
+                                                  maskClosable={true}
+                                                  menuItemSelectedIcon={
+                                                    <Icon
+                                                      className="ant-select-selected-icon"
+                                                      type="check"
+                                                    />
+                                                  }
+                                                  mouseEnterDelay={0}
+                                                  mouseLeaveDelay={0.1}
+                                                  multiple={false}
+                                                  onDropdownVisibleChange={[Function]}
+                                                  onMenuDeselect={[Function]}
+                                                  onMenuSelect={[Function]}
+                                                  onPopupAlign={[Function]}
+                                                  onPopupVisibleChange={[Function]}
+                                                  options={Array []}
+                                                  popup={
+                                                    <DropdownMenu
+                                                      ariaId="test-uuid"
+                                                      backfillValue=""
+                                                      defaultActiveFirstOption={true}
+                                                      dropdownMenuStyle={Object {}}
+                                                      inputValue=""
+                                                      menuItemSelectedIcon={
+                                                        <Icon
+                                                          className="ant-select-selected-icon"
+                                                          type="check"
+                                                        />
+                                                      }
+                                                      menuItems={Array []}
+                                                      multiple={false}
+                                                      onMenuDeselect={[Function]}
+                                                      onMenuSelect={[Function]}
+                                                      onPopupFocus={[Function]}
+                                                      prefixCls="ant-select-dropdown"
+                                                      value={Array []}
+                                                      visible={false}
+                                                    />
+                                                  }
+                                                  popupAlign={Object {}}
+                                                  popupClassName="ant-select-dropdown--single"
+                                                  popupPlacement="bottomLeft"
+                                                  popupStyle={Object {}}
+                                                  popupTransitionName="slide-up"
+                                                  popupVisible={false}
+                                                  prefixCls="ant-select-dropdown"
+                                                  showAction={
+                                                    Array [
+                                                      "click",
+                                                    ]
+                                                  }
+                                                  showSearch={true}
+                                                  transitionName="slide-up"
+                                                  value={Array []}
+                                                  visible={false}
+                                                >
+                                                  <div
+                                                    className="ant-select ant-select-enabled"
+                                                    key="trigger"
+                                                    onBlur={[Function]}
+                                                    onClick={[Function]}
+                                                    onFocus={[Function]}
+                                                    onMouseDown={[Function]}
+                                                    onMouseOut={[Function]}
+                                                    onMouseUp={[Function]}
+                                                    onTouchStart={[Function]}
+                                                  >
+                                                    <div
+                                                      aria-autocomplete="list"
+                                                      aria-controls="test-uuid"
+                                                      aria-expanded={false}
+                                                      aria-haspopup="true"
+                                                      className="ant-select-selection
+            ant-select-selection--single"
+                                                      key="selection"
+                                                      onKeyDown={[Function]}
+                                                      role="combobox"
+                                                      tabIndex={0}
+                                                    >
+                                                      <div
+                                                        className="ant-select-selection__rendered"
+                                                      >
+                                                        <div
+                                                          className="ant-select-search ant-select-search--inline"
+                                                          key="input"
+                                                          style={
+                                                            Object {
+                                                              "display": "none",
+                                                            }
+                                                          }
+                                                        >
+                                                          <div
+                                                            className="ant-select-search__field__wrap"
+                                                          >
+                                                            <input
+                                                              autoComplete="off"
+                                                              className="ant-select-search__field"
+                                                              onChange={[Function]}
+                                                              onKeyDown={[Function]}
+                                                              value=""
+                                                            />
+                                                            <span
+                                                              className="ant-select-search__field__mirror"
+                                                            >
+                                                               
+                                                            </span>
+                                                          </div>
+                                                        </div>
+                                                      </div>
+                                                      <span
+                                                        className="ant-select-arrow"
+                                                        key="arrow"
+                                                        onClick={[Function]}
+                                                        style={
+                                                          Object {
+                                                            "WebkitUserSelect": "none",
+                                                            "userSelect": "none",
+                                                          }
+                                                        }
+                                                        unselectable="on"
+                                                      >
+                                                        <Icon
+                                                          className="ant-select-arrow-icon"
+                                                          type="down"
+                                                        >
+                                                          <LocaleReceiver
+                                                            componentName="Icon"
+                                                          >
+                                                            <i
+                                                              aria-label="icon: down"
+                                                              className="anticon anticon-down ant-select-arrow-icon"
+                                                            >
+                                                              <IconReact
+                                                                className=""
+                                                                type="down-o"
+                                                              >
+                                                                <svg
+                                                                  aria-hidden="true"
+                                                                  className=""
+                                                                  data-icon="down"
+                                                                  fill="currentColor"
+                                                                  focusable="false"
+                                                                  height="1em"
+                                                                  key="svg-down"
+                                                                  viewBox="64 64 896 896"
+                                                                  width="1em"
+                                                                >
+                                                                  <path
+                                                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                                                    key="svg-down-svg-0"
+                                                                  />
+                                                                </svg>
+                                                              </IconReact>
+                                                            </i>
+                                                          </LocaleReceiver>
+                                                        </Icon>
+                                                      </span>
+                                                    </div>
+                                                  </div>
+                                                </Trigger>
+                                              </SelectTrigger>
+                                            </Select>
+                                          </Select>
+                                        </FieldInner>
+                                      </FormikConnect(FieldInner)>
+                                    </Component>
+                                  </span>
+                                  <Animate
+                                    animation={Object {}}
+                                    component=""
+                                    componentProps={Object {}}
+                                    key="help"
+                                    onAppear={[Function]}
+                                    onEnd={[Function]}
+                                    onEnter={[Function]}
+                                    onLeave={[Function]}
+                                    transitionAppear={true}
+                                    transitionEnter={true}
+                                    transitionLeave={true}
+                                    transitionName="show-help"
+                                  />
+                                </div>
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </FormItem>
+                    </FieldInner>
+                  </FormikConnect(FieldInner)>
+                </Component>
+                <Component>
+                  <FormikConnect(FieldInner)>
+                    <FieldInner
+                      formik={
+                        Object {
+                          "dirty": false,
+                          "errors": Object {},
+                          "handleBlur": [Function],
+                          "handleChange": [Function],
+                          "handleReset": [Function],
+                          "handleSubmit": [Function],
+                          "initialValues": Object {
+                            "node": undefined,
+                          },
+                          "isSubmitting": false,
+                          "isValid": false,
+                          "isValidating": false,
+                          "registerField": [Function],
+                          "resetForm": [Function],
+                          "setError": [Function],
+                          "setErrors": [Function],
+                          "setFieldError": [Function],
+                          "setFieldTouched": [Function],
+                          "setFieldValue": [Function],
+                          "setFormikState": [Function],
+                          "setStatus": [Function],
+                          "setSubmitting": [Function],
+                          "setTouched": [Function],
+                          "setValues": [Function],
+                          "status": undefined,
+                          "submitCount": 0,
+                          "submitForm": [Function],
+                          "touched": Object {},
+                          "unregisterField": [Function],
+                          "validate": [Function],
+                          "validateField": [Function],
+                          "validateForm": [Function],
+                          "validateOnBlur": true,
+                          "validateOnChange": true,
+                          "validationSchema": undefined,
+                          "values": Object {
+                            "node": undefined,
+                          },
+                        }
+                      }
+                    >
+                      <FormItem
+                        hasFeedback={false}
+                        help={false}
+                      >
+                        <Row
+                          className="ant-form-item"
+                          gutter={0}
+                          key="row"
+                        >
+                          <div
+                            className="ant-row ant-form-item"
+                          >
+                            <Col
+                              className="ant-form-item-control-wrapper"
+                            >
+                              <div
+                                className="ant-col ant-form-item-control-wrapper"
+                              >
+                                <div
+                                  className="ant-form-item-control"
+                                >
+                                  <span
+                                    className="ant-form-item-children"
+                                  >
+                                    <Button
+                                      block={false}
+                                      className="login-form-button"
+                                      ghost={false}
+                                      htmlType="submit"
+                                      loading={false}
+                                      type="primary"
+                                    >
+                                      <Wave>
+                                        <button
+                                          className="ant-btn login-form-button ant-btn-primary"
+                                          onClick={[Function]}
+                                          type="submit"
+                                        >
+                                          <span
+                                            key=".0"
+                                          >
+                                            Registrarme
+                                          </span>
+                                        </button>
+                                      </Wave>
+                                    </Button>
+                                  </span>
+                                  <Animate
+                                    animation={Object {}}
+                                    component=""
+                                    componentProps={Object {}}
+                                    key="help"
+                                    onAppear={[Function]}
+                                    onEnd={[Function]}
+                                    onEnter={[Function]}
+                                    onLeave={[Function]}
+                                    transitionAppear={true}
+                                    transitionEnter={true}
+                                    transitionLeave={true}
+                                    transitionName="show-help"
+                                  />
+                                </div>
+                              </div>
+                            </Col>
+                          </div>
+                        </Row>
+                      </FormItem>
+                    </FieldInner>
+                  </FormikConnect(FieldInner)>
+                </Component>
+              </form>
+            </Form>
+          </FieldInner>
+        </FormikConnect(FieldInner)>
       </Form>
-      <div
-        className="or-login"
-      >
-        <p>
-          O 
-          <Button
-            block={false}
-            ghost={false}
-            htmlType="button"
-            loading={false}
+    </Formik>
+    <div
+      className="or-login"
+    >
+      <p>
+        O 
+        <Button
+          block={false}
+          ghost={false}
+          htmlType="button"
+          loading={false}
+          onClick={[Function]}
+          type="link"
+        >
+          <button
+            className="ant-btn ant-btn-link"
             onClick={[Function]}
-            type="link"
+            type="button"
           >
-            <button
-              className="ant-btn ant-btn-link"
-              onClick={[Function]}
-              type="button"
+            <span
+              key=".0"
             >
-              <span
-                key=".0"
-              >
-                Ingresa con tu frase secreta
-              </span>
-            </button>
-          </Button>
-        </p>
-      </div>
+              Ingresa con tu frase secreta
+            </span>
+          </button>
+        </Button>
+      </p>
     </div>
-  </RegistrationForm>
-</Form(RegistrationForm)>
+  </div>
+</Registration>
 `;

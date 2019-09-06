@@ -3,8 +3,7 @@ import { render, fireEvent, wait } from '@testing-library/react';
 import mockedApi from '../../api';
 import Login from './Login';
 
-jest.mock('../../api', () => {
-    const api = {
+jest.mock('../../api', () => ({
         account: {
             recoverAccount: jest.fn(async (seedPhrase) => {
                 if (seedPhrase == 'valid seed phrase') {
@@ -18,9 +17,8 @@ jest.mock('../../api', () => {
                 }
             })
         }
-    }
-    return api;
-});
+    })
+);
 
 const submitButtonParams = [
     (content, element) => element.textContent === 'Entrar',

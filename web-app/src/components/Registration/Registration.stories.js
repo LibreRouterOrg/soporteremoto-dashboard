@@ -17,4 +17,4 @@ const actions = {
 storiesOf('Registration', module)
     .add('Default Node Roxa', () => <Registration {...actions} nodes={nodes} defaultNode="ql-roxa"></Registration>)
     .add('No default node', () => <Registration {...actions} nodes={nodes}></Registration>)
-    .add('Congrats after registering', () => <Congrats seedPhrase={seedPhrase} username={'gferrero'} />)
+    .add('Congrats after registering', () => <Congrats seedPhrase={seedPhrase} username={'bob'} />)
