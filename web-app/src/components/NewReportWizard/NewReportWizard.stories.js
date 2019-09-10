@@ -1,5 +1,5 @@
 import React from 'react';
-import NodeSelectionStep from './NodeSelectionStep';
+import {NodeSelectionStep} from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
 import ProblemBodyStep from './ProblemBodyStep';
 import NewReportWizard from './NewReportWizard';

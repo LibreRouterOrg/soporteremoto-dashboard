@@ -3,31 +3,19 @@ import { navigate } from '@reach/router';
 import NodeSelectionStep from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
 import ProblemBodyStep from './ProblemBodyStep';
-
-function getNodes() {
-    /* To be replaced with api service */
-    return ['ql-roxa', 'ql-silvia', 'ql-nico'];
-}
-
-function getDefaultNode() {
-    /* To be replaced with default node */
-    return 'ql-roxa';
-}
+import api from '../../api';
 
 class NewReportWizard extends Component {
     constructor(props) {
         super(props);
         this.state = {
             currentStep: 0,
+            report: {}
         }
         this.steps = [
             {
                 'key': 'node_selection',
                 'component': NodeSelectionStep,
-                'props': {
-                    nodes: getNodes(),
-                    defaultNode: getDefaultNode(),
-                }
             },
             {
                 'key': 'problem_selection',
@@ -46,11 +34,12 @@ class NewReportWizard extends Component {
         const currentStep = this.state.currentStep;
         this.setState({ currentStep: currentStep - 1 });
     }
-
-    onLeaveForward() {
+    
+    onLeaveForward(reportUpdate) {
+        this.setState({report: {...this.state.report, ...reportUpdate}});
         let currentStep = this.state.currentStep;
         if (currentStep >= (this.steps.length - 1)) {
-            navigate('/');
+            api.reports.create(this.state.report).then(navigate('/'));
         } else {
             this.setState({ currentStep: currentStep + 1 })
         }
@@ -65,7 +54,7 @@ class NewReportWizard extends Component {
         return (
             <>
                 {this.steps.map((step, index) =>
-                    <step.component {...step.props} {...props}
+                    <step.component {...props}
                         key={step.key}
                         shouldRender={index === currentStep}
                         isFirst={index === 0}

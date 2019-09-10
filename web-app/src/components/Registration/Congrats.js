@@ -6,7 +6,7 @@ import "./Congrats.css";
 
 const { Text } = Typography;
 
-export function Congrats({ seedPhrase, username }) {
+export function Congrats({ seedPhrase, username, handleExit }) {
     return (
         <div className="congrats">
             <h3>Felicitaciones {username}!</h3>
@@ -14,7 +14,7 @@ export function Congrats({ seedPhrase, username }) {
             <p><Text code>{seedPhrase}</Text></p>
             <p><b>Conservala</b>, la necesitarás para acceder en el futuro.</p>
             <div className="button-wrapper">
-                <Button type="primary">Continuar</Button>
+                <Button onClick={handleExit} type="primary">Continuar</Button>
             </div>
         </div>
     );

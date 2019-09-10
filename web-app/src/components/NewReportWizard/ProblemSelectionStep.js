@@ -23,7 +23,7 @@ function Choices({ choices, onChange, selected }) {
     }
     return (
         <div className="choices">
-            <Radio.Group onChange={onChange} value={selected}>
+            <Radio.Group name="common_issue" onChange={onChange} value={selected}>
                 {choices.map(choice =>
                     <Radio key={choice.id} style={radioStyle} value={choice}>
                         {choice.text}
@@ -62,7 +62,14 @@ class ProblemSelectionStep extends React.Component {
         if (this.state.page === 0 && hasSubchoices) {
             this.setState({ page: this.state.page + 1 })
         } else {
-            this.props.onLeaveForward();
+            const issue = this.state.page === 0 ? this.state.problem : this.state.subProblem
+            this.props.onLeaveForward({
+                common_issue: {
+                    id: issue.id,
+                    text: issue.text,
+                    parent: issue.parent,
+                }
+            });
         }
     }
 

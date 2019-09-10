@@ -10,7 +10,7 @@ export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes
     return (
         <div className="registration-page">
             <Formik
-                initialValues={{ node: defaultNode }}
+                initialValues={{ name: '', node: defaultNode }}
                 enableReinitialize
                 validate={values => {
                     let errors = {};
@@ -77,8 +77,8 @@ class RegistrationPage extends React.Component {
         })
     }
 
-    handleSubmit({ username, node }) {
-        api.account.createAccount({ name: username, node }).then(
+    handleSubmit({ name, node }) {
+        api.account.createAccount({ name, node }).then(
             () => {
                 navigate('/congrats', { state: { from: this.props.location.state.from } });
             }
