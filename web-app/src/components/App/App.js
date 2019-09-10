@@ -9,12 +9,7 @@ import NewReportWizard from '../NewReportWizard';
 import CommunityMap from '../CommunityMap';
 import IssuePage from '../IssuePage';
 import './App.less';
-
-const api = {
-  account: {
-    isLogged: () => true
-  }
-}
+import api from '../../api';
 
 function PrivateRoute({ children }) {
   /* Renders children component only if user is logged,
