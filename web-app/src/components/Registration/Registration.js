@@ -11,6 +11,7 @@ export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes
         <div className="registration-page">
             <Formik
                 initialValues={{ node: defaultNode }}
+                enableReinitialize
                 validate={values => {
                     let errors = {};
                     if (!values.name) {
@@ -26,7 +27,7 @@ export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes
                 {({ isSubmitting }) => (
                     <Form className="registration-form">
                         <Form.Item name="name" hasFeedback label="Nombre de Usuario" htmlFor="name">
-                            <Input id="name" name="name"prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} />
+                            <Input id="name" name="name" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} />
                         </Form.Item>
                         <Form.Item hasFeedback name="node" label="Tu Nodo" htmlFor="name">
                             <Select showSearch name="node"
