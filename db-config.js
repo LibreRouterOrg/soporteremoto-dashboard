@@ -22,6 +22,10 @@ config.connections.incoming.unix = [{
     transform: 'noauth'
 }]
 
+//ssb-rooms
+config.connections.incoming.tunnel = [{scope: 'public', transform: 'shs'}]
+config.connections.outgoing.tunnel = [{transform: 'shs'}]
+
 config.remote = `unix:${socketPath}:~noauth:${pubkey}`
 
 module.exports = config;

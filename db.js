@@ -1,6 +1,7 @@
 
 const SecretStack = require('secret-stack')
 const config = require('./db-config')
+const utils = require('ssb-room/utils')
 
 //create a secret-stack instance and add ssb-db, for persistence.
 var CreateSBot = SecretStack()
@@ -9,6 +10,7 @@ var CreateSBot = SecretStack()
  .use(require('ssb-conn'))
  .use(require('ssb-master'))
  .use(require('ssb-replicate'))
+ .use(require('ssb-room/tunnel/client'))
  .use(require('ssb-friends'))
 .use(require('ssb-backlinks'))
 .use(require('ssb-about'))
@@ -22,6 +24,8 @@ var sbot = CreateSBot(config)
 // Start peer connections
 setTimeout(()=>{
   sbot.conn.start()  
-}, 1000)
+  let address = utils.inviteToAddress("net:mattermost.altermundi.net:8008~shs:BaP9ZncN6DjY9lmgqaZCTlSbGZKRTCbdAPgaDW7/o0M=:SSB+Room+PSK3TLYC2T86EHQCUHBUHASCASE18JBV24=")
+  sbot.conn.connect(address, {type: 'room'}, console.log)
+}, 1000)  
 
 export default sbot
