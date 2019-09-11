@@ -2,13 +2,15 @@ const Path = require('path')
 const Config = require('ssb-config/inject')
 const ssbKeys = require('ssb-keys')
 
-const config = Config('soporteremoto', {
+const { APP_NAME, SHS, INVITE} = process.env
+
+const config = Config(APP_NAME || 'soporteremoto', {
     caps: {
-        shs: 'v/vqlQfe1EGN5gi187Wpl+0RIaeGaNkjGeoHtjmcouA=',
+        shs: SHS || 'v/vqlQfe1EGN5gi187Wpl+0RIaeGaNkjGeoHtjmcouA=',
         sign: null,
-        invite: 'VSPZS69Yqzz2F6E+TaQBKjxJqJGXAfkRKwnCbSjvy70='
+        invite: INVITE || 'VSPZS69Yqzz2F6E+TaQBKjxJqJGXAfkRKwnCbSjvy70='
     },
-    app_name: 'soporteremoto',
+    app_name: APP_NAME || 'soporteremoto',
     server: true,
     local: true
 });
