@@ -5,6 +5,8 @@ const themeVars = lessToJs(fs.readFileSync(path.join(__dirname, '../src/antTheme
 
 module.exports = async ({ config, mode }) => {
 
+  config.node = {fs: 'empty'};
+
   config.module.rules.push({
       loader: 'babel-loader',
       exclude: /node_modules/,
