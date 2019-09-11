@@ -51,7 +51,7 @@ function App() {
           <Router primary={false} component={PrivateRoute}>
             <LastIssuesPanel path="/" />
             <NewReportWizard path="/reports/new" />
-            <IssuePage path="/reports/:id" />
+            <IssuePage path="/report" />
             <Congrats path="/congrats" />
           </Router>
           <Router primary={false} component={NotLoggedRoute}>
