@@ -18,9 +18,9 @@ jest.mock('../../api', () => ({
     }
 }));
 
-jest.mock('@reach/router', () => {
-    navigate: jest.fn();
-});
+jest.mock('@reach/router', () => ({
+    navigate: jest.fn()
+}));
 
 afterEach(cleanup);
 

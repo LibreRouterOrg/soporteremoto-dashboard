@@ -33,7 +33,7 @@ it('should render an empty field for username', () => {
     expect(usernameInput.value).toBe("");
 });
 
-it.skip('should render a select node field with no selected option when default node is unknown', () => {
+it.skip('should render a select node field with no selected option when default node is unknown', async () => {
     /*Skipped since select handling of Antd Select isnt trivial*/
     const { getByLabelText } = render(<Registration />);
     const nodeSelector = getByLabelText('Tu Nodo');
@@ -43,7 +43,7 @@ it.skip('should render a select node field with no selected option when default 
     })
 });
 
-it.skip('should render a select node field with selected option being the default node when available', () => {
+it.skip('should render a select node field with selected option being the default node when available', async () => {
     /*Skipped since select handling of Antd Select isnt trivial*/
     const { getByLabelText } = render(<Registration />);
     const nodeSelector = getByLabelText('Tu Nodo');
@@ -53,7 +53,7 @@ it.skip('should render a select node field with selected option being the defaul
     })
 });
 
-it.skip('should call create account with form data when submitting the form', () => {
+it.skip('should call create account with form data when submitting the form', async () => {
     /*Skipped since select handling of Antd Select isnt trivial*/
     mockedApi.account.createAccount = jest.fn(async ({ name, node }) => { words: 'your seed phrase' });
     const { getByLabelText, getByText } = render(<Registration />);
@@ -70,7 +70,7 @@ it.skip('should call create account with form data when submitting the form', ()
     })
 });
 
-it.skip('should navigate to congrats page after submitting the form', () => {
+it.skip('should navigate to congrats page after submitting the form', async () => {
     /*Skipped since select handling of Antd Select isnt trivial*/
     mockedApi.account.createAccount = jest.fn(async ({ name, node }) => { words: 'your seed phrase' });
     const { getByLabelText, getByText } = render(<Registration />);
