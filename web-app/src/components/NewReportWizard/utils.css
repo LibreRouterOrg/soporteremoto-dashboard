@@ -1,0 +1,46 @@
+.wizard-step {
+    flex:auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.step-content{
+    display: flex;
+    flex-direction: column;
+    flex:auto;
+    padding: 1rem;
+}
+
+.step-header {
+    display: flex;
+    box-shadow: 0 2px 8px #f0f1f2;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.step-header .close-button {
+    margin-left: auto;
+}
+
+.step-title {
+    margin-bottom: 1rem;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+}
+
+.ant-radio {
+    max-height: fit-content;
+}
+
+.wizard-navigation {
+    display: flex;
+    margin-top: auto;
+}
+
+.right-button {
+    margin-left: auto;
+}

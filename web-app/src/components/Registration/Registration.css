@@ -1,0 +1,18 @@
+.registration-form {
+    flex: auto;
+}
+
+.registration-page {
+    flex:auto;
+    flex-direction: column;
+    display: flex;
+    padding: 1rem;
+}
+
+.registration-form-button {
+    width: 100%;
+}
+
+.or-login {
+    text-align: center;
+}

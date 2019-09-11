@@ -1,0 +1,15 @@
+.login-page {
+    flex:auto;
+    display: flex;
+}
+
+.login-form {
+    padding: 1rem;
+    flex:auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-form-button {
+    width: 100%;
+}

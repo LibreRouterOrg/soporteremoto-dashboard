@@ -1,0 +1,15 @@
+.comments-list-content {
+    padding-left: 0.2rem;
+}
+
+.comments-list-header {
+    font-weight: bold;
+}
+
+.comment {
+    flex:auto;
+}
+
+.comments-list {
+    flex:auto;
+}

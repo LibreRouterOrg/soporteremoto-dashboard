@@ -1,0 +1,14 @@
+.congrats {
+    flex:auto;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.congrats > .button-wrapper {
+    margin-top: auto;
+}
+
+.congrats Button {
+    float: right;
+}
