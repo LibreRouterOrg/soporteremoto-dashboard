@@ -6,7 +6,6 @@ import Menu from './Menu';
 import Status from './Status';
 import { commonIssuesDict } from '../data/commonIssues';
 import './IssuePage.less';
-import { issue } from '../data/mockData';
 
 const Header = ({ issue, status, onChangeStatus }) => (
     <div className="header">
