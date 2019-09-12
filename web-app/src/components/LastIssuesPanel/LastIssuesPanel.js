@@ -1,8 +1,10 @@
 import React from 'react';
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 import './LastIssuesPanel.less';
 import IssueSmallResume from './IssueSmallResume';
 import { Tabs, Icon, List, Button } from 'antd';
+import api from '../../api';
+
 const { TabPane } = Tabs;
 
 
@@ -48,7 +50,7 @@ function IssuesList({ issues }) {
         <List size="small" className="issues-list" dataSource={sortedIssues} renderItem={
             issue => (
                 <List.Item style={itemStyle}>
-                    <IssueSmallResume issue={issue} />
+                    <IssueSmallResume issue={issue} onSelect={() => navigate('/report', { state: { issueId: issue.id } })} />
                 </List.Item>
             )
         } />
@@ -78,13 +80,22 @@ export function LastIssuesPanel({ issues }) {
     )
 }
 
-function getReports() {
-    /* To be replaced with api service */
-    return [];
+class LastIssuesPanelPage extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            reports: []
+        }
+    }
+
+    async componentDidMount() {
+        const reports = await api.reports.list();
+        this.setState({ reports: reports });
+    }
+
+    render() {
+        return <LastIssuesPanel issues={this.state.reports} />;
+    }
 }
 
-function LastIssuesPanelContainer() {
-    const issues = getReports();
-    return <LastIssuesPanel issues={issues} />
-}
-export default LastIssuesPanelContainer;
+export default LastIssuesPanelPage;
