@@ -1,32 +1,45 @@
-@import '../../antTheme.less';
-
-.status-open{
-    color: @success-color;
-}
-
-.status-closed{
-    color: @error-color;
-}
-
-.status-icon{
-    margin-right: 0.2em;
-}
-
 .issue-page {
     flex:auto;
     padding: 1rem;
 }
 
-.subtitle {
+.header {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.header-menu {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.header-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+}
+
+.header-status {
+    margin-left: 1em;
     font-size: 0.8em;
     color: gray;
 }
 
-.title {
+.header-title {
     font-weight: bold;
 }
 
-.back {
+.header-subtitle {
+    font-size: 0.8em;
+    color: gray;
+}
+
+.header-back-button {
     padding-left: 0em !important;
     padding-right: 0.4em !important;
 }
@@ -35,36 +48,14 @@
     margin-bottom: 1rem;
 }
 
+.section-title {
+    font-weight: bold;
+}
+
 .section-content {
     padding-left: 0.2rem;
 }
 
 .common-issue-text {
     font-style: italic;
-}
-
-.header {
-    display: flex;
-}
-
-.header > .menu {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-}
-
-.header > .header-title {
-    display: flex;
-    flex-direction: column;
-}
-
-.header-title > .title {
-    display: flex;
-    align-items: center;
-}
-
-.header-title .status {
-    margin-left: 1em;
-    font-size: 0.8em;
-    color: gray;
 }

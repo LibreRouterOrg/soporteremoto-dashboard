@@ -1,38 +1,62 @@
 import React, { Component } from 'react';
-import Comments from '../Comments';
-import { commonIssuesDict } from '../data/commonIssues';
-import { Icon, Button } from 'antd';
-import { Menu } from './Menu';
-import './IssuePage.less';
 import moment from 'moment';
+import Comments from '../Comments';
+import { Button } from 'antd';
+import Menu from './Menu';
+import Status from './Status';
+import { commonIssuesDict } from '../data/commonIssues';
+import './IssuePage.less';
+import { issue } from '../data/mockData';
 
-function Header({ issue, status, onChangeStatus }) {
-    return (
-        <div className="header">
+const Header = ({ issue, status, onChangeStatus }) => (
+    <div className="header">
+        <div className="header-info">
             <div className="header-title">
-                <div className="title">
-                    <Button className="back" type="link" icon="arrow-left"/>
-                    Reporte #{issue.id}
-                    {status === "open" ?
-                        <div className="status">
-                            <Icon className="status-icon status-open" type="exclamation-circle"/>
-                            Abierto
-                        </div>
-                        :
-                        <div className="status">
-                            <Icon className="status-icon status-closed" type="check-circle" />
-                            Resuelto
-                        </div>
-                    }
+                <div className="header-back-button">
+                    <Button type="link" icon="arrow-left" />
                 </div>
-                <div className="subtitle">Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}</div>
+                Reporte #{issue.id}
+                <div className="header-status"><Status status={status} /></div>
             </div>
-            <div className="menu">
-                <Menu status={status} onChange={onChangeStatus} />
+            <div className="header-subtitle">
+                Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}
             </div>
         </div>
-    );
+        <div className="header-menu">
+            <Menu status={status} onChange={onChangeStatus} />
+        </div>
+    </div>
+);
+
+const CommonIssueSection = ({ commonIssue }) => {
+    const parentText = (commonIssue && commonIssue.parent) ?
+        commonIssuesDict[commonIssue.parent].text + ' > ' : '';
+    const childText = commonIssue ? commonIssue.text : 'Ninguno de los problemas conocidos';
+    const issueText = parentText + childText;
+    return (
+        <div className="section">
+            <div className="section-title">Tipo de problema</div>
+            <div className="section-content">
+                <div className="common-issue-text">
+                    {issueText}
+                </div>
+            </div>
+        </div>
+    )
 }
+
+const BodySection = ({ body }) => (
+    <div className="section">
+        <div className="section-title">Detalles</div>
+        <div className="section-content">{body}</div>
+    </div>
+);
+
+const CommentsSection = ({ comments, user }) => (
+    <div className="section">
+        <Comments comments={comments} user={user}></Comments>
+    </div>
+);
 
 class IssuePage extends Component {
     constructor(props) {
@@ -44,46 +68,19 @@ class IssuePage extends Component {
         this.onChangeStatus = this.onChangeStatus.bind(this);
     }
 
-    getCommonIssueText(commonIssue) {
-        let result = "";
-        if (commonIssue == null) {
-            return "Ninguno de los problemas conocidos";
-        }
-        if (commonIssue.parent) {
-            result += commonIssuesDict[commonIssue.parent].text;
-            result += " > ";
-        }
-        result += commonIssue.text;
-        return result;
-    }
-
     onChangeStatus = e => {
         const status = this.state.status;
-        this.setState({status: status === 'open' ? 'closed': 'open'});
+        this.setState({ status: status === 'open' ? 'closed' : 'open' });
     }
 
     render() {
         const { issue, user } = this.props;
         return (
             <div className="issue-page">
-                <div className="section">
-                    <Header issue={issue} status={this.state.status} onChangeStatus={this.onChangeStatus}/>
-                </div>
-                <div className="section">
-                    <div className="title">Tipo de problema</div>
-                    <div className="section-content">
-                        <div className="common-issue-text">
-                            {this.getCommonIssueText(issue.common_issue)}
-                        </div>
-                    </div>
-                </div>
-                <div className="section">
-                    <div className="title">Detalles</div>
-                    <div className="section-content">{issue.body}</div>
-                </div>
-                <div className="section">
-                    <Comments comments={this.state.comments} user={user}></Comments>
-                </div>
+                <Header issue={issue} status={this.state.status} onChangeStatus={this.onChangeStatus} />
+                <CommonIssueSection commonIssue={issue.common_issue} />
+                <BodySection body={issue.body} />
+                <CommentsSection comments={this.state.comments} user={user}></CommentsSection>
             </div>
         )
     }
