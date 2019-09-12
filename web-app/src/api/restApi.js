@@ -1,5 +1,5 @@
 import ssbKey from 'ssb-keys';
-import { get } from 'http';
+import { formatReport, formatUser } from './translator';
 
 const sendToLog = async(content, config) => {
     const sequenceData  = await fetch(config.url+'/account/getSequence', {
@@ -47,7 +47,7 @@ let  config =  {
     url: 'http://localhost:8080',
 }
 
-export default {
+const api = {
     config: (newConfig) => { config = Object.assign(config, newConfig) },
     accounts: {
         create: ({name, node}) => {
@@ -60,6 +60,7 @@ export default {
         },
         get: (id) => {
             return fetchLog({id}, {...config, path: '/account/get'})
+                .then(user => Promise.resolve(formatUser({...user, key: id})))
         },
         list: (data) => {
             return fetchLog({}, {...config, path: '/account/list'})
@@ -83,7 +84,10 @@ export default {
         },
         list: (data) => {
             const {gt,lt} = data || {};
-            return fetchLog({gt, lt}, {...config, path: '/reports/list'})
+            return fetchLog({gt, lt}, {...config, path: '/reports/list'}).then((reports) => {
+                console.log(reports);
+                return Promise.all(reports.map(formatReport)) 
+            })
         },
         get: (id) => {
             return fetchLog({id}, {...config, path: '/reports/get'})
@@ -103,3 +107,5 @@ export default {
         },
     }
 }
+
+export default api;
