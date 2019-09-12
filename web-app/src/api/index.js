@@ -16,7 +16,7 @@ export default {
             restApi.config({keys})
             console.log(keys)
             restApi.accounts.create({name,node}).then(console.log)
-            return { words: keys.words }
+            return Promise.resolve({ words: keys.words })
         },
         get: restApi.accounts.get,
         list: restApi.accounts.list,
@@ -35,5 +35,9 @@ export default {
     },
     comment: {
         create: restApi.comment.create
+    },
+    getDefaultNode: () => Promise.resolve(''),
+    nodes: {
+        list: () => Promise.resolve([])
     }
 }
