@@ -35,8 +35,8 @@ class NewReportWizard extends Component {
         this.setState({ currentStep: currentStep - 1 });
     }
     
-    onLeaveForward(reportUpdate) {
-        this.setState({report: {...this.state.report, ...reportUpdate}});
+    async onLeaveForward(reportUpdate) {
+        await this.setState({report: {...this.state.report, ...reportUpdate}});
         let currentStep = this.state.currentStep;
         if (currentStep >= (this.steps.length - 1)) {
             api.reports.create(this.state.report).then(navigate('/'));
