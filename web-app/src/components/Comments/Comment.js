@@ -33,6 +33,10 @@ export function Comment({ user, timestamp, body }) {
 
 
 export function CommentEditor ({user, onChange, onSubmit, value, submitting}) {
+    if (!user) {
+        return 'Loading';
+    }
+
     return(
         <CommentAntd
             className='comment'

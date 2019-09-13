@@ -1,8 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import IssuePage from './IssuePage';
-import {user, issue} from '../data/mockData';
-import {commonIssuesDict} from '../data/commonIssues';
+import { IssueDetail } from './IssuePage';
+import { user, issue } from '../data/mockData';
+import { commonIssuesDict } from '../data/commonIssues';
 
 const largerCommonIssuePath = {
     ...issue,
@@ -15,6 +15,6 @@ const nonCommonIssue = {
 }
 
 storiesOf('IssuePage', module)
-    .add('Basic Issue Page', () => <IssuePage issue={issue} user={user}></IssuePage>)
-    .add('Larger common issue path', () => <IssuePage issue={largerCommonIssuePath} user={user}></IssuePage>)
-    .add('Non common issue selecetd', () => <IssuePage issue={nonCommonIssue} user={user}/>)
+    .add('Basic Issue Page', () => <IssueDetail issue={issue} user={user} author={issue.user} comments={[]}/>)
+    .add('Larger common issue path', () => <IssueDetail issue={largerCommonIssuePath} user={user} author={issue.user} comments={[]}/>)
+    .add('Non common issue selecetd', () => <IssueDetail issue={nonCommonIssue} user={user} author={issue.user} comments={[]}/>)
