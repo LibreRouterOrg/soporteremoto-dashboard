@@ -86,9 +86,10 @@ const api = {
             fetchLog({gt, lt}, {...config, path: '/reports/list'})
                 .then(reports => Promise.all(reports.map(formatReport)))
         ,
-        get: (id) => {
-            return fetchLog({id}, {...config, path: '/reports/get'})
-        }
+        get: (id) => 
+            fetchLog({id}, {...config, path: '/reports/get'})
+                .then(reports => Promise.all(reports.map(formatReport)))
+                .then(reports => Promise.resolve(reports.length > 0? reports[0]: {}))
     },
     comment: {
         create:  ({
