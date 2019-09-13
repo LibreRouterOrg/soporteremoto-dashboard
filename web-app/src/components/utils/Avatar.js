@@ -9,8 +9,14 @@ export function Avatar({ user, size}) {
                 : (user.avatar ?
                     <AvatarAntd src={user.avatar} size={size} />
                     :
-                    <AvatarAntd size={size}>{user.username[0].toUpperCase()}</AvatarAntd>
+                    <AvatarAntd size={size}>{getInitial(user.username)}</AvatarAntd>
                 )}
         </>
     );
+}
+
+function getInitial(username = '') {
+    return username.length > 0
+    ?  username[0].toUpperCase()
+    : '?';
 }
