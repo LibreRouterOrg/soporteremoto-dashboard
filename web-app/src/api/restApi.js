@@ -82,13 +82,10 @@ const api = {
                 body
             }, {...config, path: '/reports/create'})
         },
-        list: (data) => {
-            const {gt,lt} = data || {};
-            return fetchLog({gt, lt}, {...config, path: '/reports/list'}).then((reports) => {
-                console.log(reports);
-                return Promise.all(reports.map(formatReport)) 
-            })
-        },
+        list: ({gt,lt} = {}) => 
+            fetchLog({gt, lt}, {...config, path: '/reports/list'})
+                .then(reports => Promise.all(reports.map(formatReport)))
+        ,
         get: (id) => {
             return fetchLog({id}, {...config, path: '/reports/get'})
         }
