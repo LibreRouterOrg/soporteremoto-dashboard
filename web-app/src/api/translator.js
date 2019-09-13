@@ -5,7 +5,7 @@ export const formatReport  = async({messages, full}) => {
     const { node, common_issue, title, body}  = content
     const user = await api.account.get(author);
     return {
-        key: messages[0].key,
+        id: messages[0].key,
         timestamp,
         user,
         status: 'open',
