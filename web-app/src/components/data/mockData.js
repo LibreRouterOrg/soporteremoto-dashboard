@@ -1,5 +1,4 @@
 import gferrero_avatar from '../../assets/gferrero_avatar.jpeg';
-import {commonIssuesDict} from './commonIssues';
 
 export const user = {
     username: "gferrero",
@@ -17,7 +16,7 @@ export const issue = {
     user: user,
     status: 'open',
     node: 'ql-gferrero',
-    common_issue: commonIssuesDict['unreachable_network'],
+    common_issue: 'unreachable_network',
     body: 'Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop',
     comments: [],
 }
