@@ -13,8 +13,16 @@ export const formatReport  = async({messages, full}) => {
         commonIssueId: common_issue.id,
         title,
         body,
-        comments: messages.splice(0,1).map(msg => msg.key)
+        comments: messages.filter(removeFirst).map(extractOption('key'))
     }
+}
+
+function removeFirst (_, key){
+  return key > 0
+}
+
+function extractOption(option=''){
+  return (value)=> value[option]
 }
 
 export const formatUser = (account) => ({
