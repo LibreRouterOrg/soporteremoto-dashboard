@@ -48,6 +48,17 @@ let  config =  {
 }
 
 const api = {
+    utils: {
+        injectUserData: async(report) => {
+            report = await report;
+            const user = await api.accounts.get(report.user)
+            console.log(report, user)
+            return {
+                ...report,
+                user
+            }
+        }
+    },
     config: (newConfig) => { config = Object.assign(config, newConfig) },
     accounts: {
         create: ({name, node}) => {
@@ -84,7 +95,13 @@ const api = {
         },
         list: ({gt,lt} = {}) => 
             fetchLog({gt, lt}, {...config, path: '/reports/list'})
-                .then(reports => Promise.all(reports.map(formatReport)))
+            .then(reports => 
+                Promise.all(
+                    reports
+                    .map(formatReport)
+                    .map(api.utils.injectUserData)
+                )
+            )
         ,
         get: (id) => 
             fetchLog({id}, {...config, path: '/reports/get'})

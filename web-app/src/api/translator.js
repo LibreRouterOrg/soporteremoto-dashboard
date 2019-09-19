@@ -1,13 +1,10 @@
-import api from ".";
-
 export const formatReport  = async({messages, full}) => {
     const { timestamp, author, content } = messages[0].value;
     const { node, common_issue, title, body}  = content
-    const user = await api.account.get(author);
     return {
         id: messages[0].key,
         timestamp,
-        user,
+        user: author,
         status: 'open',
         node,
         commonIssueId: common_issue.id,
