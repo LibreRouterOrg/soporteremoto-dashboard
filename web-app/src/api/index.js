@@ -40,5 +40,6 @@ export default {
     getDefaultNode: () => Promise.resolve(''),
     nodes: {
         list: () => Promise.resolve([])
-    }
+    },
+    status: restApi.status
 }
