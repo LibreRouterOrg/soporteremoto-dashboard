@@ -18,6 +18,7 @@ export default {
             restApi.accounts.create({name,node}).then(console.log)
             return { words: keys.words }
         },
+        set: restApi.accounts.set,
         get: restApi.accounts.get,
         list: restApi.accounts.list,
         recover: (words) => {

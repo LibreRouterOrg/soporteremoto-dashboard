@@ -58,6 +58,13 @@ export default {
                 node
             },{...config, path: `/account/create`})
         },
+        set: (key, data={}) => {
+            return sendToLog({
+                type: 'about',
+                about: config.keys.publicKey,
+                ...data
+            },{...config, path: `/account/set`})
+        },
         get: (id) => {
             return fetchLog({id}, {...config, path: '/account/get'})
         },

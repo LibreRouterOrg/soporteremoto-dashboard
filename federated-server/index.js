@@ -1,6 +1,6 @@
 import  express  from 'express'
 
-import { createAccount, getAccount, getSequence, listAccounts } from './routes/account';
+import { createAccount, getAccount, setAccount, getSequence, listAccounts } from './routes/account';
 import { createReport, getReport, listReports } from './routes/report';
 import { createComment, getComment,  } from './routes/comment';
 
@@ -25,6 +25,7 @@ app.use(function(req, res, next) {
 ///////////////////////////////////////////////////////
 app.post('/account/create', createAccount)
 app.post('/account/get', getAccount)
+app.post('/account/set', setAccount)
 app.post('/account/list', listAccounts)
 app.post('/account/getSequence', getSequence)
 
