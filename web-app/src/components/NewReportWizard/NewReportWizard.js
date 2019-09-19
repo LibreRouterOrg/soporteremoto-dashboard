@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { navigate } from '@reach/router';
 import NodeSelectionStep from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
-import ProblemBodyStep from './ProblemBodyStep';
+import ProblemDescriptionStep from './ProblemDescriptionStep';
 import api from '../../api';
 
 class NewReportWizard extends Component {
@@ -23,7 +23,7 @@ class NewReportWizard extends Component {
             },
             {
                 'key': 'problem_body',
-                'component': ProblemBodyStep,
+                'component': ProblemDescriptionStep,
             }
         ];
         this.onLeaveForward = this.onLeaveForward.bind(this);

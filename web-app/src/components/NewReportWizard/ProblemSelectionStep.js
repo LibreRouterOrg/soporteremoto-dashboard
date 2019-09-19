@@ -64,7 +64,7 @@ class ProblemSelectionStep extends React.Component {
         } else {
             const issue = this.state.page === 0 ? this.state.problem : this.state.subProblem
             this.props.onLeaveForward({
-                common_issue: {
+                common_issue: issue.id === "custom" ? null : {
                     id: issue.id,
                     text: issue.text,
                     parent: issue.parent,

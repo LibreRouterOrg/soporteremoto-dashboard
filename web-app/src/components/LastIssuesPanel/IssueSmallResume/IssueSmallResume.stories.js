@@ -52,8 +52,15 @@ const longUsernameIssue = {
     user: longUsernameUser
 }
 
+const customTitleIssue = {
+    ...issue,
+    common_issue: null,
+    title: 'Ayuda para alinear mi antena',
+}
+
 storiesOf('LastIssuesPanel/IssueSmallResume', module)
     .add('A person issue', () => <IssueSmallResume issue={issue} {...actions} />)
+    .add('An issue with custom title', () => <IssueSmallResume issue={customTitleIssue} {...actions} />)
     .add('A person issue that affects me', () => <IssueSmallResume issue={issue} affectsMe {...actions} />)
     .add('No avatar issue', () => <IssueSmallResume issue={noavatar_issue} {...actions} />)
     .add('Bot issue', () => <IssueSmallResume issue={bot_issue} {...actions} />)

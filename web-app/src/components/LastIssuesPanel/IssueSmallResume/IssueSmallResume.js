@@ -6,7 +6,7 @@ import './IssueSmallResume.less';
 import 'moment/locale/es';
 
 function IssueSmallResume({ issue, affectsMe, onSelect }) {
-    const title = issue.common_issue ? issue.common_issue.text : issue.body;
+    const title = issue.common_issue ? issue.common_issue.text : issue.title;
     return (
         <div className="container" onClick={onSelect}>
             <div className="side">

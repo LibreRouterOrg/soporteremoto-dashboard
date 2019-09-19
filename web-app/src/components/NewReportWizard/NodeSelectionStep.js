@@ -15,7 +15,8 @@ export class NodeSelectionStep extends Component {
     }
 
     submit = () => {
-        this.form.submitForm()
+        // Hack until https://github.com/jaredpalmer/formik/issues/1580 get's resolved. TODO
+        setTimeout(() => this.form.submitForm(), 10);
     }
 
     onSubmit = (values, {setSubmitting}) => {
