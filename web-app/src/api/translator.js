@@ -28,3 +28,9 @@ export const formatUser = (account) => ({
   node: account.node,
   key: account.key,
 })
+
+export const formatStatus = ({value}) => ({
+  account: value.author,
+  timestamp: value.timestamp,
+  stauts: value.content.status
+})
