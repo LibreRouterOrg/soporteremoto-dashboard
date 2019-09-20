@@ -1,5 +1,8 @@
 import ssbKey from 'ssb-keys';
 import { formatReport, formatUser } from './translator';
+import { localFetch } from './localFetch';
+
+let STATUS = ''
 
 const sendToLog = async(content, config) => {
     const sequenceData  = await fetch(config.url+'/account/getSequence', {
@@ -25,22 +28,23 @@ const sendToLog = async(content, config) => {
     })
     console.log(doc)
     
-    return fetch(config.url+config.path, {
+    return localFetch(false)(config.url+config.path, {
         method: 'POST',
         headers:{
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(doc)
     })
-    .then((res) => res.json())
+    .then(changeApiStatus)
 }
 
 const fetchLog = async(content={}, config) => {
-    return fetch(config.url+config.path, {
+    return localFetch(true)(config.url+config.path, {
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
         body: JSON.stringify(content)
-    }).then((res) => res.json())
+    })
+    .then(changeApiStatus)
 }
 
 let  config =  {
@@ -127,7 +131,17 @@ const api = {
                 body: text
             }, {...config, path: '/reports/create'})
         },
+    },
+    status: () => STATUS
+}
+
+function changeApiStatus({error, res}) {
+    if(error) { 
+        STATUS = 'disconnected'
+    } else {
+        STATUS = 'connected'
     }
+    return Promise.resolve(res)
 }
 
 export default api;

@@ -42,5 +42,6 @@ export default {
     nodes: {
         list: () => Promise.resolve([])
     },
-    socket: socketApi
+    status: restApi.status,
+    socket: socketApi,
 }
