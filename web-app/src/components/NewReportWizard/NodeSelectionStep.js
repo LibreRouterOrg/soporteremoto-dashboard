@@ -15,7 +15,8 @@ export class NodeSelectionStep extends Component {
     }
 
     submit = () => {
-        this.form.submitForm()
+        // Hack until https://github.com/jaredpalmer/formik/issues/1580 get's resolved. TODO
+        setTimeout(() => this.form.submitForm(), 10);
     }
 
     onSubmit = (values, {setSubmitting}) => {
@@ -31,14 +32,14 @@ export class NodeSelectionStep extends Component {
             <Formik
                 ref={form => this.form = form}
                 onSubmit={this.onSubmit}
-                initialValues={{ node: this.props.node }}
+                initialValues={{ node: '' }}
                 enableReinitialize
             >
                 {() => (
                     <Form className='form'>
                         <Form.Item name="node" htmlFor="node" label="Nodo afectado">
                             <Select name="node" id="node" showSearch
-                                validate={value => value ? '' : 'Por favor selecciona un nodo'}
+                                // validate={value => value ? '' : 'Por favor selecciona un nodo'}
                                 optionFilterProp="children"
                                 filterOption={(input, option) =>
                                     option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0

@@ -88,9 +88,13 @@ class LastIssuesPanelPage extends React.Component {
         }
     }
 
-    async componentDidMount() {
-        const reports = await api.reports.list();
-        this.setState({ reports: reports });
+    componentDidMount() {
+        // Hack: This timeout is a workaround, see this issue:
+        // https://github.com/LibreRouterOrg/soporteremoto-dashboard/issues/18
+        setTimeout(async () => {
+            const reports = await api.reports.list();
+            this.setState({ reports: reports });
+        }, 500);
     }
 
     render() {

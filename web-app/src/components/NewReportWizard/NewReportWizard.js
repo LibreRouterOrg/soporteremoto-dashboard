@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { navigate } from '@reach/router';
 import NodeSelectionStep from './NodeSelectionStep';
 import ProblemSelectionStep from './ProblemSelectionStep';
-import ProblemBodyStep from './ProblemBodyStep';
+import ProblemDescriptionStep from './ProblemDescriptionStep';
 import api from '../../api';
 
 class NewReportWizard extends Component {
@@ -22,26 +22,36 @@ class NewReportWizard extends Component {
                 'component': ProblemSelectionStep,
             },
             {
-                'key': 'problem_body',
-                'component': ProblemBodyStep,
+                'key': 'problem_description',
+                'component': ProblemDescriptionStep,
+                'props': [
+                    {
+                        key: 'isCustomIssue',
+                        callback: () => this.state.report.common_issue && this.state.report.common_issue.id === "custom",
+                    }
+                ]
             }
         ];
         this.onLeaveForward = this.onLeaveForward.bind(this);
         this.onLeaveBackward = this.onLeaveBackward.bind(this);
     }
 
+    getStepProps(propsCallbacks = []) {
+        return propsCallbacks.reduce((x, prop) => {x[prop.key] = prop.callback(); return x}, {});
+    }
+
     onLeaveBackward() {
         const currentStep = this.state.currentStep;
         this.setState({ currentStep: currentStep - 1 });
     }
-    
-    async onLeaveForward(reportUpdate) {
-        await this.setState({report: {...this.state.report, ...reportUpdate}});
-        let currentStep = this.state.currentStep;
+
+    onLeaveForward(reportUpdate) {
+        const currentStep = this.state.currentStep;
+        const reportUpdated = { ...this.state.report, ...reportUpdate }
         if (currentStep >= (this.steps.length - 1)) {
-            api.reports.create(this.state.report).then(navigate('/'));
+            api.reports.create(reportUpdated).then(navigate('/'));
         } else {
-            this.setState({ currentStep: currentStep + 1 })
+            this.setState({ report: reportUpdated, currentStep: currentStep + 1 });
         }
     }
 
@@ -51,14 +61,16 @@ class NewReportWizard extends Component {
             onLeaveForward: this.onLeaveForward,
             onLeaveBackward: this.onLeaveBackward,
         }
+
         return (
             <>
                 {this.steps.map((step, index) =>
-                    <step.component {...props}
+                    <step.component {...props} {...this.getStepProps(step.props)}
                         key={step.key}
                         shouldRender={index === currentStep}
                         isFirst={index === 0}
                         isLast={index === this.steps.length - 1}
+                        report={this.state.report}
                     />
                 )}
             </>
