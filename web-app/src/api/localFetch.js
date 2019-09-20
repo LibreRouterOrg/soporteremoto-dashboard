@@ -55,7 +55,7 @@ export const newFetch = (url, options, hash) => {
         })
 }
 
-const noCacheFerch = (url, options) => {
+const noCacheFetch = (url, options) => {
     return new Promise(res => {
         fetch(url, options)
             .then((res) => res.json())
@@ -83,7 +83,7 @@ export const retryFetch = (url, options, hash, old) => {
 export const localFetch = (useOffline) => {
     return (url, options) => {
         //Not use cache
-        if (!useOffline) { return noCacheFerch(url, options); }
+        if (!useOffline) { return noCacheFetch(url, options); }
         //Use cache
         const hash = hashRequest(url, options)
         const cached =  getCached(hash)
