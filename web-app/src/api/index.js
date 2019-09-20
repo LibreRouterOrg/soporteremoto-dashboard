@@ -1,5 +1,6 @@
 import keyManager  from './keyManager';
 import restApi from './restApi'
+import socketApi from './socketApi'
 
 window.keyManager = keyManager
 export default {
@@ -41,5 +42,6 @@ export default {
     nodes: {
         list: () => Promise.resolve([])
     },
-    status: restApi.status
+    status: restApi.status,
+    socket: socketApi,
 }
