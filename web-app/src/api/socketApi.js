@@ -1,0 +1,13 @@
+import io from 'socket.io-client'
+
+//TODO: Get soporte-remoto address form shared-state
+const socket = io.connect('http://localhost:8080');
+socket.on('connected', console.log)
+socket.on('message', (msg) => console.log('new messages in the server', msg))
+const socketApi = {
+    onComment: (cb) => socket.on('comment', cb),
+    onReport: (cb) => socket.on('report', cb),
+    onAbout: (cb) => socket.on('about', cb)
+}
+    
+export default socketApi;
