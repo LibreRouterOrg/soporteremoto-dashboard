@@ -50,7 +50,7 @@ function IssuesList({ issues }) {
         <List size="small" className="issues-list" dataSource={sortedIssues} renderItem={
             issue => (
                 <List.Item style={itemStyle}>
-                    <IssueSmallResume issue={issue} onSelect={() => navigate('/report', { state: { issueId: issue.id } })} />
+                    <IssueSmallResume issue={issue} onSelect={() => navigate('/report/' + encodeURI(issue.id))} />
                 </List.Item>
             )
         } />
