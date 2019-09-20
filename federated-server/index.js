@@ -63,7 +63,7 @@ pull(
   sbot.createLogStream({ live: true, reverse: false }),
   pull.flatten(),
   pull.drain(function (msg) {
-    try {
+    if (msg && msg.content && msg.content.type ) {
       switch (msg.content.type) {
         case 'about':
           io.emit('about', msg)
@@ -76,9 +76,6 @@ pull(
             return
           }
       }
-    }
-    catch(e) {
-      console.error('Error sending message via socket', e)
     }
   })
 );
