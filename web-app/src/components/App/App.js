@@ -42,10 +42,10 @@ function App() {
         <Col id="HeaderLogo" span={24}> Dashboard - Soporte Remoto </Col>
       </Row>
       <Row id="Content">
-        <Col span={16} id="MapContainer">
+        <Col md={16} id="MapContainer">
           <CommunityMap />
         </Col>
-        <Col span={8} id="MapInfoContainer">
+        <Col md={8} span={24} id="MapInfoContainer">
           {/* primary and component props are set to avoid breaking style.
               Follow https://github.com/reach/router/issues/63 for more info */}
           <Router primary={false} component={PrivateRoute}>
