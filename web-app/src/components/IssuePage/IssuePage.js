@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from '@reach/router';
 import moment from 'moment';
 import Comments from '../Comments';
-import { Button } from 'antd';
+import { Button, Tag } from 'antd';
 import Menu from './Menu';
 import Status from './Status';
 import { commonIssuesDict } from '../data/commonIssues';
@@ -10,39 +10,47 @@ import './IssuePage.less';
 import api from '../../api';
 
 
-const Header = ({ issue, onChangeStatus }) => (
-    <div className="header">
-        <div className="header-info">
-            <div className="header-title">
-                <div className="header-back-button">
-                    <Button type="link" icon="arrow-left" />
+const Header = ({ issue, onChangeStatus }) => {
+    return (
+        <div className="header">
+            <div className="header-info">
+                <div className="header-title">
+                    <div className="header-back-button">
+                        <Button type="link" icon="arrow-left" />
+                    </div>
+                    Reporte <Tag>{issue.id.slice(1, 8)}</Tag>
+                    <div className="header-status"><Status status={issue.status} /></div>
                 </div>
-                Reporte #{issue.id}
-                <div className="header-status"><Status status={issue.status} /></div>
+                <div className="header-subtitle">
+                    Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}
+                </div>
             </div>
-            <div className="header-subtitle">
-                Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}
+            <div className="header-menu">
+                <Menu status={issue.status} onChange={onChangeStatus} />
             </div>
         </div>
-        <div className="header-menu">
-            <Menu status={issue.status} onChange={onChangeStatus} />
-        </div>
-    </div>
-);
+    );
+}
 
 
-const CommonIssueSection = ({ commonIssueId }) => {
-    const commonIssue = commonIssuesDict[commonIssueId];
-    const parentText = (commonIssue && commonIssue.parent) ?
-        commonIssuesDict[commonIssue.parent].text + ' > ' : '';
-    const childText = commonIssue ? commonIssue.text : 'Ninguno de los problemas conocidos';
-    const issueText = parentText + childText;
+
+const SubjectSection = ({ commonIssueId, title }) => {
+    let subject = "";
+    if (title) {
+        subject = title;
+    } else {
+        const commonIssue = commonIssuesDict[commonIssueId];
+        const parentText = (commonIssue && commonIssue.parent) ?
+            commonIssuesDict[commonIssue.parent].text + ' > ' : '';
+        const childText = commonIssue ? commonIssue.text : 'Ninguno de los problemas conocidos';
+        subject = parentText + childText;
+    }
     return (
         <div className="section">
-            <div className="section-title">Tipo de problema</div>
+            <div className="section-title">Asunto</div>
             <div className="section-content">
                 <div className="common-issue-text">
-                    {issueText}
+                    {subject}
                 </div>
             </div>
         </div>
@@ -56,22 +64,22 @@ const BodySection = ({ body }) => (
     </div>
 );
 
-const CommentsSection = ({ comments, user, onCommentAdd }) => (
+const CommentsSection = ({ commentsIds, user, onCommentAdd }) => (
     <div className="section">
-        <Comments commentsIds={comments} onCommentAdd={onCommentAdd} user={user} />
+        <Comments commentsIds={commentsIds} onCommentAdd={onCommentAdd} user={user} />
     </div>
 );
 
-export const IssueDetail = ({ issue, user, comments, onCommentAdd, onChangeStatus, loading }) => {
+export const IssueDetail = ({ issue, user, commentsIds, onCommentAdd, onChangeStatus, loading }) => {
     if (loading) {
         return 'Cargando...'
     }
     return (
         <div className="issue-page">
             <Header issue={issue} onChangeStatus={onChangeStatus} />
-            <CommonIssueSection commonIssueId={issue.common_issue} />
+            <SubjectSection commonIssueId={issue.commonIssueId} title={issue.title} />
             <BodySection body={issue.body} />
-            <CommentsSection comments={comments} onCommentAdd={onCommentAdd} user={user}></CommentsSection>
+            <CommentsSection commentsIds={commentsIds} onCommentAdd={onCommentAdd} user={user}></CommentsSection>
         </div>
     );
 }
@@ -85,17 +93,12 @@ class IssueDetailPage extends Component {
             loading: true,
             user: null,
         }
-        try {
-            this.issueId = this.props.location.state.issueId;
-        } catch(e) {
-            this.issueId = null;
-        }
         this.onChangeStatus = this.onChangeStatus.bind(this);
         this.onCommentAdd = this.onCommentAdd.bind(this);
     }
 
     async componentDidMount() {
-        const issue = this.issueId && await api.reports.get(this.issueId);
+        const issue = this.props.issueId && await api.reports.get(this.props.issueId);
         const account = api.account.isLogged();
         const id = account['publicKey'];
         const user = await api.account.get(id);
@@ -113,16 +116,17 @@ class IssueDetailPage extends Component {
     }
 
     onCommentAdd = comment => {
-        return api.comments.create({ text: comment.body, parent: this.state.issue.id });
+        return api.comment.create({ text: comment.body, parent: this.state.issue.id })
+            .then((comment) => this.setState({ commentIds: this.state.commentsIds.concat([comment.id]) }))
     }
 
     render() {
-        if (!this.issueId){
-            return <Redirect to='/' noThrow/>
+        if (!this.props.issueId) {
+            return <Redirect to='/' noThrow />
         }
-        const { issue, comments, loading, user } = this.state;
+        const { issue, commentsIds, loading, user } = this.state;
         return (
-            <IssueDetail issue={issue} user={user} comments={comments}
+            <IssueDetail issue={issue} user={user} commentsIds={commentsIds}
                 onCommentAdd={this.onCommentAdd} onChangeStatus={this.onChangeStatus} loading={loading} />
         )
     }

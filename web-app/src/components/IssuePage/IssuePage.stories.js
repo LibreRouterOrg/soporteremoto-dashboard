@@ -5,12 +5,13 @@ import { user, issue } from '../data/mockData';
 
 const largerCommonIssuePath = {
     ...issue,
-    common_issue: 'from_precise_moment',
+    commonIssueId: 'from_precise_moment',
 }
 
 const nonCommonIssue = {
     ...issue,
-    common_issue: null,
+    commonIssueId: "custom",
+    title: "Ayuda para alinear la antena de casa"
 }
 
 storiesOf('IssuePage', module)
