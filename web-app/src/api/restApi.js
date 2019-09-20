@@ -90,6 +90,7 @@ const api = {
             node,
             common_issue,
             body,
+            title,
         }) => {
             return sendToLog({
                 type: 'report',
@@ -97,7 +98,8 @@ const api = {
                 status,
                 node,
                 common_issue,
-                body
+                body,
+                title,
             }, {...config, path: '/reports/create'})
         },
         list: ({gt,lt} = {}) => 

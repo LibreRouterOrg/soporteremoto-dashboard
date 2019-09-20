@@ -56,22 +56,23 @@ class ProblemDescriptionStep extends React.Component {
         super(props);
         this.state = {
             body: null,
-
+            
         }
         this.form = null // will hold a reference
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onNext = this.onNext.bind(this);
     }
-
+    
     onNext() {
         this.form.submit();
     }
-
+    
     handleSubmit({ title, body }) {
         this.props.onLeaveForward({ title, body })
     }
-
+    
     render() {
+        const {isCustomIssue} = this.props;
         return (
             <WizardStep shouldRender={this.props.shouldRender}>
                 <ProblemDescriptionForm ref={node => this.form = node} isCustomIssue={this.props.isCustomIssue} handleSubmit={this.handleSubmit} />
