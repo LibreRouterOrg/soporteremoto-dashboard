@@ -7,7 +7,8 @@ socket.on('message', (msg) => console.log('new messages in the server', msg))
 const socketApi = {
     onComment: (cb) => socket.on('comment', cb),
     onReport: (cb) => socket.on('report', cb),
-    onAccount: (cb) => socket.on('about', cb)
+    onAccount: (cb) => socket.on('about', cb),
+    status: () => ({ socket: socket.connected })
 }
     
 export default socketApi;
