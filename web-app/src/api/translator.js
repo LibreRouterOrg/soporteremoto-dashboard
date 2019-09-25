@@ -32,5 +32,5 @@ export const formatUser = (account) => ({
 export const formatStatus = ({value}) => ({
   account: value.author,
   timestamp: value.timestamp,
-  stauts: value.content.status
+  status: value.content.status
 })
