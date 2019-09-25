@@ -1,4 +1,4 @@
-import keyManager  from './keyManager';
+import keyManager, { saveCredentials }  from './keyManager';
 import restApi from './restApi'
 import socketApi from './socketApi'
 
@@ -22,11 +22,19 @@ export default {
         set: restApi.accounts.set,
         get: restApi.accounts.get,
         list: restApi.accounts.list,
-        recover: (words) => {
+        recover: (words, forceCredentials) => {
             return keyManager.regenerate(words)
                 .then((keys)=>{
                     restApi.config({keys})
                     return Promise.resolve(keys)
+                })
+                .then(async(keys)=>{
+                    const account = await restApi.accounts.get(keys.publicKey)
+                    if(!account.username || forceCredentials ) {
+                        return Promise.resolve({...keys, account, verified: false})
+                    }
+                    saveCredentials(keys)
+                    return Promise.resolve({...keys, account, verified: true })
                 })
         }
     },

@@ -23,11 +23,14 @@ const generate = (words) => {
     }
 }
 
+export const saveCredentials = (credentials) => {
+    localStorage.setItem('credentials', JSON.stringify(credentials))
+}
+
 const regenerate = (words) => {
     return new Promise((res, rej) => {
         try {
             const credentials = generate(words)
-            localStorage.setItem('credentials', JSON.stringify(credentials))
             res(credentials)
         } catch(e) {
             rej({error: 'wrong words'})
@@ -45,7 +48,8 @@ const loadOrCreate = () => {
     let credentials = isSaved();
     if (!credentials) {
         credentials = generate();
-        localStorage.setItem('credentials', JSON.stringify(credentials))
+        saveCredentials(credentials)
+
     }
     return credentials;
 }
