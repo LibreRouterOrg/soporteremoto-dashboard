@@ -2,10 +2,11 @@ import  express  from 'express'
 import SocketIO from 'socket.io'
 
 import { createAccount, getAccount, setAccount, getSequence, listAccounts } from './routes/account';
-import { createReport, getReport, listReports } from './routes/report';
+import { createReport, getReport, listReports, getStatusReport, setStatusReport } from './routes/report';
 import { createComment, getComment,  } from './routes/comment';
 import sbot from './db'
 import pull from 'pull-stream'
+
 
 ///////////////////////////////////////////////////////
 //Setup http server
@@ -34,6 +35,8 @@ app.post('/account/getSequence', getSequence)
 app.post('/reports/create', createReport)
 app.post('/reports/list', listReports)
 app.post('/reports/get', getReport)
+app.post('/reports/getStatus', getStatusReport)
+app.post('/reports/setStatus', setStatusReport)
 
 app.post('/comment/create', createComment)
 app.post('/comment/get', getComment)
@@ -60,7 +63,7 @@ pull(
   sbot.createLogStream({ live: true, reverse: false }),
   pull.flatten(),
   pull.drain(function (msg) {
-    try {
+    if (msg && msg.content && msg.content.type ) {
       switch (msg.content.type) {
         case 'about':
           io.emit('about', msg)
@@ -73,9 +76,6 @@ pull(
             return
           }
       }
-    }
-    catch(e) {
-      console.error('Error sending message via socket', e)
     }
   })
 );

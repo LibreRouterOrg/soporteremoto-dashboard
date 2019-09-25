@@ -33,7 +33,9 @@ export default {
     reports: {
         create: restApi.reports.create, 
         get: restApi.reports.get,
-        list: restApi.reports.list
+        list: restApi.reports.list,
+        getStatus: restApi.reports.getStatus,
+        setStatus: restApi.reports.setStatus
     },
     comment: {
         create: restApi.comment.create

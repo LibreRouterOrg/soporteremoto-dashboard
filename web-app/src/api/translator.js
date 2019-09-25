@@ -1,11 +1,11 @@
 export const formatReport  = async({messages, full}) => {
     const { timestamp, author, content } = messages[0].value;
-    const { node, common_issue, title, body}  = content
+    const { node, common_issue, title, body, status }  = content
     return {
         id: messages[0].key,
         timestamp,
         user: author,
-        status: 'open',
+        status,
         node,
         commonIssueId: common_issue.id,
         title,
@@ -27,4 +27,10 @@ export const formatUser = (account) => ({
   avatar: account.avatar,
   node: account.node,
   key: account.key,
+})
+
+export const formatStatus = ({value}) => ({
+  account: value.author,
+  timestamp: value.timestamp,
+  status: value.content.status
 })
