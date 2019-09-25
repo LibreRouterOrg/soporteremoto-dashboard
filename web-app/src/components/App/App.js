@@ -10,6 +10,7 @@ import CommunityMap from '../CommunityMap';
 import IssuePage from '../IssuePage';
 import './App.less';
 import api from '../../api';
+import {NetworkContextProvider} from '../utils';
 
 function PrivateRoute({ children }) {
   /* Renders children component only if user is logged,
@@ -35,7 +36,7 @@ function NotLoggedRoute({ children }) {
 }
 
 
-function App() {
+function Layout() {
   return (
     <div id="App">
       <Row id="Header">
@@ -64,4 +65,11 @@ function App() {
   );
 }
 
+function App() {
+  return (
+    <NetworkContextProvider>
+      <Layout/>
+    </NetworkContextProvider>
+  )
+}
 export default App;

@@ -2,7 +2,7 @@ import ssbKey from 'ssb-keys';
 import { formatReport, formatUser, formatStatus } from './translator';
 import { localFetch } from './localFetch';
 
-let STATUS = ''
+let STATUS = true
 
 const sendToLog = async(content, config) => {
     const sequenceData  = await fetch(config.url+'/account/getSequence', {

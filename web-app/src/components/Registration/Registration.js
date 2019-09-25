@@ -3,10 +3,22 @@ import { navigate } from '@reach/router';
 import { Icon, Button } from 'antd';
 import { Form, Input, Select } from "@jbuschke/formik-antd";
 import { Formik } from "formik";
-import './Registration.css';
+import './Registration.less';
 import api from '../../api';
+import { NetworkContext } from '../utils';
 
-export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes }) {
+const OfflineRegistration = () => (
+    <div className="registration-page registration-page-offline">
+        <h3>Bienvenido!</h3>
+        <p>Lamentablemente estás desconectado de la red de Soporte Remoto.</p>
+        <p>Verifica que estás conectado a tu Red Wifi.</p>
+    </div>
+);
+
+export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes, isOnline }) {
+    if (isOnline === false) {
+        return <OfflineRegistration />
+    }
     return (
         <div className="registration-page">
             <Formik
@@ -84,13 +96,20 @@ class RegistrationPage extends React.Component {
             }
         );
     }
+
     goToLogin() {
         navigate('/login', { state: { from: this.props.location.state.from } });
     }
+
     render() {
         const { defaultNode, nodes } = this.state
         return (
-            <Registration handleSubmit={this.handleSubmit} defaultNode={defaultNode} nodes={nodes} handleGoToLogin={this.goToLogin} />
+            <NetworkContext.Consumer>
+                {isOnline =>
+                    <Registration handleSubmit={this.handleSubmit} defaultNode={defaultNode}
+                        nodes={nodes} handleGoToLogin={this.goToLogin} isOnline={isOnline} />
+                }
+            </NetworkContext.Consumer>
         );
     }
 }
