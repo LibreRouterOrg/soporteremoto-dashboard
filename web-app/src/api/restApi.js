@@ -143,14 +143,14 @@ const api = {
             }, {...config, path: '/reports/create'})
         },
     },
-    status: () => STATUS
+    status: () => ({ http: STATUS })
 }
 
 function changeApiStatus({error, res}) {
     if(error) { 
-        STATUS = 'disconnected'
+        STATUS = false
     } else {
-        STATUS = 'connected'
+        STATUS = true
     }
     return Promise.resolve(res)
 }

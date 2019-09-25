@@ -44,6 +44,9 @@ export default {
     nodes: {
         list: () => Promise.resolve([])
     },
-    status: restApi.status,
+    status: () => {
+        const { http, socket } ={ ...restApi.status(), ...socketApi.status() };
+        return { http, socket, general: http && socket }
+    },
     socket: socketApi,
 }
