@@ -28,6 +28,10 @@ export default {
                     restApi.config({keys})
                     return Promise.resolve(keys)
                 })
+                .then(async(keys)=>{
+                    const account = await restApi.accounts.get(keys.publicKey)
+                    return Promise.resolve({...keys, account })
+                })
         }
     },
     reports: {
