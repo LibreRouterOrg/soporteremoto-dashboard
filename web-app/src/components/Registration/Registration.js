@@ -5,7 +5,7 @@ import { Form, Input, Select } from "@jbuschke/formik-antd";
 import { Formik } from "formik";
 import './Registration.less';
 import api from '../../api';
-import { IsOnlineWrapper } from '../utils';
+import { NetworkContext } from '../utils';
 
 const OfflineRegistration = () => (
     <div className="registration-page registration-page-offline">
@@ -104,14 +104,12 @@ class RegistrationPage extends React.Component {
     render() {
         const { defaultNode, nodes } = this.state
         return (
-            <IsOnlineWrapper>
+            <NetworkContext.Consumer>
                 {isOnline =>
-                    <>
-                        {isOnline}
-                        <Registration handleSubmit={this.handleSubmit} defaultNode={defaultNode} nodes={nodes} handleGoToLogin={this.goToLogin} isOnline={isOnline} />
-                    </>
+                    <Registration handleSubmit={this.handleSubmit} defaultNode={defaultNode}
+                        nodes={nodes} handleGoToLogin={this.goToLogin} isOnline={isOnline} />
                 }
-            </IsOnlineWrapper>
+            </NetworkContext.Consumer>
         );
     }
 }
