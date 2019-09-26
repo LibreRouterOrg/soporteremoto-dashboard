@@ -1,5 +1,5 @@
 import ssbKey from 'ssb-keys';
-import { formatReport, formatUser, formatStatus } from './translator';
+import { formatReport, formatUser, formatStatus, formatReportComments } from './translator';
 import { localFetch } from './localFetch';
 
 let STATUS = true
@@ -123,6 +123,10 @@ const api = {
         getStatus: (id) =>
             fetchLog({id}, {...config, path: '/reports/getStatus'})
                 .then(statuses => Promise.resolve(statuses.map(formatStatus))),
+        getComments: (id) =>
+            fetchLog({id}, {...config, path: '/reports/get'})
+                .then(reports => Promise.all(reports.map(formatReportComments)))
+                .then(reports => Promise.resolve(reports.length > 0? reports[0]: {})),
         setStatus: (id, status) =>
             sendToLog({
                 type: 'about',

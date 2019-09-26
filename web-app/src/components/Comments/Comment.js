@@ -28,7 +28,7 @@ export class Comment extends React.Component {
         }
     }
 
-    async componentDidMount(){
+    async componentDidMount() {
         const author = await api.account.get(this.props.userId)
         this.setState({
             author: author
@@ -37,10 +37,14 @@ export class Comment extends React.Component {
 
     render() {
         const { timestamp, body } = this.props;
+        const { author } = this.state;
+        if (author === null) {
+            return <></>
+        }
         return (
             <CommentAntd
                 className='comment'
-                author={this.state.author.name}
+                author={this.state.author.username}
                 avatar={<Avatar user={this.state.author} />}
                 content={<p>{body}</p>}
                 datetime={<CommentDatetime timestamp={timestamp} />}
@@ -50,27 +54,44 @@ export class Comment extends React.Component {
 }
 
 
-export function CommentEditor ({user, onChange, onSubmit, value, submitting}) {
-    if (!user) {
-        return 'Loading';
+export class CommentEditor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            user: null,
+        }
     }
 
-    return(
-        <CommentAntd
-            className='comment'
-            author={user.username}
-            avatar={<Avatar user={user} />}
-            content={
-                <div>
-                    <Form.Item>
-                        <TextArea rows={4} onChange={onChange} value={value} disabled={submitting}/>
-                    </Form.Item>
-                    <Form.Item>
-                        <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
-                            Agregar Comentario
-                        </Button>
-                    </Form.Item>
-                </div>
-            } />
-    );
+    async componentDidMount(){
+        const keys = api.account.isLogged();
+        const user = await api.account.get(keys['publicKey']);
+        this.setState({user: user})
+    }
+
+    render() {
+        const { onChange, onSubmit, value, submitting } = this.props;
+        const { user } = this.state;
+        console.log(user);
+        if (!user) {
+            return 'Loading';
+        }
+        return (
+            <CommentAntd
+                className='comment'
+                author={user.username}
+                avatar={<Avatar user={user} />}
+                content={
+                    <div>
+                        <Form.Item>
+                            <TextArea rows={4} onChange={onChange} value={value} disabled={submitting} />
+                        </Form.Item>
+                        <Form.Item>
+                            <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
+                                Agregar Comentario
+                            </Button>
+                        </Form.Item>
+                    </div>
+                } />
+        );
+    }
 }

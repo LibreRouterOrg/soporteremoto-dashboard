@@ -9,7 +9,7 @@ export function Avatar({ user, size}) {
                 : (user.avatar ?
                     <AvatarAntd src={user.avatar} size={size} />
                     :
-                    <AvatarAntd size={size}>{getInitial(user.name)}</AvatarAntd>
+                    <AvatarAntd size={size}>{getInitial(user.username)}</AvatarAntd>
                 )}
         </>
     );

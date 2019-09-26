@@ -5,6 +5,11 @@ import './Comments.css';
 import api from '../../api';
 
 
+const fakeUser = {
+    username: 'fake',
+    node: 'fakenode'
+}
+
 class Comments extends Component {
     constructor(props) {
         super(props);
@@ -13,10 +18,17 @@ class Comments extends Component {
             editorSubmitting: false,
             comments: [],
         }
+        this.onNewComment = this.onNewComment.bind(this);
+        api.socket.onComment(this.onNewComment);
+    }
+
+    onNewComment(comment) {
+        console.log(comment);
+        this.setState((prevState, _) => ({ comments: prevState.comments.concat(comment) }));
     }
 
     async componentDidMount() {
-        const comments = await Promise.all(this.props.commentsIds.map(id => api.comments.get(id)));
+        const comments = await api.reports.getComments(this.props.issueId);
         this.setState({ comments: comments });
     }
 
@@ -26,16 +38,9 @@ class Comments extends Component {
 
     onSubmit = e => {
         this.setState({ editorSubmitting: true });
-        const newComment = {
-            body: this.state.editorValue,
-        };
-        this.props.onCommentAdd(newComment).then((comment) => {
-            this.setState({
-                comments: this.state.comments.concat([comment]),
-                editorValue: null,
-                editorSubmitting: false
-            });
-        });
+        api.comment.create({parent:this.props.issueId, text:this.state.editorValue}).then(() =>
+            this.setState({ editorSubmitting: false, editorValue: null})
+        )
     }
 
     render() {
@@ -54,7 +59,7 @@ class Comments extends Component {
                 </div>
                 <div className="comments-list-header"> Haz un comentario </div>
                 <div className="comments-list-content">
-                    <CommentEditor user={this.props.user} onChange={this.onChange} onSubmit={this.onSubmit} submitting={editorSubmitting} value={editorValue} />
+                    <CommentEditor user={fakeUser} onChange={this.onChange} onSubmit={this.onSubmit} submitting={editorSubmitting} value={editorValue} />
                 </div>
             </div>
         );
