@@ -72,7 +72,6 @@ class ProblemDescriptionStep extends React.Component {
     }
     
     render() {
-        const {isCustomIssue} = this.props;
         return (
             <WizardStep shouldRender={this.props.shouldRender}>
                 <ProblemDescriptionForm ref={node => this.form = node} isCustomIssue={this.props.isCustomIssue} handleSubmit={this.handleSubmit} />

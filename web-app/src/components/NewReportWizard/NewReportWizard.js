@@ -49,7 +49,7 @@ class NewReportWizard extends Component {
         const currentStep = this.state.currentStep;
         const reportUpdated = { ...this.state.report, ...reportUpdate }
         if (currentStep >= (this.steps.length - 1)) {
-            api.reports.create(reportUpdated).then(navigate('/'));
+            api.reports.create(reportUpdated).then(() => navigate('/'));
         } else {
             this.setState({ report: reportUpdated, currentStep: currentStep + 1 });
         }
