@@ -18,6 +18,11 @@ export const listReports = (req,res) => {
     
     pull(
         sbot.threads.public({allowlist: 'reports'}),
+        pull.map(({messages, full}) => ({
+            full,
+            messages: messages.filter(msg => msg.value && msg.value.content && msg.value.content.common_issue)
+        })),
+        pull.filter(({messages = []}) => messages.length > 0),
         pull.asyncMap(async(data, cb) => { 
             data.messages[0].value.content.status = await getStatus(data.messages[0].key)
             cb(null, data)
