@@ -143,6 +143,9 @@ const api = {
             }, {...config, path: '/reports/create'})
         },
     },
+    network: {
+        getNodes: () => fetchLog({}, {...config, path: '/network/nodes'})
+    },
     status: () => ({ http: STATUS })
 }
 

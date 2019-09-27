@@ -50,7 +50,7 @@ export default {
     },
     getDefaultNode: () => Promise.resolve(''),
     nodes: {
-        list: () => Promise.resolve([])
+        list: () => restApi.network.getNodes().then(({nodes}) => Promise.resolve(nodes))
     },
     status: () => {
         const { http, socket } ={ ...restApi.status(), ...socketApi.status() };
