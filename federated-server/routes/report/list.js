@@ -23,7 +23,7 @@ export const listReports = (req,res) => {
         pull.filter(onlyValidThreads),
         pull.map(removeInvalidMsg),
         pull.asyncMap(injectStatus),
-        pull.map(resumeComments),
+        pull.map(reduceComments),
         pull.collect((err, msgs) => {
             err
                 ? res.json({error: 'object not found'})
@@ -49,7 +49,7 @@ function removeInvalidMsg({messages = [], full}) {
 }
 
 /* */
-function resumeComments({messages = [], full}) {    
+function reduceComments({messages = [], full}) {    
     messages[0].value.content.comments = messages.filter(removeFirst).map(extractOption('key'))
     return messages[0]
 }
