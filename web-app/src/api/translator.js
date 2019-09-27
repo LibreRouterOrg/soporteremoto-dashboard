@@ -1,13 +1,14 @@
 export const formatReport  = async({messages, full}) => {
     const { timestamp, author, content } = messages[0].value;
     const { node, common_issue, title, body, status }  = content
+    console.log({common_issue, content})
     return {
         id: messages[0].key,
         timestamp,
         user: author,
         status,
         node,
-        commonIssueId: common_issue.id,
+        commonIssueId: common_issue && common_issue.id? common_issue.id : undefined,
         title,
         body,
         comments: messages.filter(removeFirst).map(extractOption('key'))
