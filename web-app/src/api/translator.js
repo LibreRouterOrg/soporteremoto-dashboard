@@ -15,7 +15,7 @@ export const formatReport  = async({value, key}) => {
 }
 
 export const formatReportComments = async ({ messages, full }) => {
-    return messages.filter(removeFirst).map(message => formatComment(message.value))
+    return messages.filter((_, key) => key > 0).map(message => formatComment(message.value))
 }
 
 export const formatComment = (value) => {
