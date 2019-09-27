@@ -7,7 +7,7 @@ import Status from './Status';
 import { commonIssuesDict } from '../data/commonIssues';
 import './IssuePage.less';
 import api from '../../api';
-import { navigate } from '@storybook/router';
+import { navigate } from '@reach/router';
 
 const STATUS_OPEN = 'open'
 const STATUS_RESOLVED = 'resolved'
