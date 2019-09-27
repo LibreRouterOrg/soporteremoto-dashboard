@@ -18,7 +18,7 @@ export const listReports = (req,res) => {
 
     pull(
         sbot.threads.public({allowlist: 'reports'}),
-        pull.filter(onlyValidThreas),
+        pull.filter(onlyValidThreads),
         pull.map(removeInvalidMsg),
         pull.asyncMap(injectStatus),
         pull.collect((err, msgs) => {
