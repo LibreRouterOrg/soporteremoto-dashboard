@@ -1,5 +1,7 @@
 import sbot from "../../db";
 import pull from 'pull-stream';
+import { removeFirst } from '../../utils/removeFirst';
+import { extractOption } from "../../utils/extractOption";
 
 
 function getStatus(key) {
@@ -21,6 +23,7 @@ export const listReports = (req,res) => {
         pull.filter(onlyValidThreads),
         pull.map(removeInvalidMsg),
         pull.asyncMap(injectStatus),
+        pull.map(resumeComments),
         pull.collect((err, msgs) => {
             err
                 ? res.json({error: 'object not found'})
@@ -43,4 +46,10 @@ function onlyValidThreads({messages = []}) {
 /* Removes from the thread messages that are not comments or report messages */ 
 function removeInvalidMsg({messages = [], full}) {
     return { full, messages: messages.filter(msg => msg.value)}
+}
+
+/* */
+function resumeComments({messages = [], full}) {    
+    messages[0].value.content.comments = messages.filter(removeFirst).map(extractOption('key'))
+    return messages[0]
 }
