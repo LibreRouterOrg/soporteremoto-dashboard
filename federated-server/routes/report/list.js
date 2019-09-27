@@ -1,5 +1,7 @@
 import sbot from "../../db";
 import pull from 'pull-stream';
+import { removeFirst } from '../../utils/removeFirst';
+import { extractOption } from "../../utils/extractOption";
 
 
 function getStatus(key) {
@@ -15,17 +17,39 @@ export const listReports = (req,res) => {
         req.body.gt = d.getTime();
         req.body.lt = Date.now();
     }
-    
+
     pull(
         sbot.threads.public({allowlist: 'reports'}),
-        pull.asyncMap(async(data, cb) => { 
-            data.messages[0].value.content.status = await getStatus(data.messages[0].key)
-            cb(null, data)
-        }),
+        pull.filter(onlyValidThreads),
+        pull.map(removeInvalidMsg),
+        pull.asyncMap(injectStatus),
+        pull.map(reduceComments),
         pull.collect((err, msgs) => {
             err
                 ? res.json({error: 'object not found'})
                 : res.json(msgs)
         })
     )
+}
+
+/* Add the last status to the report. */
+async function injectStatus(data, cb) {
+    data.messages[0].value.content.status = await getStatus(data.messages[0].key)
+    cb(null, data)
+}
+
+/* Check that the first message of the thread is correctly formulated and is valid. */
+function onlyValidThreads({messages = []}) {
+    return messages.length > 0 && messages[0].value && messages[0].value.content && messages[0].value.content.common_issue
+}
+
+/* Removes from the thread messages that are not comments or report messages */ 
+function removeInvalidMsg({messages = [], full}) {
+    return { full, messages: messages.filter(msg => msg.value)}
+}
+
+/* */
+function reduceComments({messages = [], full}) {    
+    messages[0].value.content.comments = messages.filter(removeFirst).map(extractOption('key'))
+    return messages[0]
 }
