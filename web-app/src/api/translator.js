@@ -1,26 +1,17 @@
-export const formatReport  = async({messages, full}) => {
-    const { timestamp, author, content } = messages[0].value;
-    const { node, common_issue, title, body, status }  = content
-    console.log({common_issue, content})
+export const formatReport  = async({value, key}) => {
+    const { timestamp, author, content } = value;
+    const { node, common_issue, title, body, status, comments }  = content
     return {
-        id: messages[0].key,
+        id: key,
         timestamp,
         user: author,
         status,
         node,
-        commonIssueId: common_issue && common_issue.id? common_issue.id : undefined,
+        commonIssueId: common_issue && common_issue.id? common_issue.id : 'not-defined',
         title,
-        body,
-        comments: messages.filter(removeFirst).map(extractOption('key'))
+        body, 
+        comments
     }
-}
-
-function removeFirst (_, key){
-  return key > 0
-}
-
-function extractOption(option=''){
-  return (value)=> value[option]
 }
 
 export const formatUser = (account) => ({
