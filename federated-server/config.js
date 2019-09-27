@@ -1,0 +1,1 @@
+export const genericId = "@PKFi7zYM4tqtGJ5CplsTGqN0PL3NlVc4sVnbr5Fu588=.ed25519" // seed communitynetworks
