@@ -18,7 +18,8 @@ class IssueContextProvider extends Component {
     constructor(props) {
         super(props);
         this.changeStatus = this.changeStatus.bind(this);
-        this.getStatus = this.getStatus.bind(this);
+        // this.getStatus = this.getStatus.bind(this);
+        this.getIssue = this.getIssue.bind(this);
 
         this.state = {
             issue: null,
@@ -29,24 +30,21 @@ class IssueContextProvider extends Component {
     }
 
     async componentDidMount() {
-        const issue = await api.reports.get(this.props.issueId);
+        const issue = await this.getIssue();
         issue.user = await api.account.get(issue.user);
-        const issueStatus = await this.getStatus();
-        this.setState({ issue: issue, issueStatus: issueStatus, loading: false });
+        this.setState({ issue: issue, loading: false, issueStatus: issue.status});
     }
-    
-    async getStatus() {
-        const statuses = await api.reports.getStatus(this.props.issueId);
-        let currentStatus = STATUS_OPEN;
-        if (statuses.length > 0) {
-            currentStatus = statuses.sort((s1, s2) => s1.timestamp < s2.timestamp)[0].status;
-        }
-        return currentStatus;
+
+    async getIssue() {
+        const issue = api.reports.get(this.props.issueId);
+        return issue;
     }
 
     changeStatus() {
-        const newStatus = this.state.issueStatus === STATUS_OPEN ? STATUS_RESOLVED : STATUS_OPEN;
-        api.reports.setStatus(this.props.issueId, newStatus).then(async () => this.setState({issueStatus: await this.getStatus()}));
+        const newStatus = this.state.issue.status === STATUS_OPEN ? STATUS_RESOLVED : STATUS_OPEN;
+        api.reports.setStatus(this.props.issueId, newStatus)
+            .then(this.getIssue)
+            .then((issue) => this.setState({issueStatus: issue.status}));
     }
 
     render() {
