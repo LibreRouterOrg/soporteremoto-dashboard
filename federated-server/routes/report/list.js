@@ -18,11 +18,8 @@ export const listReports = (req,res) => {
     
     pull(
         sbot.threads.public({allowlist: 'reports'}),
-        pull.map(({messages, full}) => ({
-            full,
-            messages: messages.filter(msg => msg.value && msg.value.content && msg.value.content.common_issue)
-        })),
-        pull.filter(({messages = []}) => messages.length > 0),
+        pull.filter(onlyValidThreads),
+        pull.map(removeInvalidMsg),
         pull.asyncMap(async(data, cb) => { 
             data.messages[0].value.content.status = await getStatus(data.messages[0].key)
             cb(null, data)
@@ -33,4 +30,12 @@ export const listReports = (req,res) => {
                 : res.json(msgs)
         })
     )
+}
+
+function onlyValidThreads({messages = []}) {
+    return messages.length > 0 && messages[0].value && messages[0].value.content && messages[0].value.content.common_issue
+}
+
+function removeInvalidMsg({messages = [], full}) {
+    return { full, messages: messages.filter(msg => msg.value)}
 }
