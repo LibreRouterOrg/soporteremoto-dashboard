@@ -4,12 +4,6 @@ import { Comment, CommentEditor } from './Comment';
 import './Comments.css';
 import api from '../../api';
 
-
-const fakeUser = {
-    username: 'fake',
-    node: 'fakenode'
-}
-
 class Comments extends Component {
     constructor(props) {
         super(props);
@@ -59,7 +53,7 @@ class Comments extends Component {
                 </div>
                 <div className="comments-list-header"> Haz un comentario </div>
                 <div className="comments-list-content">
-                    <CommentEditor user={fakeUser} onChange={this.onChange} onSubmit={this.onSubmit} submitting={editorSubmitting} value={editorValue} />
+                    <CommentEditor onChange={this.onChange} onSubmit={this.onSubmit} submitting={editorSubmitting} value={editorValue} />
                 </div>
             </div>
         );
