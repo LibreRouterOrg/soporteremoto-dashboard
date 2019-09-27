@@ -143,6 +143,11 @@ const api = {
             }, {...config, path: '/reports/create'})
         },
     },
+    nodes: {
+        getDefaultNode: () => fetch('http://thisnode.info/cgi-bin/hostname')
+            .then(res => res.text())
+            .catch(e => Promise.resolve(null))
+    },
     status: () => ({ http: STATUS })
 }
 
