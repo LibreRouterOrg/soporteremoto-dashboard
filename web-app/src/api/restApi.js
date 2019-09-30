@@ -4,6 +4,11 @@ import { localFetch } from './localFetch';
 
 let STATUS = true
 
+const whitTimeout = (time=2500, promise) => new Promise((res, rej) =>{
+    setTimeout(()=>res(null), 2500)
+    promise.then(res).catch(rej)
+})
+
 const sendToLog = async(content, config) => {
     const sequenceData  = await fetch(config.url+'/account/getSequence', {
         method: 'POST',
@@ -144,9 +149,10 @@ const api = {
         },
     },
     nodes: {
-        getDefaultNode: () => fetch('http://thisnode.info/cgi-bin/hostname')
+        getDefaultNode: () => whitTimeout(2500, fetch('http://thisnode.info/cgi-bin/hostname')
             .then(res => res.text())
             .catch(e => Promise.resolve(null))
+        )
     },
     status: () => ({ http: STATUS })
 }
