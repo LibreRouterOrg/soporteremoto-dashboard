@@ -81,7 +81,7 @@ class RegistrationPage extends React.Component {
     }
 
     componentDidMount() {
-        api.getDefaultNode().then((defaultNode) => {
+        api.nodes.getDefaultNode().then((defaultNode) => {
             this.setState({ defaultNode: defaultNode });
         });
         api.nodes.list().then((nodes) => {
