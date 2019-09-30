@@ -92,7 +92,9 @@ const IssueDetail = () => (
                         <div className="header-status"><Status status={issueStatus} /></div>
                     </div>
                     <div className="header-subtitle">
-                        Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}
+                        Por {issue.user.username ? issue.user.username : '?'}
+                        {issue.node ? ' en ' + issue.node : ''}
+                        {' el ' + moment(issue.timestamp).format('LLL')}
                     </div>
                 </div>
                 <div className="section">
