@@ -70,12 +70,13 @@ const api = {
     },
     config: (newConfig) => { config = Object.assign(config, newConfig) },
     accounts: {
-        create: ({name, node}) => {
+        create: ({name, node, avatar}) => {
             return sendToLog({
                 type: 'about',
                 about: config.keys.publicKey,
                 name,
-                node
+                node,
+                avatar,
             },{...config, path: `/account/create`})
         },
         set: (key, data={}) => {

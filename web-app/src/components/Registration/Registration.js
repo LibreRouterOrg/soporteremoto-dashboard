@@ -5,7 +5,7 @@ import { Form, Input, Select } from "@jbuschke/formik-antd";
 import { Formik } from "formik";
 import './Registration.less';
 import api from '../../api';
-import { NetworkContext } from '../utils';
+import { NetworkContext, AvatarUploader } from '../utils';
 
 const OfflineRegistration = () => (
     <div className="registration-page registration-page-offline">
@@ -22,7 +22,7 @@ export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes
     return (
         <div className="registration-page">
             <Formik
-                initialValues={{ name: '', node: defaultNode }}
+                initialValues={{ name: '', node: defaultNode, 'avatar': '' }}
                 enableReinitialize
                 validate={values => {
                     let errors = {};
@@ -36,7 +36,7 @@ export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes
                     setSubmitting(false);
                 }}
             >
-                {({ isSubmitting }) => (
+                {({ isSubmitting, setFieldValue }) => (
                     <Form className="registration-form">
                         <Form.Item name="name" hasFeedback label="Nombre de Usuario" htmlFor="name">
                             <Input id="name" name="name" prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} />
@@ -53,6 +53,9 @@ export function Registration({ handleSubmit, handleGoToLogin, defaultNode, nodes
                                     node => <Select.Option key={node}>{node}</Select.Option>
                                 )}
                             </Select>
+                        </Form.Item>
+                        <Form.Item name="avatar" label="Foto de Perfil" htmlFor="avatar">
+                            <AvatarUploader id="avatar" onChange={(blobString) => setFieldValue("avatar", blobString, false)}/>
                         </Form.Item>
                         <Form.Item>
                             <Button type="primary" htmlType="submit" className="login-form-button">
@@ -89,9 +92,14 @@ class RegistrationPage extends React.Component {
         })
     }
 
-    handleSubmit({ name, node }) {
-        api.account.createAccount({ name, node }).then(
-            () => {
+    handleSubmit({ name, node, avatar }) {
+        console.log(name);
+        console.log(node);
+        console.log(avatar)
+        api.account.createAccount({ name, node, avatar}).then(
+            (res) => {
+                console.log(res);
+                debugger;
                 navigate('/congrats', { state: { from: this.props.location.state.from } });
             }
         );

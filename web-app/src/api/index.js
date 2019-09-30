@@ -12,11 +12,11 @@ export default {
             console.log(keys)
             return keys
         },
-        createAccount: ({name, node}) => {
+        createAccount: ({name, node, avatar}) => {
             const keys = keyManager.loadOrCreate();
             restApi.config({keys})
             console.log(keys)
-            restApi.accounts.create({name,node}).then(console.log)
+            restApi.accounts.create({name,node, avatar}).then(console.log)
             return Promise.resolve({ words: keys.words })
         },
         set: restApi.accounts.set,
