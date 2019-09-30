@@ -30,7 +30,7 @@ export default {
                 })
                 .then(async(keys)=>{
                     const account = await restApi.accounts.get(keys.publicKey)
-                    if(!account.username || forceCredentials ) {
+                    if(!(account.username || forceCredentials) ) {
                         return Promise.resolve({...keys, account, verified: false})
                     }
                     saveCredentials(keys)
