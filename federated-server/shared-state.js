@@ -28,7 +28,7 @@ export async function getActualNodes(){
     let nodes = []
     myState
         .show('babeld-hosts')
-        .forEach(babledHost => nodes = nodes.indexOf(babledHost.data) !== -1 ? nodes: [...nodes, babledHost.data])
+        .forEach(babeldHost => nodes = nodes.indexOf(babeldHost.data) !== -1 ? nodes: [...nodes, babeldHost.data])
         return nodes;
 }
 
