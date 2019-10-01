@@ -52,7 +52,7 @@ function Layout() {
           <Router primary={false} component={PrivateRoute}>
             <LastIssuesPanel path="/" />
             <NewReportWizard path="/reports/new" />
-            <IssuePage path="/report" />
+            <IssuePage path="/report/:issueId" />
             <Congrats path="/congrats" />
           </Router>
           <Router primary={false} component={NotLoggedRoute}>

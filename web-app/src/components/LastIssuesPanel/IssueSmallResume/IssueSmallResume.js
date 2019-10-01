@@ -14,6 +14,7 @@ function IssueSmallResume({ issue, affectsMe, onSelect }) {
             <div className="side">
                 <Avatar user={issue.user} size={64} />
                 <span className="username">@{issue.user.username}</span>
+                <span className="node">{issue.node ? 'en ' + issue.node : ''}</span>
             </div>
             <div className="content">
                 {title}

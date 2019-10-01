@@ -1,20 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import IssuePage from './IssuePage';
-import {user, issue} from '../data/mockData';
-import {commonIssuesDict} from '../data/commonIssues';
+import { NavBar } from './IssuePage';
+import { user, issue } from '../data/mockData';
 
 const largerCommonIssuePath = {
     ...issue,
-    common_issue: commonIssuesDict['from_precise_moment'],
+    commonIssueId: 'from_precise_moment',
 }
 
 const nonCommonIssue = {
     ...issue,
-    common_issue: null,
+    commonIssueId: "custom",
+    title: "Ayuda para alinear la antena de casa"
 }
 
-storiesOf('IssuePage', module)
-    .add('Basic Issue Page', () => <IssuePage issue={issue} user={user}></IssuePage>)
-    .add('Larger common issue path', () => <IssuePage issue={largerCommonIssuePath} user={user}></IssuePage>)
-    .add('Non common issue selecetd', () => <IssuePage issue={nonCommonIssue} user={user}/>)
+// storiesOf('IssuePage', module)
+//     .add('Basic Issue Page', () => <IssueDetail issue={issue} user={user} author={issue.user} comments={[]}/>)
+//     .add('Larger common issue path', () => <IssueDetail issue={largerCommonIssuePath} user={user} author={issue.user} comments={[]}/>)
+//     .add('Non common issue selecetd', () => <IssueDetail issue={nonCommonIssue} user={user} author={issue.user} comments={[]}/>)

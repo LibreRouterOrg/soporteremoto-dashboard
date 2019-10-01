@@ -1,7 +1,7 @@
 import React from 'react';
 import { Menu as MenuAntd, Dropdown, Button, Icon } from 'antd';
 
-export function Menu({ status, onChange }) {
+export default function Menu({ status, onChange }) {
     const menu = (
         <MenuAntd onClick={onChange}>
             <MenuAntd.Item key="1">
