@@ -41,7 +41,6 @@ const sendToLog = async(content, config) => {
         hash: 'sha256',
         content
     })
-    console.log(doc)
 
     return localFetch(false)(config.url + config.path, {
         method: 'POST',
@@ -73,7 +72,6 @@ const api = {
         injectUserData: async (report) => {
             report = await report;
             const user = await api.accounts.get(report.user)
-            console.log(report, user)
             return {
                 ...report,
                 user

@@ -6,7 +6,8 @@ import naclUtil from 'tweetnacl-util'
 import { fetchAsBase64 } from './fetchBase64';
 
 const CACHE_TIME = 3000;
-const log = (msg) => console.log('localFetch - ', msg)
+const LOG = false
+const log = (msg) => LOG? console.log('localFetch - ', msg): null;
 
 function sortKeys(x) {
     if (typeof x !== 'object' || !x)
@@ -84,7 +85,7 @@ export const retryFetch = (url, options, hash, old, blob) => {
 }
 
 export const localFetch = (useOffline, blob) => {
-    return (url, options) => {
+    return (url, options) =>{
         //Not use cache
         if (!useOffline) { return noCacheFetch(url, options); }
         //Use cache
@@ -95,7 +96,6 @@ export const localFetch = (useOffline, blob) => {
         //If is old try to reload
         if (isOld(cached.timestamp)) { return retryFetch(url, options, hash, cached.res, blob) }
         //If cache is valid return it
-        console.log(cached.res)
         return Promise.resolve({res: cached.res, cache: true, offline: false});
     }
 }
