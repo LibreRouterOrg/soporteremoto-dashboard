@@ -3,6 +3,7 @@
 */
 import nacl from 'tweetnacl'
 import naclUtil from 'tweetnacl-util'
+import { fetchAsBase64 } from './fetchBase64';
 
 const CACHE_TIME = 3000;
 const log = (msg) => console.log('localFetch - ', msg)
@@ -45,9 +46,10 @@ const saveOrUpdate = (hash, res) => {
     localStorage.setItem(hash, JSON.stringify({ timestamp: Date.now(), res }))
 }
 
-export const newFetch = (url, options, hash) => {
+export const newFetch = (url, options, hash, blob) => {
     log(`fetching new request - ${hash}`)
-    return fetch(url, options)
+    const fetcher = blob? fetchAsBase64: fetch;
+    return fetcher(url, options)
         .then((res) => res.json())
         .then(json => {
             saveOrUpdate(hash, json)
@@ -64,10 +66,11 @@ const noCacheFetch = (url, options) => {
     });
 }
 
-export const retryFetch = (url, options, hash, old) => {
+export const retryFetch = (url, options, hash, old, blob) => {
     log(`refetching old request - ${hash}`)
+    const fetcher = blob? fetchAsBase64: fetch;
     return new Promise((res) => {
-        fetch(url, options)
+        fetcher(url, options)
             .then((res) => res.json())
             .then(json => {
                 saveOrUpdate(hash, json)
@@ -80,7 +83,7 @@ export const retryFetch = (url, options, hash, old) => {
     })
 }
 
-export const localFetch = (useOffline) => {
+export const localFetch = (useOffline, blob) => {
     return (url, options) => {
         //Not use cache
         if (!useOffline) { return noCacheFetch(url, options); }
@@ -88,9 +91,9 @@ export const localFetch = (useOffline) => {
         const hash = hashRequest(url, options)
         const cached =  getCached(hash)
         //If not exist make the request
-        if (!cached) { return newFetch(url, options, hash); }
+        if (!cached) { return newFetch(url, options, hash, blob); }
         //If is old try to reload
-        if (isOld(cached.timestamp)) { return retryFetch(url, options, hash, cached.res) }
+        if (isOld(cached.timestamp)) { return retryFetch(url, options, hash, cached.res, blob) }
         //If cache is valid return it
         console.log(cached.res)
         return Promise.resolve({res: cached.res, cache: true, offline: false});
