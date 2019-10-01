@@ -5,6 +5,7 @@ import { createAccount, getAccount, setAccount, getSequence, listAccounts } from
 import { createReport, getReport, listReports, getStatusReport, setStatusReport } from './routes/report';
 import { createComment, getComment,  } from './routes/comment';
 import { getNodes } from './routes/network';
+import { uploadBlob, getBlob } from './routes/blobs';
 
 import sbot from './db'
 import pull from 'pull-stream'
@@ -46,6 +47,9 @@ app.post('/comment/create', createComment)
 app.post('/comment/get', getComment)
 
 app.post('/network/nodes', getNodes)
+
+app.post('/blobs/upload', uploadBlob)
+app.get('/blobs/get/:hash', getBlob)
 
 ///////////////////////////////////////////////////////
 //Start server

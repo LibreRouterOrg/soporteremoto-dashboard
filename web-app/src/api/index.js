@@ -2,6 +2,9 @@ import keyManager, { saveCredentials }  from './keyManager';
 import restApi from './restApi'
 import socketApi from './socketApi'
 
+const LOG = false;
+const log = (toLog) => LOG? console.log(toLog): null;
+
 window.keyManager = keyManager
 export default {
     account: {
@@ -9,14 +12,14 @@ export default {
             let keys = keyManager.isSaved()
             if (!keys) return keys
             restApi.config({keys})
-            console.log(keys)
+            log(keys)
             return keys
         },
-        createAccount: ({name, node}) => {
+        createAccount: ({name, node, avatar}) => {
             const keys = keyManager.loadOrCreate();
             restApi.config({keys})
-            console.log(keys)
-            restApi.accounts.create({name,node}).then(console.log)
+            log(keys)
+            restApi.accounts.create({name,node, avatar}).then(log)
             return Promise.resolve({ words: keys.words })
         },
         set: restApi.accounts.set,
@@ -30,7 +33,7 @@ export default {
                 })
                 .then(async(keys)=>{
                     const account = await restApi.accounts.get(keys.publicKey)
-                    if(!account.username || forceCredentials ) {
+                    if(!(account.username || forceCredentials) ) {
                         return Promise.resolve({...keys, account, verified: false})
                     }
                     saveCredentials(keys)

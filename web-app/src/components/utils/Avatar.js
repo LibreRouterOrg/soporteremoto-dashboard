@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar as AvatarAntd } from 'antd';
 
-export function Avatar({ user, size}) {
+export function Avatar({ user, size='large'}) {
     return (
         <>
             {user.is_bot ?

@@ -71,7 +71,7 @@ function NewIssue() {
 
 export function LastIssuesPanel({ issues }) {
     const open_issues = issues.filter(x => (x.status === 'open'))
-    const closed_issues = issues.filter(x => (x.status === 'closed'))
+    const closed_issues = issues.filter(x => (x.status !== 'open'))
     return (
         <div className="last-issues-panel">
             <IssuesTabs open_issues={open_issues} closed_issues={closed_issues}></IssuesTabs>

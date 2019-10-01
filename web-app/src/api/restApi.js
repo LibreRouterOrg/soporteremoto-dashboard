@@ -9,6 +9,16 @@ const whitTimeout = (time=2500, promise) => new Promise((res, rej) =>{
     promise.then(res).catch(rej)
 })
 
+const uploadBase64 = async(base64) => {
+    const {id} = await fetch(config.url+'/blobs/upload', {
+        method: 'POST',
+        headers:{'Content-Type': 'application/json'},
+        body: JSON.stringify({base64})
+    })
+    .then((res) => res.json())
+    return id;
+}
+
 const sendToLog = async(content, config) => {
     const sequenceData  = await fetch(config.url+'/account/getSequence', {
         method: 'POST',
@@ -31,7 +41,6 @@ const sendToLog = async(content, config) => {
         hash: 'sha256',
         content
     })
-    console.log(doc)
 
     return localFetch(false)(config.url + config.path, {
         method: 'POST',
@@ -43,8 +52,10 @@ const sendToLog = async(content, config) => {
         .then(changeApiStatus)
 }
 
-const fetchLog = async (content = {}, config) => {
-    return localFetch(true)(config.url + config.path, {
+const fetchBlob =  localFetch(true, true);
+
+const fetchLog = async(content={}, config) => {
+    return localFetch(true)(config.url+config.path, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(content)
@@ -61,7 +72,6 @@ const api = {
         injectUserData: async (report) => {
             report = await report;
             const user = await api.accounts.get(report.user)
-            console.log(report, user)
             return {
                 ...report,
                 user
@@ -70,24 +80,37 @@ const api = {
     },
     config: (newConfig) => { config = Object.assign(config, newConfig) },
     accounts: {
-        create: ({ name, node }) => {
-            return sendToLog({
+        create: async({name, node, avatar}) => {
+            if (avatar) {
+                avatar = await uploadBase64(avatar)
+            }
+            return await sendToLog({
                 type: 'about',
                 about: config.keys.publicKey,
                 name,
-                node
-            }, { ...config, path: `/account/create` })
+                node,
+                avatar,
+            },{...config, path: `/account/create`})
         },
-        set: (key, data = {}) => {
-            return sendToLog({
+        set: async(key, data={}) => {
+            if (data.avatar) {
+                data.avatar = await uploadBase64(data.avatar)
+            }
+            return await sendToLog({
                 type: 'about',
                 about: config.keys.publicKey,
                 ...data
             }, { ...config, path: `/account/set` })
         },
         get: (id) => {
-            return fetchLog({ id }, { ...config, path: '/account/get' })
-                .then(user => Promise.resolve(formatUser({ ...user, key: id })))
+            return fetchLog({id}, {...config, path: '/account/get'})
+                .then(async(user) => {
+                    let userFormated = formatUser({...user, key: id});
+                    if(!userFormated.avatar) { return userFormated; }
+                    let { res }= await fetchBlob(config.url+'/blobs/get/'+encodeURIComponent(userFormated.avatar))
+                    userFormated.avatar = res;
+                    return userFormated
+                })
         },
         list: (data) => {
             return fetchLog({}, { ...config, path: '/account/list' })

@@ -31,7 +31,6 @@ class IssueContextProvider extends Component {
     async componentDidMount() {
         const issue = await api.reports.get(this.props.issueId);
         issue.user = await api.account.get(issue.user);
-        console.log(issue);
         this.setState({ issue: issue, loading: false, issueStatus: issue.status});
     }
 

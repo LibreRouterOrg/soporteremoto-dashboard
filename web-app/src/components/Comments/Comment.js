@@ -71,7 +71,6 @@ export class CommentEditor extends React.Component {
     render() {
         const { onChange, onSubmit, value, submitting } = this.props;
         const { user } = this.state;
-        console.log(user);
         if (!user) {
             return 'Loading';
         }
