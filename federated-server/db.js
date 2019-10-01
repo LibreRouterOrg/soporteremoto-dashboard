@@ -17,6 +17,7 @@ var CreateSBot = SecretStack()
 .use(require('ssb-about'))
 .use(require('ssb-threads'))
 .use(require('ssb-promiscuous'))
+.use(require('ssb-blobs'))
 
 // create the db instance.
 // Only one instance may be created at a time due to os locks on port and database files.

@@ -17,7 +17,6 @@ const resolvedStatus = (
 );
 
 export default ({status}) => {
-    console.log(status);
     if (status === 'open') {
         return openStatus;
     } else {
