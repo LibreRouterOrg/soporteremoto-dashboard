@@ -25,11 +25,11 @@ export async function getActualNodes(){
     const nodeData = await requestSharedState('babeld-hosts', false);
     myState.merge(objToStrMap(nodeData) ,false,'babeld-hosts');
     //Format result to get a hostname list
-    let nodes = []
+    let nodes = new Set()
     myState
         .show('babeld-hosts')
-        .forEach(babeldHost => nodes = nodes.indexOf(babeldHost.data) !== -1 ? nodes: [...nodes, babeldHost.data])
-        return nodes;
+        .forEach(({data}) => nodes.add(data))
+        return Array.from(nodes);
 }
 
 export function sendNodesToDb(nodeList = [], sbot) {
