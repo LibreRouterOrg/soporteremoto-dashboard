@@ -106,7 +106,13 @@ const api = {
         },
         get: (id) => {
             return fetchLog({id}, {...config, path: '/account/get'})
-                .then(user => Promise.resolve(formatUser({...user, key: id})))
+                .then(async(user) => {
+                    let userFormated = formatUser({...user, key: id});
+                    if(!userFormated.avatar) { return userFormated; }
+                    let { res }= await fetchBlob(config.url+'/blobs/get/'+encodeURIComponent(userFormated.avatar))
+                    userFormated.avatar = res;
+                    return userFormated
+                })
         },
         list: (data) => {
             return fetchLog({}, {...config, path: '/account/list'})
