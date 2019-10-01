@@ -4,9 +4,10 @@ import SocketIO from 'socket.io'
 import { createAccount, getAccount, setAccount, getSequence, listAccounts } from './routes/account';
 import { createReport, getReport, listReports, getStatusReport, setStatusReport } from './routes/report';
 import { createComment, getComment,  } from './routes/comment';
+import { uploadBlob, getBlob } from './routes/blobs';
+
 import sbot from './db'
 import pull from 'pull-stream'
-
 
 ///////////////////////////////////////////////////////
 //Setup http server
@@ -40,6 +41,9 @@ app.post('/reports/setStatus', setStatusReport)
 
 app.post('/comment/create', createComment)
 app.post('/comment/get', getComment)
+
+app.post('/blobs/upload', uploadBlob)
+app.get('/blobs/get/:hash', getBlob)
 
 ///////////////////////////////////////////////////////
 //Start server
