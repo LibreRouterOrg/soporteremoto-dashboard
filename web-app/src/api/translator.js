@@ -14,15 +14,25 @@ export const formatReport  = async({value, key}) => {
     }
 }
 
+export const formatReportComments = async ({ messages, full }) => {
+    return messages.filter((_, key) => key > 0).map(message => formatComment(message.value))
+}
+
+export const formatComment = (value) => {
+    const { author, timestamp, content } = value;
+    const { body } = content;
+    return { userId: author, timestamp, body }
+}
+
 export const formatUser = (account) => ({
-  username: account.name,
-  avatar: account.avatar,
-  node: account.node,
-  key: account.key,
+    username: account.name,
+    avatar: account.avatar,
+    node: account.node,
+    key: account.key,
 })
 
-export const formatStatus = ({value}) => ({
-  account: value.author,
-  timestamp: value.timestamp,
-  status: value.content.status
+export const formatStatus = ({ value }) => ({
+    account: value.author,
+    timestamp: value.timestamp,
+    status: value.content.status
 })
