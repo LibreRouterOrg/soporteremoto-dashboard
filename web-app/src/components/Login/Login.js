@@ -7,7 +7,7 @@ import { Avatar } from '../utils';
 import './Login.less';
 import api from '../../api';
 
-export function Login({ handleSubmit, showError }) {
+export function Login({ handleSubmit }) {
     return (
         <Formik
             initialValues={{ seedPhrase: '' }}
@@ -26,7 +26,7 @@ export function Login({ handleSubmit, showError }) {
             {({ isSubmitting }) => (
                 <Form className='login-form'>
                     <Form.Item name="seedPhrase" label="Frase Secreta" htmlFor="seedPhrase">
-                        <Input.Password name="seedPhrase" id="seedPhrase"></Input.Password>
+                        <Input name="seedPhrase" id="seedPhrase"></Input>
                     </Form.Item>
                     <Button type="default" htmlType="submit" disabled={isSubmitting}>
                         Verificar
@@ -99,7 +99,9 @@ class LoginContainer extends React.Component {
         const {account, verified} = this.state;
         return (
             <div className="login-page">
-                <Login handleSubmit={this.handleSubmit} showError={this.state.showError} />
+                {!verified &&
+                    <Login handleSubmit={this.handleSubmit} showError={this.state.showError} />
+                }
                 {account &&
                     <LoginFeedBack account={account} verified={verified} onConfirm={this.onConfirm}></LoginFeedBack>
                 }
