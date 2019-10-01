@@ -1,92 +1,129 @@
-import React, { Component } from 'react';
-import Comments from '../Comments';
-import { commonIssuesDict } from '../data/commonIssues';
-import { Icon, Button } from 'antd';
-import { Menu } from './Menu';
-import './IssuePage.less';
+import React, { Component } from 'react'
 import moment from 'moment';
+import Comments from '../Comments';
+import { Button, Tag } from 'antd';
+import Menu from './Menu';
+import Status from './Status';
+import { commonIssuesDict } from '../data/commonIssues';
+import './IssuePage.less';
+import api from '../../api';
+import { navigate } from '@reach/router';
 
-function Header({ issue, status, onChangeStatus }) {
-    return (
-        <div className="header">
-            <div className="header-title">
-                <div className="title">
-                    <Button className="back" type="link" icon="arrow-left"/>
-                    Reporte #{issue.id}
-                    {status === "open" ?
-                        <div className="status">
-                            <Icon className="status-icon status-open" type="exclamation-circle"/>
-                            Abierto
-                        </div>
-                        :
-                        <div className="status">
-                            <Icon className="status-icon status-closed" type="check-circle" />
-                            Resuelto
-                        </div>
-                    }
-                </div>
-                <div className="subtitle">Por {issue.user.username} el {moment(issue.timestamp).format('LLL')}</div>
-            </div>
-            <div className="menu">
-                <Menu status={status} onChange={onChangeStatus} />
-            </div>
-        </div>
-    );
-}
+const STATUS_OPEN = 'open'
+const STATUS_RESOLVED = 'resolved'
 
-class IssuePage extends Component {
+const IssueContext = React.createContext({ issue: null, changeStatus: () => null })
+
+class IssueContextProvider extends Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.changeStatus = this.changeStatus.bind(this);
+        this.updateStatus = this.updateStatus.bind(this);
+
         this.state = {
-            comments: this.props.issue.comments,
-            status: this.props.issue.status,
+            issue: null,
+            issueStatus: null,
+            changeStatus: this.changeStatus,
+            loading: true,
         }
-        this.onChangeStatus = this.onChangeStatus.bind(this);
     }
 
-    getCommonIssueText(commonIssue) {
-        let result = "";
-        if (commonIssue == null) {
-            return "Ninguno de los problemas conocidos";
-        }
-        if (commonIssue.parent) {
-            result += commonIssuesDict[commonIssue.parent].text;
-            result += " > ";
-        }
-        result += commonIssue.text;
-        return result;
+    async componentDidMount() {
+        const issue = await api.reports.get(this.props.issueId);
+        issue.user = await api.account.get(issue.user);
+        console.log(issue);
+        this.setState({ issue: issue, loading: false, issueStatus: issue.status});
     }
 
-    onChangeStatus = e => {
-        const status = this.state.status;
-        this.setState({status: status === 'open' ? 'closed': 'open'});
+    updateStatus(status) {
+        this.setState({issueStatus: status});
+    }
+
+    changeStatus() {
+        const newStatus = this.state.issueStatus === STATUS_OPEN ? STATUS_RESOLVED : STATUS_OPEN;
+        api.reports.setStatus(this.props.issueId, newStatus)
+            .then(this.updateStatus(newStatus));
     }
 
     render() {
-        const { issue, user } = this.props;
         return (
-            <div className="issue-page">
-                <div className="section">
-                    <Header issue={issue} status={this.state.status} onChangeStatus={this.onChangeStatus}/>
-                </div>
-                <div className="section">
-                    <div className="title">Tipo de problema</div>
-                    <div className="section-content">
-                        <div className="common-issue-text">
-                            {this.getCommonIssueText(issue.common_issue)}
-                        </div>
-                    </div>
-                </div>
-                <div className="section">
-                    <div className="title">Detalles</div>
-                    <div className="section-content">{issue.body}</div>
-                </div>
-                <div className="section">
-                    <Comments comments={this.state.comments} user={user}></Comments>
-                </div>
-            </div>
+            <IssueContext.Provider value={this.state}>
+                {!this.state.loading && this.props.children}
+            </IssueContext.Provider>
         )
     }
 }
 
-export default IssuePage;
+const NavBar = () => (
+    <div className="nav-bar">
+        <Button type="link" icon="arrow-left" onClick={() => navigate('/')} />
+        <div className="nav-bar-menu">
+            <IssueContext.Consumer>
+                {({ issueStatus, changeStatus }) =>
+                    <Menu status={issueStatus} onChange={changeStatus} />
+                }
+            </IssueContext.Consumer>
+        </div>
+    </div>
+)
+
+const Subject = ({ issue }) => {
+    const { commonIssueId, title } = issue;
+    let subject = "";
+    if (title) {
+        subject = title;
+    } else {
+        const commonIssue = commonIssuesDict[commonIssueId];
+        const parentText = (commonIssue && commonIssue.parent) ?
+            commonIssuesDict[commonIssue.parent].text + ' > ' : '';
+        const childText = commonIssue ? commonIssue.text : 'Ninguno de los problemas conocidos';
+        subject = parentText + childText;
+    }
+    return subject
+}
+
+const IssueDetail = () => (
+    <IssueContext.Consumer>
+        {({ issue, issueStatus }) =>
+            <div className="issue-detail">
+                <div className="header">
+                    <div className="header-title">
+                        {"Reporte " + issue.id.slice(1, 8)}
+                        <div className="header-status"><Status status={issueStatus} /></div>
+                    </div>
+                    <div className="header-subtitle">
+                        Por {issue.user.username ? issue.user.username : '?'}
+                        {issue.node ? ' en ' + issue.node : ''}
+                        {' el ' + moment(issue.timestamp).format('LLL')}
+                    </div>
+                </div>
+                <div className="section">
+                    <div className="section-title">Asunto</div>
+                    <div className="section-content">
+                        <div className="common-issue-text">
+                            <Subject issue={issue}></Subject>
+                        </div>
+                    </div>
+                </div>
+                <div className="section">
+                    <div className="section-title">Detalles</div>
+                    <div className="section-content">{issue.body}</div>
+                </div>
+            </div>
+        }
+    </IssueContext.Consumer>
+)
+
+function IssuePage({ issueId }) {
+    return (
+        <IssueContextProvider issueId={issueId}>
+            <div className="issue-page">
+                <NavBar />
+                <IssueDetail />
+                <Comments issueId={issueId} />
+            </div>
+        </IssueContextProvider>
+    )
+}
+
+export default IssuePage

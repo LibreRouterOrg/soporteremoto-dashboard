@@ -50,7 +50,7 @@ function IssuesList({ issues }) {
         <List size="small" className="issues-list" dataSource={sortedIssues} renderItem={
             issue => (
                 <List.Item style={itemStyle}>
-                    <IssueSmallResume issue={issue} onSelect={() => navigate('/report', { state: { issueId: issue.id } })} />
+                    <IssueSmallResume issue={issue} onSelect={() => navigate('/report/' + encodeURIComponent(issue.id))} />
                 </List.Item>
             )
         } />
@@ -88,13 +88,9 @@ class LastIssuesPanelPage extends React.Component {
         }
     }
 
-    componentDidMount() {
-        // Hack: This timeout is a workaround, see this issue:
-        // https://github.com/LibreRouterOrg/soporteremoto-dashboard/issues/18
-        setTimeout(async () => {
-            const reports = await api.reports.list();
-            this.setState({ reports: reports });
-        }, 500);
+    async componentDidMount() {
+        const reports = await api.reports.list();
+        this.setState({ reports: reports });
     }
 
     render() {

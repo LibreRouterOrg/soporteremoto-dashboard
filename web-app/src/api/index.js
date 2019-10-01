@@ -43,14 +43,16 @@ export default {
         get: restApi.reports.get,
         list: restApi.reports.list,
         getStatus: restApi.reports.getStatus,
-        setStatus: restApi.reports.setStatus
+        setStatus: restApi.reports.setStatus,
+        getComments: restApi.reports.getComments,
     },
     comment: {
         create: restApi.comment.create
     },
     getDefaultNode: () => Promise.resolve(''),
     nodes: {
-        list: () => restApi.network.getNodes().then(({nodes}) => Promise.resolve(nodes))
+        list: () => restApi.network.getNodes().then(({nodes}) => Promise.resolve(nodes)),
+        getDefaultNode: restApi.network.getDefaultNode
     },
     status: () => {
         const { http, socket } ={ ...restApi.status(), ...socketApi.status() };
