@@ -93,13 +93,8 @@ class RegistrationPage extends React.Component {
     }
 
     handleSubmit({ name, node, avatar }) {
-        console.log(name);
-        console.log(node);
-        console.log(avatar)
         api.account.createAccount({ name, node, avatar}).then(
-            (res) => {
-                console.log(res);
-                debugger;
+            () => {
                 navigate('/congrats', { state: { from: this.props.location.state.from } });
             }
         );
