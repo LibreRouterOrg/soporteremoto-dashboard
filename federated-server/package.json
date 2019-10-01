@@ -20,7 +20,6 @@
     "express": "^4.17.1",
     "mime-types": "^2.1.24",
     "multiserver-address": "^1.0.1",
-    "pull-cat": "^1.1.11",
     "pull-file": "^1.1.0",
     "pull-identify-filetype": "^1.1.0",
     "pull-stream": "^3.6.14",
