@@ -36,14 +36,6 @@ export class AvatarUploader extends React.Component {
     }
 
     beforeUpload(file) {
-        const isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-        if (!isJpgOrPng) {
-            message.error('You can only upload JPG/PNG file!');
-        }
-        const isLt2M = file.size / 1024 / 1024 < 10;
-        if (!isLt2M) {
-            message.error('Image must smaller than 10MB!');
-        }
         getBase64(file, imageUrl => {
             this.setState({
                 imageUrl,
@@ -69,6 +61,7 @@ export class AvatarUploader extends React.Component {
                 className="avatar-uploader"
                 showUploadList={false}
                 beforeUpload={this.beforeUpload}
+                accept="image/*"
             >
                 {imageUrl ? <img src={imageUrl} alt="avatar" style={{ width: '100%' }} /> : uploadButton}
             </Upload>
