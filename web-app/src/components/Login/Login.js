@@ -1,12 +1,13 @@
 import React from 'react';
 import { navigate } from '@reach/router';
-import { Button, Alert } from 'antd';
-import { Form, Input} from "@jbuschke/formik-antd";
+import { Button, Icon } from 'antd';
+import { Form, Input } from "@jbuschke/formik-antd";
 import { Formik } from 'formik';
-import './Login.css';
+import { Avatar } from '../utils';
+import './Login.less';
 import api from '../../api';
 
-export function Login({ handleSubmit, showError }) {
+export function Login({ handleSubmit }) {
     return (
         <Formik
             initialValues={{ seedPhrase: '' }}
@@ -24,14 +25,11 @@ export function Login({ handleSubmit, showError }) {
         >
             {({ isSubmitting }) => (
                 <Form className='login-form'>
-                    {showError &&
-                        <Alert type="error" message="La frase secreta ingresada no es correcta"/>
-                    }
                     <Form.Item name="seedPhrase" label="Frase Secreta" htmlFor="seedPhrase">
-                        <Input.Password name="seedPhrase" id="seedPhrase"></Input.Password>
+                        <Input name="seedPhrase" id="seedPhrase"></Input>
                     </Form.Item>
-                    <Button type="primary" htmlType="submit" disabled={isSubmitting}>
-                        Entrar
+                    <Button type="default" htmlType="submit" disabled={isSubmitting}>
+                        Verificar
                     </Button>
                 </Form>
             )}
@@ -39,17 +37,35 @@ export function Login({ handleSubmit, showError }) {
     );
 }
 
+export function LoginFeedBack({ verified, account, onConfirm }) {
+    return(
+        <div className="login-feedback">
+            <div className="avatar">
+                <Avatar user={account}></Avatar>
+            </div>
+            {verified && <>
+                <p>Bienvenido de regreso {account.username}</p>
+                <Button type="primary" onClick={onConfirm}>Continuar</Button> </>
+            }
+            {verified === false && <>
+                <p><Icon type="warning" className="warning-icon"/> No hay datos sobre esta cuenta en la red.</p>
+                <p>Revisa cuidadosamente la frase secreta ingresada</p>
+                <Button type="primary" onClick={onConfirm}>Es correcta, Continuar</Button> </>
+            }
+        </div>
+    )
+}
+
 class LoginContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            showError: false,
+            account: null,
+            verified: null,
+            seedPhrase: null,
         }
         this.handleExit = this.handleExit.bind(this);
-    }
-
-    onFailure = () => {
-        this.setState({ showError: true });
+        this.onConfirm = this.onConfirm.bind(this);
     }
 
     handleExit() {
@@ -61,18 +77,34 @@ class LoginContainer extends React.Component {
     }
 
     handleSubmit = values => {
-        const promise = api.account.recoverAccount(values.seedPhrase);
+        const promise = api.account.recover(values.seedPhrase);
         promise
-            .then(() => this.handleExit())
-            .catch(() => {
-                this.onFailure()
-            });
+            .then(({ account, verified }) => {
+                this.setState({ account, verified, seedPhrase: values.seedPhrase})
+            })
+    }
+
+    onConfirm = () => {
+        if (this.state.verified) {
+            console.log('verified')
+            this.handleExit()
+        } else {
+            // Force credentials
+            api.account.recover(this.state.seedPhrase, true)
+                .then(() => this.handleExit())
+        }
     }
 
     render() {
+        const {account, verified} = this.state;
         return (
             <div className="login-page">
-                <Login handleSubmit={this.handleSubmit} showError={this.state.showError} />
+                {!verified &&
+                    <Login handleSubmit={this.handleSubmit} showError={this.state.showError} />
+                }
+                {account &&
+                    <LoginFeedBack account={account} verified={verified} onConfirm={this.onConfirm}></LoginFeedBack>
+                }
             </div>
         );
     }
