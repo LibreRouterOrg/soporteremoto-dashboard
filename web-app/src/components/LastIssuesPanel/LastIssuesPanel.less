@@ -14,7 +14,13 @@
     border-top: 0.1em solid @primary-color;
 }
 
+
 .issues-list {
     flex:auto;
     overflow: auto;
+}
+
+.ant-tabs-content {
+    // Hack this is a class name used by antd component.
+    min-height: 0;
 }
