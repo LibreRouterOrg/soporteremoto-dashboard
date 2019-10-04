@@ -4,10 +4,14 @@ import SocketIO from 'socket.io'
 import { createAccount, getAccount, setAccount, getSequence, listAccounts } from './routes/account';
 import { createReport, getReport, listReports, getStatusReport, setStatusReport } from './routes/report';
 import { createComment, getComment,  } from './routes/comment';
+import { getNodes } from './routes/network';
 import { uploadBlob, getBlob } from './routes/blobs';
 
 import sbot from './db'
 import pull from 'pull-stream'
+
+import schedule  from 'node-schedule';
+import { getActualNodes, sendNodesToDb } from './shared-state';
 
 ///////////////////////////////////////////////////////
 //Setup http server
@@ -41,6 +45,8 @@ app.post('/reports/setStatus', setStatusReport)
 
 app.post('/comment/create', createComment)
 app.post('/comment/get', getComment)
+
+app.post('/network/nodes', getNodes)
 
 app.post('/blobs/upload', uploadBlob)
 app.get('/blobs/get/:hash', getBlob)
@@ -83,3 +89,14 @@ pull(
     }
   })
 );
+
+
+///////////////////////////////////////////////////////
+// Start scheduled jobs
+///////////////////////////////////////////////////////
+
+schedule.scheduleJob("*/15 * * * *", ()=>{
+  console.log("Check list of nodes in the mesh")
+  getActualNodes().then(nodes => sendNodesToDb(nodes, sbot));
+})
+

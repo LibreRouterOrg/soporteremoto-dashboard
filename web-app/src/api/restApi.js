@@ -174,7 +174,8 @@ const api = {
             }, { ...config, path: '/reports/create' })
         },
     },
-    nodes: {
+    network: {
+        getNodes: () => fetchLog({}, {...config, path: '/network/nodes'}),
         getDefaultNode: () => whitTimeout(2500, fetch('http://thisnode.info/cgi-bin/hostname')
             .then(res => res.text())
             .catch(e => Promise.resolve(null))
