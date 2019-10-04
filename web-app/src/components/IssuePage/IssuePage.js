@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment';
 import Comments from '../Comments';
-import { Button, Tag } from 'antd';
+import { Button } from 'antd';
 import Menu from './Menu';
 import Status from './Status';
 import { commonIssuesDict } from '../data/commonIssues';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Icon, message } from 'antd';
+import { Upload, Icon } from 'antd';
 
 var MAX_HEIGHT = 100;
 
@@ -53,7 +53,7 @@ export class AvatarUploader extends React.Component {
                 <div className="ant-upload-text">Upload</div>
             </div>
         );
-        const { imageUrl } = this.state;
+        const imageUrl = this.state.imageUrl || this.props.imageUrl;
         return (
             <Upload
                 name="avatar"
