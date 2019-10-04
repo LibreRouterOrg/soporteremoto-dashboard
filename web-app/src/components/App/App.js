@@ -1,16 +1,18 @@
 import React from 'react';
-import { Router, Redirect } from '@reach/router';
+import { Router, Redirect, navigate } from '@reach/router';
 import { Row, Col } from 'antd';
 import Login from '../Login';
-import Registration from '../Registration';
-import Congrats from '../Registration/Congrats';
+import Registration from '../Account/Registration';
+import AccountEdition from '../Account/Edition';
+import Congrats from '../Account/Congrats';
 import LastIssuesPanel from '../LastIssuesPanel';
 import NewReportWizard from '../NewReportWizard';
 import CommunityMap from '../CommunityMap';
 import IssuePage from '../IssuePage';
 import './App.less';
 import api from '../../api';
-import {NetworkContextProvider} from '../utils';
+import NavBar from '../NavBar';
+import { NetworkContextProvider } from '../utils';
 
 function PrivateRoute({ children }) {
   /* Renders children component only if user is logged,
@@ -39,9 +41,9 @@ function NotLoggedRoute({ children }) {
 function Layout() {
   return (
     <div id="App">
-      <Row id="Header">
-        <Col id="HeaderLogo" span={24}> Dashboard - Soporte Remoto </Col>
-      </Row>
+      <div id="Header">
+          <NavBar></NavBar>
+      </div>
       <Row id="Content">
         <Col md={16} id="MapContainer">
           <CommunityMap />
@@ -54,6 +56,7 @@ function Layout() {
             <NewReportWizard path="/reports/new" />
             <IssuePage path="/report/:issueId" />
             <Congrats path="/congrats" />
+            <AccountEdition path="/account_edition"/>
           </Router>
           <Router primary={false} component={NotLoggedRoute}>
             <Registration path="/registration" />
@@ -68,7 +71,7 @@ function Layout() {
 function App() {
   return (
     <NetworkContextProvider>
-      <Layout/>
+      <Layout />
     </NetworkContextProvider>
   )
 }

@@ -1,0 +1,6 @@
+.edition-page {
+    flex:auto;
+    flex-direction: column;
+    display: flex;
+    padding: 1rem;
+}

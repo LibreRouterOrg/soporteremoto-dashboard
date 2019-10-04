@@ -53,7 +53,7 @@ export class AvatarUploader extends React.Component {
                 <div className="ant-upload-text">Upload</div>
             </div>
         );
-        const { imageUrl } = this.state;
+        const imageUrl = this.state.imageUrl || this.props.imageUrl;
         return (
             <Upload
                 name="avatar"
