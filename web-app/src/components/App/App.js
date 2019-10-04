@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Redirect, navigate } from '@reach/router';
+import { Router, Redirect } from '@reach/router';
 import { Row, Col } from 'antd';
 import Login from '../Login';
 import Registration from '../Account/Registration';

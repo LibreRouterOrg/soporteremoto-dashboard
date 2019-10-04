@@ -9,14 +9,25 @@ class Menu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            account: {}
+            account: {},
         };
+        this.updateAccount = this.updateAccount.bind(this);
     }
 
-    async componentDidMount() {
+    componentDidMount() {
+        this.updateAccount();
+        // TODO: use account as a global context
+        this.interval = setInterval(() => this.updateAccount(), 200);
+    }
+
+    async updateAccount() {
         const { publicKey } = api.account.isLogged();
         const account = await api.account.get(publicKey);
-        this.setState({ account: account });
+        this.setState({ account: account});
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.interval);
     }
 
     render() {
@@ -27,6 +38,10 @@ class Menu extends React.Component {
                 </MenuAntd.Item>
             </MenuAntd>
         );
+
+        if (!this.state.account.username) {
+            return (<></>)
+        }
 
         return (
             <div id="nav-bar-menu">

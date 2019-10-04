@@ -3,7 +3,7 @@ import { navigate } from '@reach/router';
 import { Button } from 'antd';
 import './Registration.less';
 import api from '../../api';
-import { NetworkContext, AvatarUploader } from '../utils';
+import { NetworkContext } from '../utils';
 import { AccountForm } from './AccountForm';
 
 const OfflineRegistration = () => (

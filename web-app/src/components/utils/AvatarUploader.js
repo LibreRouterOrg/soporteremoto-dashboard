@@ -1,5 +1,5 @@
 import React from 'react';
-import { Upload, Icon, message } from 'antd';
+import { Upload, Icon } from 'antd';
 
 var MAX_HEIGHT = 100;
 
