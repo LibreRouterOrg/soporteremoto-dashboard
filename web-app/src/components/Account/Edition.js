@@ -3,6 +3,7 @@ import { AccountForm } from './AccountForm';
 import api from '../../api';
 import './EditionPage.css';
 import { message } from 'antd';
+import { navigate } from '@reach/router';
 
 class EditionPage extends Component {
         constructor(props) {
@@ -26,7 +27,10 @@ class EditionPage extends Component {
         handleSubmit({ name, node, avatar }) {
             const { publicKey } = api.account.isLogged();
             api.account.set(publicKey, { name, node, avatar }).then(
-                () => message.success('Se actualizaron tus datos')
+                () => {
+                    message.success('Se actualizaron tus datos');
+                    navigate('/');
+                }
             );
         }
 
