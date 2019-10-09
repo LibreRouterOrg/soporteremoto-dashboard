@@ -2,7 +2,7 @@
 The goal of this project is to develop a platform to allow Community Networks members to interact with each other, to solve problems that may occur in their network.
 
 <p align="center"><br><br>
-    <img src="https://raw.githubusercontent.com/LibreRouterOrg/soporteremoto-dashboard/bc2c031/screenshots.gif" alt="Screenshot" />
+    <img src="https://raw.githubusercontent.com/LibreRouterOrg/soporteremoto-dashboard/6240643/screenshots.gif" alt="Screenshot" />
 </p>
 
 # Who can help whom?
