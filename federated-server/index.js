@@ -11,7 +11,8 @@ import sbot from './db'
 import pull from 'pull-stream'
 
 import schedule  from 'node-schedule';
-import { getActualNodes, sendNodesToDb } from './shared-state';
+import { getActualNodes } from './shared-state';
+import { sendNodesToDb } from './shcedule/nodes';
 
 ///////////////////////////////////////////////////////
 //Setup http server
