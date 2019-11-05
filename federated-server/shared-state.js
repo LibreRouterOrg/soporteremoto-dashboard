@@ -39,7 +39,7 @@ export function sendNodesToDb(nodeList = [], sbot) {
         pull.map(({value}) => value.content.nodes),
         pull.collect((error, results = []) => {
             if (error) { return; }
-            const oldNodes = results.reduce(flatToUnique)
+            const oldNodes = results.reduce(flatToUnique, [])
             const newNodes = nodeList.filter(node => oldNodes.indexOf(node ) === -1);
             if (newNodes.length > 0) {
                 sbot.publish({type: 'about', about: genericId, nodes: newNodes}, () => console.log('New nodes detected', newNodes))
