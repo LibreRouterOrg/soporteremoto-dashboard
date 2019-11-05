@@ -67,10 +67,12 @@ io.on('connection', function (socket) {
   console.log('New user connected')
 });
 
+
 ///////////////////////////////////////////////////////
-//Send update messages to clients
+//Start ssb
 ///////////////////////////////////////////////////////
 getSbot(sbot => {
+  //Send update messages to clients
   pull(
     sbot.createLogStream({ live: true, reverse: false }),
     pull.flatten(),
@@ -91,15 +93,11 @@ getSbot(sbot => {
       }
     })
   );
-});
 
-
-///////////////////////////////////////////////////////
 // Start scheduled jobs
-///////////////////////////////////////////////////////
-
 schedule.scheduleJob("*/15 * * * *", ()=>{
   console.log("Check list of nodes in the mesh")
   getActualNodes().then(nodes => sendNodesToDb(nodes, sbot));
 })
 
+});
