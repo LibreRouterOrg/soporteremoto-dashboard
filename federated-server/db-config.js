@@ -5,6 +5,9 @@ const ssbKeys = require('ssb-keys')
 const { APP_NAME, SHS, INVITE} = process.env
 
 const config = Config(APP_NAME || 'soporteremoto', {
+    replicate: {
+        legacy: false
+    },
     caps: {
         shs: SHS || 'v/vqlQfe1EGN5gi187Wpl+0RIaeGaNkjGeoHtjmcouA=',
         sign: null,
