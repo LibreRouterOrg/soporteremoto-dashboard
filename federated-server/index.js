@@ -7,7 +7,7 @@ import { createComment, getComment,  } from './routes/comment';
 import { getNodes } from './routes/network';
 import { uploadBlob, getBlob } from './routes/blobs';
 
-import sbot from './db'
+import { getSbot } from './db'
 import pull from 'pull-stream'
 
 import schedule  from 'node-schedule';
@@ -70,26 +70,28 @@ io.on('connection', function (socket) {
 ///////////////////////////////////////////////////////
 //Send update messages to clients
 ///////////////////////////////////////////////////////
-pull(
-  sbot.createLogStream({ live: true, reverse: false }),
-  pull.flatten(),
-  pull.drain(function (msg) {
-    if (msg && msg.content && msg.content.type ) {
-      switch (msg.content.type) {
-        case 'about':
-          io.emit('about', msg)
-          return;
-        case 'report':
-          if (msg.content.previous !== null) {
-            io.emit('comment', msg)
-          } else {
-            io.emit('report', msg)
-            return
-          }
+getSbot(sbot => {
+  pull(
+    sbot.createLogStream({ live: true, reverse: false }),
+    pull.flatten(),
+    pull.drain(function (msg) {
+      if (msg && msg.content && msg.content.type ) {
+        switch (msg.content.type) {
+          case 'about':
+            io.emit('about', msg)
+            return;
+          case 'report':
+            if (msg.content.previous !== null) {
+              io.emit('comment', msg)
+            } else {
+              io.emit('report', msg)
+              return
+            }
+        }
       }
-    }
-  })
-);
+    })
+  );
+});
 
 
 ///////////////////////////////////////////////////////
