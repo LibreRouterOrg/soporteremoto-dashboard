@@ -12,7 +12,7 @@ export const getNodes = async function(req, res) {
         pull.map(({value}) => value.content.nodes),
         pull.collect((error, results = []) => {
             if (error) { return; }
-            const nodes = results.reduce(flatToUnique)
+            const nodes = results.reduce(flatToUnique,[])
             res.json({nodes});
         })
     )
