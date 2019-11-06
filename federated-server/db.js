@@ -51,4 +51,8 @@ export function getSbot(cb) {
   return cb(sbot)
 }
 
+export const getSbotAsPromise = () => new Promise(res => {
+  getSbot(res)
+})
+
 export default sbot
