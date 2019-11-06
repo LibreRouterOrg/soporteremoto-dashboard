@@ -1,16 +1,19 @@
-import sbot from "../../db";
 import pull from 'pull-stream';
 import { removeFirst } from '../../utils/removeFirst';
 import { extractOption } from "../../utils/extractOption";
+import { getSbotAsPromise } from '../../db';
 
 
-function getStatus(key) {
-    return new Promise((res) => {
-        sbot.about.latestValue({key: 'status', dest: key}, (err, status)=>res(status || 'open'))
-    })
+function getStatus(sbot) {
+    return (key) => {
+        return new Promise((res) => {
+            sbot.about.latestValue({key: 'status', dest: key}, (err, status)=>res(status || 'open'))
+        })
+    }
 }
 
-export const listReports = (req,res) => {
+export const listReports = async(req,res) => {
+    const sbot = await getSbotAsPromise()
     if(!req.body.gt) {
         let d = new Date()
         d.setMonth(d.getMonth()-1);
@@ -22,7 +25,7 @@ export const listReports = (req,res) => {
         sbot.threads.public({allowlist: 'reports'}),
         pull.filter(onlyValidThreads),
         pull.map(removeInvalidMsg),
-        pull.asyncMap(injectStatus),
+        pull.asyncMap(injectStatus(sbot)),
         pull.map(reduceComments),
         pull.collect((err, msgs) => {
             err
@@ -33,9 +36,10 @@ export const listReports = (req,res) => {
 }
 
 /* Add the last status to the report. */
-async function injectStatus(data, cb) {
-    data.messages[0].value.content.status = await getStatus(data.messages[0].key)
-    cb(null, data)
+const injectStatus = (sbot) => async(data, cb) => {
+    let newData = Object.assign({}, data)
+    newData.messages[0].value.content.status = await getStatus(sbot)(newData.messages[0].key)
+    return cb(null, data)
 }
 
 /* Check that the first message of the thread is correctly formulated and is valid. */

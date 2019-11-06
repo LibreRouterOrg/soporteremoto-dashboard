@@ -1,5 +1,7 @@
-import sbot from "../../db";
+import { getSbotAsPromise } from "../../db"
 
-export const getAccount = (req,res) => {
-        sbot.about.latestValues({keys:['name', 'node', 'avatar'], dest: req.body.id}, (error,values)=>res.json(error? {error} : values))
+
+export const getAccount = async(req,res) => {
+  const sbot = await getSbotAsPromise()
+  sbot.about.latestValues({keys:['name', 'node', 'avatar'], dest: req.body.id}, (error,values)=>res.json(error? {error} : values))
 }
