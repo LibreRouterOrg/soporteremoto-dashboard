@@ -31,18 +31,17 @@ export async function getActualNodes(){
 }
 
 export async function getSharedConfig() {
-    const nodeData = await requestSharedState('soport-servers', false);
-    myState.merge(objToStrMap(nodeData) ,false,'soport-servers');
+    const nodeData = await requestSharedState('soporteremoto', false);
+    myState.merge(objToStrMap(nodeData) ,false,'soporteremoto');
     let servers = []
     myState
-        .show('soport-servers')
-        .forEach(({data}) => { servers = [...servers, data] })
-        return servers;
+        .show('soporteremoto')
+        .forEach(({data}) => { data.type === 'config' ? servers = [...servers, data]: false })
+    return servers;
 }
 
 export async function sendSharedConfig(config) {
-    console.log(config)
-    myState.insert(getIps(), {config}, 100, 'soport-servers')   
-    const result = await requestSharedState('soport-servers', true)
+    myState.insert(getIps(), {type: 'config', config}, 100, 'soporteremoto')   
+    const result = await requestSharedState('soporteremoto', true)
     console.log(result)
 }
