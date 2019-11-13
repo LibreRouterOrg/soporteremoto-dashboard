@@ -33,7 +33,7 @@ function startPeerConnections() {
     if( process.env.ROOM_INVITE) {
       console.log('Using room invite', process.env.ROOM_INVITE)
       let address = utils.inviteToAddress(process.env.ROOM_INVITE)
-      sbot.conn.connect(address, {type: 'room'}, (err)=>console.log(err? 'ERROR: '+err: 'Conexión con ssb-room correcta'))
+      sbot.conn.connect(address, {type: 'room'}, (err)=>console.log(err? 'ERROR: '+err: 'Successfully connected to ssb-room'))
     }
   
     pull(
