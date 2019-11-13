@@ -1,8 +1,9 @@
 import pull from 'pull-stream'
-import sbot from "../../db";
+import { getSbotAsPromise } from '../../db'
 
-export const getSequence = (req,res) => {
+export const getSequence = async(req,res) => {
     const key = req.body.id
+    const sbot = await getSbotAsPromise()
     sbot.getVectorClock(( err, vector)=>{
         sbot.getAtSequence([key, vector[key]], (err, msg)=> {
             if(err) { 

@@ -62,3 +62,6 @@ typings/
 
 .vscode
 yarn.lock
+
+# ssb config
+.config.json

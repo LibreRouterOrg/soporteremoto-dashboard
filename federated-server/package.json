@@ -15,8 +15,10 @@
   "author": "Marcos Gutierrez <gmarcos@altermundi.net",
   "license": "ISC",
   "dependencies": {
+    "babel-eslint": "^10.0.3",
     "babel-polyfill": "^6.26.0",
     "dotenv": "^8.1.0",
+    "eslint": "^6.5.1",
     "express": "^4.17.1",
     "mime-types": "^2.1.24",
     "multiserver-address": "^1.0.1",
@@ -26,7 +28,6 @@
     "pull-file": "^1.1.0",
     "pull-identify-filetype": "^1.1.0",
     "pull-stream": "^3.6.14",
-    "scuttlebot": "^13.2.2",
     "secret-stack": "^6.3.0",
     "shared-state-js": "^1.0.0",
     "socket.io": "^2.2.0",

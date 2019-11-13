@@ -1,10 +1,11 @@
-import sbot from "../../db";
 import { orderLog } from "../../utils/orderLog";
+import { getSbotAsPromise } from "../../db";
 
-export const createAccount = (req, res) => {
+export const createAccount = async(req, res) => {
+    const sbot = await getSbotAsPromise()
     try {
         const aboutData = orderLog(req.body);
-        checkFriendship(aboutData)
+        checkFriendship(aboutData, sbot)
         sbot.add(aboutData,(error,log)=>res.json(error? {error}: log))
     } catch(error) {
         console.err(error)
@@ -12,7 +13,7 @@ export const createAccount = (req, res) => {
     }
 }
 
-function checkFriendship({author}, cb=console.log){
+function checkFriendship({author}, sbot, cb=console.log){
     sbot.friends.isFollowing({source: sbot.id ,dest: author}, (err, value) => {
         if (!err  && !value) {
             sbot.publish({

@@ -2,10 +2,11 @@ import pull from 'pull-stream';
 import toPull from 'stream-to-pull-stream';
 import ident from 'pull-identify-filetype';
 import mime from 'mime-types';
-import sbot from "../../db";
+import { getSbotAsPromise } from '../../db';
+
 
 /* Search the hash in the network and wait for it */
-const waitFor = (hash, cb) => {
+const waitFor = (sbot) => (hash, cb) => {
   sbot.blobs.has(hash, function (err, has) {
     if (err) return cb(err);
     if (has) {
@@ -30,9 +31,10 @@ function respondSource(res, source){
 }
 
 /* Main function */ 
-export const getBlob = (req, res) => {
+export const getBlob = async(req, res) => {
+  const sbot = await getSbotAsPromise()
   const hash = decodeURIComponent(req.params.hash);
-  waitFor(hash, function (_, has) {
+  waitFor(sbot)(hash, function (_, has) {
     if (!has) return res.status(404).send('File not found');
     respondSource(res, sbot.blobs.get(hash));
   });

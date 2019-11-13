@@ -2,12 +2,10 @@
 const SharedState = require("shared-state-js");
 const { strMapToObj, objToStrMap } = require('obj2map');
 const fetch = require('node-fetch');
-const pull = require('pull-stream')
-const { genericId } = require('./config')
-const { flatToUnique } = require("./utils/faltToUnique");
+const { getIps } = require('./utils/getIp');
 
 // Create a shared-state object
-const myState = new SharedState({author: 'soporte-remoto'})
+const myState = new SharedState({author: 'soporteremoto'})
 
 const requestSharedState = (table, sync) => {
     const hostUrl = `http://thisnode.info/cgi-bin/shared-state/${table}`;
@@ -32,19 +30,18 @@ export async function getActualNodes(){
         return Array.from(nodes);
 }
 
-export function sendNodesToDb(nodeList = [], sbot) {
-    pull(
-        sbot.about.read({ dest: genericId, old: true, live: false }),
-        pull.filter(({value}) => value.content.nodes),
-        pull.map(({value}) => value.content.nodes),
-        pull.collect((error, results = []) => {
-            if (error) { return; }
-            const oldNodes = results.reduce(flatToUnique)
-            const newNodes = nodeList.filter(node => oldNodes.indexOf(node ) === -1);
-            if (newNodes.length > 0) {
-                sbot.publish({type: 'about', about: genericId, nodes: newNodes}, () => console.log('New nodes detected', newNodes))
-            }   
-        })
-    )
+export async function getSharedConfig() {
+    const nodeData = await requestSharedState('soporteremoto', false);
+    myState.merge(objToStrMap(nodeData) ,false,'soporteremoto');
+    let servers = []
+    myState
+        .show('soporteremoto')
+        .forEach(({data}) => { data.type === 'config' ? servers = [...servers, data]: false })
+    return servers;
 }
 
+export async function sendSharedConfig(config) {
+    myState.insert(getIps(), {type: 'config', config}, 100, 'soporteremoto')   
+    const result = await requestSharedState('soporteremoto', true)
+    console.log(result)
+}
