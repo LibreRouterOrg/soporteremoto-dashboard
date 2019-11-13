@@ -1,5 +1,5 @@
 import pull from 'pull-stream';
-import { flatToUnique } from "../utils/faltToUnique";
+import { flatToUnique } from "../utils/flatToUnique";
 import { loadOrCreateConfig } from '../config';
 
 

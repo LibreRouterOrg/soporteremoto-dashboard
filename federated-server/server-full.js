@@ -11,7 +11,7 @@ import pull from 'pull-stream'
 
 import schedule  from 'node-schedule';
 import { getActualNodes } from './shared-state';
-import { sendNodesToDb } from './shcedule/nodes';
+import { sendNodesToDb } from './schedule/nodes';
 import path from 'path'
 
 export const runFullServer = (app) => {

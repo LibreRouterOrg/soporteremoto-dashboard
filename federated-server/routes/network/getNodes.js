@@ -1,7 +1,7 @@
 import { loadOrCreateConfig } from "../../config";
 import { getSbotAsPromise } from "../../db";
 import pull from 'pull-stream';
-import { flatToUnique } from "../../utils/faltToUnique";
+import { flatToUnique } from "../../utils/flatToUnique";
 
 export const getNodes = async function(req, res) {
     const sbot = await getSbotAsPromise()

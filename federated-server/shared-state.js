@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const { getIps } = require('./utils/getIp');
 
 // Create a shared-state object
-const myState = new SharedState({author: 'soporte-remoto'})
+const myState = new SharedState({author: 'soporteremoto'})
 
 const requestSharedState = (table, sync) => {
     const hostUrl = `http://thisnode.info/cgi-bin/shared-state/${table}`;
