@@ -17,6 +17,12 @@ const requestSharedState = (table, sync) => {
     .catch(err => console.log('Http merge error', err));
 }
 
+export async function getOnlyServers(){
+    const data = await getSharedConfig()
+    return data
+        .filter(value => value.type === 'config')
+        .map(({config}) => config.network)
+}
 
 export async function getActualNodes(){
     //Merge node data into my shared-state

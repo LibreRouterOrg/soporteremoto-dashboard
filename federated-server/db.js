@@ -21,10 +21,7 @@ var CreateSBot = SecretStack()
 // create the db instance.
 // Only one instance may be created at a time due to os locks on port and database files.
 var sbot;
-getSsbConfig().then(config => {
-  sbot = CreateSBot(config)
-  startPeerConnections();
-})
+var firstRun = true;
 
 // Start peer connections
 function startPeerConnections() {
@@ -44,6 +41,13 @@ function startPeerConnections() {
 }
 
 export function getSbot(cb) {
+  if (firstRun) {
+    getSsbConfig().then(config => {
+      sbot = CreateSBot(config)
+      startPeerConnections();
+    })
+    firstRun = false;
+  }
   if(!sbot) {
     setTimeout(()=>getSbot(cb), 1000)
     return;
