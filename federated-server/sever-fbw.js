@@ -1,8 +1,9 @@
-import { showForm, setConfig } from './routes/config';
+import { showForm, setConfig, getPendrives } from './routes/config';
 import { getServers } from './routes/network/getServers';
 
 export const runFirstRunWizardServer = (app) => {
     app.get('/servers', getServers)
+    app.get('/pendrives', getPendrives)
     app.get('/*', showForm)
     app.post('/*', setConfig)
     ///////////////////////////////////////////////////////
