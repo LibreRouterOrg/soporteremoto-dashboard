@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SoporteRemoto</title>
+    <h1>SoporteRemoto</h1>
+    <p>
+       You are viewing this screen because your soporteremote device is not yet configured.
+    </p>
+    <p id=message></p>
+    
+    <div id=app></div>
+    
+    <div id=new-network style="display: none">
+        <p>
+            <label for="name">Network name:</label>
+            <input name="name" id=name />
+        </p>
+        <button onclick="setConfig()">Create</button>
+        <button onclick="hideCreateNew()">Cancel</button>
+    </div>
+
+    <div id=password-msg style="display: none">
+            <p>Congratulations, your remote support service is now configured. Keep this password in a safe place, with it you can install new services in the rest of the network.</p>
+            <h3 id=password></h3>
+            <button onClick="reboot()">Reboot and start remote support service now</button>
+
+    </div>
+
+    <script>
+        function setMessage(message) {
+            document.getElementById('message').innerHTML = message
+        }
+        
+        function noConfigFound(){
+            setMessage(`
+                No other soporteremoto configuration was found in your mesh network.<br>
+                You can choose to create a new configuration or enter the current support key and wait until you find the existing configuration.<br>
+                We only recommend you to create a new one if you don't have a previous one.<br>
+                <button onClick="showCreateNew()">Create New</button>
+            `)
+        }
+
+        function configsFound(server){
+            setMessage(`
+                We found a previous configuration for your soporteremoto server. You must enter the community support password in order to continue the configuration.
+            `)
+        }
+
+        function checkServerList(servers){
+            if(servers.length > 0) {
+                configsFound(servers[0])
+                return
+            }
+            noConfigFound()
+        }
+
+        function showCreateNew() {
+            setMessage('')
+            document.getElementById('new-network').style.display = 'block'
+        }
+
+        function hideCreateNew() {
+            document.getElementById('new-network').style.display = 'none'
+            checkServerList([])
+        }
+
+        function setConfig() {
+            var name = document.getElementById('name').value
+            document.getElementById('new-network').style.display = 'none'
+            fetch('/set-config',{ 
+                method: 'POST',
+                body: JSON.stringify({name: name}),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(res => res.json())
+            .then(data => showPassword(data.password))
+            .catch(hideCreateNew)
+        }
+
+        function reboot() {
+            fetch('/reboot', {method: 'POST'})
+                .then(()=>console.log('Rebooting....'))
+                .catch(console.error)
+        }
+
+        function showPassword(password) {
+            document.getElementById('password-msg').style.display = 'block'
+            document.getElementById('password').innerText = password
+
+        }
+    
+        (function(){
+            fetch('/servers')
+                .then(function(res){ return res.json() })
+                .then(checkServerList)
+                .catch(noConfigFound)
+
+        })()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
