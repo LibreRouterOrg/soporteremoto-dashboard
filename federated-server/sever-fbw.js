@@ -8,7 +8,6 @@ export const setupFirstRunWizardApp = (app) => {
     app.get('/pendrives', getPendrives)
     app.post('/copy-certificate', copyCertificate)
     app.post('/set-config', setConfig)
-    app.post('/*', setConfig)
     app.use(express.static('routes/config/statics'))
 }
 
