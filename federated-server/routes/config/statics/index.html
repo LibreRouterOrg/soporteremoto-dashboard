@@ -5,106 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SoporteRemoto</title>
-    <h1>SoporteRemoto</h1>
-    <p>
-       You are viewing this screen because your soporteremote device is not yet configured.
-    </p>
-    <p id=message></p>
-    
-    <div id=app></div>
-    
-    <div id=new-network style="display: none">
-        <p>
-            <label for="name">Network name:</label>
-            <input name="name" id=name />
-        </p>
-        <button onclick="setConfig()">Create</button>
-        <button onclick="hideCreateNew()">Cancel</button>
-    </div>
-
-    <div id=password-msg style="display: none">
-            <p>Congratulations, your remote support service is now configured. Keep this password in a safe place, with it you can install new services in the rest of the network.</p>
-            <h3 id=password></h3>
-            <button onClick="reboot()">Reboot and start remote support service now</button>
-
-    </div>
-
-    <script>
-        function setMessage(message) {
-            document.getElementById('message').innerHTML = message
-        }
-        
-        function noConfigFound(){
-            setMessage(`
-                No other soporteremoto configuration was found in your mesh network.<br>
-                You can choose to create a new configuration or enter the current support key and wait until you find the existing configuration.<br>
-                We only recommend you to create a new one if you don't have a previous one.<br>
-                <button onClick="showCreateNew()">Create New</button>
-            `)
-        }
-
-        function configsFound(server){
-            setMessage(`
-                We found a previous configuration for your soporteremoto server. You must enter the community support password in order to continue the configuration.
-            `)
-        }
-
-        function checkServerList(servers){
-            if(servers.length > 0) {
-                configsFound(servers[0])
-                return
-            }
-            noConfigFound()
-        }
-
-        function showCreateNew() {
-            setMessage('')
-            document.getElementById('new-network').style.display = 'block'
-        }
-
-        function hideCreateNew() {
-            document.getElementById('new-network').style.display = 'none'
-            checkServerList([])
-        }
-
-        function setConfig() {
-            var name = document.getElementById('name').value
-            document.getElementById('new-network').style.display = 'none'
-            fetch('/set-config',{ 
-                method: 'POST',
-                body: JSON.stringify({name: name}),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-            })
-            .then(res => res.json())
-            .then(data => showPassword(data.password))
-            .catch(hideCreateNew)
-        }
-
-        function reboot() {
-            fetch('/reboot', {method: 'POST'})
-                .then(()=>console.log('Rebooting....'))
-                .catch(console.error)
-        }
-
-        function showPassword(password) {
-            document.getElementById('password-msg').style.display = 'block'
-            document.getElementById('password').innerText = password
-
-        }
-    
-        (function(){
-            fetch('/servers')
-                .then(function(res){ return res.json() })
-                .then(checkServerList)
-                .catch(noConfigFound)
-
-        })()
-    </script>
 </head>
 <body>
-    
+    <div class='container'>
+        <h1>SoporteRemoto</h1>
+        <div id=message>
+                You are viewing this screen because your soporteremote device is not yet configured.
+        </div>
+        
+        <div id="new-network" style="display: none">
+            <p>
+                <label for="name">Network name:</label>
+                <input name="name" id=name placeholder="Please enter the name of your network"/>
+            </p>
+            <button onclick="setConfig()">Create</button>
+            <button onclick="hideCreateNew()">Cancel</button>
+        </div>
+
+        <div id=password-msg style="display: none">
+                <p>Congratulations, your remote support service is now configured. Keep this password in a safe place, with it you can install new services in the rest of the network.</p>
+                <h3 id=password></h3>
+                <button class=full onClick="reboot()">Reboot and start remote support service now</button>
+
+        </div>
+        <div id=loader></div>
+    </div>
+    <script>
+            function toggleLoader(state) {
+                var loader = document.getElementById('loader')
+                loader.style.display = state? 'block':'none'
+            }
+
+            function setMessage(message) {
+                document.getElementById('message').innerHTML = message
+            }
+            
+            function noConfigFound(){
+                setMessage(`
+                    <p class=banner>No other soporteremoto configuration was found in your mesh network.</p>
+                    <p>You can choose to create a new configuration or enter the current support key and wait until you find the existing configuration.
+                    <br />We only recommend you to create a new one if you don't have a previous one.</p>
+                    <button onClick="showCreateNew()">Create New</button>
+                    <button onClick="showSync()">Wait synchronization</button>
+                `)
+            }
+
+            function configsFound(server){
+                setMessage(`
+                    We found a previous configuration for your soporteremoto server. You must enter the community support password in order to continue the configuration.
+                `)
+            }
+
+            function checkServerList(servers){
+                if(servers.length > 0) {
+                    configsFound(servers[0])
+                    return
+                }
+                noConfigFound()
+            }
+
+            function showCreateNew() {
+                setMessage('')
+                document.getElementById('new-network').style.display = 'block'
+            }
+
+            function hideCreateNew() {
+                document.getElementById('new-network').style.display = 'none'
+                checkServerList([])
+            }
+
+            function setConfig() {
+                toggleLoader(true)
+                var name = document.getElementById('name').value
+                document.getElementById('new-network').style.display = 'none'
+                fetch('/set-config',{ 
+                    method: 'POST',
+                    body: JSON.stringify({name: name}),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(res => res.json())
+                .then(data => {
+                    toggleLoader(false)
+                    showPassword(data.password)
+                })
+                .catch(hideCreateNew)
+            }
+
+            function hideShowPassword() {
+                document.getElementById('password-msg').style.display = 'none'
+            }
+
+            function reboot() {
+                hideShowPassword();
+                setMessage('Rebooting...')
+                toggleLoader(true)
+                fetch('/reboot', {method: 'POST'})
+                .then(()=>{ 
+                    })
+                    .catch(console.error)
+            }
+
+            function showPassword(password) {
+                document.getElementById('password-msg').style.display = 'block'
+                document.getElementById('password').innerText = password
+
+            }
+        
+            toggleLoader(true)
+            fetch('/servers')
+                .then(function(res){ 
+                    toggleLoader(false)
+                    return res.json()
+                })
+                .then(checkServerList)
+                .catch(noConfigFound)
+    </script>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+                "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+                sans-serif;
+            margin: 20px;
+            padding: 20px; 
+            background: #3498db;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            color: #3498db;
+            text-transform: uppercase;
+            text-decoration: none;
+            background: #ffffff;
+            padding: 10px;
+            border: 2px solid #3498db;
+            display: inline-block;
+            margin-right: 10px;
+            transition: all 0.2s ease 0s;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #3498db;
+            color: #fff;
+            transition: all 0.2s ease 0s;
+        }
+        #loader {
+            margin: 20px auto;
+            padding: 0 auto;
+            border: 6px solid #f3f3f3; /* Light grey */
+            border-top: 6px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        input {
+            padding: 12px;
+            display: block;
+            border: none;
+            border: 1px solid #ccc;
+            width: calc(100% - 24px);
+            margin: 10px 0;
+        }
+        #password {
+            text-align: center;
+            font-size: 50px;
+        }
+        .full {
+            width: 100%
+        }
+    </style>
 </body>
 </html>
