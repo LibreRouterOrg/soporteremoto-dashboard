@@ -1,11 +1,19 @@
-import { showForm, setConfig, getPendrives } from './routes/config';
+import { setConfig, getPendrives, copyCertificate} from './routes/config';
 import { getServers } from './routes/network/getServers';
+import express from 'express'
+import app from './app';
 
-export const runFirstRunWizardServer = (app) => {
+export const setupFirstRunWizardApp = (app) => {
     app.get('/servers', getServers)
     app.get('/pendrives', getPendrives)
-    app.get('/*', showForm)
+    app.post('/copy-certificate', copyCertificate)
+    app.post('/set-config', setConfig)
     app.post('/*', setConfig)
+    app.use(express.static('routes/config/statics'))
+}
+
+export const runFirstRunWizardServer = () => {
+    setupFirstRunWizardApp(app)
     ///////////////////////////////////////////////////////
     //Start first boot server
     ///////////////////////////////////////////////////////

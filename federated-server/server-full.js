@@ -12,9 +12,10 @@ import pull from 'pull-stream'
 import schedule  from 'node-schedule';
 import { getActualNodes } from './shared-state';
 import { sendNodesToDb } from './schedule/nodes';
-import path from 'path'
+import path from 'path';
+import app from './app';
 
-export const runFullServer = (app) => {
+export const runFullServer = () => {
     ///////////////////////////////////////////////////////
     //Start ssb
     ///////////////////////////////////////////////////////
