@@ -3,6 +3,11 @@ const fs = require('fs');
 const path = require('path');
 const drivelist = require('drivelist');
 
+const getUsbDrives = async () => {
+    const drives = await drivelist.list();
+    return drives.filter(d => d.busType === 'USB');
+}
+
 export const getPendrives = (req, res) => {
     getUsbDrives().then(drives => res.json(drives));
 }
