@@ -61,3 +61,14 @@ export const loadOrCreateConfig = async() => {
     return config;
 }   
 
+export const getPublicCertificate = async() => {
+    const config = await loadOrCreateConfig();
+    if (!('certificates' in config)) {
+        return undefined;
+    }
+    const certificates = config['certificates'];
+    if (!('pubCert' in config)) {
+        return undefined;
+    }
+    return certificates['pubCert'];
+}
