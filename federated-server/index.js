@@ -1,12 +1,12 @@
 import { runFirstRunWizardServer } from './sever-fbw';
 import { runFullServer } from './server-full';
-const { DEPLOYED } = process.env;
+import { getConfig } from './config';
 
 ///////////////////////////////////////////////////////
 //Setup server
 ///////////////////////////////////////////////////////
 
-if(!DEPLOYED){
+if(!getConfig()){
   runFirstRunWizardServer()
 } else {
   runFullServer()

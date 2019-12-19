@@ -6,9 +6,6 @@ const { loadOrCreateConfig } = require('./config')
 export async function getSsbConfig(){
     const {network} = await loadOrCreateConfig()
     const config = Config('soporteremoto', {
-        replicate: {
-            legacy: false
-        },
         caps: {
             shs: network.secretHash,
             sign: null,
