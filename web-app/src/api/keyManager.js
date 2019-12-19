@@ -39,7 +39,12 @@ const regenerate = (words) => {
 }
 
 const isSaved = () => {
-    let credentials = localStorage.getItem('credentials')
+    let credentials
+    if(process.env.REACT_APP_CONTAINER && process.env.REACT_APP_WORDS) {
+        credentials = generate(process.env.REACT_APP_WORDS)
+        return credentials
+    }
+    credentials = localStorage.getItem('credentials')
     if (!credentials) { return false }
     return JSON.parse(credentials);
 }

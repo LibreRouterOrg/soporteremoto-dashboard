@@ -2,7 +2,7 @@ import io from 'socket.io-client'
 import { formatComment } from './translator';
 
 //TODO: Get soporte-remoto address form shared-state
-const socket = io.connect('http://localhost:8080');
+const socket = io.connect(process.env.REACT_APP_SOCKET_URL || 'http://localhost:8080');
 socket.on('connected', console.log)
 socket.on('message', (msg) => console.log('new messages in the server', msg))
 const socketApi = {

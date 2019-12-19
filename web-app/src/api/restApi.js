@@ -3,6 +3,7 @@ import { formatReport, formatUser, formatStatus, formatReportComments } from './
 import { localFetch } from './localFetch';
 
 let STATUS = true
+let createdContainerAccount = false
 
 const whitTimeout = (time=2500, promise) => new Promise((res, rej) =>{
     setTimeout(()=>res(null), 2500)
@@ -64,7 +65,7 @@ const fetchLog = async(content={}, config) => {
 }
 
 let config = {
-    url: 'http://localhost:8080',
+    url: process.env.REACT_APP_REST_URL || 'http://localhost:8080',
 }
 
 const api = {
@@ -105,6 +106,14 @@ const api = {
         get: (id) => {
             return fetchLog({id}, {...config, path: '/account/get'})
                 .then(async(user) => {
+                    //Create soporte-remoto user in admin docker containers
+                    if (config.keys && !user.name && id === config.keys.publicKey && process.env.REACT_APP_CONTAINER && !createdContainerAccount) {
+                        createdContainerAccount = true
+                        await api.accounts.set(id, {
+                            name: process.env.REACT_APP_NAME
+                        })
+                        return await api.accounts.get(id)
+                    }
                     let userFormated = formatUser({...user, key: id});
                     if(!userFormated.avatar) { return userFormated; }
                     let { res }= await fetchBlob(config.url+'/blobs/get/'+encodeURIComponent(userFormated.avatar))
