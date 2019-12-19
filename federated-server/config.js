@@ -13,6 +13,21 @@ export const saveConfig = (config={}) => {
 }
 
 export const getConfig = () => {
+    if(process.env.REMOTE_CONTAINER) {
+        return {
+            "network": {
+                rooms: [
+                    process.env.ROOM_INVITE
+                ],
+                pubs: [],
+                secretHash: process.env.SECRET_HASH,
+                secretInvite: process.env.SECRET_INVITE,
+                communityKeys: {
+                    id: process.env.COMMUNITY_ID
+                }
+            }
+        };
+    }
     try {
         const rawdata = fs.readFileSync('.config.json');
         return JSON.parse(rawdata);
