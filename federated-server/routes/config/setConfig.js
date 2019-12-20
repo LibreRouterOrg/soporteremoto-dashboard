@@ -13,19 +13,15 @@ export const setConfig = async (req, res) => {
 
     const pubCert = writePublic(formPrivate(unsecret).publicKey, true)
 
-    saveConfig({
-      ...config,
-      certificates: {
-        pubCert
-      }
-    });
+    const certificates = { 
+      secCert: secret,
+      pubCert
+    };
+
+    saveConfig(Object.assign(config, { certificates }))
 
     getSbot(async (sbot)=> {
-      const certificates = {
-        action: 'enable',
-        secCert: secret,
-        pubCert
-      }
+      const certificates = Object.assign({action: 'enable', certificates })
       sbot.publish({
         type: 'about',
         about: genericId,
