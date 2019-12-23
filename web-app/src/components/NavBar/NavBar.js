@@ -21,8 +21,9 @@ class Menu extends React.Component {
     }
 
     async updateAccount() {
-        const { publicKey } = api.account.isLogged();
-        const account = await api.account.get(publicKey);
+        const credentials = api.account.isLogged();
+        if (!credentials) return;
+        const account = await api.account.get(credentials.publicKey);
         this.setState({ account: account});
     }
 
