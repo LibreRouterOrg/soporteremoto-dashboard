@@ -65,7 +65,7 @@ const fetchLog = async(content={}, config) => {
 }
 
 let config = {
-    url: process.env.REACT_APP_REST_URL || 'http://localhost:8080',
+    url: process.env.REACT_APP_REST_URL || '/api',
 }
 
 const api = {
@@ -195,6 +195,7 @@ const api = {
 
 function changeApiStatus({ error, res }) {
     if (error) {
+        console.log({error, res})
         STATUS = false
     } else {
         STATUS = true
