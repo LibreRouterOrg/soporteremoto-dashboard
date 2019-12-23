@@ -14,7 +14,7 @@ const requestSharedState = (table, sync) => {
         body: sync? JSON.stringify(strMapToObj(myState.show(table))) : []
     })
     .then(res => res.json())
-    .catch(err => console.log('Http merge error', err));
+    .catch(() => console.log('Shared-state not found on thisnode.info'));
 }
 
 export async function getOnlyServers(){
