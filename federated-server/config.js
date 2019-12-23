@@ -57,7 +57,13 @@ export const loadOrCreateConfig = async() => {
     let config = getConfig();
     
     if(!isConfigured()) {
-        const servers = await getSharedConfig();
+        let servers = [];
+        try {
+            servers = await getSharedConfig();
+        } catch(e) {
+            console.log('Shared-state not found')
+        }
+
         if(servers.length > 0) {
             config = servers[0].config;
             saveConfig(config);
