@@ -80,7 +80,7 @@ it('should render seed phrase warning message when submitting not valid seed phr
 it('should redirect to location.state.from after submitting a valid seed phrase when available', async () => {
     global.window = { location: { pathname: null } };
     const validSeedPhrase = 'valid seed phrase';
-    const { getByLabelText, getByText } = render(<Login location={{state:{from:'/reports'}}}/>);
+    const { getByLabelText, getByText } = render(<Login location={{state:{from:'/'}}}/>);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: validSeedPhrase } });
     const submitButton = getByText(...submitButtonParams);
@@ -88,7 +88,7 @@ it('should redirect to location.state.from after submitting a valid seed phrase 
     await wait(() => {
         expect(
             window.location.pathname
-        ).toEqual('/reports')
+        ).toEqual('/')
     })
 });
 
