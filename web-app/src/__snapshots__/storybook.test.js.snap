@@ -10496,6 +10496,170 @@ exports[`Storyshots LastIssuesPanel/IssueSmallResume A person issue that affects
 </IssueSmallResume>
 `;
 
+exports[`Storyshots LastIssuesPanel/IssueSmallResume An issue with custom title 1`] = `
+<IssueSmallResume
+  issue={
+    Object {
+      "body": "Desde ayer a la mañana que no puedo conectarme a la red desde mi laptop",
+      "comments": Array [],
+      "commonIssueId": "unreachable_network",
+      "common_issue": null,
+      "id": "%25iaLjmMSCMYpUslj%2Bo8%2FEJJqkc%2BrtHJ%2B9tYpH4VXEwhQ%3D.sha256",
+      "node": "ql-gferrero",
+      "status": "open",
+      "timestamp": 1561041610000,
+      "title": "Ayuda para alinear mi antena",
+      "user": Object {
+        "avatar": "gferrero_avatar.jpeg",
+        "client": Object {
+          "hostname": "gf",
+          "ip": "192.168.1.4",
+        },
+        "is_bot": false,
+        "username": "gferrero",
+      },
+    }
+  }
+  onSelect={[Function]}
+>
+  <div
+    className="container"
+    onClick={[Function]}
+  >
+    <div
+      className="side"
+    >
+      <Avatar
+        size={64}
+        user={
+          Object {
+            "avatar": "gferrero_avatar.jpeg",
+            "client": Object {
+              "hostname": "gf",
+              "ip": "192.168.1.4",
+            },
+            "is_bot": false,
+            "username": "gferrero",
+          }
+        }
+      >
+        <Avatar
+          shape="circle"
+          size={64}
+          src="gferrero_avatar.jpeg"
+        >
+          <span
+            className="ant-avatar ant-avatar-circle ant-avatar-image"
+            style={
+              Object {
+                "fontSize": 18,
+                "height": 64,
+                "lineHeight": "64px",
+                "width": 64,
+              }
+            }
+          >
+            <img
+              onError={[Function]}
+              src="gferrero_avatar.jpeg"
+            />
+          </span>
+        </Avatar>
+      </Avatar>
+      <span
+        className="username"
+      >
+        @
+        gferrero
+      </span>
+      <span
+        className="node"
+      >
+        en ql-gferrero
+      </span>
+    </div>
+    <div
+      className="content"
+    >
+      Veo mi red wifi disponible pero no puedo conectarme
+    </div>
+    <div
+      className="bottom"
+    >
+      <span
+        className="comments"
+      >
+        <Icon
+          type="message"
+        >
+          <LocaleReceiver
+            componentName="Icon"
+          >
+            <i
+              aria-label="icon: message"
+              className="anticon anticon-message"
+            >
+              <IconReact
+                className=""
+                type="message-o"
+              >
+                <svg
+                  aria-hidden="true"
+                  className=""
+                  data-icon="message"
+                  fill="currentColor"
+                  focusable="false"
+                  height="1em"
+                  key="svg-message"
+                  viewBox="64 64 896 896"
+                  width="1em"
+                >
+                  <path
+                    d="M464 512a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm200 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm-400 0a48 48 0 1 0 96 0 48 48 0 1 0-96 0zm661.2-173.6c-22.6-53.7-55-101.9-96.3-143.3a444.35 444.35 0 0 0-143.3-96.3C630.6 75.7 572.2 64 512 64h-2c-60.6.3-119.3 12.3-174.5 35.9a445.35 445.35 0 0 0-142 96.5c-40.9 41.3-73 89.3-95.2 142.8-23 55.4-34.6 114.3-34.3 174.9A449.4 449.4 0 0 0 112 714v152a46 46 0 0 0 46 46h152.1A449.4 449.4 0 0 0 510 960h2.1c59.9 0 118-11.6 172.7-34.3a444.48 444.48 0 0 0 142.8-95.2c41.3-40.9 73.8-88.7 96.5-142 23.6-55.2 35.6-113.9 35.9-174.5.3-60.9-11.5-120-34.8-175.6zm-151.1 438C704 845.8 611 884 512 884h-1.7c-60.3-.3-120.2-15.3-173.1-43.5l-8.4-4.5H188V695.2l-4.5-8.4C155.3 633.9 140.3 574 140 513.7c-.4-99.7 37.7-193.3 107.6-263.8 69.8-70.5 163.1-109.5 262.8-109.9h1.7c50 0 98.5 9.7 144.2 28.9 44.6 18.7 84.6 45.6 119 80 34.3 34.3 61.3 74.4 80 119 19.4 46.2 29.1 95.2 28.9 145.8-.6 99.6-39.7 192.9-110.1 262.7z"
+                    key="svg-message-svg-0"
+                  />
+                </svg>
+              </IconReact>
+            </i>
+          </LocaleReceiver>
+        </Icon>
+         
+        0
+      </span>
+      <span
+        className="date"
+      >
+        <t
+          ago={false}
+          calendar={false}
+          decimal={false}
+          element={null}
+          filter={[Function]}
+          format="D MMM"
+          fromNow={false}
+          interval={60000}
+          local={false}
+          locale="es"
+          onChange={[Function]}
+          titleFormat=""
+          toNow={false}
+          unit={null}
+          unix={false}
+          utc={false}
+          withTitle={false}
+        >
+          <time
+            dateTime={"2019-06-20T14:40:10.000Z"}
+          >
+            20 jun.
+          </time>
+        </t>
+      </span>
+    </div>
+  </div>
+</IssueSmallResume>
+`;
+
 exports[`Storyshots LastIssuesPanel/IssueSmallResume Bot issue 1`] = `
 <IssueSmallResume
   issue={
@@ -13657,6 +13821,1431 @@ exports[`Storyshots NewReportWizard Problem Body 1`] = `
       </div>
     </WizardStep>
   </ProblemBodyStep>
+</div>
+`;
+
+exports[`Storyshots NewReportWizard Problem Description 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "80vh",
+      "width": "100%",
+    }
+  }
+>
+  <ProblemDescriptionStep
+    isLast={true}
+    onLeaveBackward={[Function]}
+    onLeaveForward={[Function]}
+  >
+    <WizardStep>
+      <div
+        className="wizard-step"
+      >
+        <div
+          className="step-header"
+        >
+          Nuevo Reporte
+          <Button
+            block={false}
+            className="close-button"
+            ghost={false}
+            htmlType="button"
+            icon="close"
+            loading={false}
+            onClick={[Function]}
+          >
+            <Wave>
+              <button
+                className="ant-btn close-button ant-btn-icon-only"
+                onClick={[Function]}
+                type="button"
+              >
+                <Icon
+                  type="close"
+                >
+                  <LocaleReceiver
+                    componentName="Icon"
+                  >
+                    <i
+                      aria-label="icon: close"
+                      className="anticon anticon-close"
+                    >
+                      <IconReact
+                        className=""
+                        type="close-o"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className=""
+                          data-icon="close"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          key="svg-close"
+                          viewBox="64 64 896 896"
+                          width="1em"
+                        >
+                          <path
+                            d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                            key="svg-close-svg-0"
+                          />
+                        </svg>
+                      </IconReact>
+                    </i>
+                  </LocaleReceiver>
+                </Icon>
+              </button>
+            </Wave>
+          </Button>
+        </div>
+        <div
+          className="step-content"
+        >
+          <ProblemDescriptionForm
+            handleSubmit={[Function]}
+          >
+            <Formik
+              enableReinitialize={true}
+              initialValues={
+                Object {
+                  "body": null,
+                  "title": null,
+                }
+              }
+              isInitialValid={false}
+              onSubmit={[Function]}
+              validateOnBlur={true}
+              validateOnChange={true}
+            >
+              <Form
+                name="asd"
+              >
+                <FormikConnect(FieldInner)>
+                  <FieldInner
+                    formik={
+                      Object {
+                        "dirty": false,
+                        "errors": Object {},
+                        "handleBlur": [Function],
+                        "handleChange": [Function],
+                        "handleReset": [Function],
+                        "handleSubmit": [Function],
+                        "initialValues": Object {
+                          "body": null,
+                          "title": null,
+                        },
+                        "isSubmitting": false,
+                        "isValid": false,
+                        "isValidating": false,
+                        "registerField": [Function],
+                        "resetForm": [Function],
+                        "setError": [Function],
+                        "setErrors": [Function],
+                        "setFieldError": [Function],
+                        "setFieldTouched": [Function],
+                        "setFieldValue": [Function],
+                        "setFormikState": [Function],
+                        "setStatus": [Function],
+                        "setSubmitting": [Function],
+                        "setTouched": [Function],
+                        "setValues": [Function],
+                        "status": undefined,
+                        "submitCount": 0,
+                        "submitForm": [Function],
+                        "touched": Object {},
+                        "unregisterField": [Function],
+                        "validate": undefined,
+                        "validateField": [Function],
+                        "validateForm": [Function],
+                        "validateOnBlur": true,
+                        "validateOnChange": true,
+                        "validationSchema": undefined,
+                        "values": Object {
+                          "body": null,
+                          "title": null,
+                        },
+                      }
+                    }
+                  >
+                    <Form
+                      colon={true}
+                      hideRequiredMark={false}
+                      layout="horizontal"
+                      name="asd"
+                      onReset={[Function]}
+                      onSubmit={[Function]}
+                    >
+                      <form
+                        className="ant-form ant-form-horizontal"
+                        name="asd"
+                        onReset={[Function]}
+                        onSubmit={[Function]}
+                      >
+                        <p>
+                           Si quieres, puedes contar más detalles del problema 
+                        </p>
+                        <Component
+                          htmlFor="body"
+                          label="Descripción detallada"
+                          name="body"
+                        >
+                          <FormikConnect(FieldInner)
+                            name="body"
+                          >
+                            <FieldInner
+                              formik={
+                                Object {
+                                  "dirty": false,
+                                  "errors": Object {},
+                                  "handleBlur": [Function],
+                                  "handleChange": [Function],
+                                  "handleReset": [Function],
+                                  "handleSubmit": [Function],
+                                  "initialValues": Object {
+                                    "body": null,
+                                    "title": null,
+                                  },
+                                  "isSubmitting": false,
+                                  "isValid": false,
+                                  "isValidating": false,
+                                  "registerField": [Function],
+                                  "resetForm": [Function],
+                                  "setError": [Function],
+                                  "setErrors": [Function],
+                                  "setFieldError": [Function],
+                                  "setFieldTouched": [Function],
+                                  "setFieldValue": [Function],
+                                  "setFormikState": [Function],
+                                  "setStatus": [Function],
+                                  "setSubmitting": [Function],
+                                  "setTouched": [Function],
+                                  "setValues": [Function],
+                                  "status": undefined,
+                                  "submitCount": 0,
+                                  "submitForm": [Function],
+                                  "touched": Object {},
+                                  "unregisterField": [Function],
+                                  "validate": undefined,
+                                  "validateField": [Function],
+                                  "validateForm": [Function],
+                                  "validateOnBlur": true,
+                                  "validateOnChange": true,
+                                  "validationSchema": undefined,
+                                  "values": Object {
+                                    "body": null,
+                                    "title": null,
+                                  },
+                                }
+                              }
+                              name="body"
+                            >
+                              <FormItem
+                                hasFeedback={false}
+                                help={false}
+                                htmlFor="body"
+                                label="Descripción detallada"
+                              >
+                                <Row
+                                  className="ant-form-item"
+                                  gutter={0}
+                                  key="row"
+                                >
+                                  <div
+                                    className="ant-row ant-form-item"
+                                    style={Object {}}
+                                  >
+                                    <Col
+                                      className="ant-form-item-label"
+                                    >
+                                      <div
+                                        className="ant-col ant-form-item-label"
+                                        style={Object {}}
+                                      >
+                                        <label
+                                          className=""
+                                          htmlFor="body"
+                                          onClick={[Function]}
+                                          title="Descripción detallada"
+                                        >
+                                          Descripción detallada
+                                        </label>
+                                      </div>
+                                    </Col>
+                                    <Col
+                                      className="ant-form-item-control-wrapper"
+                                    >
+                                      <div
+                                        className="ant-col ant-form-item-control-wrapper"
+                                        style={Object {}}
+                                      >
+                                        <div
+                                          className="ant-form-item-control"
+                                        >
+                                          <span
+                                            className="ant-form-item-children"
+                                          >
+                                            <Component
+                                              id="body"
+                                              name="body"
+                                              rows={4}
+                                            >
+                                              <FormikConnect(FieldInner)
+                                                name="body"
+                                              >
+                                                <FieldInner
+                                                  formik={
+                                                    Object {
+                                                      "dirty": false,
+                                                      "errors": Object {},
+                                                      "handleBlur": [Function],
+                                                      "handleChange": [Function],
+                                                      "handleReset": [Function],
+                                                      "handleSubmit": [Function],
+                                                      "initialValues": Object {
+                                                        "body": null,
+                                                        "title": null,
+                                                      },
+                                                      "isSubmitting": false,
+                                                      "isValid": false,
+                                                      "isValidating": false,
+                                                      "registerField": [Function],
+                                                      "resetForm": [Function],
+                                                      "setError": [Function],
+                                                      "setErrors": [Function],
+                                                      "setFieldError": [Function],
+                                                      "setFieldTouched": [Function],
+                                                      "setFieldValue": [Function],
+                                                      "setFormikState": [Function],
+                                                      "setStatus": [Function],
+                                                      "setSubmitting": [Function],
+                                                      "setTouched": [Function],
+                                                      "setValues": [Function],
+                                                      "status": undefined,
+                                                      "submitCount": 0,
+                                                      "submitForm": [Function],
+                                                      "touched": Object {},
+                                                      "unregisterField": [Function],
+                                                      "validate": undefined,
+                                                      "validateField": [Function],
+                                                      "validateForm": [Function],
+                                                      "validateOnBlur": true,
+                                                      "validateOnChange": true,
+                                                      "validationSchema": undefined,
+                                                      "values": Object {
+                                                        "body": null,
+                                                        "title": null,
+                                                      },
+                                                    }
+                                                  }
+                                                  name="body"
+                                                >
+                                                  <TextArea
+                                                    id="body"
+                                                    name="body"
+                                                    onBlur={[Function]}
+                                                    onChange={[Function]}
+                                                    rows={4}
+                                                    value={null}
+                                                  >
+                                                    <ClearableLabeledInput
+                                                      element={
+                                                        <ResizableTextArea
+                                                          id="body"
+                                                          name="body"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          prefixCls="ant-input"
+                                                          rows={4}
+                                                          value={null}
+                                                        />
+                                                      }
+                                                      handleReset={[Function]}
+                                                      id="body"
+                                                      inputType="text"
+                                                      name="body"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      prefixCls="ant-input"
+                                                      rows={4}
+                                                      value=""
+                                                    >
+                                                      <ResizableTextArea
+                                                        id="body"
+                                                        name="body"
+                                                        onBlur={[Function]}
+                                                        onChange={[Function]}
+                                                        onKeyDown={[Function]}
+                                                        prefixCls="ant-input"
+                                                        rows={4}
+                                                        value=""
+                                                      >
+                                                        <ResizeObserver
+                                                          disabled={true}
+                                                          onResize={[Function]}
+                                                        >
+                                                          <textarea
+                                                            className="ant-input"
+                                                            id="body"
+                                                            name="body"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            onKeyDown={[Function]}
+                                                            rows={4}
+                                                            style={Object {}}
+                                                            value=""
+                                                          />
+                                                        </ResizeObserver>
+                                                      </ResizableTextArea>
+                                                    </ClearableLabeledInput>
+                                                  </TextArea>
+                                                </FieldInner>
+                                              </FormikConnect(FieldInner)>
+                                            </Component>
+                                          </span>
+                                          <Animate
+                                            animation={Object {}}
+                                            component=""
+                                            componentProps={Object {}}
+                                            key="help"
+                                            onAppear={[Function]}
+                                            onEnd={[Function]}
+                                            onEnter={[Function]}
+                                            onLeave={[Function]}
+                                            transitionAppear={true}
+                                            transitionEnter={true}
+                                            transitionLeave={true}
+                                            transitionName="show-help"
+                                          />
+                                        </div>
+                                      </div>
+                                    </Col>
+                                  </div>
+                                </Row>
+                              </FormItem>
+                            </FieldInner>
+                          </FormikConnect(FieldInner)>
+                        </Component>
+                      </form>
+                    </Form>
+                  </FieldInner>
+                </FormikConnect(FieldInner)>
+              </Form>
+            </Formik>
+          </ProblemDescriptionForm>
+          <Navigation
+            isLast={true}
+            onNext={[Function]}
+            onPrev={[Function]}
+          >
+            <div
+              className="wizard-navigation"
+            >
+              <Button
+                block={false}
+                ghost={false}
+                htmlType="button"
+                loading={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+              >
+                <Wave>
+                  <button
+                    className="ant-btn"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "block",
+                      }
+                    }
+                    type="button"
+                  >
+                    <Icon
+                      key=".0"
+                      type="left"
+                    >
+                      <LocaleReceiver
+                        componentName="Icon"
+                      >
+                        <i
+                          aria-label="icon: left"
+                          className="anticon anticon-left"
+                        >
+                          <IconReact
+                            className=""
+                            type="left-o"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className=""
+                              data-icon="left"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              key="svg-left"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                                key="svg-left-svg-0"
+                              />
+                            </svg>
+                          </IconReact>
+                        </i>
+                      </LocaleReceiver>
+                    </Icon>
+                    <span
+                      key=".1"
+                    >
+                      Volver
+                    </span>
+                  </button>
+                </Wave>
+              </Button>
+              <Button
+                block={false}
+                className="right-button"
+                ghost={false}
+                htmlType="button"
+                loading={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "none",
+                  }
+                }
+              >
+                <Wave>
+                  <button
+                    className="ant-btn right-button"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                    type="button"
+                  >
+                    <span
+                      key=".0"
+                    >
+                      Continuar 
+                    </span>
+                    <Icon
+                      key=".1"
+                      type="right"
+                    >
+                      <LocaleReceiver
+                        componentName="Icon"
+                      >
+                        <i
+                          aria-label="icon: right"
+                          className="anticon anticon-right"
+                        >
+                          <IconReact
+                            className=""
+                            type="right-o"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className=""
+                              data-icon="right"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              key="svg-right"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+                                key="svg-right-svg-0"
+                              />
+                            </svg>
+                          </IconReact>
+                        </i>
+                      </LocaleReceiver>
+                    </Icon>
+                  </button>
+                </Wave>
+              </Button>
+              <Button
+                block={false}
+                className="right-button"
+                ghost={false}
+                htmlType="button"
+                loading={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+              >
+                <Wave>
+                  <button
+                    className="ant-btn right-button"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "block",
+                      }
+                    }
+                    type="button"
+                  >
+                    <span
+                      key=".0"
+                    >
+                      Finalizar
+                    </span>
+                  </button>
+                </Wave>
+              </Button>
+            </div>
+          </Navigation>
+        </div>
+      </div>
+    </WizardStep>
+  </ProblemDescriptionStep>
+</div>
+`;
+
+exports[`Storyshots NewReportWizard Problem Description Custom Issue 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "minHeight": "80vh",
+      "width": "100%",
+    }
+  }
+>
+  <ProblemDescriptionStep
+    isCustomIssue={true}
+    isLast={true}
+    onLeaveBackward={[Function]}
+    onLeaveForward={[Function]}
+  >
+    <WizardStep>
+      <div
+        className="wizard-step"
+      >
+        <div
+          className="step-header"
+        >
+          Nuevo Reporte
+          <Button
+            block={false}
+            className="close-button"
+            ghost={false}
+            htmlType="button"
+            icon="close"
+            loading={false}
+            onClick={[Function]}
+          >
+            <Wave>
+              <button
+                className="ant-btn close-button ant-btn-icon-only"
+                onClick={[Function]}
+                type="button"
+              >
+                <Icon
+                  type="close"
+                >
+                  <LocaleReceiver
+                    componentName="Icon"
+                  >
+                    <i
+                      aria-label="icon: close"
+                      className="anticon anticon-close"
+                    >
+                      <IconReact
+                        className=""
+                        type="close-o"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          className=""
+                          data-icon="close"
+                          fill="currentColor"
+                          focusable="false"
+                          height="1em"
+                          key="svg-close"
+                          viewBox="64 64 896 896"
+                          width="1em"
+                        >
+                          <path
+                            d="M563.8 512l262.5-312.9c4.4-5.2.7-13.1-6.1-13.1h-79.8c-4.7 0-9.2 2.1-12.3 5.7L511.6 449.8 295.1 191.7c-3-3.6-7.5-5.7-12.3-5.7H203c-6.8 0-10.5 7.9-6.1 13.1L459.4 512 196.9 824.9A7.95 7.95 0 0 0 203 838h79.8c4.7 0 9.2-2.1 12.3-5.7l216.5-258.1 216.5 258.1c3 3.6 7.5 5.7 12.3 5.7h79.8c6.8 0 10.5-7.9 6.1-13.1L563.8 512z"
+                            key="svg-close-svg-0"
+                          />
+                        </svg>
+                      </IconReact>
+                    </i>
+                  </LocaleReceiver>
+                </Icon>
+              </button>
+            </Wave>
+          </Button>
+        </div>
+        <div
+          className="step-content"
+        >
+          <ProblemDescriptionForm
+            handleSubmit={[Function]}
+            isCustomIssue={true}
+          >
+            <Formik
+              enableReinitialize={true}
+              initialValues={
+                Object {
+                  "body": null,
+                  "title": null,
+                }
+              }
+              isInitialValid={false}
+              onSubmit={[Function]}
+              validateOnBlur={true}
+              validateOnChange={true}
+            >
+              <Form
+                name="asd"
+              >
+                <FormikConnect(FieldInner)>
+                  <FieldInner
+                    formik={
+                      Object {
+                        "dirty": false,
+                        "errors": Object {},
+                        "handleBlur": [Function],
+                        "handleChange": [Function],
+                        "handleReset": [Function],
+                        "handleSubmit": [Function],
+                        "initialValues": Object {
+                          "body": null,
+                          "title": null,
+                        },
+                        "isSubmitting": false,
+                        "isValid": false,
+                        "isValidating": false,
+                        "registerField": [Function],
+                        "resetForm": [Function],
+                        "setError": [Function],
+                        "setErrors": [Function],
+                        "setFieldError": [Function],
+                        "setFieldTouched": [Function],
+                        "setFieldValue": [Function],
+                        "setFormikState": [Function],
+                        "setStatus": [Function],
+                        "setSubmitting": [Function],
+                        "setTouched": [Function],
+                        "setValues": [Function],
+                        "status": undefined,
+                        "submitCount": 0,
+                        "submitForm": [Function],
+                        "touched": Object {},
+                        "unregisterField": [Function],
+                        "validate": undefined,
+                        "validateField": [Function],
+                        "validateForm": [Function],
+                        "validateOnBlur": true,
+                        "validateOnChange": true,
+                        "validationSchema": undefined,
+                        "values": Object {
+                          "body": null,
+                          "title": null,
+                        },
+                      }
+                    }
+                  >
+                    <Form
+                      colon={true}
+                      hideRequiredMark={false}
+                      layout="horizontal"
+                      name="asd"
+                      onReset={[Function]}
+                      onSubmit={[Function]}
+                    >
+                      <form
+                        className="ant-form ant-form-horizontal"
+                        name="asd"
+                        onReset={[Function]}
+                        onSubmit={[Function]}
+                      >
+                        <p>
+                           Tu problema no estaba entre las opciones, elige un título descriptivo para identificarlo
+                        </p>
+                        <Component
+                          htmlFor="title"
+                          label="Título"
+                          name="title"
+                        >
+                          <FormikConnect(FieldInner)
+                            name="title"
+                          >
+                            <FieldInner
+                              formik={
+                                Object {
+                                  "dirty": false,
+                                  "errors": Object {},
+                                  "handleBlur": [Function],
+                                  "handleChange": [Function],
+                                  "handleReset": [Function],
+                                  "handleSubmit": [Function],
+                                  "initialValues": Object {
+                                    "body": null,
+                                    "title": null,
+                                  },
+                                  "isSubmitting": false,
+                                  "isValid": false,
+                                  "isValidating": false,
+                                  "registerField": [Function],
+                                  "resetForm": [Function],
+                                  "setError": [Function],
+                                  "setErrors": [Function],
+                                  "setFieldError": [Function],
+                                  "setFieldTouched": [Function],
+                                  "setFieldValue": [Function],
+                                  "setFormikState": [Function],
+                                  "setStatus": [Function],
+                                  "setSubmitting": [Function],
+                                  "setTouched": [Function],
+                                  "setValues": [Function],
+                                  "status": undefined,
+                                  "submitCount": 0,
+                                  "submitForm": [Function],
+                                  "touched": Object {},
+                                  "unregisterField": [Function],
+                                  "validate": undefined,
+                                  "validateField": [Function],
+                                  "validateForm": [Function],
+                                  "validateOnBlur": true,
+                                  "validateOnChange": true,
+                                  "validationSchema": undefined,
+                                  "values": Object {
+                                    "body": null,
+                                    "title": null,
+                                  },
+                                }
+                              }
+                              name="title"
+                            >
+                              <FormItem
+                                hasFeedback={false}
+                                help={false}
+                                htmlFor="title"
+                                label="Título"
+                              >
+                                <Row
+                                  className="ant-form-item"
+                                  gutter={0}
+                                  key="row"
+                                >
+                                  <div
+                                    className="ant-row ant-form-item"
+                                    style={Object {}}
+                                  >
+                                    <Col
+                                      className="ant-form-item-label"
+                                    >
+                                      <div
+                                        className="ant-col ant-form-item-label"
+                                        style={Object {}}
+                                      >
+                                        <label
+                                          className=""
+                                          htmlFor="title"
+                                          onClick={[Function]}
+                                          title="Título"
+                                        >
+                                          Título
+                                        </label>
+                                      </div>
+                                    </Col>
+                                    <Col
+                                      className="ant-form-item-control-wrapper"
+                                    >
+                                      <div
+                                        className="ant-col ant-form-item-control-wrapper"
+                                        style={Object {}}
+                                      >
+                                        <div
+                                          className="ant-form-item-control"
+                                        >
+                                          <span
+                                            className="ant-form-item-children"
+                                          >
+                                            <Component
+                                              id="title"
+                                              maxLength={40}
+                                              name="title"
+                                              validate={[Function]}
+                                            >
+                                              <FormikConnect(FieldInner)
+                                                name="title"
+                                                validate={[Function]}
+                                              >
+                                                <FieldInner
+                                                  formik={
+                                                    Object {
+                                                      "dirty": false,
+                                                      "errors": Object {},
+                                                      "handleBlur": [Function],
+                                                      "handleChange": [Function],
+                                                      "handleReset": [Function],
+                                                      "handleSubmit": [Function],
+                                                      "initialValues": Object {
+                                                        "body": null,
+                                                        "title": null,
+                                                      },
+                                                      "isSubmitting": false,
+                                                      "isValid": false,
+                                                      "isValidating": false,
+                                                      "registerField": [Function],
+                                                      "resetForm": [Function],
+                                                      "setError": [Function],
+                                                      "setErrors": [Function],
+                                                      "setFieldError": [Function],
+                                                      "setFieldTouched": [Function],
+                                                      "setFieldValue": [Function],
+                                                      "setFormikState": [Function],
+                                                      "setStatus": [Function],
+                                                      "setSubmitting": [Function],
+                                                      "setTouched": [Function],
+                                                      "setValues": [Function],
+                                                      "status": undefined,
+                                                      "submitCount": 0,
+                                                      "submitForm": [Function],
+                                                      "touched": Object {},
+                                                      "unregisterField": [Function],
+                                                      "validate": undefined,
+                                                      "validateField": [Function],
+                                                      "validateForm": [Function],
+                                                      "validateOnBlur": true,
+                                                      "validateOnChange": true,
+                                                      "validationSchema": undefined,
+                                                      "values": Object {
+                                                        "body": null,
+                                                        "title": null,
+                                                      },
+                                                    }
+                                                  }
+                                                  name="title"
+                                                  validate={[Function]}
+                                                >
+                                                  <Input
+                                                    id="title"
+                                                    maxLength={40}
+                                                    name="title"
+                                                    onBlur={[Function]}
+                                                    onChange={[Function]}
+                                                    type="text"
+                                                    value={null}
+                                                  >
+                                                    <ClearableLabeledInput
+                                                      element={
+                                                        <input
+                                                          className="ant-input"
+                                                          id="title"
+                                                          maxLength={40}
+                                                          name="title"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          type="text"
+                                                          value={null}
+                                                        />
+                                                      }
+                                                      handleReset={[Function]}
+                                                      id="title"
+                                                      inputType="input"
+                                                      maxLength={40}
+                                                      name="title"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      prefixCls="ant-input"
+                                                      type="text"
+                                                      value=""
+                                                    >
+                                                      <input
+                                                        className="ant-input"
+                                                        id="title"
+                                                        maxLength={40}
+                                                        name="title"
+                                                        onBlur={[Function]}
+                                                        onChange={[Function]}
+                                                        onKeyDown={[Function]}
+                                                        type="text"
+                                                        value=""
+                                                      />
+                                                    </ClearableLabeledInput>
+                                                  </Input>
+                                                </FieldInner>
+                                              </FormikConnect(FieldInner)>
+                                            </Component>
+                                          </span>
+                                          <Animate
+                                            animation={Object {}}
+                                            component=""
+                                            componentProps={Object {}}
+                                            key="help"
+                                            onAppear={[Function]}
+                                            onEnd={[Function]}
+                                            onEnter={[Function]}
+                                            onLeave={[Function]}
+                                            transitionAppear={true}
+                                            transitionEnter={true}
+                                            transitionLeave={true}
+                                            transitionName="show-help"
+                                          />
+                                        </div>
+                                      </div>
+                                    </Col>
+                                  </div>
+                                </Row>
+                              </FormItem>
+                            </FieldInner>
+                          </FormikConnect(FieldInner)>
+                        </Component>
+                        <p>
+                           Si quieres, puedes contar más detalles del problema 
+                        </p>
+                        <Component
+                          htmlFor="body"
+                          label="Descripción detallada"
+                          name="body"
+                        >
+                          <FormikConnect(FieldInner)
+                            name="body"
+                          >
+                            <FieldInner
+                              formik={
+                                Object {
+                                  "dirty": false,
+                                  "errors": Object {},
+                                  "handleBlur": [Function],
+                                  "handleChange": [Function],
+                                  "handleReset": [Function],
+                                  "handleSubmit": [Function],
+                                  "initialValues": Object {
+                                    "body": null,
+                                    "title": null,
+                                  },
+                                  "isSubmitting": false,
+                                  "isValid": false,
+                                  "isValidating": false,
+                                  "registerField": [Function],
+                                  "resetForm": [Function],
+                                  "setError": [Function],
+                                  "setErrors": [Function],
+                                  "setFieldError": [Function],
+                                  "setFieldTouched": [Function],
+                                  "setFieldValue": [Function],
+                                  "setFormikState": [Function],
+                                  "setStatus": [Function],
+                                  "setSubmitting": [Function],
+                                  "setTouched": [Function],
+                                  "setValues": [Function],
+                                  "status": undefined,
+                                  "submitCount": 0,
+                                  "submitForm": [Function],
+                                  "touched": Object {},
+                                  "unregisterField": [Function],
+                                  "validate": undefined,
+                                  "validateField": [Function],
+                                  "validateForm": [Function],
+                                  "validateOnBlur": true,
+                                  "validateOnChange": true,
+                                  "validationSchema": undefined,
+                                  "values": Object {
+                                    "body": null,
+                                    "title": null,
+                                  },
+                                }
+                              }
+                              name="body"
+                            >
+                              <FormItem
+                                hasFeedback={false}
+                                help={false}
+                                htmlFor="body"
+                                label="Descripción detallada"
+                              >
+                                <Row
+                                  className="ant-form-item"
+                                  gutter={0}
+                                  key="row"
+                                >
+                                  <div
+                                    className="ant-row ant-form-item"
+                                    style={Object {}}
+                                  >
+                                    <Col
+                                      className="ant-form-item-label"
+                                    >
+                                      <div
+                                        className="ant-col ant-form-item-label"
+                                        style={Object {}}
+                                      >
+                                        <label
+                                          className=""
+                                          htmlFor="body"
+                                          onClick={[Function]}
+                                          title="Descripción detallada"
+                                        >
+                                          Descripción detallada
+                                        </label>
+                                      </div>
+                                    </Col>
+                                    <Col
+                                      className="ant-form-item-control-wrapper"
+                                    >
+                                      <div
+                                        className="ant-col ant-form-item-control-wrapper"
+                                        style={Object {}}
+                                      >
+                                        <div
+                                          className="ant-form-item-control"
+                                        >
+                                          <span
+                                            className="ant-form-item-children"
+                                          >
+                                            <Component
+                                              id="body"
+                                              name="body"
+                                              rows={4}
+                                            >
+                                              <FormikConnect(FieldInner)
+                                                name="body"
+                                              >
+                                                <FieldInner
+                                                  formik={
+                                                    Object {
+                                                      "dirty": false,
+                                                      "errors": Object {},
+                                                      "handleBlur": [Function],
+                                                      "handleChange": [Function],
+                                                      "handleReset": [Function],
+                                                      "handleSubmit": [Function],
+                                                      "initialValues": Object {
+                                                        "body": null,
+                                                        "title": null,
+                                                      },
+                                                      "isSubmitting": false,
+                                                      "isValid": false,
+                                                      "isValidating": false,
+                                                      "registerField": [Function],
+                                                      "resetForm": [Function],
+                                                      "setError": [Function],
+                                                      "setErrors": [Function],
+                                                      "setFieldError": [Function],
+                                                      "setFieldTouched": [Function],
+                                                      "setFieldValue": [Function],
+                                                      "setFormikState": [Function],
+                                                      "setStatus": [Function],
+                                                      "setSubmitting": [Function],
+                                                      "setTouched": [Function],
+                                                      "setValues": [Function],
+                                                      "status": undefined,
+                                                      "submitCount": 0,
+                                                      "submitForm": [Function],
+                                                      "touched": Object {},
+                                                      "unregisterField": [Function],
+                                                      "validate": undefined,
+                                                      "validateField": [Function],
+                                                      "validateForm": [Function],
+                                                      "validateOnBlur": true,
+                                                      "validateOnChange": true,
+                                                      "validationSchema": undefined,
+                                                      "values": Object {
+                                                        "body": null,
+                                                        "title": null,
+                                                      },
+                                                    }
+                                                  }
+                                                  name="body"
+                                                >
+                                                  <TextArea
+                                                    id="body"
+                                                    name="body"
+                                                    onBlur={[Function]}
+                                                    onChange={[Function]}
+                                                    rows={4}
+                                                    value={null}
+                                                  >
+                                                    <ClearableLabeledInput
+                                                      element={
+                                                        <ResizableTextArea
+                                                          id="body"
+                                                          name="body"
+                                                          onBlur={[Function]}
+                                                          onChange={[Function]}
+                                                          onKeyDown={[Function]}
+                                                          prefixCls="ant-input"
+                                                          rows={4}
+                                                          value={null}
+                                                        />
+                                                      }
+                                                      handleReset={[Function]}
+                                                      id="body"
+                                                      inputType="text"
+                                                      name="body"
+                                                      onBlur={[Function]}
+                                                      onChange={[Function]}
+                                                      prefixCls="ant-input"
+                                                      rows={4}
+                                                      value=""
+                                                    >
+                                                      <ResizableTextArea
+                                                        id="body"
+                                                        name="body"
+                                                        onBlur={[Function]}
+                                                        onChange={[Function]}
+                                                        onKeyDown={[Function]}
+                                                        prefixCls="ant-input"
+                                                        rows={4}
+                                                        value=""
+                                                      >
+                                                        <ResizeObserver
+                                                          disabled={true}
+                                                          onResize={[Function]}
+                                                        >
+                                                          <textarea
+                                                            className="ant-input"
+                                                            id="body"
+                                                            name="body"
+                                                            onBlur={[Function]}
+                                                            onChange={[Function]}
+                                                            onKeyDown={[Function]}
+                                                            rows={4}
+                                                            style={Object {}}
+                                                            value=""
+                                                          />
+                                                        </ResizeObserver>
+                                                      </ResizableTextArea>
+                                                    </ClearableLabeledInput>
+                                                  </TextArea>
+                                                </FieldInner>
+                                              </FormikConnect(FieldInner)>
+                                            </Component>
+                                          </span>
+                                          <Animate
+                                            animation={Object {}}
+                                            component=""
+                                            componentProps={Object {}}
+                                            key="help"
+                                            onAppear={[Function]}
+                                            onEnd={[Function]}
+                                            onEnter={[Function]}
+                                            onLeave={[Function]}
+                                            transitionAppear={true}
+                                            transitionEnter={true}
+                                            transitionLeave={true}
+                                            transitionName="show-help"
+                                          />
+                                        </div>
+                                      </div>
+                                    </Col>
+                                  </div>
+                                </Row>
+                              </FormItem>
+                            </FieldInner>
+                          </FormikConnect(FieldInner)>
+                        </Component>
+                      </form>
+                    </Form>
+                  </FieldInner>
+                </FormikConnect(FieldInner)>
+              </Form>
+            </Formik>
+          </ProblemDescriptionForm>
+          <Navigation
+            isLast={true}
+            onNext={[Function]}
+            onPrev={[Function]}
+          >
+            <div
+              className="wizard-navigation"
+            >
+              <Button
+                block={false}
+                ghost={false}
+                htmlType="button"
+                loading={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+              >
+                <Wave>
+                  <button
+                    className="ant-btn"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "block",
+                      }
+                    }
+                    type="button"
+                  >
+                    <Icon
+                      key=".0"
+                      type="left"
+                    >
+                      <LocaleReceiver
+                        componentName="Icon"
+                      >
+                        <i
+                          aria-label="icon: left"
+                          className="anticon anticon-left"
+                        >
+                          <IconReact
+                            className=""
+                            type="left-o"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className=""
+                              data-icon="left"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              key="svg-left"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"
+                                key="svg-left-svg-0"
+                              />
+                            </svg>
+                          </IconReact>
+                        </i>
+                      </LocaleReceiver>
+                    </Icon>
+                    <span
+                      key=".1"
+                    >
+                      Volver
+                    </span>
+                  </button>
+                </Wave>
+              </Button>
+              <Button
+                block={false}
+                className="right-button"
+                ghost={false}
+                htmlType="button"
+                loading={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "none",
+                  }
+                }
+              >
+                <Wave>
+                  <button
+                    className="ant-btn right-button"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "none",
+                      }
+                    }
+                    type="button"
+                  >
+                    <span
+                      key=".0"
+                    >
+                      Continuar 
+                    </span>
+                    <Icon
+                      key=".1"
+                      type="right"
+                    >
+                      <LocaleReceiver
+                        componentName="Icon"
+                      >
+                        <i
+                          aria-label="icon: right"
+                          className="anticon anticon-right"
+                        >
+                          <IconReact
+                            className=""
+                            type="right-o"
+                          >
+                            <svg
+                              aria-hidden="true"
+                              className=""
+                              data-icon="right"
+                              fill="currentColor"
+                              focusable="false"
+                              height="1em"
+                              key="svg-right"
+                              viewBox="64 64 896 896"
+                              width="1em"
+                            >
+                              <path
+                                d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"
+                                key="svg-right-svg-0"
+                              />
+                            </svg>
+                          </IconReact>
+                        </i>
+                      </LocaleReceiver>
+                    </Icon>
+                  </button>
+                </Wave>
+              </Button>
+              <Button
+                block={false}
+                className="right-button"
+                ghost={false}
+                htmlType="button"
+                loading={false}
+                onClick={[Function]}
+                style={
+                  Object {
+                    "display": "block",
+                  }
+                }
+              >
+                <Wave>
+                  <button
+                    className="ant-btn right-button"
+                    onClick={[Function]}
+                    style={
+                      Object {
+                        "display": "block",
+                      }
+                    }
+                    type="button"
+                  >
+                    <span
+                      key=".0"
+                    >
+                      Finalizar
+                    </span>
+                  </button>
+                </Wave>
+              </Button>
+            </div>
+          </Navigation>
+        </div>
+      </div>
+    </WizardStep>
+  </ProblemDescriptionStep>
 </div>
 `;
 

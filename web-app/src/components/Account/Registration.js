@@ -6,6 +6,24 @@ import api from '../../api';
 import { NetworkContext } from '../utils';
 import { AccountForm } from './AccountForm';
 
+export const Registration = ({ isOnline, nodes, defaultNode, handleSubmit, handleGoToLogin }) => (
+    isOnline ?
+        <OnlineRegistration nodes={nodes} defaultNode={defaultNode}
+            handleSubmit={handleSubmit} handleGoToLogin={handleGoToLogin} />
+        :
+        <OfflineRegistration />
+);
+
+const OnlineRegistration = ({ nodes, defaultNode, handleSubmit, handleGoToLogin }) => (
+    <div className="registration-page">
+        <div className="registration-page">
+            <AccountForm handleSubmit={handleSubmit} defaultNode={defaultNode}
+                nodes={nodes} buttonMessage={"Registrarme"} />
+            <GoToLogin handleGoToLogin={handleGoToLogin}></GoToLogin>
+        </div>
+    </div>
+);
+
 const OfflineRegistration = () => (
     <div className="registration-page registration-page-offline">
         <h3>Bienvenido!</h3>
@@ -57,14 +75,9 @@ class RegistrationPage extends React.Component {
         return (
             <NetworkContext.Consumer>
                 {isOnline =>
-                    isOnline ?
-                        <div className="registration-page">
-                            <AccountForm handleSubmit={this.handleSubmit} defaultNode={defaultNode}
-                                nodes={nodes} buttonMessage={"Registrarme"} />
-                            <GoToLogin handleGoToLogin={this.handleGoToLogin} />
-                        </div>
-                        :
-                        <OfflineRegistration />
+                    <Registration isOnline={isOnline} nodes={nodes} defaultNode={defaultNode}
+                        handleGoToLogin={this.handleGoToLogin} handleSubmit={this.handleSubmit}
+                    />
                 }
             </NetworkContext.Consumer>
         );
