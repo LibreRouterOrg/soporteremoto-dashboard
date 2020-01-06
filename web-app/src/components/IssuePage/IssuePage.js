@@ -12,7 +12,7 @@ import { navigate } from '@reach/router';
 const STATUS_OPEN = 'open'
 const STATUS_RESOLVED = 'resolved'
 
-const IssueContext = React.createContext({ issue: null, changeStatus: () => null })
+export const IssueContext = React.createContext({ issue: null, changeStatus: () => null })
 
 class IssueContextProvider extends Component {
     constructor(props) {
@@ -31,11 +31,11 @@ class IssueContextProvider extends Component {
     async componentDidMount() {
         const issue = await api.reports.get(this.props.issueId);
         issue.user = await api.account.get(issue.user);
-        this.setState({ issue: issue, loading: false, issueStatus: issue.status});
+        this.setState({ issue: issue, loading: false, issueStatus: issue.status });
     }
 
     updateStatus(status) {
-        this.setState({issueStatus: status});
+        this.setState({ issueStatus: status });
     }
 
     changeStatus() {
@@ -113,16 +113,19 @@ const IssueDetail = () => (
     </IssueContext.Consumer>
 )
 
-function IssuePage({ issueId }) {
-    return (
-        <IssueContextProvider issueId={issueId}>
-            <div className="issue-page">
-                <NavBar />
-                <IssueDetail />
-                <Comments issueId={issueId} />
-            </div>
-        </IssueContextProvider>
-    )
-}
+export const Issue = ({issueId}) => (
+    // Should be used inside a IssueContext.Provider
+    <div className="issue-page">
+        <NavBar />
+        <IssueDetail />
+        <Comments issueId={issueId} />
+    </div>
+);
+
+const IssuePage = ({ issueId }) => (
+    <IssueContextProvider issueId={issueId}>
+        <Issue issueId={issueId}></Issue>
+    </IssueContextProvider>
+);
 
 export default IssuePage
