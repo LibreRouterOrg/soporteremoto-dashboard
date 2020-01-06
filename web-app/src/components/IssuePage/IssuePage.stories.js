@@ -2,7 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { IssueContext, Issue } from './IssuePage';
-import { user, issue } from '../data/mockData';
+import { issue } from '../data/mockData';
 
 const largerCommonIssuePath = {
     ...issue,
