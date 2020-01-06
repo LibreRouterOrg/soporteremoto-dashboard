@@ -14,6 +14,8 @@ import { getActualNodes } from './shared-state';
 import { sendNodesToDb } from './schedule/nodes';
 import path from 'path';
 import app from './app';
+import fs from 'fs';
+import { resendToSupport } from './schedule/resendToSupport';
 
 export const runFullServer = () => {
     ///////////////////////////////////////////////////////
@@ -91,6 +93,11 @@ export const runFullServer = () => {
         schedule.scheduleJob("*/15 * * * *", ()=>{
             console.log("Check list of nodes in the mesh")
             getActualNodes().then(nodes => sendNodesToDb(nodes, sbot));
+        })
+
+        schedule.scheduleJob('*/1 * * * *', () => {
+            if (!fs.existsSync('./toSend.json')) return;
+            resendToSupport();
         })
     });
 }
