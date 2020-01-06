@@ -18,6 +18,10 @@
                 <label for="name">Network name:</label>
                 <input name="name" id=name placeholder="Please enter the name of your network"/>
             </p>
+            <p>
+                <label for="apiKey">Remote Support API key:</label>
+                <input name="apiKey" id=apiKey placeholder="Leave empty if you don't have one"/>
+            </p>
             <button onclick="setConfig()">Create</button>
             <button onclick="hideCreateNew()">Cancel</button>
         </div>
@@ -77,10 +81,14 @@
             function setConfig() {
                 toggleLoader(true)
                 var name = document.getElementById('name').value
+                var apiKey = document.getElementById('apiKey').value
                 document.getElementById('new-network').style.display = 'none'
                 fetch('./set-config',{ 
                     method: 'POST',
-                    body: JSON.stringify({name: name}),
+                    body: JSON.stringify({
+                        name: name,
+                        apiKey: apiKey
+                    }),
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
