@@ -6,3 +6,4 @@
  - __SECRET_HASH__ Community secret hash  
  - __SECRET INVITE__ Community secret invite
  - __COMMUNITY_ID__ Community id
+ - __SUPPORT_ENDPOINT__ Remote support endpoint

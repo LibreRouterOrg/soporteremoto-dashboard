@@ -65,3 +65,6 @@ yarn.lock
 
 # ssb config
 .config.json
+
+# support config
+toSend.json
