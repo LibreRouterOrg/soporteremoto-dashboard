@@ -7,9 +7,9 @@ afterEach(cleanup);
 
 jest.mock('../../api', () => {
     const api = {
-        getDefaultNode: jest.fn(async () => 'ql-bob'),
         nodes: {
-            list: async () => ['ql-bob', 'ql-jim', 'ql-roxa']
+            list: async () => ['ql-bob', 'ql-jim', 'ql-roxa'],
+            getDefaultNode: jest.fn(async () => 'ql-bob')
         },
         account: {
             createAccount: async ({ name, node }) => ({ words: 'your words' })

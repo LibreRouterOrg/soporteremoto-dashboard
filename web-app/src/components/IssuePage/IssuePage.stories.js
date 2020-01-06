@@ -18,7 +18,7 @@ const nonCommonIssue = {
 const changeStatus = action('changeStatus');
 
 const IssueContextProvider = ({ issue, children }) => (
-    <IssueContext.Provider value={{ issue: issue, changeStatus: changeStatus }}>
+    <IssueContext.Provider value={{ issue: issue, issueStatus: issue.status, changeStatus: changeStatus }}>
         {children}
     </IssueContext.Provider>
 )

@@ -5,15 +5,22 @@ import Login from './Login';
 
 jest.mock('../../api', () => ({
         account: {
-            recoverAccount: jest.fn(async (seedPhrase) => {
+            recover: jest.fn(async (seedPhrase) => {
                 if (seedPhrase == 'valid seed phrase') {
                     return ({
-                        name: 'gferrero',
-                        node: 'ql-gferrero',
-                        avatar: '/path/to/avatar'
+                        account:{
+                            name: 'gferrero',
+                            node: 'ql-gferrero',
+                            avatar: '/path/to/avatar',
+                        },
+                        verified: true,
                     });
                 } else {
-                    throw new Error('not valid seed phrase');
+                    return ({
+                        account: {
+                        },
+                        verified: false,
+                    });
                 }
             })
         }
@@ -21,7 +28,7 @@ jest.mock('../../api', () => ({
 );
 
 const submitButtonParams = [
-    (content, element) => element.textContent === 'Entrar',
+    (content, element) => element.textContent === 'Verificar',
     {'selector': '*[type="submit"]'}
 ]
 
@@ -47,7 +54,7 @@ it('should render seed phrase required message when submitting empty seedPhrase'
 
 
 it('should call account api recover endpoint when submitting a seed phrase', async () => {
-    const seedPhrase = 'my seed phrase'
+    const seedPhrase = 'valid seed phrase'
     const { getByLabelText, getByText } = render(<Login />);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: seedPhrase } });
@@ -55,19 +62,19 @@ it('should call account api recover endpoint when submitting a seed phrase', asy
     fireEvent.click(submitButton);
     await wait(() => {
         expect(
-            mockedApi.account.recoverAccount
+            mockedApi.account.recover
         ).toBeCalledWith(seedPhrase)
     });
 })
 
-it('should render seed phrase not valid message when submitting not valid seed phrase', async () => {
+it('should render seed phrase warning message when submitting not valid seed phrase', async () => {
     const notValidSeedPhrase = 'not valid seed phrase';
     const { getByLabelText, getByText, findByText } = render(<Login />);
     const seedPhraseInput = getByLabelText('Frase Secreta');
     fireEvent.change(seedPhraseInput, { target: { name: 'seedPhrase', value: notValidSeedPhrase } });
     const submitButton = getByText(...submitButtonParams);
     fireEvent.click(submitButton);
-    await findByText('La frase secreta ingresada no es correcta');
+    await findByText('Revisa cuidadosamente la frase secreta ingresada');
 })
 
 it('should redirect to location.state.from after submitting a valid seed phrase when available', async () => {

@@ -59,7 +59,7 @@ const NavBar = () => (
         <div className="nav-bar-menu">
             <IssueContext.Consumer>
                 {({ issueStatus, changeStatus }) =>
-                    <Menu status={issueStatus} onChange={changeStatus} />
+                    <Menu status={issueStatus} onChange={changeStatus}/>
                 }
             </IssueContext.Consumer>
         </div>
