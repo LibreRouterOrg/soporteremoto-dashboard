@@ -15,7 +15,7 @@ const actions = {
 }
 
 storiesOf('Registration', module)
-    .add('Default Node Roxa', () => <Registration {...actions} nodes={nodes} defaultNode="ql-roxa"></Registration>)
-    .add('No default node', () => <Registration {...actions} nodes={nodes}></Registration>)
+    .add('Default Node Roxa', () => <Registration isOnline {...actions} nodes={nodes} defaultNode="ql-roxa"></Registration>)
+    .add('No default node', () => <Registration isOnline {...actions} nodes={nodes}></Registration>)
     .add('Congrats after registering', () => <Congrats seedPhrase={seedPhrase} username={'bob'} />)
     .add('When Offline', () => <Registration isOnline={false}></Registration>)

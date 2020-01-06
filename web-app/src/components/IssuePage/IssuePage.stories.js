@@ -1,7 +1,8 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { NavBar } from './IssuePage';
-import { user, issue } from '../data/mockData';
+import { action } from '@storybook/addon-actions';
+import { IssueContext, Issue } from './IssuePage';
+import { issue } from '../data/mockData';
 
 const largerCommonIssuePath = {
     ...issue,
@@ -14,7 +15,27 @@ const nonCommonIssue = {
     title: "Ayuda para alinear la antena de casa"
 }
 
-// storiesOf('IssuePage', module)
-//     .add('Basic Issue Page', () => <IssueDetail issue={issue} user={user} author={issue.user} comments={[]}/>)
-//     .add('Larger common issue path', () => <IssueDetail issue={largerCommonIssuePath} user={user} author={issue.user} comments={[]}/>)
-//     .add('Non common issue selecetd', () => <IssueDetail issue={nonCommonIssue} user={user} author={issue.user} comments={[]}/>)
+const changeStatus = action('changeStatus');
+
+const IssueContextProvider = ({ issue, children }) => (
+    <IssueContext.Provider value={{ issue: issue, issueStatus: issue.status, changeStatus: changeStatus }}>
+        {children}
+    </IssueContext.Provider>
+)
+
+storiesOf('IssuePage', module)
+    .add('Basic Issue Page', () => (
+        <IssueContextProvider issue={issue}>
+            <Issue issueId={issue.id}></Issue>
+        </IssueContextProvider>)
+    )
+    .add('Larger common issue path', () => (
+        <IssueContextProvider issue={largerCommonIssuePath}>
+            <Issue issueId={largerCommonIssuePath.id}></Issue>
+        </IssueContextProvider>)
+    )
+    .add('Non common issue selecetd', () => (
+        <IssueContextProvider issue={nonCommonIssue}>
+            <Issue issueId={nonCommonIssue.id}></Issue>
+        </IssueContextProvider>)
+    )
