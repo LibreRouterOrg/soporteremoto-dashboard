@@ -1,16 +1,6 @@
 import { getSbotAsPromise } from "../../db";
 import pull from "pull-stream";
-
-function getStatus(sbot) {
-    return (key) => {
-        return new Promise((res) => {
-            sbot.about.latestValue(
-                { key: 'status', dest: key },
-                (err, status) => res(status || 'requestNoSent')
-            );
-        });
-    }
-};
+import { getStatus } from "./enrich";
 
 export const listSupportRequests = async (req, res) => {
     /*
