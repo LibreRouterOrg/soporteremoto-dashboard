@@ -48,6 +48,11 @@ export default {
         getStatus: restApi.reports.getStatus,
         setStatus: restApi.reports.setStatus,
         getComments: restApi.reports.getComments,
+        getSupportRequests: restApi.reports.getSupportRequests,
+    },
+    supportRequests: {
+        create: restApi.supportRequests.create,
+        cancel: restApi.supportRequests.cancel,
     },
     comment: {
         create: restApi.comment.create
