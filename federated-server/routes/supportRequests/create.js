@@ -1,5 +1,6 @@
 import { getSbotAsPromise } from "../../db";
 import { orderLog } from "../../utils/orderLog";
+import { getStatus } from "./enrich";
 
 export const createSupportRequest = async (req, res) => {
     /*
@@ -10,7 +11,8 @@ export const createSupportRequest = async (req, res) => {
         const supportRequestData = orderLog(req.body);
         if (supportRequestData)
             sbot.add(supportRequestData,
-                (err, supportRequest) => {
+                async (err, supportRequest) => {
+                    supportRequest.value.content.status = await getStatus(sbot)(supportRequest.key);
                     return res.json({ err, supportRequest });
                 })
     } catch (error) {
