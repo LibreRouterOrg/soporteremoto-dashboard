@@ -1,5 +1,5 @@
 import ssbKey from 'ssb-keys';
-import { formatReport, formatUser, formatStatus, formatReportComments } from './translator';
+import { formatReport, formatUser, formatStatus, formatReportComments, formatReportSupportRequests, formatSupportRequest } from './translator';
 import { localFetch } from './localFetch';
 
 let STATUS = true
@@ -76,6 +76,14 @@ const api = {
             return {
                 ...report,
                 user
+            }
+        },
+        addUserData: (idFrom, dataTo) => async (msg) => {
+            const id = msg[idFrom];
+            const data = await api.accounts.get(id);
+            return {
+                ...msg,
+                [dataTo]: data
             }
         }
     },
@@ -165,11 +173,8 @@ const api = {
                 .then(reports => Promise.resolve(reports.length > 0? reports[0]: {})),
         getSupportRequests: (id) =>
             fetchLog({id}, {...config, path: '/reports/support-requests'})
-                .then(res => {
-                    const {messages} = res[0];
-                    const requests = messages.splice(1)
-                    return Promise.resolve(requests);
-                }),
+                .then(res => Promise.all(res.map(formatReportSupportRequests)))
+                .then(requests => Promise.resolve(requests.length > 0? requests[0]: [])),
         setStatus: (id, status) =>
             sendToLog({
                 type: 'about',
@@ -199,6 +204,7 @@ const api = {
                 author: config.keys.publicKey,
                 root: reportId,
             }, { ...config, path: '/support-requests/create' })
+            .then(({err, supportRequest}) => formatSupportRequest(supportRequest.value));
         },
         cancel: ({
             id
