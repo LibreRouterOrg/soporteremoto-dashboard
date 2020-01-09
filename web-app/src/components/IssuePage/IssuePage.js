@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import moment from 'moment';
 import Comments from '../Comments';
+import SupportRequests from '../SupportRequests';
 import { Button } from 'antd';
 import Menu from './Menu';
 import Status from './Status';
@@ -118,6 +119,7 @@ export const Issue = ({issueId}) => (
     <div className="issue-page">
         <NavBar />
         <IssueDetail />
+        <SupportRequests reportId={issueId}/>
         <Comments issueId={issueId} />
     </div>
 );
