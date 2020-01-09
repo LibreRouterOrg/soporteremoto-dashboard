@@ -65,7 +65,7 @@ const fetchLog = async(content={}, config) => {
 }
 
 let config = {
-    url: process.env.REACT_APP_REST_URL || '/api',
+    url: 'http://localhost:8080' || '/api',
 }
 
 const api = {
@@ -163,12 +163,18 @@ const api = {
             fetchLog({id}, {...config, path: '/reports/get'})
                 .then(reports => Promise.all(reports.map(formatReportComments)))
                 .then(reports => Promise.resolve(reports.length > 0? reports[0]: {})),
+        getSupportRequests: (id) =>
+            fetchLog({id}, {...config, path: '/reports/support-requests'})
+                .then(requests => {
+                    console.log(requests);
+                    return Promise.resolve(requests);
+                }),
         setStatus: (id, status) =>
             sendToLog({
                 type: 'about',
                 about: id,
                 status
-            }, { ...config, path: `/reports/setStatus` })
+            }, { ...config, path: `/reports/setStatus` }),
     },
     comment: {
         create: ({
@@ -183,9 +189,29 @@ const api = {
             }, { ...config, path: '/reports/create' })
         },
     },
+    supportRequests: {
+        create: ({
+            reportId
+        }) => {
+            return sendToLog({
+                type: 'supportRequest',
+                author: config.keys.publicKey,
+                root: reportId,
+            }, { ...config, path: '/support_requests/create' })
+        },
+        cancel: ({
+            id
+        }) => {
+            return sendToLog({
+                type: 'about',
+                about: id,
+                status: 'canceled'
+            }, { ...config, path: '/support_requests/set' })
+        }
+    },
     network: {
         getNodes: () => fetchLog({}, {...config, path: '/network/nodes'}),
-        getDefaultNode: () => whitTimeout(2500, fetch('http://thisnode.info/cgi-bin/hostname')
+        getDefaultNode: () => whitTimeout(2500, fetch('http://10.5.0.6/cgi-bin/hostname')
             .then(res => res.text())
             .catch(e => Promise.resolve(null))
         )
