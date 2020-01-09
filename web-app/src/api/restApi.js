@@ -65,7 +65,7 @@ const fetchLog = async(content={}, config) => {
 }
 
 let config = {
-    url: 'http://localhost:8080' || '/api',
+    url: process.env.REACT_APP_REST_URL || '/api',
 }
 
 const api = {
@@ -165,8 +165,9 @@ const api = {
                 .then(reports => Promise.resolve(reports.length > 0? reports[0]: {})),
         getSupportRequests: (id) =>
             fetchLog({id}, {...config, path: '/reports/support-requests'})
-                .then(requests => {
-                    console.log(requests);
+                .then(res => {
+                    const {messages} = res[0];
+                    const requests = messages.splice(1)
                     return Promise.resolve(requests);
                 }),
         setStatus: (id, status) =>
@@ -197,7 +198,7 @@ const api = {
                 type: 'supportRequest',
                 author: config.keys.publicKey,
                 root: reportId,
-            }, { ...config, path: '/support_requests/create' })
+            }, { ...config, path: '/support-requests/create' })
         },
         cancel: ({
             id
@@ -206,7 +207,7 @@ const api = {
                 type: 'about',
                 about: id,
                 status: 'canceled'
-            }, { ...config, path: '/support_requests/set' })
+            }, { ...config, path: '/support-requests/set' })
         }
     },
     network: {
