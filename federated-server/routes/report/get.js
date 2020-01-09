@@ -15,10 +15,11 @@ export const getReport = async(req,res) => {
         sbot.threads.thread({ root: req.body.id, blocklist: ['like']}),
         pull.asyncMap(async(data, cb) => { 
             let newData = Object.assign({}, data)
-            newData.messages[0].value.content.status = await getStatus(newData.messages[0].key)
-            cb(null, data)
+            newData.messages[0].value.content.status = await getStatus(sbot)(newData.messages[0].key)
+            cb(null, newData)
         }),
         pull.collect((err, msgs) => {
+            msgs[0].messages = msgs[0].messages.filter(x => x.value.content.type === 'report')
             err
                 ? res.json({error: 'object not found'})
                 : res.json(msgs)

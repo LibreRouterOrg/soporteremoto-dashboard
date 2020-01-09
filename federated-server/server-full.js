@@ -16,6 +16,7 @@ import path from 'path';
 import app from './app';
 import fs from 'fs';
 import { resendToSupport } from './schedule/resendToSupport';
+import { createSupportRequest, setSupportRequest, listSupportRequests } from './routes/supportRequests';
 
 export const runFullServer = () => {
     ///////////////////////////////////////////////////////
@@ -33,6 +34,10 @@ export const runFullServer = () => {
         app.post('/reports/get', getReport)
         app.post('/reports/getStatus', getStatusReport)
         app.post('/reports/setStatus', setStatusReport)
+        app.post('/reports/support-requests', listSupportRequests)
+        
+        app.post('/support-requests/create', createSupportRequest)
+        app.post('/support-requests/set', setSupportRequest)
 
         app.post('/comment/create', createComment)
         app.post('/comment/get', getComment)
@@ -41,7 +46,6 @@ export const runFullServer = () => {
 
         app.post('/blobs/upload', uploadBlob)
         app.get('/blobs/get/:hash', getBlob)
-
 
         app.use(express.static(path.join(__dirname,'..','web-app','build')));
         app.get('*', function(req, res) {
