@@ -19,7 +19,7 @@ export const formatReportComments = async ({ messages, full }) => {
 }
 
 export const formatReportSupportRequests = async ({ messages, full }) => {
-    return messages.filter((_, key) => key > 0).map(message => formatSupportRequest(message.value))
+    return messages.filter((_, key) => key > 0).map(message => formatSupportRequest(message))
 }
 
 export const formatComment = (value) => {
@@ -28,9 +28,9 @@ export const formatComment = (value) => {
     return { userId: author, timestamp, body }
 }
 
-export const formatSupportRequest = (value) => {
+export const formatSupportRequest = ({value, key}) => {
     const {author, timestamp, content} = value;
-    return {author, timestamp, status:content["status"], reportId:content["root"]};
+    return {key:key, author, timestamp, status:content["status"], reportId:content["root"]};
 }
 
 export const formatUser = (account) => ({

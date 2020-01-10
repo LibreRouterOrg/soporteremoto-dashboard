@@ -204,7 +204,7 @@ const api = {
                 author: config.keys.publicKey,
                 root: reportId,
             }, { ...config, path: '/support-requests/create' })
-            .then(({err, supportRequest}) => formatSupportRequest(supportRequest.value));
+            .then(({err, supportRequest}) => formatSupportRequest(supportRequest));
         },
         cancel: ({
             id
@@ -212,7 +212,7 @@ const api = {
             return sendToLog({
                 type: 'about',
                 about: id,
-                status: 'canceled'
+                status: 'requestCanceled'
             }, { ...config, path: '/support-requests/set' })
         }
     },
