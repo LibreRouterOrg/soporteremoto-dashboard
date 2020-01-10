@@ -118,9 +118,11 @@ export const Issue = ({issueId}) => (
     // Should be used inside a IssueContext.Provider
     <div className="issue-page">
         <NavBar />
-        <IssueDetail />
-        <SupportRequests reportId={issueId}/>
-        <Comments issueId={issueId} />
+        <div className="scrollable-content">
+            <IssueDetail />
+            <SupportRequests reportId={issueId}/>
+            <Comments issueId={issueId} />
+        </div>
     </div>
 );
 
