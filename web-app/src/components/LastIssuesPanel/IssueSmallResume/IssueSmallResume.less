@@ -39,18 +39,26 @@
     min-width: 0;
 }
 
+.side {
+    .ant-avatar {
+        flex: 0 0 auto;
+    }
+}
 .username {
     margin-top: .2em;
     max-width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 0.8rem;
-    line-height: 2em;
+    white-space: nowrap;
 }
 
 .node {
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 0.8rem;
-    line-height: 1em;
+    white-space: nowrap;
 }
 .affects-me {
     padding-top:0.5em;
