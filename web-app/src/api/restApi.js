@@ -218,7 +218,7 @@ const api = {
     },
     network: {
         getNodes: () => fetchLog({}, {...config, path: '/network/nodes'}),
-        getDefaultNode: () => whitTimeout(2500, fetch('http://10.5.0.6/cgi-bin/hostname')
+        getDefaultNode: () => whitTimeout(2500, fetch('http://thisnode.info/cgi-bin/hostname')
             .then(res => res.text())
             .catch(e => Promise.resolve(null))
         )
