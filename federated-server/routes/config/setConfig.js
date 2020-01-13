@@ -1,6 +1,6 @@
 import { makePasswd } from "../../utils/makePassword"
 import { getSbot } from "../../db"
-import { loadOrCreateConfig, saveConfig } from "../../config"
+import { loadOrCreateConfig, saveConfig, savePasswords } from "../../config"
 import { writeSecretBox, formPrivate, writePublic } from "../../utils/signify"
 import fs from 'fs';
 import os from 'os';
@@ -42,7 +42,8 @@ export const setConfig = async (req, res) => {
     };
 
     saveConfig(Object.assign(config, { certificates }))
-
+    savePasswords({ apiKey: req.body.apiKey, password })
+    
     getSbot(async (sbot)=> {
       const certificates = Object.assign({action: 'enable', certificates })
       sbot.publish({
@@ -53,7 +54,7 @@ export const setConfig = async (req, res) => {
       }, async() => {
         if(!req.body.apiKey) return res.json({password, certificates});
         const toSend = JSON.stringify({
-          apiKey: 'BqlmHSxkI8K5',
+          apiKey: req.body.apiKey,
           config: {
             device: {
               name: os.hostname(),

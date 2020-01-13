@@ -12,6 +12,24 @@ export const saveConfig = (config={}) => {
     }
 }
 
+export const savePasswords = ({apiKey, password}) => {
+    try {
+        fs.writeFileSync('.passwords.json', JSON.stringify({apiKey, password}, null, '  '), { encoding: 'utf8'});
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+
+export const getPasswords = () => {
+    try {
+        const rawdata = fs.readFileSync('.passwords.json', { encoding: 'utf8' });
+        return JSON.parse(rawdata);
+    } catch (e) {
+        return;
+    }
+}
+
 export const getConfig = () => {
     if(process.env.REMOTE_CONTAINER) {
         return {
