@@ -56,11 +56,25 @@ export const readSignature = (signature, asString=false) => {
     }
 }
 
-export const checkSignature = (msg='', signature='', pKey='') => {
-    msg = Uint8Array.from(decodeUTF8(msg))
-    signature = Uint8Array.from(readSignature(signature).sig)
-    pKey = Uint8Array.from(readPublic(pKey).publkey)
-    return nacl.sign.detached.verify(msg, signature, pKey)
+export const writeSignature = (signature, asString=false) => {
+    if (typeof signature === 'string') {
+        signature = decodeBase64(signature)
+    }
+    signature = Array.from(signature)
+    
+    const uSignature = [
+        ...PKGALG,
+        ...[0,0,0,0,0,0,0,0],
+        ...signature.splice(0,SIGBYTES)
+    ]
+    return asString? encodeBase64(uSignature): uSignature
+}
+
+export const checkSignature = (msg='', signature='', publicKey='') => {
+    msg = decodeUTF8(msg)
+    signature = decodeBase64(signature)
+    publicKey = Uint8Array.from(readPublic(publicKey).publkey)
+    return nacl.sign.detached.verify(msg, signature, publicKey)
 }
 
 const uintSized = (base=[], size=32) => {
