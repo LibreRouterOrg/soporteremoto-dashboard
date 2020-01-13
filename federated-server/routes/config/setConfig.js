@@ -73,7 +73,7 @@ export const setConfig = async (req, res) => {
 
         try {
           console.log('Sending to support endpoint', process.env.SUPPORT_ENDPOINT)
-          const supportsubscription = await fetch(process.env.SUPPORT_ENDPOINT, {
+          const supportsubscription = await fetch(process.env.SUPPORT_ENDPOINT+'/submit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: toSend

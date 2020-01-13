@@ -5,7 +5,7 @@ export async function resendToSupport(){
     try {
         let json = fs.readFileSync('./toSend.json', { encoding: 'utf8'})
         console.log(json)
-        const response = await fetch(process.env.SUPPORT_ENDPOINT, {
+        const response = await fetch(process.env.SUPPORT_ENDPOINT+'/submit', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: json
