@@ -121,6 +121,7 @@ export const signKey = (secretKey, keyToSign='') => {
     const signature = nacl.sign(decodeUTF8(keyToSign), secretKey)
     return {
         key: keyToSign,
-        signature: encodeBase64(signature)
+        signature: encodeBase64(uintSized(signature,64)),
+        using: writeSignature(signature, true)
     }
 }
