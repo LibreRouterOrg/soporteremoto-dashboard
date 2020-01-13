@@ -5,6 +5,7 @@ import { createReport, getReport, listReports, getStatusReport, setStatusReport 
 import { createComment, getComment,  } from './routes/comment';
 import { getNodes } from './routes/network';
 import { uploadBlob, getBlob } from './routes/blobs';
+import { addKey, listKeys, deleteKey } from './routes/keys';
 
 import { getSbot } from './db'
 import pull from 'pull-stream'
@@ -46,6 +47,10 @@ export const runFullServer = () => {
 
         app.post('/blobs/upload', uploadBlob)
         app.get('/blobs/get/:hash', getBlob)
+
+        app.post('/keys/add', addKey)
+        app.post('/keys/delete', deleteKey)
+        app.post('/keys/list', listKeys)
 
         app.use(express.static(path.join(__dirname,'..','web-app','build')));
         app.get('*', function(req, res) {

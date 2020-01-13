@@ -47,12 +47,12 @@ export const writePublic = (pubKey, asString) => {
     return encodeBase64(pKeyBase64)
 }
 
-export const readSignature = (signature) => {
+export const readSignature = (signature, asString=false) => {
     signature = Array.from(decodeBase64(signature))
     return {
         pkgalg: signature.splice(0,2),
         keynum: signature.splice(0,KEYNUMLEN),
-        sig: signature.splice(0,SIGBYTES),
+        sig: asString? encodeBase64(signature.splice(0,SIGBYTES)) : signature.splice(0,SIGBYTES),
     }
 }
 
@@ -103,6 +103,7 @@ export const readSecretBox = (genericId, secret, password) => {
 }
 
 export const signKey = (secretKey, keyToSign='') => {
+    secretKey = typeof secretKey === 'string'? decodeBase64(secretKey): secretKey;
     const signature = nacl.sign(decodeUTF8(keyToSign), secretKey)
     return {
         key: keyToSign,
