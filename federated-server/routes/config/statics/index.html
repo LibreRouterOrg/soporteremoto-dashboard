@@ -36,7 +36,7 @@
         <div id=pendrive-step style="display:none;">
             <p id=plug-in-msg>Please plug-in a usb stick into the remote support device </p>
             <p id='waiting-for-pendrive-msg'> Waiting for a usb stick to be plugged in ...</p>
-            <button style="display:none" id=copy-cert-btn class=full onClick="copyToPendrive()"></button>
+            <button style="display:none" id=copy-cert-btn class=full onClick="copyCertificate()"></button>
         </div>
 
         <div id=last-step style="display:none">
@@ -55,6 +55,7 @@
     </div>
     <script>
             var pendrivesPullInterval = null;
+            var pendriveId = null;
 
             function toggleLoader(state) {
                 var loader = document.getElementById('loader')
@@ -142,53 +143,47 @@
                     .then(res => res.json())
                     .then(pendrives => {
                         if (pendrives.length <= 0) {
+                            document.getElementById('waiting-for-pendrive-msg').style.display = 'block'
+                            document.getElementById('copy-cert-btn').style.display = 'none'
                             return;
                         }
                         var drive = pendrives[0];
-                        var description = drive.description.substring(0, 15)
-                        var driveText = description + " (" + (drive.size / 1e9).toFixed(2) + " GB)"
-                        var btnText = document.createTextNode(
-                            "Copy to " + driveText
-                        )
+                        if (drive.device === pendriveId) {
+                            return;
+                        }
                         var copyBtn = document.getElementById('copy-cert-btn')
-                        copyBtn.appendChild(btnText)
+                        driveDescription = drive.description || 'usb-stick'
+                        copyBtn.textContent = "Copy to " + drive.description
+                        copyBtn.style.display = 'block'
                         document.getElementById('waiting-for-pendrive-msg').style.display = 'none'
+                        pendriveId = drive.device
                     })
                 }, 500)
             }
 
-            function selectedPendrive() {
-                var selected = document.getElementsByName("drive").filter(x => x.checked)
-                if (selected.length == 0) return null;
-                return selected.value;
-            }
-
             function hidePendriveStep() {
-                document.getElementById('pendrive-step').style.display = none
+                document.getElementById('pendrive-step').style.display = 'none'
             }
 
             function copyCertificate(){
-                var device = selectedPendrive();
-                if (!device) {
-                    document.getElementById('pendrive-please-select-msg').style.display = "block"
-                }
                 fetch('./copy-certificate', {
                     method: 'POST',
                     body: JSON.stringify({
-                        device: device,
+                        device: pendriveId,
                     }),
                     headers: {
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
                 }).then(() => {
-                    clearInterval()
+                    clearInterval(pendrivesPullInterval)
                     showLastStep()
                 })
             }
 
             function showLastStep() {
-                document.getElementById('last-step').style.display = block
+                hidePendriveStep();
+                document.getElementById('last-step').style.display = 'block'
             }
 
             function reboot() {
