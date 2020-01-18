@@ -1,9 +1,6 @@
 import { getOnlyServers } from "../../shared-state"
 
 export async function getServers(req, res) {
-    res.setTimeout(4000,()=> {
-        res.json({ error: 'timeout' })
-    })
     try {
         const servers = await getOnlyServers()
         res.json(servers)
