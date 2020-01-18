@@ -37,6 +37,7 @@
             <p id=plug-in-msg>Please plug-in a usb stick into the remote support device </p>
             <p id='waiting-for-pendrive-msg'> Waiting for a usb stick to be plugged in ...</p>
             <button style="display:none" id=copy-cert-btn class=full onClick="copyCertificate()"></button>
+            <p id="pendrive-error-msg" style="display:none"> Error writting to usb-stick, try a different one</p>
         </div>
 
         <div id=last-step style="display:none">
@@ -48,9 +49,8 @@
                 </p>
                 <p> Repeat this for each LibreRouter in the network </p>
                 <p> We have finished here!</p>
-                <div id='pendrives-list'></div>
                 <button class=full onClick="reboot()">Reboot and start remote support service now</button>
-            </div>
+        </div>
         <div id=loader></div>
     </div>
     <script>
@@ -133,7 +133,6 @@
                 document.getElementById('pendrive-step').style.display = 'block'
                 document.getElementById('waiting-for-pendrive-msg').style.display = 'block'
                 pendrivesPullInterval = setInterval(() => {
-                    var pendrivesList = document.getElementById('pendrives-list');
                     fetch('./pendrives', {
                         headers: {
                             'Accept': 'application/json',
@@ -145,6 +144,8 @@
                         if (pendrives.length <= 0) {
                             document.getElementById('waiting-for-pendrive-msg').style.display = 'block'
                             document.getElementById('copy-cert-btn').style.display = 'none'
+                            document.getElementById("pendrive-error-msg").style.display = 'none';
+                            pendriveId = null;
                             return;
                         }
                         var drive = pendrives[0];
@@ -175,7 +176,14 @@
                         'Accept': 'application/json',
                         'Content-Type': 'application/json'
                     },
-                }).then(() => {
+                })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res);
+                    if (res.error) {
+                        document.getElementById("pendrive-error-msg").style.display = 'block';
+                        return;
+                    }
                     clearInterval(pendrivesPullInterval)
                     showLastStep()
                 })
