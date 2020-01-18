@@ -5,6 +5,7 @@ export async function getServers(req, res) {
         const servers = await getOnlyServers()
         res.json(servers)
     } catch(e) {
-        console.log('Error on shared-state')
+        console.log('Error on shared-state', e)
+        res.json({ error: 'timeout' })
     }
 }
