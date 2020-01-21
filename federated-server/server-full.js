@@ -17,7 +17,7 @@ import path from 'path';
 import app from './app';
 import fs from 'fs';
 import { resendToSupport } from './schedule/resendToSupport';
-import sendPendingRequestsToTier from './schedule/sendSupportRequests';
+import sendPendingSupportRequestsToTier from './schedule/sendSupportRequests';
 import { createSupportRequest, setSupportRequest, listSupportRequests } from './routes/supportRequests';
 
 export const runFullServer = () => {
@@ -110,7 +110,7 @@ export const runFullServer = () => {
             resendToSupport();
         })
 
-        schedule.scheduleJob('*/15 * * * *', () => {
+        schedule.scheduleJob('*/5 * * * *', () => {
             sendPendingSupportRequestsToTier();
         })
     });

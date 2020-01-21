@@ -32,7 +32,7 @@ const changeSupportRequestStatus = async (supporRequest) => {
     }, () => {});
 }
 
-const sendRequestToTier = (supportRequest) => {
+export const sendRequestToTier = (supportRequest) => {
     const { apiKey } = getPasswords()
     const ln6Ip = ip.address('librenet6', "ipv6")
 
@@ -53,29 +53,17 @@ const sendRequestToTier = (supportRequest) => {
         body: JSON.stringify(toSend)
     })
         .then(res => res.json())
-        .then(({ error }) => { if (error) throw Error(error) })
-        .catch(error => {
-            console.log(`Error requesting support to tier server:
-                        ${error} while processing ${supportRequest}`);
-        });
-
-    tierRequest
-        .then(({ sshKey, name }) => saveKeys(sshKey, name))
-        .catch(error => {
-            console.log(`Error saving keys for supportRequest:
-                        ${error} while processing ${supporRequest}`);
-        });
-
-    tierRequest
+        .then(res => { if (res.error) throw Error(res.error); return res })
+        .then(({sshKey, name}) => saveKeys(sshKey, name))
         .then(() => { changeSupportRequestStatus(supportRequest) })
         .catch(error => {
-            console.log(`Error logging supportRequest status:
-                         ${error} while processing ${supporRequest}`);
+            console.log(`${error} sending support request to tier
+                         ${JSON.stringify(supportRequest)}`);
         });
 }
 
-const sendPendingSupportRequestsToTier = () => {
-    const sbot = getSbotAsPromise();
+const sendPendingSupportRequestsToTier = async () => {
+    const sbot = await getSbotAsPromise();
     pull(
         sbot.messagesByType({type: 'supportRequest'}),
         pull.asyncMap(async (msg, cb) => {

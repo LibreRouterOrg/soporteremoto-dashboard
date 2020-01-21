@@ -1,6 +1,7 @@
 import { getSbotAsPromise } from "../../db"
 import { orderLog } from "../../utils/orderLog"
 import { getStatus } from "./enrich"
+import { sendRequestToTier } from "../../schedule/sendSupportRequests"
 
 export const createSupportRequest = async (req, res) => {
     /*
@@ -15,6 +16,7 @@ export const createSupportRequest = async (req, res) => {
             res.json({error: errorMsg});
         } else {
             supportRequest.value.content.status = await getStatus(sbot)(supportRequest.key);
+            sendRequestToTier(supportRequest);
             res.json({supportRequest: supportRequest});
         }
     });
