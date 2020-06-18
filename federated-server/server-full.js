@@ -17,6 +17,7 @@ import path from 'path';
 import app from './app';
 import fs from 'fs';
 import { resendToSupport } from './schedule/resendToSupport';
+import sendPendingSupportRequestsToTier from './schedule/sendSupportRequests';
 import { createSupportRequest, setSupportRequest, listSupportRequests } from './routes/supportRequests';
 
 export const runFullServer = () => {
@@ -107,6 +108,10 @@ export const runFullServer = () => {
         schedule.scheduleJob('*/1 * * * *', () => {
             if (!fs.existsSync('./toSend.json')) return;
             resendToSupport();
+        })
+
+        schedule.scheduleJob('*/5 * * * *', () => {
+            sendPendingSupportRequestsToTier();
         })
     });
 }

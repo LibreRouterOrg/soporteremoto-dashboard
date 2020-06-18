@@ -7,14 +7,26 @@ const { getIps } = require('./utils/getIp');
 // Create a shared-state object
 const myState = new SharedState({author: 'soporteremoto'})
 
+function fetchWithTimeout (url, options, timeout = 4000) {
+    return Promise.race([
+        fetch(url, options),
+        new Promise((_, reject) =>
+            setTimeout(() => reject(new Error('timeout')), timeout)
+        )
+    ]);
+}
+
 const requestSharedState = (table, sync) => {
     const hostUrl = `http://thisnode.info/cgi-bin/shared-state/${table}`;
-    return fetch(hostUrl, {
+    return fetchWithTimeout(hostUrl, {
         method: 'POST',
         body: sync? JSON.stringify(strMapToObj(myState.show(table))) : []
     })
     .then(res => res.json())
-    .catch(() => console.log('Shared-state not found on thisnode.info'));
+    .catch((e) => {
+        console.log('Shared-state not found on thisnode.info')
+        throw e;
+    });
 }
 
 export async function getOnlyServers(){
@@ -47,7 +59,11 @@ export async function getSharedConfig() {
 }
 
 export async function sendSharedConfig(config) {
-    myState.insert(getIps(), {type: 'config', config}, 100, 'soporteremoto')   
-    const result = await requestSharedState('soporteremoto', true)
-    console.log(result)
+    myState.insert(getIps(), {type: 'config', config}, 100, 'soporteremoto')
+    try {
+        const result = await requestSharedState('soporteremoto', true)
+        console.log(result)
+    } catch (e) {
+        console.log('Cant send config to shared state', e)
+    }
 }
