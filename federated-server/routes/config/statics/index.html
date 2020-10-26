@@ -29,12 +29,34 @@
         <div id=password-msg style="display: none">
                 <p>Congratulations, your remote support service is now configured. Keep this password in a safe place, with it you can install new services in the rest of the network.</p>
                 <h3 id=password></h3>
-                <button class=full onClick="reboot()">Reboot and start remote support service now</button>
+                <p> In the next step we will let LibreRouters get to know this service </p>
+                <button class=full onClick="showPendriveStep()">Continue</button>
+        </div>
 
+        <div id=pendrive-step style="display:none;">
+            <p id=plug-in-msg>Please plug-in a usb stick into the remote support device </p>
+            <p id='waiting-for-pendrive-msg'> Waiting for a usb stick to be plugged in ...</p>
+            <button style="display:none" id=copy-cert-btn class=full onClick="copyCertificate()"></button>
+            <p id="pendrive-error-msg" style="display:none"> Error writting to usb-stick, try a different one</p>
+        </div>
+
+        <div id=last-step style="display:none">
+                <p> Great the service certificate has been written into the usb stick </p>
+                <p> The next step is to plug in the usb stick in each LibreRouter you want to get support on</p>
+                <p> 
+                    Turn on the LibreRouter, plug the usb-stick and wait for the blue led to blink three times.<br/>
+                    Got the three blinks? That's it, the LibreRouter has met the Support Service.
+                </p>
+                <p> Repeat this for each LibreRouter in the network </p>
+                <p> We have finished here!</p>
+                <button class=full onClick="reboot()">Reboot and start remote support service now</button>
         </div>
         <div id=loader></div>
     </div>
     <script>
+            var pendrivesPullInterval = null;
+            var pendriveId = null;
+
             function toggleLoader(state) {
                 var loader = document.getElementById('loader')
                 loader.style.display = state? 'block':'none'
@@ -106,6 +128,72 @@
                 document.getElementById('password-msg').style.display = 'none'
             }
 
+            function showPendriveStep() {
+                hideShowPassword();
+                document.getElementById('pendrive-step').style.display = 'block'
+                document.getElementById('waiting-for-pendrive-msg').style.display = 'block'
+                pendrivesPullInterval = setInterval(() => {
+                    fetch('./pendrives', {
+                        headers: {
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json'
+                        },
+                    })
+                    .then(res => res.json())
+                    .then(pendrives => {
+                        if (pendrives.length <= 0) {
+                            document.getElementById('waiting-for-pendrive-msg').style.display = 'block'
+                            document.getElementById('copy-cert-btn').style.display = 'none'
+                            document.getElementById("pendrive-error-msg").style.display = 'none';
+                            pendriveId = null;
+                            return;
+                        }
+                        var drive = pendrives[0];
+                        if (drive.device === pendriveId) {
+                            return;
+                        }
+                        var copyBtn = document.getElementById('copy-cert-btn')
+                        driveDescription = drive.description || 'usb-stick'
+                        copyBtn.textContent = "Copy to " + drive.description
+                        copyBtn.style.display = 'block'
+                        document.getElementById('waiting-for-pendrive-msg').style.display = 'none'
+                        pendriveId = drive.device
+                    })
+                }, 500)
+            }
+
+            function hidePendriveStep() {
+                document.getElementById('pendrive-step').style.display = 'none'
+            }
+
+            function copyCertificate(){
+                fetch('./copy-certificate', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        device: pendriveId,
+                    }),
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                })
+                .then(res => res.json())
+                .then(res => {
+                    console.log(res);
+                    if (res.error) {
+                        document.getElementById("pendrive-error-msg").style.display = 'block';
+                        return;
+                    }
+                    clearInterval(pendrivesPullInterval)
+                    showLastStep()
+                })
+            }
+
+            function showLastStep() {
+                hidePendriveStep();
+                document.getElementById('last-step').style.display = 'block'
+            }
+
             function reboot() {
                 hideShowPassword();
                 setMessage('Rebooting...')
@@ -121,7 +209,7 @@
                 document.getElementById('password').innerText = password
 
             }
-        
+
             toggleLoader(true)
             fetch('./servers')
                 .then(function(res){ 

@@ -106,7 +106,7 @@ export const getPublicCertificate = async() => {
         return undefined;
     }
     const certificates = config['certificates'];
-    if (!('pubCert' in config)) {
+    if (!('pubCert' in certificates)) {
         return undefined;
     }
     return certificates['pubCert'];
